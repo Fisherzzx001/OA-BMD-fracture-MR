@@ -1,0 +1,7 @@
+cohort,threshold,n_edges,avg_degree,metabolic_OE,musculoskeletal_OE
+CHARLS,top_K,33,4.125,1.44,1.431
+CHARLS,OE_1.2,27,3.375,1.44,1.431
+CHARLS,OE_1.5,16,2.0,1.44,1.431
+UKB,top_K,91,11.375,1.373,1.426
+UKB,OE_1.2,49,6.125,1.373,1.426
+UKB,OE_1.5,12,1.5,1.373,1.426

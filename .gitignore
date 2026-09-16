@@ -1,0 +1,13 @@
+# ---- Third-party / re-downloadable references (LDSC source + 1000G LD scores, ~0.8 GB) ----
+code/ref/
+
+# ---- Python cache ----
+__pycache__/
+*.pyc
+
+# ---- Demo / scratch files ----
+*_demo_*
+
+# ---- Env / secrets ----
+.env
+*.egg-info/

@@ -1,0 +1,41 @@
+cohort,combination,prevalence_oa,OE,OR,type
+CHARLS,Hypertension + Dyslipidaemia,33.78,1.31,4.35,dyad
+CHARLS,Hypertension + Chronic back pain,21.16,1.05,1.21,dyad
+CHARLS,Hypertension + Diabetes,20.06,1.37,4.22,dyad
+CHARLS,Diabetes + Dyslipidaemia,16.98,1.64,4.52,dyad
+CHARLS,Dyslipidaemia + Chronic back pain,14.88,1.04,1.11,dyad
+CHARLS,Hypertension + Neck/shoulder pain,14.3,1.05,1.19,dyad
+CHARLS,Dyslipidaemia + Neck/shoulder pain,10.49,1.09,1.22,dyad
+CHARLS,Hypertension + Heart disease,10.39,1.09,1.33,dyad
+CHARLS,Chronic back pain + Neck/shoulder pain,10.05,1.33,1.86,dyad
+CHARLS,Hypertension + Depression,9.71,1.06,1.21,dyad
+CHARLS,Hypertension + Diabetes + Dyslipidaemia,15.05,2.41,,triad
+CHARLS,Hypertension + Dyslipidaemia + Chronic back pain,11.8,1.37,,triad
+CHARLS,Hypertension + Dyslipidaemia + Neck/shoulder pain,8.44,1.45,,triad
+CHARLS,Hypertension + Diabetes + Chronic back pain,7.72,1.58,,triad
+CHARLS,Hypertension + Chronic back pain + Neck/shoulder pain,6.65,1.46,,triad
+CHARLS,Diabetes + Dyslipidaemia + Chronic back pain,6.41,1.85,,triad
+CHARLS,Hypertension + Dyslipidaemia + Heart disease,5.93,1.46,,triad
+CHARLS,Hypertension + Dyslipidaemia + Depression,5.83,1.5,,triad
+CHARLS,Hypertension + Dyslipidaemia + Multisite joint pain,5.83,1.54,,triad
+CHARLS,Hypertension + Diabetes + Neck/shoulder pain,5.42,1.65,,triad
+UKB,Chronic back pain + Neck/shoulder pain,31.13,1.34,4.1,dyad
+UKB,Chronic back pain + Multisite joint pain,26.0,1.38,4.13,dyad
+UKB,Hypertension + Chronic back pain,25.9,1.05,1.22,dyad
+UKB,Neck/shoulder pain + Multisite joint pain,21.71,1.55,4.27,dyad
+UKB,Hypertension + Neck/shoulder pain,19.7,1.07,1.25,dyad
+UKB,Dyslipidaemia + Chronic back pain,18.21,1.06,1.23,dyad
+UKB,Hypertension + Dyslipidaemia,17.61,1.3,2.17,dyad
+UKB,Hypertension + Multisite joint pain,16.21,1.09,1.27,dyad
+UKB,Dyslipidaemia + Neck/shoulder pain,13.6,1.07,1.18,dyad
+UKB,Dyslipidaemia + Multisite joint pain,11.27,1.09,1.22,dyad
+UKB,Chronic back pain + Neck/shoulder pain + Multisite joint pain,18.38,2.35,,triad
+UKB,Hypertension + Chronic back pain + Neck/shoulder pain,15.1,1.47,,triad
+UKB,Hypertension + Chronic back pain + Multisite joint pain,12.56,1.51,,triad
+UKB,Hypertension + Neck/shoulder pain + Multisite joint pain,10.87,1.76,,triad
+UKB,Hypertension + Dyslipidaemia + Chronic back pain,10.79,1.43,,triad
+UKB,Dyslipidaemia + Chronic back pain + Neck/shoulder pain,10.39,1.46,,triad
+UKB,Dyslipidaemia + Chronic back pain + Multisite joint pain,8.78,1.52,,triad
+UKB,Hypertension + Dyslipidaemia + Neck/shoulder pain,8.37,1.49,,triad
+UKB,Dyslipidaemia + Neck/shoulder pain + Multisite joint pain,7.55,1.76,,triad
+UKB,Hypertension + Dyslipidaemia + Multisite joint pain,6.83,1.5,,triad

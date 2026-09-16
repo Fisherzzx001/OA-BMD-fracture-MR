@@ -1,0 +1,16 @@
+Phenotype: Femoral neck BMD (Femur_neck_BMD)
+  n                 : 5975502
+  n_gws             : 742
+  n_sug             : 2032
+  lambda_gc         : 1.097741737524301
+  n_palindromic     : 840712
+  n_eaf_extreme     : 0
+  n_dup_rsid        : 16083
+  n_invalid         : 0
+  min_p             : 3.1380000000000003e-25
+  lead_rsid         : rs2566752
+  lead_chr          : 1
+  lead_pos          : 68656697
+  lead_beta         : -0.0883
+  lead_p            : 3.1380000000000003e-25
+  mean_abs_beta     : 0.01389884262443557

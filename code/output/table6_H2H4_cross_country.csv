@@ -1,0 +1,8 @@
+metric,delta_CN_minus_UK,ci_low,ci_high,p_bootstrap,significant
+Average degree (whole network),-0.029,-0.375,0.0,1,no
+Module: metabolic,0.066,0.015,0.117,0.011,YES
+Module: cardiovascular,-0.174,-0.59,0.233,0.413,no
+Module: respiratory,0.204,-0.626,1.086,0.676,no
+Module: organ_other,0.101,-0.434,0.671,0.732,no
+Module: mental,-0.019,-0.726,0.724,0.953,no
+Module: musculoskeletal,0.004,-0.085,0.095,0.928,no

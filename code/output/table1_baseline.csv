@@ -1,0 +1,45 @@
+Cohort,Variable,OA,Control,SMD
+CHARLS,N,"2,916","2,916",—
+CHARLS,"Age, mean (SD)",62.8 (8.3),62.8 (8.3),0.003
+CHARLS,"BMI, mean (SD)",25.3 (3.8),24.4 (3.8),0.235
+CHARLS,"Female, %",54.6,54.2,0.000
+CHARLS,"Current smoking, %",66.5,65.4,0.001
+CHARLS,"Current drinking, %",95.8,95.7,0.018
+CHARLS,hypertension,59.8,42.1,0.374
+CHARLS,diabetes,24.5,13.3,0.285
+CHARLS,dyslipidaemia,42.6,27.3,0.322
+CHARLS,heart_disease,15.7,10.2,0.156
+CHARLS,stroke,7.6,5.0,0.121
+CHARLS,asthma,4.6,3.3,0.055
+CHARLS,copd,7.0,5.0,0.069
+CHARLS,liver_disease,4.1,3.2,0.062
+CHARLS,kidney_disease,5.1,3.5,0.069
+CHARLS,digestive,11.5,10.2,0.032
+CHARLS,cancer,3.2,2.9,0.008
+CHARLS,depression,15.0,10.0,0.151
+CHARLS,dementia,2.8,2.5,0.041
+CHARLS,back_pain,33.8,25.5,0.167
+CHARLS,neck_pain,22.3,17.4,0.128
+CHARLS,multisite_pain,14.6,12.5,0.065
+UKB,N,"12,951","12,951",—
+UKB,"Age, mean (SD)",63.7 (7.7),63.8 (7.6),0.001
+UKB,"BMI, mean (SD)",28.5 (4.4),27.0 (4.4),0.357
+UKB,"Female, %",54.1,54.0,0.000
+UKB,"Current smoking, %",64.9,64.3,0.002
+UKB,"Current drinking, %",95.7,94.4,0.058
+UKB,hypertension,43.8,36.6,0.155
+UKB,diabetes,16.9,12.7,0.126
+UKB,dyslipidaemia,30.5,24.7,0.129
+UKB,heart_disease,13.7,11.7,0.066
+UKB,stroke,6.6,5.6,0.045
+UKB,asthma,4.9,3.9,0.044
+UKB,copd,8.8,7.0,0.065
+UKB,liver_disease,3.4,2.8,0.041
+UKB,kidney_disease,4.7,3.4,0.072
+UKB,digestive,11.9,10.1,0.069
+UKB,cancer,3.0,2.6,0.032
+UKB,depression,17.7,12.7,0.124
+UKB,dementia,3.4,2.3,0.067
+UKB,back_pain,55.9,37.1,0.381
+UKB,neck_pain,41.4,24.3,0.371
+UKB,multisite_pain,33.7,19.6,0.324

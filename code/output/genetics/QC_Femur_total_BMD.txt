@@ -1,0 +1,16 @@
+Phenotype: Femoral total BMD (Femur_total_BMD)
+  n                 : 5975502
+  n_gws             : 1275
+  n_sug             : 2237
+  lambda_gc         : 1.1149802673034195
+  n_palindromic     : 840712
+  n_eaf_extreme     : 0
+  n_dup_rsid        : 16083
+  n_invalid         : 0
+  min_p             : 8.947000000000001e-26
+  lead_rsid         : rs9533090
+  lead_chr          : 13
+  lead_pos          : 42951449
+  lead_beta         : -0.0861
+  lead_p            : 8.947000000000001e-26
+  mean_abs_beta     : 0.01400526322307314

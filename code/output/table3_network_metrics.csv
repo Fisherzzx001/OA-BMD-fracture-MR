@@ -1,0 +1,5 @@
+cohort,group,n_edges,average_degree,density,modularity,centralization,clustering
+CHARLS,OA,33,4.125,0.275,0.261,0.143,0.294
+CHARLS,Matched control,13,1.625,0.1083,0.512,0.181,0.323
+UKB,OA,91,11.375,0.7583,-0.01,0.276,0.867
+UKB,Matched control,68,8.5,0.5667,0.004,0.267,0.686
