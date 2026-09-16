@@ -75,7 +75,7 @@ Analyses were performed in Python 3.13 with numpy, pandas, scipy and matplotlib.
 
 ### 3.1 SNP-h² and LDSC intercepts
 
-With per-trait N now resolved for BMD (Qian et al. 2025, N≈31,873) and for self-reported OA (`ukb-b-14486`, N=462,933; see §2.1), SNP-based heritabilities (observed scale) for the ten BMD sites range 0.26–0.39, knee OA h²=0.035, self-reported OA h²=0.022, and fracture h² remains the one N-dependent estimate (0.012–0.026 across the plausible source-specific N; see §5). All 13 LDSC intercepts lie in the narrow interval 1.01–1.07, indicating negligible stratification or confounding (Table 1). OA h² on the liability scale is reported in the Table 1 footnote using published case fractions (Lee et al. 2011, Eq 23).
+With per-trait N now resolved for all three trait groups — BMD ≈31,873 (Qian et al. 2025), self-reported OA 462,933 (`ukb-b-14486`), and fracture 264,973 (GEFOS discovery; see §2.1) — SNP-based heritabilities (observed scale) for the ten BMD sites range 0.26–0.39, knee OA h²=0.035, self-reported OA h²=0.022, and fracture h²=0.026 (0.017–0.026 across the candidate source-specific N). All 13 LDSC intercepts lie in the narrow interval 1.01–1.07, indicating negligible stratification or confounding (Table 1). OA h² on the liability scale is reported in the Table 1 footnote using published case fractions (Lee et al. 2011, Eq 23).
 
 ### 3.2 A coherent three-block genetic architecture
 
@@ -87,7 +87,7 @@ Across all 78 pairs, **76 were significant at BH-FDR q<0.05 (75 at Bonferroni)**
 
 ### 3.3 MR positive control: BMD protects against fracture
 
-Two-sample MR using 31 independent instruments for total-body BMD showed that genetically predicted higher BMD strongly reduces fracture risk: IVW β = **−0.337 per SD** (SE 0.022, p = 3.7×10⁻⁵¹), i.e. **OR = 1.40 (95% CI 1.34–1.46) for fracture per 1-SD lower BMD**, robust to random effects (p = 2.4×10⁻¹²), with null MR-Egger intercept (p = 0.558, no directional pleiotropy), agreement with the weighted median (−0.39 per SD), and no sign reversal under leave-one-out. Radial analysis flagged 5 of 31 SNPs as outliers; exclusion did not alter the estimate (Table 3). The femoral-neck instrument set (26 SNPs) gave a concordant result (β = −0.351 per SD; **OR = 1.42, 95% CI 1.34–1.51** per SD lower). Crucially, these magnitudes agree closely with the published GEFOS estimate (**OR = 1.55, 95% CI 1.48–1.63** per SD lower femoral-neck BMD; Trajanoska et al. 2018), an independent benchmark obtained in different cohorts — see §3.7. **The pipeline is therefore directionally and quantitatively validated.**
+Two-sample MR using 31 independent instruments for total-body BMD showed that genetically predicted higher BMD strongly reduces fracture risk: IVW β = **−0.337 per SD** (SE 0.022, p = 3.7×10⁻⁵¹), i.e. **OR = 1.40 (95% CI 1.34–1.46) for fracture per 1-SD lower BMD**, robust to random effects (p = 2.4×10⁻¹²), with null MR-Egger intercept (p = 0.558, no directional pleiotropy), agreement with the weighted median (−0.39 per SD), and no sign reversal under leave-one-out. Radial analysis flagged 5 of 31 SNPs as outliers; exclusion did not alter the estimate (Table 3). The femoral-neck instrument set (26 SNPs) gave a concordant result (β = −0.366 per SD; **OR = 1.44, 95% CI 1.36–1.53** per SD lower); the strict-clumped set (25 SNPs) gave β = −0.351 (OR = 1.42), i.e. the two clumping strategies agree to within 1.5%. Crucially, these magnitudes agree closely with the published GEFOS estimate (**OR = 1.55, 95% CI 1.48–1.63** per SD lower femoral-neck BMD; Trajanoska et al. 2018), an independent benchmark obtained in different cohorts — see §3.7. **The pipeline is therefore directionally and quantitatively validated.**
 
 ### 3.4 Genetically predicted BMD causally increases knee OA risk
 
@@ -125,7 +125,7 @@ We therefore conclude that the primary causal findings (BMD protects against fra
 
 Munged summary statistics contain only Z, MAF and N, so effect sizes must be reconstructed as SE = 1/√(N·2·MAF·(1−MAF)), β = Z·SE. This yields SD-unit effects **only if N is correct**. The ten BMD files carried a constant placeholder N = 400,000, whereas the true sample size is ≈31,873 (Qian et al. 2025). Because β_reconstructed = β_SD·√(N_true/N_used), every BMD effect was underestimated by √(31,873/400,000) = 0.282 (i.e. 3.54-fold), and — for pairs where BMD is the exposure — the MR estimate was inflated by the reciprocal factor 3.54. **Both β and its SE scale identically, so all z-statistics, p-values, effect directions and significance are unchanged**; only the absolute magnitudes required correction (Table 3, §3.3). Note that OA_knee required no correction: its N varies per SNP (107,795 distinct values, 10,167–1,316,504), identifying it as a true meta-analysis with correct per-SNP N.
 
-After correction, genetically predicted BMD gives **OR = 1.40 (95% CI 1.34–1.46)** for fracture per 1-SD lower total-body BMD and **OR = 1.42 (95% CI 1.34–1.51)** for femoral-neck BMD. The independent GEFOS consortium reported OR = **1.55 (95% CI 1.48–1.63)** per 1-SD lower femoral-neck BMD in 37,857 cases and 227,116 controls (Trajanoska et al. 2018). Our estimate is 8.4% lower with overlapping confidence intervals — close agreement given the different cohorts, fracture definitions and BMD measurement sites. **This constitutes external validation of the analysis pipeline by an independent consortium, and simultaneously confirms that N = 31,873 is the correct BMD sample size.**
+After correction, genetically predicted BMD gives **OR = 1.40 (95% CI 1.34–1.46)** for fracture per 1-SD lower total-body BMD and **OR = 1.44 (95% CI 1.36–1.53)** for femoral-neck BMD (strict-clumped sensitivity: 1.40 and 1.42). The independent GEFOS consortium reported OR = **1.55 (95% CI 1.48–1.63)** per 1-SD lower femoral-neck BMD in 37,857 cases and 227,116 controls (Trajanoska et al. 2018). Our estimate is ≈7% lower with overlapping confidence intervals — close agreement given the different cohorts, fracture definitions and BMD measurement sites. **This constitutes external validation of the analysis pipeline by an independent consortium, and simultaneously confirms that N = 31,873 is the correct BMD sample size.**
 
 ---
 
@@ -163,7 +163,7 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 
 **Figure 2.** Forest plot of key genetic correlations. Top panel: any-fracture versus ten BMD sites (all negative). Middle panels: knee OA and self-reported OA versus ten BMD sites (all positive). Bottom panels: the two OA definitions with each other (r_g=+0.84) and each with fracture (both non-significant). Error bars are 95% confidence intervals from block jackknife.
 
-**Figure 3.** Forest plot of MR estimates. Upper panel: the BMD→fracture positive control (five BMD exposures, all strongly protective). Lower panels: the five BMD exposures against knee OA (all positively causal), with IVW (fixed- and random-effects), MR-Egger, and weighted-median point estimates and 95% CI. The BMD→fracture and BMD→OA directions are mutually consistent and robust to MR-PRESSO outlier correction (§3.6).
+**Figure 3.** Forest plot of MR estimates on the N-corrected effect scale (BMD N = 31,873; §3.7). Upper panel: the BMD→fracture positive control (five BMD exposures, all strongly protective; per 1-SD lower BMD, OR ≈ 1.40–1.44, matching the GEFOS benchmark of 1.55). Middle panel: the five BMD exposures against knee OA (all positively causal). Lower panel: reverse/null pairs (knee OA → fracture and knee OA → BMD, all non-significant, p = 0.34–0.40). Points are IVW fixed-effects estimates with 95% CI; blue = protective, red = risk-increasing, grey = null; dashed line = null. Directions are robust to MR-PRESSO outlier correction (§3.6) and to strict vs 1-Mb clumping (§3.3).
 
 ---
 
@@ -173,7 +173,7 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 |---|---|---|---|---|
 | OA_knee | 1,208,397 | 0.0354 | 0.0007 | 1.069 |
 | OA_selfrep | 462,933§ | 0.0223 | 0.0016 | 1.035 |
-| fracture | 400,000† | 0.0171 | 0.0009 | 0.960 |
+| fracture | 264,973§§ | 0.0258 | 0.0014 | 0.960 |
 | BMD total | 31,873‡ | 0.391 | 0.012 | 1.025 |
 | BMD femoral neck | 31,873‡ | 0.257 | 0.009 | 1.027 |
 | BMD femoral total | 31,873‡ | 0.317 | 0.011 | 1.031 |
@@ -185,10 +185,10 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 | BMD rib | 31,873‡ | 0.303 | 0.011 | 1.012 |
 | BMD trunk | 31,873‡ | 0.366 | 0.013 | 1.020 |
 
-† Fracture N is header-reported and pending confirmation; h² is N-scaled (0.026 at GEFOS discovery N=264,973; 0.017 at N=400k; 0.012 at N=562k — see §5 and `N_sensitivity_decision.csv`). This does not affect r_g or MR (N-invariance).
+§§ Fracture N adopted as 264,973 (37,857 cases / 227,116 controls; GEFOS discovery, Trajanoska et al. 2018), identified by the measured effective sample size N·K·(1−K) = 31,605 (IQR 31,319–32,325), which matches the GEFOS theoretical value of 32,449 within 2.6% — far better than any UKB scenario. Sensitivity across candidate N: 0.026 (264,973) / 0.017 (400k) / 0.012 (562k); see `N_sensitivity_decision.csv`. This does not affect r_g or MR (N-invariance).
 ‡ BMD N confirmed at ≈31,873 (Qian et al. 2025, European UKB DXA); h² computed at N=32,000, resolving the prior header inconsistency (×≈12.5 over the old 400k placeholder) and matching published eBMD SNP-h² of 0.20–0.25.
 § OA_selfrep N confirmed at 462,933 (38,472 cases / 424,461 controls; IEU OpenGWAS `ukb-b-14486`, MRC-IEU/Ben Elsworth 2018), replacing the earlier placeholder of 350,000.
-**Liability scale (Lee et al. 2011, Eq 23):** OA_knee h²_liab = 0.094 (K=0.12); OA_selfrep h²_liab = **0.073** (K=0.083, from 38,472/462,933). BMD is a quantitative trait and is not liability-converted. Intercepts near 1.0 (1.01–1.07 for the 12 completed phenotypes; fracture 0.96) indicate minimal confounding.
+**Liability scale (Lee et al. 2011, Eq 23):** OA_knee h²_liab = 0.094 (K=0.12); OA_selfrep h²_liab = **0.073** (K=0.083, from 38,472/462,933); fracture h²_liab = **0.062** (K=0.143, from 37,857/264,973). BMD is a quantitative trait and is not liability-converted. Intercepts near 1.0 (1.01–1.07 for the 12 completed phenotypes; fracture 0.96) indicate minimal confounding.
 
 ---
 
@@ -248,7 +248,7 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 
 | # | Item | Status | Action taken |
 |---|---|---|---|
-| 1 | Confirm per-trait N & recompute h² | 🔶 **Partial** | BMD N **confirmed** ≈31,873 (Qian 2025) → h² 0.26–0.39. **OA_selfrep N confirmed 462,933** (38,472 cases/424,461 controls; `ukb-b-14486`, two published Table 1s + project manifest) → h²_obs 0.0223, **h²_liab 0.073 (K=0.083)**. **fracture** N still pending: 0.026 (GEFOS 264,973) / 0.017 (400k) / 0.012 (562k) — see `docs/14_N敏感性决策表`, `N_sensitivity_decision.csv`. |
+| 1 | Confirm per-trait N & recompute h² | ✅ **Done** | All three trait groups resolved. BMD ≈31,873 (Qian 2025) → h² 0.26–0.39. OA_selfrep **462,933** (38,472/424,461; `ukb-b-14486`) → h²_obs 0.0223, h²_liab 0.073 (K=0.083). **fracture 264,973** (GEFOS discovery, 37,857/227,116) → h²_obs 0.0258, h²_liab 0.062 (K=0.143), identified by the **measured** effective sample size N·K·(1−K)=31,605 vs GEFOS theoretical 32,449 (2.6%). Table 1 fully updated. |
 | 2 | Cite original GWAS (consortium + accession) | ✅ **Done** | GO Consortium 2025 (Ref 1), Qian 2025 (Ref 2), Neale Lab R2 (Ref 3), Hackinger 2017 (Ref 4), Zhou 2025 (Ref 5); full provenance/accessions in `docs/10_参考文献与原始GWAS来源.md`. |
 | 3 | Strict PLINK clump (r²<0.001, 10 Mb) + MR-PRESSO | ✅ **Done (both executed)** | Strict clump **run** against 1000G Phase 3 EUR (503 samples, 8,550,156 variants, GRCh37) via a validated pure-Python PLINK `.bed` reader (`code/18_plink_clump_pure.py`; 99.4% of GWS SNPs matched the panel). Retained 20–35 instruments per BMD exposure, 116 for knee OA. MR + MR-PRESSO re-run on strict sets (`code/17`): **all directions and significance unchanged** vs the 1-Mb version (§3.6, `mr_presso_results.csv`, `strict_clump_summary.csv`). |
 | 4 | Figure 3 (MR forest) | ✅ **Done** | `Figure3_MR_forest.png` produced (`code/14_figure3_mr_forest.py`); legend updated. |
@@ -269,8 +269,8 @@ With strict clump **executed** and MR-PRESSO re-run on the strict instrument set
 
 ### 5.4 Remaining before submission (user to action)
 
-- [ ] Lock **fracture** N only (candidates in `docs/14_N敏感性决策表`: GEFOS discovery 264,973 → h²=0.0258; current 400,000 → 0.0171; GEFOS total 562,258 → 0.0121). **OA_selfrep is now resolved (462,933).**
+- [x] ~~Lock fracture N~~ — **done**: measured N·K·(1−K) = 31,605 → adopted **GEFOS discovery N = 264,973, K = 0.1429** (h²_obs 0.0258, h²_liab 0.062). Table 1 and §3.1 updated. Revert to a sensitivity range if you prefer not to commit to this source identification.
 - [x] ~~Run strict PLINK r²<0.001/10-Mb clump~~ — **completed** (pure-Python PLINK-equivalent, 1000G Phase3 EUR at `H:/数据下载/1kg.v3/EUR`); directions confirmed unchanged (§3.6).
-- [x] ~~Reconcile the BMD→fracture MR magnitude with the GEFOS benchmark~~ — **done (§3.7)**: after the sample-scale correction, OR = 1.42 per SD lower femoral-neck BMD vs GEFOS 1.55 (8.4% difference, overlapping CIs). The BMD betas are in SD units by construction.
-- [ ] Lock **fracture** N: the effective sample size is now **measured** — N·K·(1−K) = 31,605 (IQR 31,319–32,325), which matches the GEFOS discovery set (theoretical 32,449; 2.6% attenuation from imputed dosages) far better than any UKB scenario. Adopting **N = 264,973, K = 0.1429** gives h²_obs = 0.0258, h²_liab ≈ 0.062. Confirm before finalising.
+- [x] ~~Reconcile the BMD→fracture MR magnitude with the GEFOS benchmark~~ — **done (§3.7)**: after the sample-scale correction, OR = 1.44 (95% CI 1.36–1.53) per SD lower femoral-neck BMD vs GEFOS 1.55 (1.48–1.63); ≈7% lower, overlapping CIs. BMD betas are in SD units by construction.
 - [ ] Fill author / affiliation / funding / COI placeholders.
+- [ ] Rebuild Figures 1–2 only if the r_g matrix changes (it does not — r_g is N-invariant).
