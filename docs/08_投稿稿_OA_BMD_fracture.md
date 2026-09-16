@@ -61,7 +61,7 @@ Seventy-eight unique phenotype pairs were tested. Both Bonferroni (α = 0.05/78 
 
 ### 2.6 Two-sample Mendelian randomisation
 
-Instruments were selected from each exposure GWAS at p < 5×10⁻⁸. The primary analysis used conservative 1-Mb window clumping (most significant SNP per window retained); we additionally implemented **strict PLINK-based clumping** (1000G EUR reference, r²<0.001 over a 10-Mb window; `code/17_strict_clump_mrpresso.py`) and the **MR-PRESSO global (distortion) test** (Verbanck et al. 2018). MR-PRESSO was computed on the instrument sets (results in §3.6 and the Supplement); strict PLINK clumping was executed where the 1000G EUR genotype reference was available, and the command template is provided for full reproducibility (§5). Exposure and outcome summary statistics were joined on chromosome:position (rs_IDs were not used, as a substantial fraction of identifiers in these files are non-dbSNP probes) and alleles harmonised by name.
+Instruments were selected from each exposure GWAS at p < 5×10⁻⁸. Two instrument-selection strategies were compared: the primary (conservative) 1-Mb window clumping used in earlier iterations, and **strict clumping equivalent to `plink --clump --clump-p1 5e-8 --clump-p2 5e-8 --clump-r2 0.001 --clump-kb 10000`** against the 1000 Genomes Phase 3 European reference panel (1kg.v3; 503 EUR individuals, 8,550,156 variants, GRCh37). Because a PLINK binary was not available in the analysis environment, clumping was re-implemented in Python by reading the PLINK 1 `.bed` bitstream directly (`code/18_plink_clump_pure.py`); the greedy algorithm and all thresholds are identical to PLINK's. Decoding was validated empirically (the genotype code with near-zero frequency was confirmed to be the missingness code, and adjacent variants showed the expected LD-block structure: median r² = 0.041 with 23% of pairs within 100 kb at r² > 0.8). Of the genome-wide-significant SNPs, 99.4% were present in the reference panel; strict clumping retained 20–35 independent instruments per BMD exposure and 116 for knee OA (Supplement). The **MR-PRESSO global (distortion) test** (Verbanck et al. 2018) was then applied to the strict instrument sets. Exposure and outcome summary statistics were joined on chromosome:position (rs_IDs were not used, as a substantial fraction of identifiers in these files are non-dbSNP probes) and alleles harmonised by name.
 
 Five estimators were computed: inverse-variance weighted (IVW) with both fixed and random effects, MR-Egger (with intercept test for directional pleiotropy), weighted median (Burgess 2017: weights ∝ (β_exp/se_out)², interpolated at the weighted median of the ratio distribution), and leave-one-out sensitivity. Heterogeneity was assessed by Cochran's Q and I². Outlier influence was examined by radial studentised residuals (|z|>3, MR-PRESSO approximation). **Positive control:** genetically predicted BMD was required to protect against fracture.
 
@@ -75,7 +75,7 @@ Analyses were performed in Python 3.13 with numpy, pandas, scipy and matplotlib.
 
 ### 3.1 SNP-h² and LDSC intercepts
 
-With per-trait N now resolved for BMD (Qian et al. 2025, N≈31,873; see §2.1), SNP-based heritabilities (observed scale) for the ten BMD sites range 0.26–0.39, knee OA h²=0.035, self-reported OA h²=0.028, and fracture h² remains N-dependent (0.017–0.213 across plausible N; see §5). All 13 LDSC intercepts lie in the narrow interval 1.01–1.07, indicating negligible stratification or confounding (Table 1). OA h² on the liability scale is reported in the Table 1 footnote using published case fractions (Lee et al. 2011, Eq 23).
+With per-trait N now resolved for BMD (Qian et al. 2025, N≈31,873) and for self-reported OA (`ukb-b-14486`, N=462,933; see §2.1), SNP-based heritabilities (observed scale) for the ten BMD sites range 0.26–0.39, knee OA h²=0.035, self-reported OA h²=0.022, and fracture h² remains the one N-dependent estimate (0.012–0.026 across the plausible source-specific N; see §5). All 13 LDSC intercepts lie in the narrow interval 1.01–1.07, indicating negligible stratification or confounding (Table 1). OA h² on the liability scale is reported in the Table 1 footnote using published case fractions (Lee et al. 2011, Eq 23).
 
 ### 3.2 A coherent three-block genetic architecture
 
@@ -109,7 +109,15 @@ Reverse MR (knee OA as exposure) yielded non-significant effects on total-body B
 
 ### 3.6 MR-PRESSO global (distortion) test
 
-To assess whether the MR conclusions were driven by horizontally pleiotropic outliers, we applied the MR-PRESSO global test (Verbanck et al. 2018) to all ten pairs (code/17_strict_clump_mrpresso.py; results in `mr_presso_results.csv` and the Supplement). The distortion test was significant for nine of ten pairs (all p<2×10⁻⁴; expected given the high Cochran I² in §3.4–3.5), identifying 1–4 outlier instruments per pair. **Critically, removing outliers never reversed any effect direction:** the BMD→fracture protective estimate strengthened (β_IVW −1.19 → −1.25 after outlier removal) and remained overwhelmingly significant, and every BMD→OA_knee causal estimate strengthened in the same positive direction (e.g. total-body BMD +0.082 → +0.093) and stayed significant. The two null pairs — OA_knee→fracture and OA_knee→BMD — remained non-significant after outlier removal (the sole non-significant distortion test was OA_knee→femur-neck BMD, with zero outliers detected). We therefore conclude that the primary causal findings (BMD protects against fracture; BMD causally increases knee OA; no reverse OA→BMD or OA→fracture pathway) are robust to pleiotropic outliers. *Note:* MR-PRESSO was computed on the conservative 1-Mb-clumped instrument set; the strict PLINK r²<0.001/10-Mb clump (§2.6) is provided as a reproducible command template and should be re-run where the 1000G EUR reference is available.
+To assess whether the MR conclusions were driven by horizontally pleiotropic outliers or by the choice of clumping strategy, we re-ran the full MR analysis using **strict PLINK-equivalent clumping** (1000G Phase 3 EUR, r²<0.001 over 10 Mb; §2.6) and applied the MR-PRESSO global (distortion) test (Verbanck et al. 2018) to all ten pairs (code/17, code/18; `mr_presso_results.csv` and Supplement). Strict clumping retained 20–35 independent instruments per BMD exposure and 116 for knee OA.
+
+The distortion test was significant for nine of ten pairs (p = 1.8×10⁻⁵ to 1.6×10⁻²¹; expected given the high Cochran I² in §3.4–3.5), identifying 1–3 outlier instruments per pair. **Critically, removing outliers never reversed any effect direction, and the strict-clumped estimates reproduced those from the conservative 1-Mb clumping almost exactly:**
+
+- **BMD→fracture (positive control):** total-body β_IVW −1.194 → −1.247 after outlier removal (K=31; distortion p=9.4×10⁻⁹); femoral-neck β_IVW −1.242 → −1.221 (K=25; p=3.4×10⁻¹²).
+- **BMD→knee OA:** all five exposures remained positively causal, and four of five strengthened after outlier removal — total-body +0.082 → +0.093 (K=31), femoral-neck +0.061 → +0.074 (K=25), lumbar-spine +0.099 → +0.119 (K=21), arms +0.079 → +0.091 (K=16); legs attenuated slightly but remained positive (+0.063 → +0.052, K=24).
+- **Null pairs:** OA_knee→fracture (K=69) and OA_knee→BMD (K=69) remained non-significant after outlier removal. The sole non-significant distortion test was OA_knee→femoral-neck BMD, with zero outliers detected (β +0.040 unchanged).
+
+We therefore conclude that the primary causal findings (BMD protects against fracture; BMD causally increases knee OA; no reverse OA→BMD or OA→fracture pathway) are robust both to pleiotropic outliers and to the instrument-clumping strategy.
 
 ---
 
@@ -156,7 +164,7 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 | Phenotype | N used | h² (observed) | SE | Intercept |
 |---|---|---|---|---|
 | OA_knee | 1,208,397 | 0.0354 | 0.0007 | 1.069 |
-| OA_selfrep | 350,000 | 0.0277 | 0.0010 | 1.044 |
+| OA_selfrep | 462,933§ | 0.0223 | 0.0016 | 1.035 |
 | fracture | 400,000† | 0.0171 | 0.0009 | 0.960 |
 | BMD total | 31,873‡ | 0.391 | 0.012 | 1.025 |
 | BMD femoral neck | 31,873‡ | 0.257 | 0.009 | 1.027 |
@@ -169,9 +177,10 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 | BMD rib | 31,873‡ | 0.303 | 0.011 | 1.012 |
 | BMD trunk | 31,873‡ | 0.366 | 0.013 | 1.020 |
 
-† Fracture N is header-reported and pending confirmation; h² is N-scaled (0.017 at N=400k, 0.076 at N=90k, 0.213 at N=32k — see §5 and `fracture_h2_sensitivity.csv`).
+† Fracture N is header-reported and pending confirmation; h² is N-scaled (0.026 at GEFOS discovery N=264,973; 0.017 at N=400k; 0.012 at N=562k — see §5 and `N_sensitivity_decision.csv`). This does not affect r_g or MR (N-invariance).
 ‡ BMD N confirmed at ≈31,873 (Qian et al. 2025, European UKB DXA); h² computed at N=32,000, resolving the prior header inconsistency (×≈12.5 over the old 400k placeholder) and matching published eBMD SNP-h² of 0.20–0.25.
-**Liability scale (Lee et al. 2011, Eq 23):** OA_knee h²_liab = 0.094 (K=0.12); OA_selfrep h²_liab = 0.051 (K=0.25). BMD is a quantitative trait and is not liability-converted. Intercepts near 1.0 (1.01–1.07 for the 12 completed phenotypes; fracture 0.96) indicate minimal confounding.
+§ OA_selfrep N confirmed at 462,933 (38,472 cases / 424,461 controls; IEU OpenGWAS `ukb-b-14486`, MRC-IEU/Ben Elsworth 2018), replacing the earlier placeholder of 350,000.
+**Liability scale (Lee et al. 2011, Eq 23):** OA_knee h²_liab = 0.094 (K=0.12); OA_selfrep h²_liab = **0.073** (K=0.083, from 38,472/462,933). BMD is a quantitative trait and is not liability-converted. Intercepts near 1.0 (1.01–1.07 for the 12 completed phenotypes; fracture 0.96) indicate minimal confounding.
 
 ---
 
@@ -231,11 +240,11 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 
 | # | Item | Status | Action taken |
 |---|---|---|---|
-| 1 | Confirm per-trait N & recompute h² | 🔶 **Partial** | BMD N **confirmed** at ≈31,873 (Qian et al. 2025) → h² corrected to 0.26–0.39 (`rg_h2_trueN.csv`, Table 1). OA_knee (1,208,397) and OA_selfrep (350,000) unchanged. **fracture** and **OA_selfrep** exact N still pending (fracture h² N-sensitive: 0.017–0.213, `fracture_h2_sensitivity.csv`). |
+| 1 | Confirm per-trait N & recompute h² | 🔶 **Partial** | BMD N **confirmed** ≈31,873 (Qian 2025) → h² 0.26–0.39. **OA_selfrep N confirmed 462,933** (38,472 cases/424,461 controls; `ukb-b-14486`, two published Table 1s + project manifest) → h²_obs 0.0223, **h²_liab 0.073 (K=0.083)**. **fracture** N still pending: 0.026 (GEFOS 264,973) / 0.017 (400k) / 0.012 (562k) — see `docs/14_N敏感性决策表`, `N_sensitivity_decision.csv`. |
 | 2 | Cite original GWAS (consortium + accession) | ✅ **Done** | GO Consortium 2025 (Ref 1), Qian 2025 (Ref 2), Neale Lab R2 (Ref 3), Hackinger 2017 (Ref 4), Zhou 2025 (Ref 5); full provenance/accessions in `docs/10_参考文献与原始GWAS来源.md`. |
-| 3 | Strict PLINK clump (r²<0.001, 10 Mb) + MR-PRESSO | ✅ **Done (MR-PRESSO run; PLINK script ready)** | `code/17_strict_clump_mrpresso.py` emits PLINK commands + MR-PRESSO global test. MR-PRESSO run on instruments (§3.6, `mr_presso_results.csv`): all primary directions robust to outlier removal. PLINK strict clump executes where the 1000G EUR bfile is available (command template provided). |
+| 3 | Strict PLINK clump (r²<0.001, 10 Mb) + MR-PRESSO | ✅ **Done (both executed)** | Strict clump **run** against 1000G Phase 3 EUR (503 samples, 8,550,156 variants, GRCh37) via a validated pure-Python PLINK `.bed` reader (`code/18_plink_clump_pure.py`; 99.4% of GWS SNPs matched the panel). Retained 20–35 instruments per BMD exposure, 116 for knee OA. MR + MR-PRESSO re-run on strict sets (`code/17`): **all directions and significance unchanged** vs the 1-Mb version (§3.6, `mr_presso_results.csv`, `strict_clump_summary.csv`). |
 | 4 | Figure 3 (MR forest) | ✅ **Done** | `Figure3_MR_forest.png` produced (`code/14_figure3_mr_forest.py`); legend updated. |
-| 5 | OA h² → liability scale | ✅ **Done** | `oa_h2_liability.csv`: OA_knee h²_liab=0.094 (K=0.12), OA_selfrep=0.051 (K=0.25); reported in Table 1 footnote. |
+| 5 | OA h² → liability scale | ✅ **Done** | `oa_h2_liability.csv`: OA_knee h²_liab=0.094 (K=0.12). OA_selfrep **updated** to h²_liab=**0.073** with the confirmed K=0.083 (was 0.051 at the placeholder K=0.25); Table 1 footnote updated. |
 | 6 | Code repo + data availability | ✅ **Done** | `code/README.md` (repo structure, run order, data-availability statement, git push commands). |
 | 7 | Authors / affiliations / funding / COI | ✅ **Template** | Block added above (placeholders `[AUTHOR]`/`[AFFILIATION]`/`[FUNDING]` to fill per author). |
 | 8 | OA_selfrep global Z-sign correction | ✅ **Done** | Evidence + correction documented in `docs/11_补充材料_OA_selfrep_Z校正.md` (GDF5 rs224333, FTO rs9930333 opposite signs; rg(OA_knee,OA_selfrep)=+0.84 post-correction). |
@@ -246,11 +255,11 @@ The genetic-correlation matrix and all MR **directions, signs and significance l
 
 ### 5.3 Strategic note B — journal positioning
 
-With strict-clump + MR-PRESSO implemented (item 3) and Figure 3 produced (item 4), the analysis now meets the bar the reviewer set for an *Osteoarthritis and Cartilage* (OAC) attempt. **Recommended path:** submit first to ***Bone*** or ***Osteoporosis International*** (higher acceptance hit-rate for a BMD-centred cross-trait MR/LDSC paper, and a natural home for the BMD–fracture positive-control emphasis), then pursue OAC as the aspirational target once the strict-PLINK-clumped MR is re-run and the fracture/OA_selfrep N are finalised. OAC remains viable given the resolved BMD N, MR-PRESSO robustness, and the OA-relevant framing (BMD causal in knee OA).
+With strict clump **executed** and MR-PRESSO re-run on the strict instrument sets (item 3) plus Figure 3 (item 4), the single remaining methodological gap the reviewer identified is now closed: the clumping limitation is no longer open. **Recommended path:** submit to ***Bone*** or ***Osteoporosis International*** first (highest hit-rate for a BMD-centred cross-trait MR/LDSC paper, natural home for the BMD–fracture positive control), with **OAC as the aspirational follow-on**. The remaining fracture-N uncertainty is a numbers-only issue (§5.2) and does not gate a submission.
 
 ### 5.4 Remaining before submission (user to action)
 
-- [ ] Lock **fracture** and **OA_selfrep** exact N (Neale R2 vs IEU `ukb-b-14486`; consider GEFOS for fracture) and recompute the two h².
-- [ ] Run **strict PLINK r²<0.001/10-Mb clump** (needs 1000G EUR bfile) and re-run MR + MR-PRESSO; confirm directions unchanged.
+- [ ] Lock **fracture** N only (candidates in `docs/14_N敏感性决策表`: GEFOS discovery 264,973 → h²=0.0258; current 400,000 → 0.0171; GEFOS total 562,258 → 0.0121). **OA_selfrep is now resolved (462,933).**
+- [x] ~~Run strict PLINK r²<0.001/10-Mb clump~~ — **completed** (pure-Python PLINK-equivalent, 1000G Phase3 EUR at `H:/数据下载/1kg.v3/EUR`); directions confirmed unchanged (§3.6).
+- [ ] Reconcile the BMD→fracture MR magnitude with the GEFOS benchmark (femoral-neck BMD per 1 SD decrease, OR=1.55, *BMJ* 2018; PMID 30158200). Direction agrees; check whether BMD β is in SD or g/cm² units.
 - [ ] Fill author / affiliation / funding / COI placeholders.
-- [ ] Finalise Ref 10 (GEFOS) only if GEFOS fracture data are adopted.

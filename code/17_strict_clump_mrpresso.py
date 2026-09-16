@@ -30,9 +30,13 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "output", "genetics")
 
 # ---- 可配置：1000G EUR bfile 路径（用户按本地环境修改）------------------
-BFILE = "/path/to/1000G_phase3_EUR/1000G_phase3_EUR"
+# 推荐面板：MR-Base 同款 http://fileserve.mrcieu.ac.uk/ld/1kg.v3.tgz
+#   解压后取 EUR.bed / EUR.bim / EUR.fam（坐标系 GRCh37/hg19，与本批 sumstats 一致）
+# 可用环境变量覆盖：BFILE_1KG_EUR 指向 .bed 前缀（不含扩展名）；PLINK_BIN 指向 plink 可执行文件
+BFILE = os.environ.get("BFILE_1KG_EUR", r"C:/REF/1000G_EUR/EUR")   # 不含扩展名
+PLINK_BIN = os.environ.get("PLINK_BIN", "plink")                   # 或 plink.exe 绝对路径
 
-P1 = 1e-5       # --clump-p1 / --clump-p2（与 select_instruments p<5e-8 衔接时可取 5e-8）
+P1 = 5e-8       # --clump-p1 / --clump-p2（与 select_instruments p<5e-8 衔接）
 R2 = 0.001      # --clump-r2  严格 LD 阈值
 KB = 10000      # --clump-kb  10 Mb 窗口
 
@@ -148,21 +152,52 @@ def load_strict_instruments(exp, dfs):
     return d[d["SNP"].astype(str).isin(snps)]
 
 
+# ----------------------------------------------------------------- PLINK 执行
+def run_plink_clump():
+    """若 PLINK_BIN 可用则真正执行严格 clump；否则返回 False（由 emit_plink_commands 兜底）。"""
+    import shutil, subprocess
+    plink = shutil.which(PLINK_BIN)
+    if plink is None and os.path.exists(PLINK_BIN):
+        plink = PLINK_BIN
+    if plink is None:
+        return False
+    print("\n▶ 执行严格 PLINK clumping（r²<%.4f / %d kb）..." % (R2, KB // 1000))
+    for exp, out, note in PAIRS:
+        inp = os.path.join(OUT, f"{exp}_clump_input.txt")
+        clumped = os.path.join(OUT, f"{exp}_clumped")
+        cmd = [plink, "--bfile", BFILE, "--clump", inp,
+               "--clump-p1", f"{P1:g}", "--clump-p2", f"{P1:g}",
+               "--clump-r2", f"{R2:g}", "--clump-kb", f"{KB}", "--out", clumped]
+        print("  #", exp, "->", out, ":", note)
+        print("  ", " ".join(cmd))
+        subprocess.run(cmd, check=False)
+    return True
+
+
 # ----------------------------------------------------------------- 主流程
 def main():
     os.makedirs(OUT, exist_ok=True)
     dfs = m13.load_all()
     prepare_clump_inputs(dfs)
-    emit_plink_commands()
 
-    print("\n" + "=" * 72)
-    print("B. MR-PRESSO 全局（distortion）检验")
-    print("=" * 72)
-    if STRICT_CLUMP_DIR and os.path.isdir(STRICT_CLUMP_DIR):
-        print(f"★ 使用严格 clump 仪器集：{STRICT_CLUMP_DIR}")
+    def _has_clump():
+        return any(os.path.exists(os.path.join(OUT, f"{exp}_clumped.clumped"))
+                   for exp, _, _ in PAIRS)
+
+    global STRICT_CLUMP_DIR
+    if _has_clump():
+        # 已有严格 clump 结果（由 18_plink_clump_pure.py 生成）：直接采用
+        STRICT_CLUMP_DIR = OUT
+        print("\n★ 检测到严格 clump 结果（%s/<exposure>_clumped.clumped）" % OUT)
+        print("  将用之覆盖仪器集，复跑 MR + MR-PRESSO。\n")
+    elif run_plink_clump() and _has_clump():
+        STRICT_CLUMP_DIR = OUT
+        print("\n★ PLINK clump 完成，将用严格仪器集复跑 MR + MR-PRESSO。\n")
     else:
-        print("⚠  PLINK 未运行 / bfile 未挂载：以下基于近似 1-Mb clump 仪器集。")
-        print("   严格 clump 后请将 <exposure>.clumped 放入 STRICT_CLUMP_DIR 并复跑。\n")
+        emit_plink_commands()
+        STRICT_CLUMP_DIR = None
+        print("\n⚠ 未执行严格 clump：以下基于近似 1-Mb clump 仪器集（与之前一致）。")
+        print("  可运行 18_plink_clump_pure.py（纯 Python，无需 PLINK）生成严格仪器集后复跑。\n")
 
     inst = {nm: m13.select_instruments(d) for nm, d in dfs.items()}
     rows = []
