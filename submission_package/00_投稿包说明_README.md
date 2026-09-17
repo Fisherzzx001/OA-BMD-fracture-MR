@@ -11,7 +11,9 @@
 
 | 文件 / 文件夹 | 内容 | 用途 |
 |---|---|---|
-| `Manuscript.docx` | 最终投稿稿（标题页 + 摘要 + 正文 + 图注 + 表 + 参考文献） | 主稿件上传 |
+| `Manuscript.docx` | 最终投稿稿（标题页 + 摘要 + 正文 + 图注 + 表 + 参考文献，单文件完整版） | 主稿件上传（单文件版） |
+| `Submission_TitlePage.docx` | 单独标题页（作者/单位/基金/COI/Running title） | 多数期刊要求标题页与正文分传 |
+| `Submission_MainText.docx` | 盲法正文（仅标题 + 摘要 + 正文，不含作者信息） | 双盲审稿用正文 |
 | `Cover_Letter.docx` | 投稿信 | 投稿系统 Cover Letter 上传 |
 | `Figures/` | Figure1_rg_heatmap_13.png、Figure2_forest_key_results.png、Figure3_MR_forest.png | 三张主图（含图注见稿件） |
 | `Tables/` | `rg_matrix_13.csv`、`mr_corrected_N.csv`、`mr_presso_results.csv`、`oa_h2_liability.csv`、`strict_clump_summary.csv`、`rg_h2_trueN.csv` | 支持性数据（rg 矩阵、MR、MR-PRESSO、h²、严格 clump 汇总、h²_trueN） |
