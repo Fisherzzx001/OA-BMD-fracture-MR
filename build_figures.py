@@ -76,9 +76,26 @@ def read_matrix(fname):
     M = np.array([[float(x) if x != "" else np.nan for x in row[1:]] for row in rows])
     return labels, M
 
-def panel_label(ax, txt, x=-0.12, y=1.04):
+def panel_label(ax, txt, x=-0.02, y=1.05):
+    """面板标签置于轴左上角、与标题同高，避开 y 轴刻度文字。"""
     ax.text(x, y, txt, transform=ax.transAxes, fontsize=9, fontweight="bold",
-            va="top", ha="right", color=CB["ink"])
+            va="bottom", ha="right", color=CB["ink"])
+
+
+def limits(los, his, include_zero=True, pad=0.06):
+    """由数据本身推出 x 轴范围，保证每条误差棒都完整可见（避免坐标轴截断）。
+
+    之前的做法是把范围写死（如 -0.75~0.35 / -0.30~0.15），实测会切掉多条
+    95% CI 的端线：Fig2a 有 6/10 条下缘被截（最远 -0.921），Fig3c 有 3/3
+    条上缘被截（最远 +0.354）。改为数据驱动后不再丢失任何信息。
+    """
+    lo, hi = float(min(los)), float(max(his))
+    if include_zero:
+        lo, hi = min(lo, 0.0), max(hi, 0.0)
+    span = hi - lo
+    if span <= 0:
+        span = max(abs(hi), abs(lo), 1e-6)
+    return lo - pad * span, hi + pad * span
 
 def save(fig, name):
     fig.savefig(os.path.join(OUT, name + ".png"), dpi=300)
@@ -154,7 +171,7 @@ def fig1():
     plt.close(fig)
 
 # ================= FIGURE 2 : r_g forest =================
-def fig2():
+def fig2(LIMITS=None):
     labels, M = read_matrix("rg_matrix_13.csv")
     _, SE = read_matrix("rg_se_matrix_13.csv")
     _, P = read_matrix("rg_p_matrix_13.csv")
@@ -180,17 +197,20 @@ def fig2():
 
     for ax, (lab, title, row, cols, color) in zip(axes, panels):
         ys = list(range(len(cols)))[::-1]
+        los, his = [], []
         for y, c in zip(ys, cols):
-            rg = M[labels.index(row), labels.index(c)]
-            se = SE[labels.index(row), labels.index(c)]
-            sig = Q[labels.index(row), labels.index(c)] < 0.05
+            i, j = labels.index(row), labels.index(c)
+            rg, se = M[i, j], SE[i, j]
+            sig = Q[i, j] < 0.05
             col = color if sig else CB["grey"]
             ax.errorbar(rg, y, xerr=1.96*se, fmt="o", color=col, ecolor=col,
                         markersize=4, elinewidth=1.1, capsize=2.5, zorder=3)
+            los.append(rg - 1.96*se); his.append(rg + 1.96*se)
         ax.axvline(0, color=CB["grey"], ls="--", lw=0.8, zorder=1)
         ax.set_yticks(ys); ax.set_yticklabels([PRETTY[c] for c in cols], fontsize=7)
         ax.set_xlabel("Genetic correlation (r_g)", fontsize=7.5)
-        ax.set_xlim(-0.75, 0.35)
+        ax.set_xlim(*limits(los, his))
+        if LIMITS is not None: LIMITS[f"fig2_{lab}"] = list(ax.get_xlim())
         panel_label(ax, lab)
         ax.set_title(title, fontsize=8, fontweight="bold", loc="left")
 
@@ -199,24 +219,27 @@ def fig2():
              ("OA_knee","fracture","OA (knee) vs Fracture"),
              ("OA_selfrep","fracture","OA (self-rep) vs Fracture")]
     ys = list(range(len(drows)))[::-1]
+    los, his = [], []
     for y, (a, b, _) in zip(ys, drows):
-        rg = M[labels.index(a), labels.index(b)]
-        se = SE[labels.index(a), labels.index(b)]
-        sig = Q[labels.index(a), labels.index(b)] < 0.05
-        col = color if sig else CB["grey"]
+        i, j = labels.index(a), labels.index(b)
+        rg, se = M[i, j], SE[i, j]
+        sig = Q[i, j] < 0.05
+        col = CB["cb_blue"] if sig else CB["grey"]
         axd.errorbar(rg, y, xerr=1.96*se, fmt="o", color=col, ecolor=col,
                      markersize=4, elinewidth=1.1, capsize=2.5, zorder=3)
+        los.append(rg - 1.96*se); his.append(rg + 1.96*se)
     axd.axvline(0, color=CB["grey"], ls="--", lw=0.8, zorder=1)
     axd.set_yticks(ys); axd.set_yticklabels([t for _,_,t in drows], fontsize=7)
     axd.set_xlabel("Genetic correlation (r_g)", fontsize=7.5)
-    axd.set_xlim(-0.2, 1.0)
+    axd.set_xlim(*limits(los, his))
+    if LIMITS is not None: LIMITS["fig2_d"] = list(axd.get_xlim())
     panel_label(axd, "d")
     axd.set_title("OA\u2013OA and OA\u2013fracture pairs", fontsize=8, fontweight="bold", loc="left")
     save(fig, "Figure2_forest_key_results")
     plt.close(fig)
 
 # ================= FIGURE 3 : MR forest =================
-def fig3():
+def fig3(LIMITS=None):
     rows = []
     with open(os.path.join(GEN, "mr_corrected_N.csv")) as f:
         for row in csv.DictReader(f):
@@ -230,18 +253,18 @@ def fig3():
         except: return np.nan
 
     panels = [
-        ("a", "BMD \u2192 fracture (positive control)", -0.50, 0.05, [
+        ("a", "BMD \u2192 fracture (positive control)", [
             ("BMD total \u2192 fracture\nOR 1.40 (1.34\u20131.46)", "BMD_total","fracture", CB["cb_blue"]),
             ("BMD femoral neck \u2192 fracture\nOR 1.42 (1.34\u20131.51)", "BMD_femur_neck","fracture", CB["cb_blue"]),
         ]),
-        ("b", "BMD \u2192 knee OA (causally risk-increasing)", -0.005, 0.045, [
+        ("b", "BMD \u2192 knee OA (causally risk-increasing)", [
             ("BMD total \u2192 OA knee", "BMD_total","OA_knee", CB["red"]),
             ("BMD femoral neck \u2192 OA knee", "BMD_femur_neck","OA_knee", CB["red"]),
             ("BMD lumbar \u2192 OA knee", "BMD_lumbar","OA_knee", CB["red"]),
             ("BMD arms \u2192 OA knee", "BMD_arms","OA_knee", CB["red"]),
             ("BMD legs \u2192 OA knee", "BMD_leg","OA_knee", CB["red"]),
         ]),
-        ("c", "Reverse / null pairs (non-significant)", -0.30, 0.15, [
+        ("c", "Reverse / null pairs (non-significant)", [
             ("OA knee \u2192 fracture", "OA_knee","fracture", CB["grey"]),
             ("OA knee \u2192 BMD total", "OA_knee","BMD_total", CB["grey"]),
             ("OA knee \u2192 BMD femoral neck", "OA_knee","BMD_femur_neck", CB["grey"]),
@@ -249,18 +272,21 @@ def fig3():
     ]
     fig = plt.figure(figsize=(7.2, 6.6))
     gs = fig.add_gridspec(3, 1, height_ratios=[0.85, 1.30, 0.95], hspace=0.55)
-    for k, (lab, title, xlo, xhi, items) in enumerate(panels):
+    for k, (lab, title, items) in enumerate(panels):
         ax = fig.add_subplot(gs[k])
         ys = list(range(len(items)))[::-1]
+        los, his = [], []
         for y, (ylab, e, o, col) in zip(ys, items):
             r = get(e, o)
             b = num(r["beta"]); se = num(r["se"])
             ax.errorbar(b, y, xerr=1.96*se, fmt="o", color=col, ecolor=col,
                         markersize=4.5, elinewidth=1.2, capsize=2.5, zorder=3)
+            los.append(b - 1.96*se); his.append(b + 1.96*se)
         ax.axvline(0, color=CB["grey"], ls="--", lw=0.8, zorder=1)
         ax.set_yticks(ys); ax.set_yticklabels([t for t,_,_,_ in items], fontsize=7)
         ax.set_xlabel("MR effect (\u03b2 per 1 SD higher exposure)", fontsize=7.5)
-        ax.set_xlim(xlo, xhi)
+        ax.set_xlim(*limits(los, his))
+        if LIMITS is not None: LIMITS[f"fig3_{lab}"] = list(ax.get_xlim())
         panel_label(ax, lab)
         ax.set_title(title, fontsize=8, fontweight="bold", loc="left")
     fig.text(0.5, 0.005, "Points: IVW fixed-effects estimate with 95% CI.  "
@@ -271,7 +297,7 @@ def fig3():
     plt.close(fig)
 
 # ================= FIGURE 4 : SNP heritability bar =================
-def fig4():
+def fig4(LIMITS=None):
     # load h2 from rg_h2_trueN (OA + BMD) and N_sensitivity_decision (fracture)
     h2, se = {}, {}
     with open(os.path.join(GEN, "rg_h2_trueN.csv")) as f:
@@ -324,6 +350,7 @@ def fig4():
     ax.set_yticks(y); ax.set_yticklabels(pretty, fontsize=7.5)
     ax.set_xlabel("SNP-based heritability (h², observed scale)", fontsize=8)
     ax.set_xlim(0, 0.52)
+    if LIMITS is not None: LIMITS["fig4"] = list(ax.get_xlim())
     ax.set_title("SNP-based heritability of the 13 skeletal phenotypes", fontsize=9,
                  fontweight="bold", loc="left")
     ax.grid(axis="x", ls="-", lw=0.4, color="#E0E0E0", zorder=0)
@@ -395,9 +422,14 @@ def fig5():
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
+    LIMITS = {}
     fig1()
-    fig2()
-    fig3()
-    fig4()
+    fig2(LIMITS)
+    fig3(LIMITS)
+    fig4(LIMITS)
     fig5()
+    # 把每张图实际使用的坐标轴范围落盘，供 verify_figures.py 做端到端校验
+    with open(os.path.join(GEN, "figure_axis_limits.json"), "w", encoding="utf-8") as fh:
+        json.dump(LIMITS, fh, indent=2)
+    print("axis limits ->", os.path.join(GEN, "figure_axis_limits.json"))
     print("ALL FIGURES DONE")

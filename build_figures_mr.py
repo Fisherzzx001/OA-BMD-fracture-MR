@@ -128,17 +128,21 @@ def pfmt(p):
     return f"{p:.3f}"
 
 
+# 二分类性状（病例-对照 GWAS）效应量为 log-OR；BMD 为定量性状，效应量为 SD
+BINARY = {"OA_knee", "OA_selfrep", "fracture"}
+
+
+def effect_lab(t):
+    unit = "log-OR per allele" if t in BINARY else "SD per allele"
+    return f"SNP effect on {PRETTY[t]} ({unit})"
+
+
 def xlab(t):
-    return (f"SNP effect on {PRETTY[t]} (SD per allele)"
-            if t.startswith("BMD") else f"SNP effect on {PRETTY[t]} (per allele)")
+    return effect_lab(t)
 
 
 def ylab(t):
-    if t == "fracture":
-        return "SNP effect on fracture (log-OR per allele)"
-    if t.startswith("BMD"):
-        return f"SNP effect on {PRETTY[t]} (SD per allele)"
-    return f"SNP effect on {PRETTY[t]} (per allele)"
+    return effect_lab(t)
 
 
 def panel_label(ax, txt, x=-0.14, y=1.06):
