@@ -2,10 +2,13 @@
 """Produce journal-required split files: Submission_TitlePage.docx and Submission_MainText.docx (blinded).
 Reuses cleaning/parsing helpers from build_submission.py.
 """
+import os
 import build_submission as B
 from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+OUTDIR = (os.environ.get("OUTDIR", "submission_package")).replace("\\", "/")
 
 def style_doc(doc):
     st = doc.styles["Normal"]
@@ -56,8 +59,9 @@ def build_title_page():
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.add_run("Running title: BMD and OA genetics: shared architecture, divergent fracture causality").font.size = Pt(9)
     p.runs[0].italic = True
-    doc.save("submission_package/Submission_TitlePage.docx")
-    print("Saved submission_package/Submission_TitlePage.docx")
+    path = OUTDIR + "/Submission_TitlePage.docx"
+    doc.save(path)
+    print("Saved", path)
 
 def build_main():
     text, da = B.clean(B.read_text())
@@ -71,8 +75,9 @@ def build_main():
         doc.add_paragraph()
         h = doc.add_heading(level=2); h.add_run("Data availability")
         p = doc.add_paragraph(); p.add_run(da)
-    doc.save("submission_package/Submission_MainText.docx")
-    print("Saved submission_package/Submission_MainText.docx")
+    path = OUTDIR + "/Submission_MainText.docx"
+    doc.save(path)
+    print("Saved", path)
 
 if __name__ == "__main__":
     build_title_page(); build_main()

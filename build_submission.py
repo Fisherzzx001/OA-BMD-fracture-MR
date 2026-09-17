@@ -11,7 +11,7 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 SRC = r"docs/08_投稿稿_OA_BMD_fracture.md"
-OUT = r"submission_package/Manuscript.docx"
+OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Manuscript.docx").replace("\\", "/")
 
 # ---- author / affiliation block (from user input) ----
 AUTHORS = "Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹*, Qiuyan Jiang²*"
@@ -51,12 +51,14 @@ def clean(text):
     m = re.search(r"\n## §5 Pre-submission checklist.*$", text, re.S)
     if m:
         text = text[: m.start()]
-    # extract data-availability sentence, then remove the §Authors block
+    # extract data-availability sentence, then remove the §Authors block (now at end of text)
     da = ""
     mda = re.search(r"Summary statistics are from publicly published GWAS[^\n]*", text)
     if mda:
         da = mda.group(0)
-    text = re.sub(r"\n## Authors, affiliations, funding and competing interests\n.*?(?=\n## )", "", text, flags=re.S)
+    mauth = re.search(r"\n## Authors, affiliations, funding and competing interests\n", text)
+    if mauth:
+        text = text[:mauth.start()]
     return text.strip(), da
 
 def parse_inline(p, text):
