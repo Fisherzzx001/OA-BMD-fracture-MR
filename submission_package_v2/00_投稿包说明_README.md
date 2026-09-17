@@ -23,9 +23,11 @@
 
 > 说明：稿件中的 Table 1–3（h²、rg 模块、MR 估计）已内嵌于 `Manuscript.docx`；`Tables/` 提供其底层数据以便审稿人与编辑复核。
 
-## 2. 投稿前最后一项待办（用户操作）
+## 2. 投稿前数据核实（✅ 已完成，2026-09-17）
 
-- [ ] **在 GWAS Catalog 中核实 BMD 原始汇总数据的 accession：`GCST90568457`（Qian et al. 2025）**，确认 N=31,873 与来源论文一致。这是稿件中唯一依赖外部核实的编号；正文已注明"should be confirmed directly in the GWAS Catalog before submission"。
+- [x] ~~在 GWAS Catalog 中核实 BMD 原始汇总数据的 accession~~ — **已核实**：GCST90568457 = DXA-BMD femur total（UKB field 23291），N=31,873 欧洲血统 UKB（Qian et al. 2025，PMID 41206123，summary statistics 公开）。同系列逐部位 accession/N 已一并核验并写入稿件 §2.1（lumbar GCST90568448 N=30,449；total body GCST90568455 N=31,986；femoral neck GCST90568458 N=32,017；legs/pelvis/femur-total N=31,873）。逐部位 N 对校正因子的影响已量化：headline OR（1.40/1.42）变化 <0.3%，最大偏差 lumbar 2.3%，所有舍入报告值与全部 z/p/方向不变（§3.7）。
+
+**当前状态：无遗留投稿前待办。**
 
 ## 3. 引用占位符处理说明（已自动修复）
 

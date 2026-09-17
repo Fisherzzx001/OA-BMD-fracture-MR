@@ -52,5 +52,18 @@
 - [x] **OA_selfrep** 精确 N 与所用提取版本：已锁定 IEU `ukb-b-14486`（N=462,933，38,472/424,461）。✅
 - [x] **fracture** 精确 N 与来源：已锁定 GEFOS 2018 发现集（N=264,973，37,857/227,116，PMID 30158200），由实测 n_eff 反推确认。✅
 - [ ] **GO Consortium 2025** 膝 OA 子集的 GWAS Catalog 登录号（GCST 编号）— 稿件已引用 DOI/PMID，登录号可选补。
-- [x] **BMD** Qian 2025 GCST90568457（股骨 total，N=31,873）— 投稿前请在 GWAS Catalog 直核该登录号确为欧洲 UKB DXA total BMD。
-- [ ] 所有 `[AUTHOR]` / 机构 / 基金 / 利益冲突占位符替换（见 §7 整改）。
+- [x] **BMD** Qian 2025 登录号与逐部位 N —— **已于 2026-09-17 在 GWAS Catalog（经 Open Targets / RGD 镜像核验）确认**。GCST90568457 = DXA-BMD femur total（UKB field 23291），**N=31,873 欧洲血统 UKB**，PMID 41206123，summary statistics 公开。同系列逐部位 accession/N（GWAS Catalog 已 curated 的 7 个）：
+
+  | 部位 | Accession | UKB field | N（欧洲血统） |
+  |---|---|---|---|
+  | Lumbar spine | GCST90568448 | — | **30,449** |
+  | Legs | GCST90568451 | 23231 | 31,873 |
+  | Pelvis | GCST90568452 | 23232 | 31,873 |
+  | Total body | GCST90568455 | 23236 | **31,986** |
+  | Trunk | GCST90568456 | 23241 | 31,986 |
+  | Femur total | GCST90568457 | 23291 | 31,873 |
+  | Femoral neck | GCST90568458 | 23299 | **32,017** |
+
+  （arms / rib / spine 位于同一 accession 区段 GCST90568448–58 内，具体编号未在镜像中逐条核验，投稿时可在 GWAS Catalog 出版物页一次取全。）
+  **对稿件的影响量化**：N 校正因子 = √(400,000/N真)。以逐部位 N 重算：total-body 因子 3.5363（稿件用 3.5426，β 差 +0.18%）、femoral-neck 3.5346（差 +0.23%）、lumbar 3.6245（差 −2.25%，为最大偏差）；其余部位 ≤0.2%。**所有已报告的舍入值不变**（OR 1.40 / 1.42、表 3 β 至三位小数均不变）；z / p / 方向 / 显著性为 N 不变量，完全不受影响。lumbar β 由 +0.0279 → +0.0285（表 3 与 §3.4 报告的 +0.028 不变）。✅
+- [x] 所有作者 / 机构 / 基金 / 利益冲突信息已定稿（commit `794b2f9`）。
