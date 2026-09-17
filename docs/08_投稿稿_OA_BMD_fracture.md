@@ -1,7 +1,7 @@
 # Bone Mineral Density and Osteoarthritis Share Genetic Architecture but Not Causal Pathways to Fracture: A Cross-Trait Analysis of 13 Skeletal Phenotypes
 
 **Manuscript draft — target journal: *Osteoarthritis and Cartilage* (aspirational) / *Bone* or *Osteoporosis International* (realistic)**
-**Status: pre-submission revisions complete (checklist items 1–8 addressed; see §5). Remaining user actions in §5.4. Author/affiliation/funding/COI placeholders require final input.**
+**Status: ready for submission (all checklist items 1–9 addressed; see §5). Author/affiliation/funding/COI finalised 2026-09-17.**
 
 ---
 
@@ -238,10 +238,12 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 
 ## Authors, affiliations, funding and competing interests
 
-- **Authors.** [AUTHOR_1] (conceptualisation, methodology, analysis, writing); [AUTHOR_2] … ; [AUTHOR_N] (supervision). *Author order and contributions to be finalised before submission.*
-- **Affiliations.** [AFFILIATION_1]; [AFFILIATION_2].
-- **Funding.** This work was supported by [FUNDING_BODY / GRANT_NUMBER]. *To be completed.*
-- **Competing interests.** The authors declare no competing interests. *Confirm per author before submission.*
+- **Authors.** Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹*, Qiuyan Jiang²*.
+  - # Zhenxin Zheng and Song Chen contributed equally to this work.
+  - * Corresponding authors: Huricha Bao, MD (baohuricha@126.com) and Qiuyan Jiang, MD (after9951023@gmail.com).
+- **Affiliations.** ¹ Department of Orthopedics, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China; ² Department of Surgery, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China.
+- **Funding.** None.
+- **Competing interests.** The authors declare no competing interests.
 - **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; see `docs/10_参考文献与原始GWAS来源.md` for provenance and accessions, and `code/README.md` for the analysis repository and reproducibility commands.
 
 ## §5 Pre-submission checklist — status and journal positioning
@@ -256,7 +258,7 @@ Genetically predicted higher BMD is protective against fracture but causally inc
 | 4 | Figure 3 (MR forest) | ✅ **Done** | `Figure3_MR_forest.png` produced (`code/14_figure3_mr_forest.py`); legend updated. |
 | 5 | OA h² → liability scale | ✅ **Done** | `oa_h2_liability.csv`: OA_knee h²_liab=0.094 (K=0.12). OA_selfrep **updated** to h²_liab=**0.073** with the confirmed K=0.083 (was 0.051 at the placeholder K=0.25); Table 1 footnote updated. |
 | 6 | Code repo + data availability | ✅ **Done** | `code/README.md` (repo structure, run order, data-availability statement, git push commands). |
-| 7 | Authors / affiliations / funding / COI | ✅ **Template** | Block added above (placeholders `[AUTHOR]`/`[AFFILIATION]`/`[FUNDING]` to fill per author). |
+| 7 | Authors / affiliations / funding / COI | ✅ **Done** | Block finalised (§Authors): Zheng Z & Chen S equal contribution (#); Bao H & Jiang Q joint corresponding (*); both affiliations at Quzhou People's Hospital (Wenzhou Medical Univ.); Funding: None; Competing interests: none declared. |
 | 8 | OA_selfrep global Z-sign correction | ✅ **Done** | Evidence + correction documented in `docs/11_补充材料_OA_selfrep_Z校正.md` (GDF5 rs224333, FTO rs9930333 opposite signs; rg(OA_knee,OA_selfrep)=+0.84 post-correction). |
 
 | 9 | Correct MR effect magnitudes for the BMD placeholder N | ✅ **Done** | BMD files carried N=400,000 (placeholder) while true N=31,873 → munged β underestimated 3.54-fold, MR β inflated 3.54-fold. Corrected in `code/21_mr_corrected_N.py` → `mr_corrected_N.csv`; Table 3 and §3.3 updated; **p-values unchanged** (β and SE scale identically). Corrected BMD→fracture OR per SD = 1.40–1.42, matching the GEFOS benchmark of 1.55 within 8.4% (§3.7). |
@@ -274,5 +276,5 @@ With strict clump **executed** and MR-PRESSO re-run on the strict instrument set
 - [x] ~~Lock fracture N~~ — **done**: measured N·K·(1−K) = 31,605 → adopted **GEFOS discovery N = 264,973, K = 0.1429** (h²_obs 0.0258, h²_liab 0.062). Table 1 and §3.1 updated. Revert to a sensitivity range if you prefer not to commit to this source identification.
 - [x] ~~Run strict PLINK r²<0.001/10-Mb clump~~ — **completed** (pure-Python PLINK-equivalent, 1000G Phase3 EUR at `H:/数据下载/1kg.v3/EUR`); directions confirmed unchanged (§3.6).
 - [x] ~~Reconcile the BMD→fracture MR magnitude with the GEFOS benchmark~~ — **done (§3.7)**: after the sample-scale correction, OR = 1.42 (95% CI 1.34–1.51) per SD lower femoral-neck BMD vs GEFOS 1.55 (1.48–1.63); 8–10% lower, overlapping CIs. BMD betas are in SD units by construction.
-- [ ] Fill author / affiliation / funding / COI placeholders.
+- [x] ~~Fill author / affiliation / funding / COI placeholders~~ — **done** (§Authors, finalised 2026-09-17): Zheng Z & Chen S (# equal); Bao H & Jiang Q (* corresponding); Quzhou People's Hospital affiliations; Funding None; no competing interests.
 - [ ] Rebuild Figures 1–2 only if the r_g matrix changes (it does not — r_g is N-invariant).
