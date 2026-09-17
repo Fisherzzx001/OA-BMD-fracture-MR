@@ -87,3 +87,26 @@
    - **Supplementary Figure S2 — 留一法稳定性（全部 10 对）**：每行一对，黑点为全 SNP IVW 估计（含 95% CI），蓝色带为逐一剔除每个 SNP 后的估计范围；10 对全部无符号翻转。
 
 3. **稿件同步更新**：§3.4/§3.5/§3.6 正文加入 Figure 6 / Figure 7 / SupplFig S1–S2 交叉引用；图注区新增 Figure 6、Figure 7 与补充图 S1、S2 的完整图例；`Manuscript.docx`、`Submission_MainText.docx` 已重新生成（盲法正文校验无作者信息）。
+
+---
+
+## 7. 语言润色（去 AI 痕迹，v5）
+
+对包内**全部英文文字**（稿件正文、图注、表注、投稿信、medRxiv/OSF 英文声明）做了一次去 AI 痕迹的语言润色，按 SCI 顶刊写作习惯执行。
+
+**处理原则**：只改措辞与节奏，**不动任何数据、统计量、引用与结论**。已用脚本逐条替换并做数字多重集比对校验：除下文"顺带修正"一项外，全部数字出现次数与旧版完全一致（0.337 / 1.40 / 1.42 / 1.55 / 0.2823 / 3.5426 / 690,150 等逐一核对无变化）。
+
+**具体处理**：
+
+| 类别 | 处理 |
+|---|---|
+| 破折号（em dash） | 稿件正文 37 处 → 1 处，投稿信 2 处 → 0 处；改为逗号、冒号或拆句 |
+| 宣传性形容词 | 删除或替换 exaggerated 用词：`clinically entangled` → 直述关联；`coherent three-block` → `three blocks`；`exquisitely sensitive` → 直接说明依赖；`canonical` → `established`；`Crucially/`critically` 等强调词删除 |
+| 加粗强调 | 正文内加粗（\*\*First/Second/Third\*\*、\*\*The pipeline is therefore...\*\* 等）改为自然行文；仅保留摘要标签、图注编号、表头等结构性加粗 |
+| 斜体强调 | 删除用于"强调语气"的斜体（\*increased\*、\*same\*、\*quantity\*），保留物种/基因名与期刊名的规范斜体 |
+| 三段式与同义轮换 | `not only...but`、`rule of three` 排比改写为直述；统一用词（BMD→OA 一律 `raise`，不再 increased/elevated/augmented 轮换） |
+| 句尾 -ing 尾巴 | `..., reproducing/indicating/underscoring...` 类附着结构改为独立句 |
+| 空泛结论 | 删除 `The pipeline is therefore directionally and quantitatively validated` 等口号式总结，改为陈述事实 |
+| 弯引号 | 投稿信标题弯引号 → 直引号 |
+
+**顺带修正的一处数据不一致**（非语言问题，需你知晓）：§4.3 原写 `β = +0.086, p = 0.402`，与 Table 3 及 §3.5 的 `β = +0.092, p = 0.395`（`mr_corrected_N.csv` 主口径）不一致，为旧版遗留值。已统一为 **+0.092 / 0.395**。方向、显著性与结论均不变。

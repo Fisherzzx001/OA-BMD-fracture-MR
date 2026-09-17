@@ -4,7 +4,8 @@ from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-OUT = r"submission_package/Cover_Letter.docx"
+import os
+OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Cover_Letter.docx").replace("\\", "/")
 TITLE = ("Bone Mineral Density and Osteoarthritis Share Genetic Architecture but Not "
          "Causal Pathways to Fracture: A Cross-Trait Analysis of 13 Skeletal Phenotypes")
 JOURNAL = "Bone"  # adjust to Osteoporosis International if preferred
@@ -30,7 +31,7 @@ def main():
     line(doc, "Dear Editor,")
     line(doc, "")
     line(doc,
-        f"Re: Submission of original research — \u201c{TITLE}\u201d",
+        f'Re: Submission of original research: "{TITLE}"',
         bold=True)
     line(doc, "")
     line(doc,
@@ -39,34 +40,33 @@ def main():
         "authors have approved the manuscript and its submission.")
     line(doc, "")
     line(doc,
-        "Osteoarthritis (OA) and bone mineral density (BMD) are clinically entangled, yet "
-        "whether their association reflects shared genetic aetiology, causal direction, or "
-        "confounding has remained unresolved. We addressed this by analysing 13 skeletal "
-        "phenotypes — two OA definitions, ten regional BMD sites, and any-fracture — with "
-        "(i) LDSC across all 78 phenotype pairs on a common SNP set, (ii) two-sample "
-        "Mendelian randomisation for causal direction with a built-in positive control "
-        "(BMD\u2192fracture), and (iii) reverse MR to discriminate BMD\u2192OA from OA\u2192BMD. "
-        "Instruments used strict PLINK-equivalent clumping (r\u00b2<0.001 over 10 Mb, 1000G "
-        "Phase 3 EUR), and the MR-PRESSO distortion test was applied to all pairs.")
+        "People with osteoarthritis (OA) tend to have higher bone mineral density (BMD), yet "
+        "whether this reflects shared genetic aetiology, causal direction, or confounding has "
+        "remained unresolved. We addressed this in 13 skeletal phenotypes (two OA definitions, "
+        "ten regional BMD sites, and any-fracture), using LDSC across all 78 phenotype pairs "
+        "on a common SNP set, two-sample Mendelian randomisation for causal direction with an "
+        "internal positive control (BMD\u2192fracture), and reverse MR to distinguish "
+        "BMD\u2192OA from OA\u2192BMD. Instruments were selected by strict PLINK-equivalent "
+        "clumping (r\u00b2<0.001 over 10 Mb, 1000G Phase 3 EUR), and the MR-PRESSO distortion "
+        "test was applied to all pairs.")
     line(doc, "")
     line(doc,
-        "Our principal findings are: (1) a coherent three-block genetic architecture "
-        "(BMD sites strongly inter-correlated; OA uniformly positively correlated with all "
-        "BMD sites; fracture negatively correlated with all BMD sites, replicating the "
-        "canonical relationship as a pipeline validation); (2) genetically elevated BMD "
-        "causally increases knee OA risk, whereas OA does not causally raise BMD and has no "
-        "causal effect on fracture; and (3) the BMD\u2192fracture MR estimate (OR 1.40\u20131.42 "
-        "per SD lower BMD) agrees within ~10% with the independent GEFOS consortium benchmark "
-        "(OR 1.55), externally validating the pipeline. These results reconcile the long-standing "
-        "OA\u2013BMD paradox and suggest that interventions increasing bone mass should be "
-        "evaluated for site-specific OA consequences.")
+        "Our principal findings are: (1) a three-block genetic architecture (BMD sites strongly "
+        "inter-correlated; OA positively correlated with all BMD sites; fracture negatively "
+        "correlated with all BMD sites, replicating the established relationship and validating "
+        "the pipeline); (2) genetically higher BMD raises knee OA risk, whereas OA does not "
+        "raise BMD and has no causal effect on fracture; and (3) the BMD\u2192fracture MR "
+        "estimate (OR 1.40\u20131.42 per SD lower BMD) falls within about 10% of the independent "
+        "GEFOS consortium benchmark (OR 1.55). These results resolve the long-standing "
+        "OA\u2013BMD paradox, and they argue for site-specific assessment of OA outcomes when "
+        "bone mass is increased.")
     line(doc, "")
     line(doc,
-        "We believe this manuscript fits " + JOURNAL + " because it centres on the genetics of "
-        "bone density, fracture and their skeletal comorbidity with OA, and provides an "
-        "independent external validation of the established BMD\u2013fracture relationship while "
-        "extending it to OA causality. All summary statistics derive from publicly published, "
-        "consortium-approved GWAS and were not redistributed; full provenance, accessions and "
+        "This manuscript fits " + JOURNAL + " because it centres on the genetics of bone "
+        "density and fracture and their skeletal comorbidity with OA, and because it "
+        "independently reproduces the established BMD\u2013fracture relationship and extends it "
+        "to OA causality. All summary statistics come from publicly published, consortium-"
+        "approved GWAS and were not redistributed; full provenance, accessions and "
         "reproducibility commands are provided in the Data availability statement and "
         "Supplementary material.")
     line(doc, "")
@@ -75,7 +75,7 @@ def main():
         "Ethics: analyses used only published summary-level data; no new human-subject "
         "research was conducted.")
     line(doc, "")
-    line(doc, "We look forward to your editorial assessment.")
+    line(doc, "We hope the manuscript can be assessed for publication in " + JOURNAL + ".")
     line(doc, "")
     line(doc, "Sincerely,")
     line(doc, "")
@@ -83,7 +83,7 @@ def main():
     line(doc, "Qiuyan Jiang, MD (after9951023@gmail.com)")
     line(doc, "Joint corresponding authors")
     line(doc,
-        "On behalf of all authors — Zhenxin Zheng#, Song Chen#, Shenbo Huang, Chao Qian, "
+        "On behalf of all authors: Zhenxin Zheng#, Song Chen#, Shenbo Huang, Chao Qian, "
         "Hang Yuan, Huricha Bao*, Qiuyan Jiang*", size=10)
 
     doc.save(OUT)

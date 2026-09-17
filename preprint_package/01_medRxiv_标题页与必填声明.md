@@ -57,7 +57,7 @@ All genome-wide summary statistics analysed in this study are publicly available
 
 ### Code availability / 代码可用性
 
-★ The complete analysis pipeline — LD score regression, strict PLINK-equivalent clumping (r²<0.001, 10 Mb), two-sample MR (IVW / MR-Egger / weighted median / Cochran's Q / radial outlier removal / leave-one-out), MR-PRESSO global distortion test, sample-scale (N) reconstruction and correction, and all figure-generation scripts (Python 3) — is available from the corresponding authors on request and will be deposited in a public GitHub repository with a Zenodo DOI upon publication.
+★ The complete analysis pipeline (LD score regression; strict PLINK-equivalent clumping at r²<0.001 over 10 Mb; two-sample MR with IVW, MR-Egger, weighted median, Cochran's Q, radial outlier removal and leave-one-out; the MR-PRESSO global distortion test; sample-scale N reconstruction and correction; and all figure-generation scripts, written in Python 3) is available from the corresponding authors on request and will be deposited in a public GitHub repository with a Zenodo DOI upon publication.
 
 ### Author contributions (CRediT) ★草拟，请确认★
 

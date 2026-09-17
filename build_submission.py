@@ -33,6 +33,7 @@ def clean(text):
     repl = {
         "in 1972 [REF]": "in 1972 [11]",
         "inversely related [REF]": "inversely related [11]",
+        "opposing conditions [REF]": "opposing conditions [11]",
         "[Bulik-Sullivan 2015, REF]": "[6]",
         "interrogate causality [REF]": "interrogate causality [7]",
         "[Hackinger 2017 HMG, REF]": "[4]",
@@ -40,6 +41,11 @@ def clean(text):
     }
     for k, v in repl.items():
         text = text.replace(k, v)
+    if "[REF]" in text:
+        import sys
+        for m in re.finditer(r".{80}\[REF\].{30}", text):
+            print("UNRESOLVED [REF]:", m.group(0), file=sys.stderr)
+        raise SystemExit("Aborting: unresolved [REF] placeholder(s) remain in the manuscript.")
     # fix dangling cross-reference to the removed §5 checklist
     text = text.replace("(§5 and the Supplement, ", "(the Supplement, ")
     # append Foss & Byers 1972 as Ref 11 (real citation)

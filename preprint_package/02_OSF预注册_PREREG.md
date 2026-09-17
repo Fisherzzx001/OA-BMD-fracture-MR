@@ -17,7 +17,7 @@ Zhenxin Zheng¹, Song Chen¹, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha 
 
 ## 3. Description（研究问题）
 
-Osteoarthritis (OA), bone mineral density (BMD) and fracture are epidemiologically entangled, but whether their shared genetic architecture reflects causal pathways is unresolved. We ask three questions:
+Osteoarthritis (OA), bone mineral density (BMD) and fracture are associated in observational studies, but whether their shared genetic architecture reflects causal pathways is unresolved. We ask three questions:
 
 1. Do OA, BMD and fracture share genetic architecture (LDSC genetic correlations)?
 2. Does genetically predicted BMD causally influence fracture risk and OA risk (two-sample MR)?
