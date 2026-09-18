@@ -21,7 +21,7 @@ from matplotlib.lines import Line2D
 import matplotlib.patheffects as pe
 
 GEN = "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/output/genetics"
-OUT = "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/submission_package/Figures"
+OUT = os.environ.get("FIG_OUT", "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/submission_package/Figures")
 
 # ---------- Nature style ----------
 plt.rcParams.update({

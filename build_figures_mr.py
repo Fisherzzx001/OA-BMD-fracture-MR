@@ -25,7 +25,7 @@ from matplotlib.lines import Line2D
 from scipy.stats import norm
 
 HARM = "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/output/genetics/harmonised"
-OUT = "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/submission_package/Figures"
+OUT = os.environ.get("FIG_OUT", "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/submission_package/Figures")
 
 # ---------- Nature style（与 build_figures.py 保持一致）----------
 plt.rcParams.update({
@@ -128,12 +128,23 @@ def pfmt(p):
     return f"{p:.3f}"
 
 
-# 二分类性状（病例-对照 GWAS）效应量为 log-OR；BMD 为定量性状，效应量为 SD
-BINARY = {"OA_knee", "OA_selfrep", "fracture"}
+# 效应量尺度（由独立审计 90_audit_mr_recompute.py 反解 N_eff 逐一确认）：
+#   fracture  -> N_eff ≈ N·K(1-K)（≈32,459），即 logistic 回归的 **log-OR** 尺度
+#   BMD       -> 定量性状，**SD** 尺度
+#   OA_knee   -> N_eff ≈ N（≈1,152,869），即 **标准化/线性尺度，不是 log-OR**
+#      （若 OA_knee 为 log-OR，N_eff 应 ≈127k，与实测相差约 9 倍，已排除）
+#      因此 OA_knee 的 β 不应写作 "log-OR per allele"，也不应直接 exp() 成 OR（§3.5）
+BINARY = {"fracture"}
+STANDARDISED = {"OA_knee", "OA_selfrep"}
 
 
 def effect_lab(t):
-    unit = "log-OR per allele" if t in BINARY else "SD per allele"
+    if t in BINARY:
+        unit = "log-OR per allele"
+    elif t in STANDARDISED:
+        unit = "standardised effect per allele"
+    else:
+        unit = "SD per allele"
     return f"SNP effect on {PRETTY[t]} ({unit})"
 
 

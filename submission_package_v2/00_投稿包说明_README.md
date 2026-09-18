@@ -165,3 +165,32 @@
 - 效能只依赖 |β|/SE，而 β 与 SE 同比例缩放，故**所有效能结论对 §3.7 的 N 尺度校正不变**。
 - 稿件改动：新增 **§3.8 Statistical power of the MR estimates** 与 **Table 4**；§3.5、§4.3、§4.5 Limitations、§4.6 Conclusion 及摘要相应改为"未检出（underpowered）"的表述。**未改动任何 β、SE、OR、p 值或效应方向**。
 - 提交记录：v8。
+
+---
+
+## §11 v9 — 图片扩容与美化（新增 3 张图 + 轴单位修正）（2026-09-19）
+
+应用 nature-figure 与 science-figures 两个 skill，对全部 9 张既有图按 Nature 系列规范重生成，并**依据论文真实统计结果新增 3 张图**，加强对三处审稿人关切点的表达。
+
+### 新增图（全部来自真实数据，数据源见括号）
+| 图 | 内容 | 数据源 |
+|---|---|---|
+| **Figure 8** `Figure8_MR_power` | (a) MR 设计效能函数 \|β\|/SE → power + 10 对观测点；(b) 逐对实测效能条形图（80% 参考线） | `mr_power.csv`（Table 4 同源） |
+| **Figure 9** `Figure9_overlap_pleiotropy` | (a) 逐对 ρ_GE 重叠/多效性量规；(b) ρ_GE 符号 vs IVW z 符号一致性散点（10/10 同号） | `overlap_statistics.csv` + `mr_corrected_N.csv` |
+| **Supplementary Figure S3** `SupplFig3_GEFOS_benchmark` | 外部效度森林图：GEFOS 2018 (1.55) vs 本研究 1.40 / 1.42 / 1.44（1-Mb 敏感性） | `gefos_benchmark.json`（§3.7 数值） |
+
+稿件同步：§2.8 引 Figure 9、§3.7 引 Supplementary Figure S3、§3.8 引 Figure 8；Figure legends 新增三条图注。
+
+### 修正（不影响任何统计量）
+- **OA_knee 轴单位错误**：Figure 6c/6d、S1 的轴标签此前误写为 "log-OR per allele"。独立审计（`90_audit_mr_recompute.py` 反解 N_eff）证实 OA_knee 为**标准化/线性尺度**（N_eff ≈ 1,152,869 ≈ N，而非 log-OR 所需的 ≈N·K(1−K)≈127k），已改为 **"standardised effect per allele"**；Figure 6 图注补充尺度说明（膝 OA 斜率不得 exp() 成 OR，见 §3.5）。
+- 图组仍按 Nature 规范：Arial ≥7 pt、色盲安全配色、去顶/右边框、小写粗体面板标签、300 dpi PNG + 可编辑矢量 PDF（`pdf.fonttype=42`）。
+
+### 原图保留
+- `Figures_Original/`：最早（美化前）的 Figure 1–3 PNG。
+- `Figures_v8/`：本轮修改前的完整 v8 图组（18 个文件）快照。
+- `Figures/`：本轮最新图组（12 张图 × PNG+PDF = 24 个文件）。
+
+### 质量门禁
+- `verify_figures.py` 重跑：**120/120 通过**；`figure_axis_limits.json` 已同步。
+- 三份 docx 已重生成并程序化校验（无 [REF]、含 Figure 8/9 与 S3 图注及正文引用）。
+- 提交记录：v9。
