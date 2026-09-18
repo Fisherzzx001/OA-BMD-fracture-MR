@@ -24,6 +24,7 @@ build_figures_v9.py
 build_figures_mr.py 完全一致。
 """
 import os
+import json
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -75,6 +76,9 @@ def panel_label(ax, txt, x=-0.02, y=1.05):
             fontweight="bold", va="top", ha="right")
 
 
+DUMP = {}
+
+
 def save(fig, name):
     os.makedirs(OUT, exist_ok=True)
     fig.savefig(os.path.join(OUT, name + ".png"))
@@ -85,11 +89,17 @@ def save(fig, name):
 
 # ================================================================== 数据
 def load_power():
+    """|z| 直接由 mr_corrected_N.csv 的 β/SE 现算，避免读 mr_power.csv 的 2 位小数舍入值。"""
     d = pd.read_csv(os.path.join(GEN, "mr_power.csv"))
-    d["pair"] = [f"{PRETTY.get(e, e)} → {PRETTY.get(o, o)}"
-                 for e, o in zip(d.exposure, d.outcome)]
+    src = pd.read_csv(os.path.join(GEN, "mr_corrected_N.csv"))
+    exact = {(e, o): (b, s) for e, o, b, s in
+             zip(src.exposure, src.outcome, src.beta, src.se)}
+    d["abs_z"] = [abs(exact[(e, o)][0] / exact[(e, o)][1])
+                  for e, o in zip(d.exposure, d.outcome)]
     d["power_curve"] = [float(norm.sf(1.96 - z) + norm.cdf(-1.96 - z))
                         for z in d.abs_z]
+    d["pair"] = [f"{PRETTY.get(e, e)} → {PRETTY.get(o, o)}"
+                 for e, o in zip(d.exposure, d.outcome)]
     return d
 
 
@@ -165,6 +175,24 @@ def fig_power():
     ax.text(0.805, len(dd) - 0.35, "80%", fontsize=6, color=CB["cb_orange"])
     panel_label(ax, "b")
 
+    # ---- 记录实际绘制值（供独立审计 92_audit_figures_v9.py 端到端复核）----
+    DUMP["figure8"] = dict(
+        panel_a=dict(
+            curve_x=az.tolist(), curve_y=pw.tolist(),
+            thresholds=dict(power80=0.80, z80=2.80),
+            points=[dict(pair=p, abs_z=float(z), power=float(v), K=int(k),
+                         verdict=vd)
+                    for p, z, v, k, vd in zip(d.pair, d.abs_z, d.power_curve,
+                                              d.K, d.verdict)],
+            xlim=(0.0, 16.5), ylim=(0.0, 1.04)),
+        panel_b=dict(
+            order=dd.pair.tolist(),
+            power=dd.power_observed.tolist(),
+            K=dd.K.tolist(),
+            verdict=dd.verdict.tolist(),
+            xlim=(0.0, 1.22)),
+    )
+
     fig.suptitle("Statistical power of the two-sample MR design",
                  fontsize=9, fontweight="bold", x=0.008, ha="left", y=1.0)
     save(fig, "Figure8_MR_power")
@@ -233,9 +261,69 @@ def fig_overlap():
               edgecolor="#DDDDDD")
     panel_label(ax, "b")
 
+    # ---- 记录实际绘制值（供独立审计）----
+    DUMP["figure9"] = dict(
+        panel_a=dict(order=d.pair.tolist(), rho=d.rho.tolist(),
+                     K=d.K.tolist(), xlim=(-0.95, 0.72)),
+        panel_b=dict(rho=d.rho.tolist(), z=d.z.tolist(),
+                     xlim=(xl, xh), ylim=(yl, yh),
+                     n_sign_concordant=int(same.sum())),
+    )
+
     fig.suptitle("Sample-overlap diagnostics for the ten MR pairs",
                  fontsize=9, fontweight="bold", x=0.008, ha="left", y=1.0)
     save(fig, "Figure9_overlap_pleiotropy")
+
+
+# ================================================================== 补充图 S3
+def fig_gefos():
+    """外部效度森林图（布局取 science-figures 的 forest 规范，字体取 nature-figure 规范）"""
+    g = json.load(open(os.path.join(GEN, "gefos_benchmark.json"), encoding="utf-8"))
+    labs, est = g["labels"], np.array(g["estimates"])
+    lo, hi = np.array(g["ci_low"]), np.array(g["ci_high"])
+
+    fig, ax = plt.subplots(figsize=(7.2, 2.7))
+    y = np.arange(len(labs))[::-1]          # 第一条在最上
+
+    ax.axvspan(1.48, 1.63, facecolor=CB["grey"], alpha=0.13, zorder=0,
+               label="GEFOS 95% CI band")
+    ax.axvline(1.55, color=CB["grey"], ls=":", lw=1.0, zorder=1)
+
+    for i, (yy, e, l, h) in enumerate(zip(y, est, lo, hi)):
+        ours = i > 0
+        c = CB["cb_blue"] if ours else CB["ink"]
+        ax.plot([l, h], [yy, yy], "-", color=c, lw=1.6 if ours else 1.4,
+                solid_capstyle="butt", zorder=2)
+        ax.plot([l, l], [yy - 0.13, yy + 0.13], "-", color=c, lw=1.2, zorder=2)
+        ax.plot([h, h], [yy - 0.13, yy + 0.13], "-", color=c, lw=1.2, zorder=2)
+        ax.scatter(e, yy, s=78 if ours else 92,
+                   facecolor=c if ours else "white",
+                   edgecolors=c, linewidths=1.2,
+                   marker="o" if ours else "s", zorder=4)
+        ax.text(1.675, yy, f"{e:.2f} [{l:.2f}, {h:.2f}]", va="center",
+                fontsize=6.5, color=CB["ink"])
+
+    ax.set_yticks(y)
+    ax.set_yticklabels(labs, fontsize=6.5)
+    ax.set_xlim(1.28, 1.80)
+    ax.set_ylim(-0.6, len(labs) - 0.4)
+    ax.set_xlabel("Odds ratio for any fracture per 1 SD lower BMD", fontsize=7.5)
+    ax.tick_params(labelsize=6.5)
+    handles = [
+        Line2D([0], [0], marker="s", color=CB["ink"], markerfacecolor="white",
+               markersize=6, lw=1.2, label="External benchmark (GEFOS 2018)"),
+        Line2D([0], [0], marker="o", color=CB["cb_blue"], markerfacecolor=CB["cb_blue"],
+               markersize=6, lw=1.2, label="This study"),
+    ]
+    ax.legend(handles=handles, fontsize=6.2, loc="upper left", frameon=True,
+              framealpha=0.95, edgecolor="#DDDDDD")
+    fig.suptitle("External validation against the GEFOS benchmark",
+                 fontsize=9, fontweight="bold", x=0.008, ha="left", y=1.0)
+
+    DUMP["supplfig3"] = dict(labels=labs, estimates=est.tolist(),
+                             ci_low=lo.tolist(), ci_high=hi.tolist(),
+                             xlim=(1.28, 1.80), ref_band=(1.48, 1.63))
+    save(fig, "SupplFig3_GEFOS_benchmark")
 
 
 # ================================================================== 主流程
@@ -243,6 +331,12 @@ def main():
     print(">> 依据真实统计结果补充新图")
     fig_power()
     fig_overlap()
+    fig_gefos()
+    # 落盘实际绘制值，供 92_audit_figures_v9.py 做端到端独立复核
+    with open(os.path.join(GEN, "figure_v9_plotted_data.json"), "w",
+              encoding="utf-8") as fh:
+        json.dump(DUMP, fh, ensure_ascii=False, indent=1)
+    print("   plotted-data dump ->", os.path.join(GEN, "figure_v9_plotted_data.json"))
     print("NEW FIGURES DONE ->", OUT)
 
 
