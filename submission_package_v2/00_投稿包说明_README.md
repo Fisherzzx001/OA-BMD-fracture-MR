@@ -138,3 +138,17 @@
   on zero"（实际数值范围 -0.65~+1.00 不对称，仅色相以 0 为中心）。
 
 上述修正只影响**图形呈现与随包补充表**，未改动任何统计量、OR、p 值或结论。
+
+---
+
+## §9 v7 — 预审稿三大阻塞项修复（2026-09-18）
+
+依据 `docs/12_学术预审委员会审稿报告.md` 的三项投稿阻断点，已直接改稿并同步更新投稿包。本轮**未改动任何统计量、OR、p 值或结论**，仅补文本/方法学表述；`docs/08_投稿稿_OA_BMD_fracture.md` 为唯一数据源，三份 docx 据其重生成并已程序化校验。
+
+1. **清除 [REF] 占位（≥5 处）。** 引言 Foss & Byers 1972 → 真实引用 [11]（*Ann Rheum Dis* 31(4):259–264，PMID 5045904）；"骨质疏松与 OA 长期被视为对立条件" → Dequeker 2003 [12]（*Aging Clin Exp Res* 15:426–439，PMID 14703009）；LDSC 原始文献 [6]、MR 原始文献 Davey Smith & Ebrahim 2003 [13]、Hackinger 2017 [4]、Zhou 2025 [5] 全部落实。同时把 Zhou 2025 中未定义的缩写 **HDL** 展开为 "high-definition likelihood (HDL) inference"（真实方法名，已联网核实）。参考文献现连续 1–15 无缺。
+
+2. **补 MR 样本重叠处理（新增 §2.8）。** 明确指出全部 10 对 MR 均因共享 UK Biobank 样本而存在样本重叠（BMD=UKB 31,873；OA_selfrep=UKB；OA_knee 所属的 GO 与 fracture 所属的 GEFOS 均含 UKB 组分）；引用 Burgess & Thompson 2017 [14] 说明重叠使 IVW 偏向 r_g、但不改方向与 p 值（重叠不变性）。三点处置：(a) 以 MR-Egger / 加权中位数 / MR-PRESSO 与 IVW 并列报告；(b) 用逐 SNP 暴露–结局统计量相关 ρ_GE = corr(β_e/se_e, β_o/se_o) 作为重叠/多效性量化指标（新增 `Supplementary/overlap_statistics.csv`，10 对 ρ_GE 符号均与 MR 效应一致，范围 −0.79~+0.46，证伪"单 SNP 反向驱动"）；(c) 计划在定稿前用 MRlap（Mounier & Kutalik 2023 [15]，*Genet Epidemiol*，doi:10.1002/gepi.22522）做重叠稳健校正，并以 GO/GEFOS 非-UKB 子集做敏感性分析。
+
+3. **正视阳性对照 Egger p=0.010 方向性多效性。** §3.3 原 "validates the pipeline in both direction and magnitude" 改为：以总体质 BMD→fracture 的 Egger 截距 p=0.558（无方向性多效性）作为主阳性对照；股骨颈 BMD→fracture 的 Egger 截距 p=0.010（显著），但 MR-Egger 斜率(−0.351)与加权中位数(−0.373)仍强保护且与 IVW 接近，故结论对多效性稳健、仅 IVW 点估计或略被夸大。同步在 Table 3 脚注与 §4.5 Limitations 注明该 caveat。
+
+**交付：** `Manuscript.docx` / `Submission_MainText.docx` / `Submission_TitlePage.docx` 已据 `docs/08` 重生成（已程序化校验：无 [REF]、含 §2.8 与 Egger 修正、含 Ref 15）；`Supplementary/overlap_statistics.csv` 与 `Tables/overlap_statistics.csv` 新增。提交记录：v7。

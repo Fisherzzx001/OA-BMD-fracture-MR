@@ -1,0 +1,11 @@
+pair,n_iv,rho_GE_zcorr,rho_beta
+BMD_arms__OA_knee.csv,16,0.3984,0.3679
+BMD_femur_neck__OA_knee.csv,25,0.3944,0.3952
+BMD_femur_neck__fracture.csv,25,-0.7181,-0.7022
+BMD_leg__OA_knee.csv,24,0.3214,0.2774
+BMD_lumbar__OA_knee.csv,21,0.4595,0.4369
+BMD_total__OA_knee.csv,31,0.4471,0.4007
+BMD_total__fracture.csv,31,-0.7907,-0.8059
+OA_knee__BMD_femur_neck.csv,69,0.1628,0.0861
+OA_knee__BMD_total.csv,69,0.1106,0.1173
+OA_knee__fracture.csv,69,0.0805,0.0673

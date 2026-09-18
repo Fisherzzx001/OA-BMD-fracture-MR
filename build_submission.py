@@ -29,18 +29,7 @@ def clean(text):
     # drop draft-status lines
     text = re.sub(r"\*\*Manuscript draft — target journal.*?\*\*\n", "", text)
     text = re.sub(r"\*\*Status:.*?\*\*\n", "", text)
-    # resolve [REF] placeholders
-    repl = {
-        "in 1972 [REF]": "in 1972 [11]",
-        "inversely related [REF]": "inversely related [11]",
-        "opposing conditions [REF]": "opposing conditions [11]",
-        "[Bulik-Sullivan 2015, REF]": "[6]",
-        "interrogate causality [REF]": "interrogate causality [7]",
-        "[Hackinger 2017 HMG, REF]": "[4]",
-        "[Zhou 2025 Front Genet, REF]": "[5]",
-    }
-    for k, v in repl.items():
-        text = text.replace(k, v)
+    # [REF] placeholders are resolved directly in the source markdown (docs/08).
     if "[REF]" in text:
         import sys
         for m in re.finditer(r".{80}\[REF\].{30}", text):
@@ -48,11 +37,6 @@ def clean(text):
         raise SystemExit("Aborting: unresolved [REF] placeholder(s) remain in the manuscript.")
     # fix dangling cross-reference to the removed §5 checklist
     text = text.replace("(§5 and the Supplement, ", "(the Supplement, ")
-    # append Foss & Byers 1972 as Ref 11 (real citation)
-    text = text.replace(
-        "PMID 30158200.",
-        "PMID 30158200.\n11. Foss MV, Byers PD. Bone density, osteoarthrosis of the hip, and fracture. *Ann Rheum Dis*. 1972;31(3):259–264.",
-    )
     # cut the §5 pre-submission checklist section (and everything after it)
     m = re.search(r"\n## §5 Pre-submission checklist.*$", text, re.S)
     if m:
