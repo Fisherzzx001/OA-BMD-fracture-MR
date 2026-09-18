@@ -152,3 +152,16 @@
 3. **正视阳性对照 Egger p=0.010 方向性多效性。** §3.3 原 "validates the pipeline in both direction and magnitude" 改为：以总体质 BMD→fracture 的 Egger 截距 p=0.558（无方向性多效性）作为主阳性对照；股骨颈 BMD→fracture 的 Egger 截距 p=0.010（显著），但 MR-Egger 斜率(−0.351)与加权中位数(−0.373)仍强保护且与 IVW 接近，故结论对多效性稳健、仅 IVW 点估计或略被夸大。同步在 Table 3 脚注与 §4.5 Limitations 注明该 caveat。
 
 **交付：** `Manuscript.docx` / `Submission_MainText.docx` / `Submission_TitlePage.docx` 已据 `docs/08` 重生成（已程序化校验：无 [REF]、含 §2.8 与 Egger 修正、含 Ref 15）；`Supplementary/overlap_statistics.csv` 与 `Tables/overlap_statistics.csv` 新增。提交记录：v7。
+
+---
+
+## §10 v8 — 补充 MR 检验效能（power）分析（2026-09-19）
+
+预审报告指出：OA→fracture（β=+0.092, p=0.395, K=69）被当作 "null" 报告，却未给出检验效能，无法判断是否足以排除小效应。已补做并写入稿件。
+
+- 新脚本 `code/28_mr_power.py`：从 `mr_corrected_N.csv` 的真实估计出发，为 10 对 MR 计算 80% 效能下的最小可检测效应 **MDE = (1.96 + 0.84) × SE**，以及观测点估计的实测效能（输出 `Supplementary/mr_power.csv`）。
+- **结果**：7 对支持阳性对照与 BMD→OA 结论的估计效能充足（实测效能 **0.93–1.00**；最小的显著效应——股骨颈 BMD→膝 OA β=+0.017——仍有 93% 效能）。3 对 "null"（OA→fracture、OA→BMD 总体质 / 股骨颈）SE=0.108，只能排除 **|β| ≥ 0.303**，实测效能仅 **0.14 / 0.17 / 0.26** —— 属**"无证据"而非"证据显示无效应"**。
+- 骨折结局上界：MDE 对应 OR ≈ 1.07（总体质 BMD，每 SD）、≈1.09（股骨颈 BMD，每 SD）、≈1.36（膝 OA，按 Table 3 的暴露尺度；受 §3.5 / §3.7 的尺度说明约束）。
+- 效能只依赖 |β|/SE，而 β 与 SE 同比例缩放，故**所有效能结论对 §3.7 的 N 尺度校正不变**。
+- 稿件改动：新增 **§3.8 Statistical power of the MR estimates** 与 **Table 4**；§3.5、§4.3、§4.5 Limitations、§4.6 Conclusion 及摘要相应改为"未检出（underpowered）"的表述。**未改动任何 β、SE、OR、p 值或效应方向**。
+- 提交记录：v8。
