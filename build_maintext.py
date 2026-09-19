@@ -1,0 +1,139 @@
+# -*- coding: utf-8 -*-
+"""Build blind Submission_MainText.docx from docs/08 (v11), without author/affil block.
+Reuses the same cleaning + parsing as build_submission.py but omits the title-page author lines.
+"""
+import re, os
+from docx import Document
+from docx.shared import Pt, RGBColor, Inches
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+
+SRC = r"docs/08_投稿稿_OA_BMD_fracture.md"
+OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Submission_MainText.docx").replace("\\", "/")
+
+def read_text():
+    with open(SRC, encoding="utf-8") as f:
+        return f.read()
+
+def clean(text):
+    text = re.sub(r"\*\*Manuscript draft — target journal.*?\*\*\n", "", text)
+    text = re.sub(r"\*\*Status:.*?\*\*\n", "", text)
+    if "[REF]" in text:
+        raise SystemExit("Aborting: unresolved [REF] placeholder(s) remain in the manuscript.")
+    text = text.replace("(§5 and the Supplement, ", "(the Supplement, ")
+    m = re.search(r"\n## §5 Pre-submission checklist.*$", text, re.S)
+    if m:
+        text = text[: m.start()]
+    da = ""
+    mda = re.search(r"Summary statistics are from publicly published GWAS[^\n]*", text)
+    if mda:
+        da = mda.group(0)
+    mauth = re.search(r"\n## Authors, affiliations, funding and competing interests\n", text)
+    if mauth:
+        text = text[:mauth.start()]
+    return text.strip(), da
+
+def parse_inline(p, text):
+    token_re = re.compile(r"(\*\*.+?\*\*|\*.+?\*|`.+?`)")
+    last = 0
+    for mt in token_re.finditer(text):
+        if mt.start() > last:
+            p.add_run(text[last:mt.start()])
+        tok = mt.group(0)
+        if tok.startswith("**"):
+            r = p.add_run(tok[2:-2]); r.bold = True
+        elif tok.startswith("`"):
+            r = p.add_run(tok[1:-1]); r.font.name = "Consolas"; r.font.size = Pt(9)
+        else:
+            r = p.add_run(tok[1:-1]); r.italic = True
+        last = mt.end()
+    if last < len(text):
+        p.add_run(text[last:])
+
+def add_heading(doc, text, level):
+    h = doc.add_heading(level=level)
+    parse_inline(h, text)
+    return h
+
+def set_cell(cell, text, bold=False, size=8.5):
+    cell.text = ""
+    p = cell.paragraphs[0]
+    parse_inline(p, text)
+    for r in p.runs:
+        r.font.size = Pt(size)
+        if bold:
+            r.bold = True
+    if bold:
+        tcPr = cell._tc.get_or_add_tcPr()
+        shd = OxmlElement("w:shd")
+        shd.set(qn("w:val"), "clear"); shd.set(qn("w:color"), "auto"); shd.set(qn("w:fill"), "D9E2F3")
+        tcPr.append(shd)
+
+def add_table(doc, block):
+    rows = [ln for ln in block if ln.strip().startswith("|")]
+    data = []
+    for ln in rows:
+        cells = [c.strip() for c in ln.strip().strip("|").split("|")]
+        data.append(cells)
+    header = data[0]; body = data[2:]; ncol = len(header)
+    t = doc.add_table(rows=1, cols=ncol); t.style = "Table Grid"; t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    for j, h in enumerate(header):
+        set_cell(t.rows[0].cells[j], h, bold=True)
+    for r in body:
+        cells = t.add_row().cells
+        for j in range(ncol):
+            set_cell(cells[j], r[j] if j < len(r) else "")
+    try:
+        for row in t.rows:
+            for j, c in enumerate(row.cells):
+                c.width = Inches(max(0.6, 6.5 / ncol))
+    except Exception:
+        pass
+    doc.add_paragraph()
+
+def build():
+    text, da = clean(read_text())
+    lines = text.split("\n")
+    doc = Document()
+    base = doc.styles["Normal"]
+    base.font.name = "Times New Roman"; base.font.size = Pt(11)
+    base.paragraph_format.space_after = Pt(6)
+    base.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    # blind: title only, no author block
+    title = lines[0].lstrip("# ").strip()
+    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = p.add_run(title); r.bold = True; r.font.size = Pt(15)
+    doc.add_paragraph()
+    i = 0; n = len(lines)
+    while i < n:
+        s = lines[i].rstrip()
+        if s.strip() == "" or s.strip() == "---" or s.strip() == "* * *":
+            i += 1; continue
+        if s.startswith("# "):
+            i += 1; continue
+        if s.startswith("## "):
+            add_heading(doc, s[3:].strip(), 1); i += 1; continue
+        if s.startswith("### "):
+            add_heading(doc, s[4:].strip(), 2); i += 1; continue
+        if s.strip().startswith("|"):
+            block = []
+            while i < n and lines[i].strip().startswith("|"):
+                block.append(lines[i].rstrip()); i += 1
+            add_table(doc, block); continue
+        if s.startswith("- ") or s.startswith("  - ") or s.startswith("    - "):
+            lvl = (len(s) - len(s.lstrip(" "))) // 2
+            para = doc.add_paragraph(style="List Bullet" if lvl == 0 else "List Bullet 2")
+            parse_inline(para, s.strip()[2:].strip()); i += 1; continue
+        para = doc.add_paragraph(); parse_inline(para, s.strip()); i += 1
+    if da:
+        doc.add_paragraph()
+        h = doc.add_heading(level=2); h.add_run("Data availability")
+        p = doc.add_paragraph(); p.add_run(da)
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    doc.save(OUT)
+    print("Saved", OUT)
+
+if __name__ == "__main__":
+    build()

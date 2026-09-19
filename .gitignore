@@ -11,3 +11,7 @@ __pycache__/
 # ---- Env / secrets ----
 .env
 *.egg-info/
+
+# ---- generated submission build dirs (canonical deliverable is the *.zip) ----
+submission_package*/
+v11_stage/
