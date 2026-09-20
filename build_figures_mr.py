@@ -48,9 +48,9 @@ plt.rcParams.update({
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
 })
-CB = {"blue": "#4878CF", "red": "#D65F5F", "orange": "#EE854A",
-      "purple": "#956CB4", "grey": "#8C8C8C", "cb_blue": "#0072B2",
-      "ink": "#222222"}
+CB = {"blue": "#0072B2", "red": "#D55E00", "orange": "#E69F00",
+      "purple": "#CC79A7", "grey": "#999999", "cb_blue": "#0072B2",
+      "ink": "#000000"}
 
 PRETTY = {
     "OA_knee": "knee OA", "OA_selfrep": "self-reported OA", "fracture": "fracture",
@@ -165,6 +165,7 @@ def save(fig, name):
     os.makedirs(OUT, exist_ok=True)
     fig.savefig(os.path.join(OUT, name + ".png"))
     fig.savefig(os.path.join(OUT, name + ".pdf"))
+    fig.savefig(os.path.join(OUT, name + ".tif"), dpi=300)
     plt.close(fig)
     print("  ✔", name)
 
@@ -194,16 +195,16 @@ def scatter(ax, exp, out, lab, title=None, show_ylab=True, show_xlab=True):
     ax.plot(xs, st["wm"] * xs, ":", color=CB["purple"], lw=1.2, zorder=5,
             label=f"Weighted median  β={st['wm']:+.3f}")
 
-    ax.axhline(0, color="#D8D8D8", lw=0.7, zorder=0)
-    ax.axvline(0, color="#D8D8D8", lw=0.7, zorder=0)
+    ax.axhline(0, color="#DDDDDD", lw=0.7, zorder=0)
+    ax.axvline(0, color="#DDDDDD", lw=0.7, zorder=0)
     if title:
         ax.set_title(title, fontsize=8.5, fontweight="bold", loc="left", pad=3)
     if show_xlab:
         ax.set_xlabel(xlab(exp), fontsize=7)
     if show_ylab:
         ax.set_ylabel(ylab(out), fontsize=7)
-    ax.tick_params(labelsize=6.5)
-    ax.legend(fontsize=5.6, frameon=True, framealpha=0.92,
+    ax.tick_params(labelsize=7.0)
+    ax.legend(fontsize=6.5, frameon=True, framealpha=0.92,
               edgecolor="#DDDDDD", loc="best", handlelength=1.4,
               borderpad=0.4, labelspacing=0.3)
     panel_label(ax, lab)
@@ -249,8 +250,8 @@ def funnel(ax, exp, out, lab, title=None, show_ylab=True, show_xlab=True):
         ax.set_xlabel("SNP-specific causal estimate (Wald ratio)", fontsize=7)
     if show_ylab:
         ax.set_ylabel("1 / SE (ratio)", fontsize=7)
-    ax.tick_params(labelsize=6.5)
-    ax.legend(fontsize=5.6, frameon=True, framealpha=0.92,
+    ax.tick_params(labelsize=7.0)
+    ax.legend(fontsize=6.5, frameon=True, framealpha=0.92,
               edgecolor="#DDDDDD", loc="upper right", handlelength=1.4,
               borderpad=0.4, labelspacing=0.3)
     panel_label(ax, lab)
@@ -320,9 +321,9 @@ def fig_loo(fname):
     ax.axvline(0, color=CB["grey"], ls="--", lw=0.9, zorder=0)
     ax.set_yticks(y)
     ax.set_yticklabels([f"{PRETTY[r['exp']]} → {PRETTY[r['out']]}"
-                        for r in rows], fontsize=6.5)
+                        for r in rows], fontsize=7.0)
     ax.set_xlabel("MR effect (β, N-corrected scale)", fontsize=7.5)
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     ax.set_title("Leave-one-out stability of the IVW estimate",
                  fontsize=9, fontweight="bold", loc="left")
 

@@ -45,16 +45,16 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 CB = {  # colorblind-safe Nature palette
-    "blue":   "#4878CF",
-    "red":    "#D65F5F",
-    "green":  "#6ACC65",
-    "orange": "#EE854A",
-    "purple": "#956CB4",
-    "teal":   "#82C6E2",
-    "grey":   "#8C8C8C",
+    "blue":   "#0072B2",
+    "red":    "#D55E00",
+    "green":  "#009E73",
+    "orange": "#E69F00",
+    "purple": "#CC79A7",
+    "teal":   "#56B4E9",
+    "grey":   "#999999",
     "cb_blue": "#0072B2",
     "cb_orange": "#E69F00",
-    "ink": "#222222",
+    "ink": "#000000",
 }
 
 ORDER = ["OA_knee","OA_selfrep","fracture","BMD_total","BMD_femur_neck","BMD_femur_total",
@@ -100,6 +100,7 @@ def limits(los, his, include_zero=True, pad=0.06):
 def save(fig, name):
     fig.savefig(os.path.join(OUT, name + ".png"), dpi=300)
     fig.savefig(os.path.join(OUT, name + ".pdf"))
+    fig.savefig(os.path.join(OUT, name + ".tif"), dpi=300)
     print("saved", name)
 
 # ---------- BH-FDR q across the 78 unique off-diagonal pairs ----------
@@ -141,7 +142,7 @@ def fig1():
         for j in range(n):
             v = M[i, j]
             if i == j:
-                ax.text(j, i, "1.00", ha="center", va="center", fontsize=6.2,
+                ax.text(j, i, "1.00", ha="center", va="center", fontsize=7.0,
                         color="white", fontweight="bold")
                 continue
             col = "white" if abs(v) > 0.55 or v < -0.35 else CB["ink"]
@@ -150,7 +151,7 @@ def fig1():
             elif Q[i, j] < 0.01: star = "**"
             elif Q[i, j] < 0.05: star = "*"
             txt = f"{v:+.2f}{star}"
-            ax.text(j, i, txt, ha="center", va="center", fontsize=6.0, color=col)
+            ax.text(j, i, txt, ha="center", va="center", fontsize=7.0, color=col)
     # block separators: OA(0,1) | fracture(2) | BMD(3..12)
     for b in (2, 3):
         ax.axvline(b - 0.5, color="black", lw=1.1)
@@ -166,7 +167,7 @@ def fig1():
                  fontsize=9, fontweight="bold", pad=10)
     fig.text(0.5, 0.005, "Asterisks: BH-FDR q < 0.05 (*), < 0.01 (**), < 0.001 (***).  "
              "Black lines separate the three phenotype blocks (OA / fracture / BMD).",
-             ha="center", fontsize=6.5, color=CB["grey"])
+             ha="center", fontsize=7.0, color=CB["grey"])
     save(fig, "Figure1_rg_heatmap_13")
     plt.close(fig)
 
@@ -292,7 +293,7 @@ def fig3(LIMITS=None):
     fig.text(0.5, 0.005, "Points: IVW fixed-effects estimate with 95% CI.  "
              "Blue = protective, red = risk-increasing, grey = null.  "
              "Scale is N-corrected (BMD N = 31,873; \u00a73.7).",
-             ha="center", fontsize=6.5, color=CB["grey"])
+             ha="center", fontsize=7.0, color=CB["grey"])
     save(fig, "Figure3_MR_forest")
     plt.close(fig)
 
@@ -335,7 +336,7 @@ def fig4(LIMITS=None):
     # annotate exact observed h2 values
     for yy, v, l in zip(y, vals, labels):
         ax.text(v + err[labels.index(l)] + 0.012, yy, f"{v:.3f}", va="center", ha="left",
-                fontsize=6.5, color=CB["ink"])
+                fontsize=7.0, color=CB["ink"])
     # add group legend manually, placed in empty space to the right
     from matplotlib.patches import Patch
     legend_handles = [
@@ -357,7 +358,7 @@ def fig4(LIMITS=None):
     ax.invert_yaxis()
     fig.text(0.5, 0.005, "Bars: observed-scale h² with 95% CI; diamond markers: liability-scale h² for OA and fracture. "
              "BMD is a quantitative trait and is not liability-converted.",
-             ha="center", fontsize=6.5, color=CB["grey"])
+             ha="center", fontsize=7.0, color=CB["grey"])
     save(fig, "Figure4_h2_bar")
     plt.close(fig)
 

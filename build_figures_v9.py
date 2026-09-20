@@ -60,9 +60,9 @@ plt.rcParams.update({
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
 })
-CB = {"blue": "#4878CF", "red": "#D65F5F", "orange": "#EE854A",
-      "purple": "#956CB4", "grey": "#8C8C8C", "cb_blue": "#0072B2",
-      "cb_orange": "#E69F00", "ink": "#222222", "faint": "#D8D8D8"}
+CB = {"blue": "#0072B2", "red": "#D55E00", "orange": "#E69F00",
+      "purple": "#CC79A7", "grey": "#999999", "cb_blue": "#0072B2",
+      "cb_orange": "#E69F00", "ink": "#000000", "faint": "#DDDDDD"}
 
 PRETTY = {
     "OA_knee": "knee OA", "OA_selfrep": "self-reported OA", "fracture": "fracture",
@@ -83,6 +83,7 @@ def save(fig, name):
     os.makedirs(OUT, exist_ok=True)
     fig.savefig(os.path.join(OUT, name + ".png"))
     fig.savefig(os.path.join(OUT, name + ".pdf"))
+    fig.savefig(os.path.join(OUT, name + ".tif"), dpi=300)
     plt.close(fig)
     print("  OK", name)
 
@@ -146,7 +147,7 @@ def fig_power():
     ax.set_xlabel("|β| / SE  (standardised effect size, |z|)", fontsize=7)
     ax.set_ylabel("Power at two-sided α = 0.05", fontsize=7)
     ax.set_xticks([0, 2.8, 5, 10, 15])
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     ax.legend(fontsize=6, loc="lower right", frameon=True, framealpha=0.95,
               edgecolor="#DDDDDD")
     panel_label(ax, "a")
@@ -163,7 +164,7 @@ def fig_power():
     for yy, v, k in zip(y, dd.power_observed, dd.K):
         ax.text(min(v + 0.015, 0.99), yy, f"{v:.2f}  (K={k})",
                 va="center", ha="left" if v < 0.93 else "right",
-                fontsize=5.8, color=CB["ink"],
+                fontsize=6.5, color=CB["ink"],
                 bbox=dict(facecolor="white", edgecolor="none", pad=0.6, alpha=0.75)
                 if v >= 0.93 else None)
     ax.set_yticks(y)
@@ -171,7 +172,7 @@ def fig_power():
     ax.set_xlim(0, 1.22)
     ax.set_ylim(-0.6, len(dd) - 0.4)
     ax.set_xlabel("Achieved power for the observed point estimate", fontsize=7)
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     ax.text(0.805, len(dd) - 0.35, "80%", fontsize=6, color=CB["cb_orange"])
     panel_label(ax, "b")
 
@@ -215,14 +216,14 @@ def fig_overlap():
     for yy, v in zip(y, d.rho):
         off = 0.02 if v >= 0 else -0.02
         ax.text(v + off, yy, f"{v:+.2f}", va="center",
-                ha="left" if v >= 0 else "right", fontsize=5.8)
+                ha="left" if v >= 0 else "right", fontsize=6.5)
     ax.set_yticks(y)
     ax.set_yticklabels(d.pair, fontsize=6)
     ax.set_xlim(-0.95, 0.72)
     ax.set_ylim(-0.6, len(d) - 0.4)
     ax.set_xlabel("ρ_GE: correlation of SNP–exposure with SNP–outcome z statistics",
                   fontsize=7)
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     handles = [Line2D([0], [0], color=CB["cb_blue"], lw=5, label="Positive (BMD→OA)"),
                Line2D([0], [0], color=CB["red"], lw=5, label="Negative (BMD→fracture)")]
     ax.legend(handles=handles, fontsize=6, loc="center right", frameon=True,
@@ -250,13 +251,13 @@ def fig_overlap():
                    label="Sign-discordant")
     for _, r in d.iterrows():
         if abs(r.z) > 8 or abs(r.rho) > 0.6:
-            ax.annotate(f"{r.z:+.1f}", (r.rho, r.z), fontsize=5.6,
+            ax.annotate(f"{r.z:+.1f}", (r.rho, r.z), fontsize=6.5,
                         xytext=(4, 4), textcoords="offset points")
     ax.set_xlim(xl, xh)
     ax.set_ylim(yl, yh)
     ax.set_xlabel("ρ_GE (overlap / pleiotropy gauge)", fontsize=7)
     ax.set_ylabel("IVW z statistic (signed)", fontsize=7)
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     ax.legend(fontsize=6, loc="lower left", frameon=True, framealpha=0.95,
               edgecolor="#DDDDDD")
     panel_label(ax, "b")
@@ -301,21 +302,21 @@ def fig_gefos():
                    edgecolors=c, linewidths=1.2,
                    marker="o" if ours else "s", zorder=4)
         ax.text(1.675, yy, f"{e:.2f} [{l:.2f}, {h:.2f}]", va="center",
-                fontsize=6.5, color=CB["ink"])
+                fontsize=7.0, color=CB["ink"])
 
     ax.set_yticks(y)
-    ax.set_yticklabels(labs, fontsize=6.5)
+    ax.set_yticklabels(labs, fontsize=7.0)
     ax.set_xlim(1.28, 1.80)
     ax.set_ylim(-0.6, len(labs) - 0.4)
     ax.set_xlabel("Odds ratio for any fracture per 1 SD lower BMD", fontsize=7.5)
-    ax.tick_params(labelsize=6.5)
+    ax.tick_params(labelsize=7.0)
     handles = [
         Line2D([0], [0], marker="s", color=CB["ink"], markerfacecolor="white",
                markersize=6, lw=1.2, label="External benchmark (GEFOS 2018)"),
         Line2D([0], [0], marker="o", color=CB["cb_blue"], markerfacecolor=CB["cb_blue"],
                markersize=6, lw=1.2, label="This study"),
     ]
-    ax.legend(handles=handles, fontsize=6.2, loc="upper left", frameon=True,
+    ax.legend(handles=handles, fontsize=7.0, loc="upper left", frameon=True,
               framealpha=0.95, edgecolor="#DDDDDD")
     fig.suptitle("External validation against the GEFOS benchmark",
                  fontsize=9, fontweight="bold", x=0.008, ha="left", y=1.0)
