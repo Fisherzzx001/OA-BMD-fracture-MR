@@ -1,0 +1,481 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+MRlap driver
+  GWASDIR=C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_gwas
+  LD=C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/ldsc_ref/eur_w_ld_chr
+  HM3=C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/ldsc_ref/w_hm3.snplist
+  OUTDIR=C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out
+
+===== [01/10] BMD_total -> fracture =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_total) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_total.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (fracture) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "fracture.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    2,382 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    48 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: -0.122 ( 0.0117 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: -0.141 ( 0.0137 )
+    covariance between observed and corrected effect: 0.00016 
+            7000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  7  minute(s) and  39  second(s).  
+  observed=-0.1222  corrected=-0.1409  p_diff=1.71e-13  rg=-0.487  h2_exp=0.339  m_IVs=48
+  -> saved 1 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [02/10] BMD_femur_neck -> fracture =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_femur_neck) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_femur_neck.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (fracture) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "fracture.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    674 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    34 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: -0.103 ( 0.0225 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: -0.123 ( 0.027 )
+    covariance between observed and corrected effect: 0.000602 
+            8000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  7  minute(s) and  28  second(s).  
+  observed=-0.1032  corrected=-0.1232  p_diff=0.000668  rg=-0.509  h2_exp=0.236  m_IVs=34
+  -> saved 2 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [03/10] BMD_total -> OA_knee =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_total) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_total.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    2,268 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    46 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0241 ( 0.00634 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.0284 ( 0.00744 )
+    covariance between observed and corrected effect: 4.71e-05 
+            14000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  10  minute(s) and  36  second(s).  
+  observed=0.0241  corrected=0.0284  p_diff=0.000204  rg=0.162  h2_exp=0.339  m_IVs=46
+  -> saved 3 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [04/10] BMD_femur_neck -> OA_knee =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_femur_neck) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_femur_neck.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    632 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    33 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0222 ( 0.00895 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.027 ( 0.0109 )
+    covariance between observed and corrected effect: 9.71e-05 
+            9000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  9  minute(s) and  23  second(s).  
+  observed=0.0222  corrected=0.0270  p_diff=0.0127  rg=0.188  h2_exp=0.236  m_IVs=33
+  -> saved 4 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [05/10] BMD_lumbar -> OA_knee =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_lumbar) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_lumbar.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    1,234 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    33 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0333 ( 0.00827 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.0406 ( 0.0103 )
+    covariance between observed and corrected effect: 8.77e-05 
+            4000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  8  minute(s) and  43  second(s).  
+  observed=0.0333  corrected=0.0406  p_diff=2.94e-107  rg=0.150  h2_exp=0.316  m_IVs=33
+  -> saved 5 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [06/10] BMD_arms -> OA_knee =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_arms) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_arms.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    1,176 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    31 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0281 ( 0.00897 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.0343 ( 0.0109 )
+    covariance between observed and corrected effect: 9.75e-05 
+            12000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  9  minute(s) and  31  second(s).  
+  observed=0.0281  corrected=0.0343  p_diff=0.000719  rg=0.167  h2_exp=0.282  m_IVs=31
+  -> saved 6 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [07/10] BMD_leg -> OA_knee =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (BMD_leg) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_leg.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    1,228 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    35 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0253 ( 0.0085 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.0302 ( 0.0101 )
+    covariance between observed and corrected effect: 8.52e-05 
+            13000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  9  minute(s) and  39  second(s).  
+  observed=0.0253  corrected=0.0302  p_diff=0.00572  rg=0.202  h2_exp=0.283  m_IVs=35
+  -> saved 7 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [08/10] OA_knee -> fracture =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (fracture) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "fracture.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    5,531 IVs with p < 5e-08 
+    0 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    156 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.0384 ( 0.0344 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.0398 ( 0.0418 )
+    covariance between observed and corrected effect: 0.00141 
+            8000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  9  minute(s) and  10  second(s).  
+  observed=0.0384  corrected=0.0398  p_diff=0.895  rg=0.121  h2_exp=0.034  m_IVs=156
+  -> saved 8 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [09/10] OA_knee -> BMD_total =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (BMD_total) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_total.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    5,533 IVs with p < 5e-08 
+    35 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    156 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.274 ( 0.11 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.344 ( 0.136 )
+    covariance between observed and corrected effect: 0.015 
+            6000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  8  minute(s) and  51  second(s).  
+  observed=0.2742  corrected=0.3435  p_diff=0.00574  rg=0.162  h2_exp=0.034  m_IVs=156
+  -> saved 9 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+
+===== [10/10] OA_knee -> BMD_femur_neck =====
+<<< Preparation of analysis >>> 
+> Checking parameters 
+The p-value threshold used for selecting MR instruments is: 5e-08 
+The distance used for pruning MR instruments is:  500 Kb 
+Distance-based pruning will be used for MR instruments 
+> Processing exposure (OA_knee) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "OA_knee.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+> Processing outcome (BMD_femur_neck) summary statistics... 
+# Preparation of the data... 
+The file used as input is: "BMD_femur_neck.tsv".  
+   SNPID column, ok - CHR column, ok - POS column, ok - ALT column, ok - REF column, ok - BETA column, ok - SE column, ok - N column, ok 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Performing cross-trait LDSC >>>  
+> Munging exposure data... 
+> Munging outcome data... 
+> Running cross-trait LDSC... 
+  Please consider saving the log files and checking them to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files
+> Cleaning temporary files... 
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Running IVW-MR >>>  
+> Identifying IVs... 
+    5,529 IVs with p < 5e-08 
+    15 IVs excluded - more strongly associated with the outcome than with the exposure, p < 1e-03 
+   Pruning : distance :  500 Kb 
+    156 IVs left after pruning 
+> Performing MR 
+    IVW-MR observed effect: 0.261 ( 0.101 )
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> 
+<<< Estimating corrected effect >>>  
+> Estimating genetic architecture parameters... 
+> Estimating corrected effect... 
+    corrected effect: 0.321 ( 0.124 )
+    covariance between observed and corrected effect: 0.0124 
+            6000 simulations were used to estimate the variance and the covariance.
+> Testing difference between observed and corrected effect... 
+Runtime of the analysis:  9  minute(s) and  3  second(s).  
+  observed=0.2608  corrected=0.3210  p_diff=0.0149  rg=0.188  h2_exp=0.034  m_IVs=156
+  -> saved 10 rows to C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT/code/ref/mrlap_out/mrlap_overlap_results.csv
+There were 23 warnings (use warnings() to see them)
+
+ALL DONE
+          exposure        outcome observed_effect observed_effect_se
+            <char>         <char>           <num>              <num>
+ 1:      BMD_total       fracture     -0.12224583        0.011722937
+ 2: BMD_femur_neck       fracture     -0.10318422        0.022540430
+ 3:      BMD_total        OA_knee      0.02406800        0.006344879
+ 4: BMD_femur_neck        OA_knee      0.02219049        0.008950017
+ 5:     BMD_lumbar        OA_knee      0.03334404        0.008271382
+ 6:       BMD_arms        OA_knee      0.02809564        0.008969573
+ 7:        BMD_leg        OA_knee      0.02529296        0.008499466
+ 8:        OA_knee       fracture      0.03844614        0.034430602
+ 9:        OA_knee      BMD_total      0.27420101        0.110296954
+10:        OA_knee BMD_femur_neck      0.26077818        0.100684987
+    observed_effect_p corrected_effect corrected_effect_se corrected_effect_p
+                <num>            <num>               <num>              <num>
+ 1:      1.848944e-25      -0.14090054         0.013730063       1.043123e-24
+ 2:      4.700270e-06      -0.12322111         0.027034989       5.168277e-06
+ 3:      1.486612e-04       0.02837772         0.007439485       1.364738e-04
+ 4:      1.316110e-02       0.02697207         0.010853004       1.294723e-02
+ 5:      5.548006e-05       0.04061763         0.010346627       8.648226e-05
+ 6:      1.734266e-03       0.03427211         0.010854883       1.592383e-03
+ 7:      2.921979e-03       0.03022532         0.010062475       2.666602e-03
+ 8:      2.641539e-01       0.03976644         0.041757030       3.409300e-01
+ 9:      1.291788e-02       0.34354476         0.135925164       1.148925e-02
+10:      9.596468e-03       0.32096040         0.123697701       9.466911e-03
+     p_difference m_IVs egger_intercept_p         rg int_crosstrait     h2_exp
+            <num> <int>             <num>      <num>          <num>      <num>
+ 1:  1.713197e-13    48        0.45051471 -0.4867950  -0.0360600722 0.33884804
+ 2:  6.679263e-04    34        0.09288779 -0.5086438  -0.0245175581 0.23588133
+ 3:  2.036764e-04    46        0.58229352  0.1620843  -0.0051073508 0.33884804
+ 4:  1.268030e-02    33        0.47991015  0.1878545  -0.0007430615 0.23588133
+ 5: 2.937619e-107    33        0.14715789  0.1498961   0.0009706430 0.31606884
+ 6:  7.186569e-04    31        0.11878733  0.1670558  -0.0101136478 0.28248415
+ 7:  5.717161e-03    35        0.91546624  0.2021879  -0.0056069278 0.28252336
+ 8:  8.949101e-01   156        0.32664002  0.1208617   0.0152720653 0.03362104
+ 9:  5.741501e-03   156        0.24166876  0.1620843  -0.0051073508 0.03362104
+10:  1.488115e-02   156        0.26621599  0.1878545  -0.0007430615 0.03362104
+        h2_out status
+         <num> <char>
+ 1: 0.02401187     ok
+ 2: 0.02401187     ok
+ 3: 0.03362104     ok
+ 4: 0.03362104     ok
+ 5: 0.03362104     ok
+ 6: 0.03362104     ok
+ 7: 0.03362104     ok
+ 8: 0.02401187     ok
+ 9: 0.33884804     ok
+10: 0.23588133     ok
