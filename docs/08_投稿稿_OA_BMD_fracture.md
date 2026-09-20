@@ -300,6 +300,22 @@ MDE = (1.96 + 0.84) × SE is the minimum \|β\| detectable at 80% power with a t
 14. Burgess S, Davies NM, Thompson SG. Bias due to participant overlap in two-sample Mendelian randomization. *Genet Epidemiol*. 2016;40(7):597–608. doi:10.1002/gepi.21998.
 15. Mounier N, Kutalik Z. Bias correction for inverse variance weighted Mendelian randomization. *Genet Epidemiol*. 2023;47:e22522. doi:10.1002/gepi.22522.
 
+## Author contributions (CRediT)
+
+Contributions are reported under the CRediT (Contributor Roles Taxonomy). # equal contribution; * corresponding author.
+
+| Author | Conceptualization | Data curation | Formal analysis | Funding acquisition | Investigation | Methodology | Project administration | Resources | Software | Supervision | Validation | Visualization | Writing – original draft | Writing – review & editing |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Zhenxin Zheng¹# | ✓ | | ✓ | | ✓ | ✓ | | | ✓ | | ✓ | ✓ | ✓ | ✓ |
+| Song Chen¹# | ✓ | ✓ | | | ✓ | | | ✓ | | | ✓ | | ✓ | ✓ |
+| Shenbo Huang¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
+| Chao Qian¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
+| Hang Yuan¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
+| Huricha Bao¹* | ✓ | | | ✓ | | ✓ | ✓ | | | ✓ | | | | ✓ |
+| Qiuyan Jiang²* | ✓ | | | ✓ | | ✓ | ✓ | | | ✓ | | | | ✓ |
+
+This statement is provided for CRediT compliance and should be confirmed by all authors before submission.
+
 ## Authors, affiliations, funding and competing interests
 
 - **Authors.** Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹*, Qiuyan Jiang²*.
@@ -308,7 +324,7 @@ MDE = (1.96 + 0.84) × SE is the minimum \|β\| detectable at 80% power with a t
 - **Affiliations.** ¹ Department of Orthopedics, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China; ² Department of Surgery, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China.
 - **Funding.** None.
 - **Competing interests.** The authors declare no competing interests.
-- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; provenance and accessions are listed in §2.1 and the GWAS Catalog, and the analysis code is in the project repository (to be made public on acceptance) for reproducibility. All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
+- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; provenance and accessions are listed in §2.1 and the GWAS Catalog. The analysis code is deposited at the project repository (https://github.com/&lt;owner&gt;/OA-BMD-fracture-MR; archived at Zenodo, doi:10.5281/zenodo.XXXXXXX) for reproducibility, including the MRlap sample-overlap sensitivity script (code/mrlap_overlap_correction.R, executed in R). All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
 
 ## §5 Pre-submission checklist — status and journal positioning
 

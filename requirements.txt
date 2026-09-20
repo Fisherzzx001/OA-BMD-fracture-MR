@@ -1,0 +1,11 @@
+# OA–BMD–Fracture cross-trait MR — Python analysis environment
+# Tested with CPython 3.13
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+matplotlib>=3.7
+python-docx>=1.1     # only needed to rebuild Manuscript.docx / Submission_MainText.docx
+
+# Optional (LDSC reference download, not required for the MR/figure pipeline):
+# The LDSC baseline LD scores are large (~0.8 GB) and are downloaded by
+# code/07_download_ldsc_ref.py into code/ref/; they are git-ignored.

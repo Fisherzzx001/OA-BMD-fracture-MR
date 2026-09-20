@@ -1,0 +1,33 @@
+{
+  "title": "OA–BMD–Fracture cross-trait Mendelian randomization: analysis code and harmonised summary statistics",
+  "upload_type": "software",
+  "publication_date": "2026-09-20",
+  "description": "Reproducible analysis code and harmonised per-SNP summary statistics for the cross-trait Mendelian randomization study 'Bone Mineral Density and Osteoarthritis Share Genetic Architecture but No Evidence of a Causal Pathway from Osteoarthritis to Fracture' (13 skeletal phenotypes: 2 OA definitions, 10-site BMD, any fracture). Includes the strict PLINK-equivalent clumping pipeline, two-sample MR (IVW, MR-Egger, weighted median), MR-PRESSO, LDSC genetic-correlation matrix, power calculations, sample-overlap diagnostics (rho_GE), and an MRlap sample-overlap sensitivity script (R). All statistics are recomputed from publicly published GWAS; no individual-level data are redistributed.",
+  "access_right": "open",
+  "license": "mit",
+  "version": "v15",
+  "creators": [
+    {"name": "Zheng, Zhenxin", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Chen, Song", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Huang, Shenbo", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Qian, Chao", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Yuan, Hang", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Bao, Huricha", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"},
+    {"name": "Jiang, Qiuyan", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, China", "orcid": "0000-0000-0000-0000"}
+  ],
+  "keywords": [
+    "Mendelian randomization",
+    "osteoarthritis",
+    "bone mineral density",
+    "fracture",
+    "genetic correlation",
+    "sample overlap",
+    "MRlap",
+    "MR-PRESSO"
+  ],
+  "related_identifiers": [
+    {"identifier": "https://github.com/<owner>/OA-BMD-fracture-MR", "relation": "isSupplementTo", "resource_type": "software"},
+    {"identifier": "doi:10.5281/zenodo.XXXXXXX", "relation": "isVersionOf", "resource_type": "software"}
+  ],
+  "notes": "ORCID placeholders (0000-0000-0000-0000) and the GitHub/Zenodo identifiers must be replaced with the real values before deposition. The repository is made public on manuscript acceptance."
+}
