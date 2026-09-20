@@ -67,7 +67,7 @@ Five estimators were computed: inverse-variance weighted (IVW) with both fixed a
 
 ### 2.7 Software
 
-Analyses were performed in Python 3.13 with numpy, pandas, scipy and matplotlib. All code is available at the project repository (see Data availability), together with the strict-clumping command template and MR-PRESSO implementation. This MR study followed the STROBE-MR reporting guideline (Skrivankova et al., *BMJ* 2021).
+Analyses were performed in Python 3.13 with numpy, pandas, scipy and matplotlib. All code is available at the project repository (see Data availability), together with the strict-clumping command template and MR-PRESSO implementation. This MR study followed the STROBE-MR reporting guideline (Skrivankova et al., *BMJ* 2021); the full study flow is illustrated in Supplementary Fig. S4.
 
 ### 2.8 Assessment of sample overlap in two-sample MR
 
@@ -200,6 +200,10 @@ Genetically higher BMD protects against fracture and raises knee OA risk. We fou
 **Figure 9.** Sample-overlap diagnostics for the ten MR pairs (§2.8). (a) ρ_GE, the correlation between SNP–exposure and SNP–outcome z-statistics across the harmonised instruments (`overlap_statistics.csv`, Supplementary). Positive bars (blue) are the BMD→OA pairs; negative bars (red) are the BMD→fracture pairs. ρ_GE shares the sign of the MR effect in all ten pairs, so no pair owes its direction to a single anti-correlated instrument. (b) ρ_GE against the signed IVW z-statistic; shaded regions are the sign-concordant quadrants, and all ten pairs fall within them (10/10 concordant). Because the exposure and outcome GWAS share UK Biobank participants, ρ_GE also reflects the sample-overlap component of the summary-statistic correlation; such overlap inflates IVW magnitudes toward r_g without changing signs, p-values or directions [14].
 
 **Supplementary Figure S3.** External validation of the reconstructed BMD effect scale against the independent GEFOS benchmark (§3.7). Odds ratios for any fracture per 1-SD lower BMD are shown for GEFOS 2018 (femoral-neck BMD; Trajanoska et al.), for this study's femoral-neck BMD instrument set under the primary strict clumping and the conservative 1-Mb sensitivity clumping, and for this study's total-body BMD instrument set. Whiskers are 95% confidence intervals; the dashed line is the null (OR = 1). This study's estimates lie 8–10% below GEFOS with overlapping confidence intervals, supporting the biological plausibility of the reconstructed effect scale.
+
+**Supplementary Figure S4.** Study design and MR analysis flow, compliant with the STROBE-MR reporting guideline (§2.7). The pipeline moves from GWAS inputs (13 skeletal phenotypes) through quality control and allele harmonisation, strict PLINK-equivalent clumping (r²<0.001 over 10 Mb, with a 1-Mb sensitivity window), two-sample MR across ten exposure–outcome pairs (IVW, MR-Egger, weighted median), and sensitivity/diagnostic checks (MR-PRESSO, leave-one-out, Cochran Q/I², sample-overlap ρ_GE, Bonferroni and BH-FDR correction).
+
+**Graphical Abstract.** A separate file (GraphicalAbstract.pdf) summarises the OA–BMD–fracture triangle: genetically higher BMD protects against fracture yet raises knee-OA risk, and OA shows no well-powered causal pathway to fracture.
 
 ---
 

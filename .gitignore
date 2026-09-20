@@ -14,4 +14,8 @@ __pycache__/
 
 # ---- generated submission build dirs (canonical deliverable is the *.zip) ----
 submission_package*/
+Figures_Beautified/
 v11_stage/
+v12_stage/
+v13_stage/
+v14_stage/
