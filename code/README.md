@@ -67,16 +67,28 @@ python build_maintext.py            # 生成盲法 Submission_MainText.docx
 ```
 审计脚本（`90_audit_mr_recompute.py` / `91_audit_crosscheck.py` / `92_audit_figures_v9.py`）用于投稿前独立复盘，输出 `AUDIT_*.csv`，详见 `docs/15`–`docs/21`。
 
-### 样本重叠敏感性分析（MRlap，需 R）
-```r
-# 在本地 R (>= 4.1) 环境运行；本构建沙箱无 R
-# install.packages(c("data.table","dplyr","readr"))
-# remotes::install_github("MRCIEU/MRlap")
-Rscript code/mrlap_overlap_correction.R
+### 样本重叠校正（MRlap，需 R；已在 R 4.6.1 跑通，10/10 对成功）
+```bash
+# 1) 工具链（一次性；GenomicSEM 需本地 tarball，详见脚本注释）
+Rscript code/install_mrlap_v2.R
+
+# 2) rsID 恢复：UKB/GWAS-Catalog 源文件只有 chr:pos:ref:alt，用
+#    allele 一致性 + 最近位置(±200bp) 对 1000G EUR(hg19) 反查 rsid
+python code/prep_mrlap_gwas.py          # -> code/ref/mrlap_gwas/<trait>.tsv
+
+# 3) 输入修正：OR 预转 log-OR（绕开 MRlap tidy_inputGWAS 的 'or' 分支 bug），
+#    N 固定为稿件 Table 1 值（BMD 31,873 / fracture 264,973 / knee OA 1,208,397）
+python code/fix_mrlap_inputs.py
+
+# 4) 跑全部 10 对（每对 ~7–12 min）
+Rscript code/run_mrlap.R                # -> code/ref/mrlap_out/mrlap_overlap_results.csv
 ```
-脚本读取 `output/genetics/harmonised/<EXP>__<OUT>.csv`，对 10 对做 MRlap 重叠校正，
-输出 `output/genetics/mrlap_overlap_results.csv`（MRlap β / se / p 与估计重叠相关 ρ，对比朴素 IVW）。
-结果用于核验稿件 §2.8 的 Burgess 2016 上界（BMD→OA ≤2.6%、BMD→fracture ≤12%）是否保守。
+输入为**全量 GWAS**（非协调后的少量 IV），MRlap 自行做 munge → 跨性状 LDSC → 距离剪枝 → IVW → bootstrap 校正。
+输出列：`pair, m_IVs, observed_effect/se/p, corrected_effect/se/p, p_difference, rg, h2_exp, h2_out`。
+结果副本：`code/output/mrlap_overlap_results.csv`；运行日志：`code/output/mrlap_run_log.txt`。
+
+> 注意：`BMD`/`fracture` GWAS 实际为 **hg19**（不要做 hg38→hg19 liftover）；`BMD` 文件开头数万行是 indel，
+> rsID 恢复须跳过 indel，否则匹配率会被误判为 ~0.3%。
 
 
 ## 数据可用性声明（Data availability）
@@ -114,7 +126,7 @@ git push -u origin main
 
 ### 2) Zenodo 归档（生成 DOI，供稿件 Data availability 引用）
 - 在 Zenodo 用 GitHub 账号授权并开启 "GitHub" 同步，连接上述仓库；
-- 打一个带版本标签的 release：`git tag v15 && git push origin v15`；
+- 打一个带版本标签的 release：`git tag v16 && git push origin v16`；
 - Zenodo 自动抓取并归档，生成 `doi:10.5281/zenodo.XXXXXXX`；
 - 将真实 `XXXXXXX` 与 GitHub 仓库 URL 回填到根目录 `.zenodo.json` 的 `related_identifiers`、
   `docs/08` 的 Data availability 段，以及各作者 ORCID（当前为 `0000-0000-0000-0000` 占位）。
