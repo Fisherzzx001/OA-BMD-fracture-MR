@@ -13,6 +13,57 @@ from docx.oxml import OxmlElement
 SRC = r"docs/08_投稿稿_OA_BMD_fracture.md"
 OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Manuscript.docx").replace("\\", "/")
 
+# ---- optional figure embedding (off by default) -------------------------------
+# Set EMBED_FIG=1 and FIGDIR=<dir with Figure*.png> to also emit
+# "Manuscript_with_Figures.docx", which inserts each figure after its legend.
+# Journals normally want figures as separate files, so the default package keeps
+# the text-only docx; this variant is for co-author / reviewer convenience only.
+EMBED_FIG = os.environ.get("EMBED_FIG", "0") == "1"
+FIGDIR = os.environ.get("FIGDIR", "Figures_v17_Nature")
+FIG_MAP = {
+    "Figure 1": "Figure1_rg_heatmap_13.png",
+    "Figure 2": "Figure2_forest_key_results.png",
+    "Figure 3": "Figure3_MR_forest.png",
+    "Figure 4": "Figure4_h2_bar.png",
+    "Figure 5": "Figure5_causal_network.png",
+    "Figure 6": "Figure6_MR_scatter.png",
+    "Figure 7": "Figure7_MR_funnel.png",
+    "Figure 8": "Figure8_MR_power.png",
+    "Figure 9": "Figure9_overlap_pleiotropy.png",
+    "Figure 10": "Figure10_MRlap_overlap_correction.png",
+    "Supplementary Figure S1": "SupplFig1_MR_scatter_remaining.png",
+    "Supplementary Figure S2": "SupplFig2_leave_one_out.png",
+    "Supplementary Figure S3": "SupplFig3_GEFOS_benchmark.png",
+    "Supplementary Figure S4": "SupplFig4_STROBE_flow.png",
+    "Supplementary Figure S5": "SupplFig5_OA_knee_N_sensitivity.png",
+    "Supplementary Figure S6": "SupplFig6_fracture_N_decision.png",
+    "Supplementary Figure S7": "SupplFig7_pleiotropy_diagnostics.png",
+    "Graphical Abstract": "GraphicalAbstract.png",
+}
+
+def maybe_embed_figure(doc, raw_line):
+    """If raw_line opens a figure legend, append the corresponding image."""
+    if not EMBED_FIG:
+        return False
+    s = raw_line.strip()
+    if not s.startswith("**"):
+        return False
+    key = None
+    for k in FIG_MAP:
+        if s.startswith("**" + k + ".**") or s.startswith("**" + k + ":**"):
+            key = k
+            break
+    if key is None:
+        return False
+    path = os.path.join(FIGDIR, FIG_MAP[key]).replace("\\", "/")
+    if not os.path.exists(path):
+        print("  [warn] figure file missing, skipped:", path)
+        return False
+    from docx.shared import Inches as _Inches
+    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.add_run().add_picture(path, width=_Inches(6.2))
+    return True
+
 # ---- author / affiliation block (from user input) ----
 AUTHORS = "Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹*, Qiuyan Jiang²*"
 AFFIL1 = "¹ Department of Orthopedics, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China"
@@ -172,6 +223,7 @@ def build():
         # plain paragraph
         para = doc.add_paragraph()
         parse_inline(para, s.strip())
+        maybe_embed_figure(doc, s)
         i += 1
 
     # data availability at end
@@ -186,3 +238,9 @@ def build():
 
 if __name__ == "__main__":
     build()
+    if EMBED_FIG:
+        out_embed = OUT.replace(".docx", "_with_Figures.docx")
+        os.replace(OUT, out_embed)
+        print("Saved", out_embed)
+        EMBED_FIG = False          # second pass: text-only canonical docx
+        build()

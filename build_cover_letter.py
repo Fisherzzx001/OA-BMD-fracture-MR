@@ -6,8 +6,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 import os
 OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Cover_Letter.docx").replace("\\", "/")
-TITLE = ("Bone Mineral Density and Osteoarthritis Share Genetic Architecture but Not "
-         "Causal Pathways to Fracture: A Cross-Trait Analysis of 13 Skeletal Phenotypes")
+TITLE = ("Bone Mineral Density and Osteoarthritis Share Genetic Architecture, but "
+         "Evidence for an Osteoarthritis-to-Fracture Causal Pathway Remains Limited: "
+         "A Cross-Trait Analysis of 13 Skeletal Phenotypes")
 JOURNAL = "Bone"  # adjust to Osteoporosis International if preferred
 
 def line(doc, text, bold=False, size=11, space=6, align=None):
@@ -23,7 +24,7 @@ def main():
     doc = Document()
     st = doc.styles["Normal"]; st.font.name = "Times New Roman"; st.font.size = Pt(11)
 
-    line(doc, "17 September 2026")
+    line(doc, "23 September 2026")
     line(doc, "")
     line(doc, f"Editor-in-Chief, {JOURNAL}")
     line(doc, f"{JOURNAL} Editorial Office")
