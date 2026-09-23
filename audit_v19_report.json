@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "RECON_BMD_total->fracture_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "IVW beta=-0.33713 (audit -0.33713, table -0.337)"
+  },
+  {
+    "id": "IVWp_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "IVW p=3.65e-51 (audit 3.65e-51, table 3.7e-51)"
+  },
+  {
+    "id": "IVWse_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "IVW se=0.02241"
+  },
+  {
+    "id": "REp_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "RE p=2.363e-12 (audit 2.363e-12, table 2.4e-12)"
+  },
+  {
+    "id": "EGG_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "Egger int p=0.558 (audit 0.558, table 0.558)"
+  },
+  {
+    "id": "WMED_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "wmed=-0.36422 (audit -0.36422, table -0.364)"
+  },
+  {
+    "id": "I2_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "I2=0.783 (audit 0.783, table 0.78)"
+  },
+  {
+    "id": "NSNP_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "K=31"
+  },
+  {
+    "id": "Q_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "Q=138.164 Qp=8.04e-16"
+  },
+  {
+    "id": "RECON_BMD_femur_neck->fracture_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "IVW beta=-0.35066 (audit -0.35066, table -0.351)"
+  },
+  {
+    "id": "IVWp_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "IVW p=7.71e-31 (audit 7.71e-31, table 7.7e-31)"
+  },
+  {
+    "id": "IVWse_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "IVW se=0.03037"
+  },
+  {
+    "id": "REp_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "RE p=2.323e-06 (audit 2.323e-06, table 2.3e-06)"
+  },
+  {
+    "id": "EGG_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "Egger int p=0.018 (audit 0.018, table 0.018)"
+  },
+  {
+    "id": "WMED_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "wmed=-0.36461 (audit -0.36461, table -0.365)"
+  },
+  {
+    "id": "I2_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "I2=0.833 (audit 0.833, table 0.83)"
+  },
+  {
+    "id": "NSNP_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "K=25"
+  },
+  {
+    "id": "Q_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "Q=143.431 Qp=5.44e-19"
+  },
+  {
+    "id": "RECON_BMD_total->OA_knee_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "IVW beta=0.02312 (audit 0.02312, table 0.023)"
+  },
+  {
+    "id": "IVWp_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "IVW p=3.86e-10 (audit 3.86e-10, table 3.9e-10)"
+  },
+  {
+    "id": "IVWse_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "IVW se=0.00369"
+  },
+  {
+    "id": "REp_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "RE p=6.204e-03 (audit 6.204e-03, table 6.2e-03)"
+  },
+  {
+    "id": "EGG_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "Egger int p=0.810 (audit 0.810, table 0.810)"
+  },
+  {
+    "id": "WMED_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "wmed=0.01927 (audit 0.01927, table 0.019)"
+  },
+  {
+    "id": "I2_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "I2=0.809 (audit 0.809, table 0.81)"
+  },
+  {
+    "id": "NSNP_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "K=31"
+  },
+  {
+    "id": "Q_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "Q=156.943 Qp=3.89e-19"
+  },
+  {
+    "id": "RECON_BMD_lumbar->OA_knee_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "IVW beta=0.02791 (audit 0.02791, table 0.028)"
+  },
+  {
+    "id": "IVWp_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "IVW p=7.70e-09 (audit 7.70e-09, table 7.7e-09)"
+  },
+  {
+    "id": "IVWse_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "IVW se=0.00483"
+  },
+  {
+    "id": "REp_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "RE p=1.659e-02 (audit 1.659e-02, table 1.7e-02)"
+  },
+  {
+    "id": "EGG_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "Egger int p=0.295 (audit 0.295, table 0.295)"
+  },
+  {
+    "id": "WMED_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "wmed=0.03705 (audit 0.03705, table 0.037)"
+  },
+  {
+    "id": "I2_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "I2=0.828 (audit 0.828, table 0.83)"
+  },
+  {
+    "id": "NSNP_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "K=21"
+  },
+  {
+    "id": "Q_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "Q=116.214 Qp=1.43e-15"
+  },
+  {
+    "id": "RECON_BMD_arms->OA_knee_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "IVW beta=0.02218 (audit 0.02218, table 0.022)"
+  },
+  {
+    "id": "IVWp_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "IVW p=1.71e-06 (audit 1.71e-06, table 1.7e-06)"
+  },
+  {
+    "id": "IVWse_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "IVW se=0.00464"
+  },
+  {
+    "id": "REp_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "RE p=6.991e-02 (audit 6.991e-02, table 7.0e-02)"
+  },
+  {
+    "id": "EGG_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "Egger int p=0.982 (audit 0.982, table 0.982)"
+  },
+  {
+    "id": "WMED_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "wmed=0.03067 (audit 0.03067, table 0.031)"
+  },
+  {
+    "id": "I2_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "I2=0.857 (audit 0.857, table 0.86)"
+  },
+  {
+    "id": "NSNP_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "K=16"
+  },
+  {
+    "id": "Q_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "Q=104.538 Qp=1.79e-15"
+  },
+  {
+    "id": "RECON_BMD_leg->OA_knee_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "IVW beta=0.01772 (audit 0.01772, table 0.018)"
+  },
+  {
+    "id": "IVWp_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "IVW p=2.29e-05 (audit 2.29e-05, table 2.3e-05)"
+  },
+  {
+    "id": "IVWse_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "IVW se=0.00418"
+  },
+  {
+    "id": "REp_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "RE p=9.758e-02 (audit 9.758e-02, table 9.8e-02)"
+  },
+  {
+    "id": "EGG_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "Egger int p=0.815 (audit 0.815, table 0.815)"
+  },
+  {
+    "id": "WMED_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "wmed=0.02478 (audit 0.02478, table 0.025)"
+  },
+  {
+    "id": "I2_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "I2=0.847 (audit 0.847, table 0.85)"
+  },
+  {
+    "id": "NSNP_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "K=24"
+  },
+  {
+    "id": "Q_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "Q=150.260 Qp=1.14e-20"
+  },
+  {
+    "id": "RECON_BMD_femur_neck->OA_knee_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "IVW beta=0.01709 (audit 0.01709, table 0.017)"
+  },
+  {
+    "id": "IVWp_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "IVW p=6.36e-04 (audit 6.36e-04, table 6.4e-04)"
+  },
+  {
+    "id": "IVWse_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "IVW se=0.00500"
+  },
+  {
+    "id": "REp_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "RE p=5.474e-02 (audit 5.474e-02, table 5.5e-02)"
+  },
+  {
+    "id": "EGG_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "Egger int p=0.875 (audit 0.875, table 0.875)"
+  },
+  {
+    "id": "WMED_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "wmed=0.01533 (audit 0.01533, table 0.015)"
+  },
+  {
+    "id": "I2_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "I2=0.684 (audit 0.684, table 0.68)"
+  },
+  {
+    "id": "NSNP_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "K=25"
+  },
+  {
+    "id": "Q_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "Q=75.884 Qp=2.72e-07"
+  },
+  {
+    "id": "RECON_OA_knee->fracture_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "IVW beta=0.09215 (audit 0.09215, table 0.092)"
+  },
+  {
+    "id": "IVWp_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "IVW p=3.95e-01 (audit 3.95e-01, table 4.0e-01)"
+  },
+  {
+    "id": "IVWse_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "IVW se=0.10834"
+  },
+  {
+    "id": "REp_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "RE p=5.421e-01 (audit 5.421e-01, table 5.4e-01)"
+  },
+  {
+    "id": "EGG_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "Egger int p=0.476 (audit 0.476, table 0.476)"
+  },
+  {
+    "id": "WMED_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "wmed=0.11810 (audit 0.11810, table 0.118)"
+  },
+  {
+    "id": "I2_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "I2=0.486 (audit 0.486, table 0.49)"
+  },
+  {
+    "id": "NSNP_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "K=69"
+  },
+  {
+    "id": "Q_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "Q=132.364 Qp=4.92e-06"
+  },
+  {
+    "id": "RECON_OA_knee->BMD_total_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "IVW beta=0.10612 (audit 0.10612, table 0.106)"
+  },
+  {
+    "id": "IVWp_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "IVW p=3.26e-01 (audit 3.26e-01, table 3.3e-01)"
+  },
+  {
+    "id": "IVWse_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "IVW se=0.10814"
+  },
+  {
+    "id": "REp_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "RE p=4.813e-01 (audit 4.813e-01, table 4.8e-01)"
+  },
+  {
+    "id": "EGG_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "Egger int p=0.376 (audit 0.376, table 0.376)"
+  },
+  {
+    "id": "WMED_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "wmed=0.11192 (audit 0.11192, table 0.112)"
+  },
+  {
+    "id": "I2_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "I2=0.485 (audit 0.485, table 0.49)"
+  },
+  {
+    "id": "NSNP_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "K=69"
+  },
+  {
+    "id": "Q_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "Q=132.064 Qp=5.31e-06"
+  },
+  {
+    "id": "RECON_OA_knee->BMD_femur_neck_ratio",
+    "status": "PASS",
+    "detail": "ratio/se from beta_o/beta_e agrees with file (<1e-9)"
+  },
+  {
+    "id": "IVWb_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "IVW beta=0.14188 (audit 0.14188, table 0.142)"
+  },
+  {
+    "id": "IVWp_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "IVW p=1.90e-01 (audit 1.90e-01, table 1.9e-01)"
+  },
+  {
+    "id": "IVWse_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "IVW se=0.10814"
+  },
+  {
+    "id": "REp_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "RE p=2.724e-01 (audit 2.724e-01, table 2.7e-01)"
+  },
+  {
+    "id": "EGG_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "Egger int p=0.169 (audit 0.169, table 0.169)"
+  },
+  {
+    "id": "WMED_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "wmed=0.11322 (audit 0.11322, table 0.113)"
+  },
+  {
+    "id": "I2_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "I2=0.300 (audit 0.300, table 0.30)"
+  },
+  {
+    "id": "NSNP_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "K=69"
+  },
+  {
+    "id": "Q_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "Q=97.161 Qp=1.17e-02"
+  },
+  {
+    "id": "RG_SYMMETRY",
+    "status": "PASS",
+    "detail": "asymmetric off-diag count=0"
+  },
+  {
+    "id": "RG_DIAG",
+    "status": "PASS",
+    "detail": "diag!=1 count=0"
+  },
+  {
+    "id": "RG_OAxBMD",
+    "status": "PASS",
+    "detail": "n=20 range[0.117,0.250] mean=0.169"
+  },
+  {
+    "id": "RG_BMDxBMD",
+    "status": "PASS",
+    "detail": "n=45 range[0.689,0.960] mean=0.812"
+  },
+  {
+    "id": "RG_FRACxBMD",
+    "status": "PASS",
+    "detail": "n=10 range[-0.596,-0.446] mean=-0.531"
+  },
+  {
+    "id": "RG_OAxOA",
+    "status": "PASS",
+    "detail": "OA_knee x OA_selfrep=0.8381"
+  },
+  {
+    "id": "RG_OAxFRAC",
+    "status": "PASS",
+    "detail": "OA x fracture n=2 range[0.148,0.211]"
+  },
+  {
+    "id": "RG_OAkneeFRAC_p",
+    "status": "PASS",
+    "detail": "OA_knee x fracture p=0.321 (manuscript q=0.33)"
+  },
+  {
+    "id": "RG_OAselfFRAC_p",
+    "status": "PASS",
+    "detail": "OA_selfrep x fracture p=0.371 (manuscript q=0.37)"
+  },
+  {
+    "id": "RG_FNFRAC_bonf",
+    "status": "PASS",
+    "detail": "fem-neck x fracture p=8.10e-04 p_bonf=0.063 (manuscript 0.063; fails Bonferroni so 75/78)"
+  },
+  {
+    "id": "RG_FDR76",
+    "status": "PASS",
+    "detail": "n_sig(FDR<0.05 across 78 pairs, reconstructed)=76 (manuscript 76)"
+  },
+  {
+    "id": "RG_BONF75",
+    "status": "PASS",
+    "detail": "n_sig(Bonf<0.05)=75 (manuscript 75)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "observed=-0.1222 (0.0117) (table -0.122)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "corrected=-0.1409 (0.0137) (table -0.141)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "corrected_p=1.04e-24 (table 1.0e-24)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "ratio=1.153 (table 1.15)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "p_diff=1.71e-13 (table 1.7e-13)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "IVs=48 (table 48)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "rg=-0.487 (table -0.49)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "observed=-0.1032 (0.0225) (table -0.103)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "corrected=-0.1232 (0.0270) (table -0.123)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "corrected_p=5.17e-06 (table 5.2e-06)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "ratio=1.194 (table 1.19)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "p_diff=6.68e-04 (table 6.7e-04)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "IVs=34 (table 34)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "rg=-0.509 (table -0.51)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "observed=0.0241 (0.0063) (table 0.0241)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "corrected=0.0284 (0.0074) (table 0.0284)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "corrected_p=1.36e-04 (table 1.4e-04)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "ratio=1.179 (table 1.18)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "p_diff=2.04e-04 (table 2.0e-04)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "IVs=46 (table 46)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "rg=0.162 (table 0.16)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "observed=0.0222 (0.0090) (table 0.0222)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "corrected=0.0270 (0.0109) (table 0.027)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "corrected_p=1.29e-02 (table 1.3e-02)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "ratio=1.215 (table 1.22)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "p_diff=1.27e-02 (table 1.3e-02)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "IVs=33 (table 33)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "rg=0.188 (table 0.19)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "observed=0.0333 (0.0083) (table 0.0333)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "corrected=0.0406 (0.0103) (table 0.0406)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "corrected_p=8.65e-05 (table 8.6e-05)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "ratio=1.218 (table 1.22)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "p_diff=2.94e-107 (table <1e-100)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "IVs=33 (table 33)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "rg=0.150 (table 0.15)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "observed=0.0281 (0.0090) (table 0.0281)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "corrected=0.0343 (0.0109) (table 0.0343)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "corrected_p=1.59e-03 (table 1.6e-03)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "ratio=1.220 (table 1.22)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "p_diff=7.19e-04 (table 7.2e-04)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "IVs=31 (table 31)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "rg=0.167 (table 0.17)"
+  },
+  {
+    "id": "MRLAP_obs_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "observed=0.0253 (0.0085) (table 0.0253)"
+  },
+  {
+    "id": "MRLAP_cor_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "corrected=0.0302 (0.0101) (table 0.0302)"
+  },
+  {
+    "id": "MRLAP_corp_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "corrected_p=2.67e-03 (table 2.7e-03)"
+  },
+  {
+    "id": "MRLAP_ratio_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "ratio=1.195 (table 1.20)"
+  },
+  {
+    "id": "MRLAP_pd_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "p_diff=5.72e-03 (table 5.7e-03)"
+  },
+  {
+    "id": "MRLAP_ivs_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "IVs=35 (table 35)"
+  },
+  {
+    "id": "MRLAP_rg_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "rg=0.202 (table 0.2)"
+  },
+  {
+    "id": "MRLAP_obs_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "observed=0.0384 (0.0344) (table 0.0384)"
+  },
+  {
+    "id": "MRLAP_cor_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "corrected=0.0398 (0.0418) (table 0.0398)"
+  },
+  {
+    "id": "MRLAP_corp_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "corrected_p=3.41e-01 (table 3.4e-01)"
+  },
+  {
+    "id": "MRLAP_ratio_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "ratio=1.034 (table 1.03)"
+  },
+  {
+    "id": "MRLAP_pd_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "p_diff=8.95e-01 (table 8.9e-01)"
+  },
+  {
+    "id": "MRLAP_ivs_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "IVs=156 (table 156)"
+  },
+  {
+    "id": "MRLAP_rg_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "rg=0.121 (table 0.12)"
+  },
+  {
+    "id": "MRLAP_obs_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "observed=0.2742 (0.1103) (table 0.2742)"
+  },
+  {
+    "id": "MRLAP_cor_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "corrected=0.3435 (0.1359) (table 0.3435)"
+  },
+  {
+    "id": "MRLAP_corp_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "corrected_p=1.15e-02 (table 1.1e-02)"
+  },
+  {
+    "id": "MRLAP_ratio_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "ratio=1.253 (table 1.25)"
+  },
+  {
+    "id": "MRLAP_pd_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "p_diff=5.74e-03 (table 5.7e-03)"
+  },
+  {
+    "id": "MRLAP_ivs_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "IVs=156 (table 156)"
+  },
+  {
+    "id": "MRLAP_rg_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "rg=0.162 (table 0.16)"
+  },
+  {
+    "id": "MRLAP_obs_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "observed=0.2608 (0.1007) (table 0.2608)"
+  },
+  {
+    "id": "MRLAP_cor_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "corrected=0.3210 (0.1237) (table 0.321)"
+  },
+  {
+    "id": "MRLAP_corp_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "corrected_p=9.47e-03 (table 9.5e-03)"
+  },
+  {
+    "id": "MRLAP_ratio_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "ratio=1.231 (table 1.23)"
+  },
+  {
+    "id": "MRLAP_pd_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "p_diff=1.49e-02 (table 1.5e-02)"
+  },
+  {
+    "id": "MRLAP_ivs_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "IVs=156 (table 156)"
+  },
+  {
+    "id": "MRLAP_rg_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "rg=0.188 (table 0.19)"
+  },
+  {
+    "id": "MRLAP_LAMBDA",
+    "status": "PASS",
+    "detail": "|lambda|max=0.03606 (manuscript <=0.037)"
+  },
+  {
+    "id": "MRLAP_rg_text",
+    "status": "PASS",
+    "detail": "BMDxfrac[-0.51,-0.49] BMDxknee[0.15,0.20] kneexfrac 0.12"
+  },
+  {
+    "id": "MRLAP_median_pct",
+    "status": "PASS",
+    "detail": "median %change=20.52 (manuscript 20%, Fig10a 20.5%)"
+  },
+  {
+    "id": "MRLAP_9of10",
+    "status": "PASS",
+    "detail": "p_diff<0.05 in 9/10 pairs (manuscript 9/10)"
+  },
+  {
+    "id": "MRLAP_h2_pearson",
+    "status": "PASS",
+    "detail": "Pearson r(MRlap h2, primary h2)=0.9991 (manuscript 0.999)"
+  },
+  {
+    "id": "OVERLAP_range",
+    "status": "PASS",
+    "detail": "rho_GE range[-0.791,0.460] (manuscript -0.79..+0.46)"
+  },
+  {
+    "id": "OVERLAP_sign",
+    "status": "PASS",
+    "detail": "rho_GE sign concordant with MR direction in all 10 pairs"
+  },
+  {
+    "id": "POWER_z_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "z=15.05 (table 15.05)"
+  },
+  {
+    "id": "POWER_mde_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "MDE=0.063 (table 0.063)"
+  },
+  {
+    "id": "POWER_pw_BMD_total->fracture",
+    "status": "PASS",
+    "detail": "power=1.00 (table 1.00)"
+  },
+  {
+    "id": "POWER_z_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "z=11.55 (table 11.55)"
+  },
+  {
+    "id": "POWER_mde_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "MDE=0.085 (table 0.085)"
+  },
+  {
+    "id": "POWER_pw_BMD_femur_neck->fracture",
+    "status": "PASS",
+    "detail": "power=1.00 (table 1.00)"
+  },
+  {
+    "id": "POWER_z_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "z=6.26 (table 6.26)"
+  },
+  {
+    "id": "POWER_mde_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "MDE=0.010 (table 0.010)"
+  },
+  {
+    "id": "POWER_pw_BMD_total->OA_knee",
+    "status": "PASS",
+    "detail": "power=1.00 (table 1.00)"
+  },
+  {
+    "id": "POWER_z_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "z=5.77 (table 5.77)"
+  },
+  {
+    "id": "POWER_mde_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "MDE=0.014 (table 0.014)"
+  },
+  {
+    "id": "POWER_pw_BMD_lumbar->OA_knee",
+    "status": "PASS",
+    "detail": "power=1.00 (table 1.00)"
+  },
+  {
+    "id": "POWER_z_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "z=4.78 (table 4.78)"
+  },
+  {
+    "id": "POWER_mde_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "MDE=0.013 (table 0.013)"
+  },
+  {
+    "id": "POWER_pw_BMD_arms->OA_knee",
+    "status": "PASS",
+    "detail": "power=1.00 (table 1.00)"
+  },
+  {
+    "id": "POWER_z_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "z=4.23 (table 4.23)"
+  },
+  {
+    "id": "POWER_mde_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "MDE=0.012 (table 0.012)"
+  },
+  {
+    "id": "POWER_pw_BMD_leg->OA_knee",
+    "status": "PASS",
+    "detail": "power=0.99 (table 0.99)"
+  },
+  {
+    "id": "POWER_z_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "z=3.42 (table 3.42)"
+  },
+  {
+    "id": "POWER_mde_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "MDE=0.014 (table 0.014)"
+  },
+  {
+    "id": "POWER_pw_BMD_femur_neck->OA_knee",
+    "status": "PASS",
+    "detail": "power=0.93 (table 0.93)"
+  },
+  {
+    "id": "POWER_z_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "z=0.85 (table 0.85)"
+  },
+  {
+    "id": "POWER_mde_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "MDE=0.303 (table 0.304)"
+  },
+  {
+    "id": "POWER_pw_OA_knee->fracture",
+    "status": "PASS",
+    "detail": "power=0.13 (table 0.14)"
+  },
+  {
+    "id": "POWER_z_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "z=0.98 (table 0.98)"
+  },
+  {
+    "id": "POWER_mde_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "MDE=0.303 (table 0.303)"
+  },
+  {
+    "id": "POWER_pw_OA_knee->BMD_total",
+    "status": "PASS",
+    "detail": "power=0.16 (table 0.17)"
+  },
+  {
+    "id": "POWER_z_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "z=1.31 (table 1.31)"
+  },
+  {
+    "id": "POWER_mde_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "MDE=0.303 (table 0.303)"
+  },
+  {
+    "id": "POWER_pw_OA_knee->BMD_femur_neck",
+    "status": "PASS",
+    "detail": "power=0.26 (table 0.26)"
+  },
+  {
+    "id": "OR_total",
+    "status": "PASS",
+    "detail": "OR total=1.40 (1.34-1.46) (manuscript 1.40 [1.34-1.46])"
+  },
+  {
+    "id": "OR_femn",
+    "status": "PASS",
+    "detail": "OR fem-neck=1.42 (1.34-1.51) (manuscript 1.42 [1.34-1.51])"
+  },
+  {
+    "id": "H2_OA_knee",
+    "status": "PASS",
+    "detail": "h2=0.0354 (table 0.035)"
+  },
+  {
+    "id": "H2_OA_selfrep",
+    "status": "PASS",
+    "detail": "h2=0.0223 (table 0.022)"
+  },
+  {
+    "id": "H2_fracture",
+    "status": "PASS",
+    "detail": "h2=0.0258 (table 0.026)"
+  },
+  {
+    "id": "H2_BMD_total",
+    "status": "PASS",
+    "detail": "h2=0.3912 (table 0.391)"
+  },
+  {
+    "id": "H2_BMD_femur_neck",
+    "status": "PASS",
+    "detail": "h2=0.2574 (table 0.257)"
+  },
+  {
+    "id": "H2_BMD_femur_total",
+    "status": "PASS",
+    "detail": "h2=0.3171 (table 0.317)"
+  },
+  {
+    "id": "H2_BMD_lumbar",
+    "status": "PASS",
+    "detail": "h2=0.3498 (table 0.350)"
+  },
+  {
+    "id": "H2_BMD_spine",
+    "status": "PASS",
+    "detail": "h2=0.3572 (table 0.357)"
+  },
+  {
+    "id": "H2_BMD_arms",
+    "status": "PASS",
+    "detail": "h2=0.3250 (table 0.325)"
+  },
+  {
+    "id": "H2_BMD_leg",
+    "status": "PASS",
+    "detail": "h2=0.3248 (table 0.325)"
+  },
+  {
+    "id": "H2_BMD_pelvis",
+    "status": "PASS",
+    "detail": "h2=0.3576 (table 0.358)"
+  },
+  {
+    "id": "H2_BMD_rib",
+    "status": "PASS",
+    "detail": "h2=0.3031 (table 0.303)"
+  },
+  {
+    "id": "H2_BMD_trunk",
+    "status": "PASS",
+    "detail": "h2=0.3657 (table 0.366)"
+  },
+  {
+    "id": "H2_placeholder_note",
+    "status": "PASS",
+    "detail": "rg_h2.csv BMD_total=0.0313 == placeholder-N(400k) value; true-N file rg_h2_trueN.csv backs Table1"
+  },
+  {
+    "id": "H2_intercepts",
+    "status": "PASS",
+    "detail": "intercepts range[1.009,1.069]"
+  }
+]
