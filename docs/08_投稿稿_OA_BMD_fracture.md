@@ -335,9 +335,9 @@ MDE = (1.96 + 0.84) × SE is the minimum \|β\| detectable at 80% power with a t
 13. Davey Smith G, Ebrahim S. 'Mendelian randomization': can genetic epidemiology contribute to understanding environmental determinants of disease? *Int J Epidemiol*. 2003;32(1):1–22. doi:10.1093/ije/dyg070.
 14. Burgess S, Davies NM, Thompson SG. Bias due to participant overlap in two-sample Mendelian randomization. *Genet Epidemiol*. 2016;40(7):597–608. doi:10.1002/gepi.21998.
 15. Mounier N, Kutalik Z. Bias correction for inverse variance weighted Mendelian randomization. *Genet Epidemiol*. 2023;47:e22522. doi:10.1002/gepi.22522.
-16. Alhassan E, Nguyen K, Hochberg MC, Mitchell BD. Causal Factors for Osteoarthritis: A Scoping Review of Mendelian Randomization Studies. *Arthritis Care Res (Hoboken)*. 2024. doi:10.1002/acr.25252. PMID 37846209.
-17. Liu H, Zhu J, Jiang H, et al. Using Mendelian randomization analyses in osteoarthritis: state of art and future perspectives. *Ann Med*. 2025. doi:10.1080/07853890.2025.2533428. PMID 40697045.
-18. Kröger H, Vainio P, Nieminen J, Kotaniemi A. Comparison of different models for interpreting bone mineral density measurements using DXA and MRI technology. *Bone*. 1995. doi:10.1016/s8756-3282(95)00162-x. PMID 8554924.
+16. Alhassan E, Nguyen K, Hochberg MC, Mitchell BD. Causal Factors for Osteoarthritis: A Scoping Review of Mendelian Randomization Studies. *Arthritis Care Res (Hoboken)*. 2024;76(3):366–375. doi:10.1002/acr.25252. PMID 37846209.
+17. Liu H, Zhu J, Jiang H, et al. Using Mendelian randomization analyses in osteoarthritis: state of art and future perspectives. *Ann Med*. 2025;57(1):2533428. doi:10.1080/07853890.2025.2533428. PMID 40697045.
+18. Kröger H, Vainio P, Nieminen J, Kotaniemi A. Comparison of different models for interpreting bone mineral density measurements using DXA and MRI technology. *Bone*. 1995;17(2):157–159. doi:10.1016/s8756-3282(95)00162-x. PMID 8554924.
 
 ## Author contributions (CRediT)
 

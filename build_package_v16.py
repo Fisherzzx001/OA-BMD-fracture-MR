@@ -239,7 +239,7 @@ reconciled each figure against those source data.
       (`Supplementary_Figures/`), per the journal's instructions.
 - [ ] Upload `Manuscript.docx` (or `Submission_MainText.docx` + separate title page
       if the journal is double-blind).
-- [ ] Complete reference 16 and 18 volume/issue/pages before final upload.
+- [x] References 16/17/18 volume/issue/pages completed (Crossref/PubMed verified).
 
 ## Reproducibility
 
