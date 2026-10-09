@@ -1,0 +1,572 @@
+[
+ {
+  "id": "T3_parsed",
+  "status": "PASS",
+  "detail": "Table 3 rows parsed from manuscript: 11"
+ },
+ {
+  "id": "T3_BMD total->fracture_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=31.0 recomputed=31  [harmonised/BMD_total__fracture.csv]"
+ },
+ {
+  "id": "T3_BMD total->fracture_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=-0.337 recomputed=-0.337134  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_BMD total->fracture_se",
+  "status": "PASS",
+  "detail": "SE text=0.022 recomputed=0.022406"
+ },
+ {
+  "id": "T3_BMD total->fracture_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.558 recomputed=0.5581  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_BMD total->fracture_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=-0.364 recomputed=-0.364222  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_BMD total->fracture_i2",
+  "status": "PASS",
+  "detail": "I2 text=78.0% recomputed=78.3%"
+ },
+ {
+  "id": "T3_BMD total->fracture_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=2.36e-12 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=25.0 recomputed=25  [harmonised/BMD_femur_neck__fracture.csv]"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=-0.351 recomputed=-0.350660  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_se",
+  "status": "PASS",
+  "detail": "SE text=0.03 recomputed=0.030370"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.018 recomputed=0.0182  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=-0.365 recomputed=-0.364607  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_i2",
+  "status": "PASS",
+  "detail": "I2 text=83.0% recomputed=83.3%"
+ },
+ {
+  "id": "T3_BMD femoral neck->fracture_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=2.32e-06 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_BMD total->OA knee_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=31.0 recomputed=31  [harmonised/BMD_total__OA_knee.csv]"
+ },
+ {
+  "id": "T3_BMD total->OA knee_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.023 recomputed=0.023121  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_BMD total->OA knee_se",
+  "status": "PASS",
+  "detail": "SE text=0.004 recomputed=0.003694"
+ },
+ {
+  "id": "T3_BMD total->OA knee_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.81 recomputed=0.8099  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_BMD total->OA knee_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.019 recomputed=0.019270  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_BMD total->OA knee_i2",
+  "status": "PASS",
+  "detail": "I2 text=81.0% recomputed=80.9%"
+ },
+ {
+  "id": "T3_BMD total->OA knee_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.0062 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=21.0 recomputed=21  [harmonised/BMD_lumbar__OA_knee.csv]"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.028 recomputed=0.027913  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_se",
+  "status": "PASS",
+  "detail": "SE text=0.005 recomputed=0.004833"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.295 recomputed=0.2947  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.037 recomputed=0.037047  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_i2",
+  "status": "PASS",
+  "detail": "I2 text=83.0% recomputed=82.8%"
+ },
+ {
+  "id": "T3_Lumbar spine->OA knee_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.0166 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_Arms->OA knee_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=16.0 recomputed=16  [harmonised/BMD_arms__OA_knee.csv]"
+ },
+ {
+  "id": "T3_Arms->OA knee_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.022 recomputed=0.022179  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_Arms->OA knee_se",
+  "status": "PASS",
+  "detail": "SE text=0.005 recomputed=0.004635"
+ },
+ {
+  "id": "T3_Arms->OA knee_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.982 recomputed=0.9820  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_Arms->OA knee_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.031 recomputed=0.030670  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_Arms->OA knee_i2",
+  "status": "PASS",
+  "detail": "I2 text=86.0% recomputed=85.7%"
+ },
+ {
+  "id": "T3_Arms->OA knee_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.0699 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_Legs->OA knee_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=24.0 recomputed=24  [harmonised/BMD_leg__OA_knee.csv]"
+ },
+ {
+  "id": "T3_Legs->OA knee_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.018 recomputed=0.017718  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_Legs->OA knee_se",
+  "status": "PASS",
+  "detail": "SE text=0.004 recomputed=0.004184"
+ },
+ {
+  "id": "T3_Legs->OA knee_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.815 recomputed=0.8155  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_Legs->OA knee_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.025 recomputed=0.024780  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_Legs->OA knee_i2",
+  "status": "PASS",
+  "detail": "I2 text=85.0% recomputed=84.7%"
+ },
+ {
+  "id": "T3_Legs->OA knee_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.0976 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=25.0 recomputed=25  [harmonised/BMD_femur_neck__OA_knee.csv]"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.017 recomputed=0.017090  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_se",
+  "status": "PASS",
+  "detail": "SE text=0.005 recomputed=0.005003"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.875 recomputed=0.8748  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.015 recomputed=0.015333  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_i2",
+  "status": "PASS",
+  "detail": "I2 text=68.0% recomputed=68.4%"
+ },
+ {
+  "id": "T3_Femoral neck->OA knee_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.0547 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_OA knee->fracture_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=69.0 recomputed=69  [harmonised/OA_knee__fracture.csv]"
+ },
+ {
+  "id": "T3_OA knee->fracture_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.092 recomputed=0.092155  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_OA knee->fracture_se",
+  "status": "PASS",
+  "detail": "SE text=0.108 recomputed=0.108336"
+ },
+ {
+  "id": "T3_OA knee->fracture_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.476 recomputed=0.4757  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_OA knee->fracture_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.118 recomputed=0.118104  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_OA knee->fracture_i2",
+  "status": "PASS",
+  "detail": "I2 text=49.0% recomputed=48.6%"
+ },
+ {
+  "id": "T3_OA knee->fracture_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.542 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_OA knee->BMD total_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=69.0 recomputed=69  [harmonised/OA_knee__BMD_total.csv]"
+ },
+ {
+  "id": "T3_OA knee->BMD total_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.106 recomputed=0.106120  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_OA knee->BMD total_se",
+  "status": "PASS",
+  "detail": "SE text=0.108 recomputed=0.108142"
+ },
+ {
+  "id": "T3_OA knee->BMD total_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.376 recomputed=0.3760  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_OA knee->BMD total_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.112 recomputed=0.111918  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_OA knee->BMD total_i2",
+  "status": "PASS",
+  "detail": "I2 text=49.0% recomputed=48.5%"
+ },
+ {
+  "id": "T3_OA knee->BMD total_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.481 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_nsnp",
+  "status": "PASS",
+  "detail": "n_snp text=69.0 recomputed=69  [harmonised/OA_knee__BMD_femur_neck.csv]"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_beta",
+  "status": "PASS",
+  "detail": "IVW beta text=0.142 recomputed=0.141883  (harmonised SNP-level)"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_se",
+  "status": "PASS",
+  "detail": "SE text=0.108 recomputed=0.108142"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_eggerp",
+  "status": "PASS",
+  "detail": "Egger-intercept p text=0.169 recomputed=0.1692  (resid-dispersion SE)"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_wmed",
+  "status": "PASS",
+  "detail": "Weighted median text=0.113 recomputed=0.113223  (Bowden non-extrapolated)"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_i2",
+  "status": "PASS",
+  "detail": "I2 text=30.0% recomputed=30.0%"
+ },
+ {
+  "id": "T3_OA knee->BMD femoral neck_pre",
+  "status": "PASS",
+  "detail": "RE p recomputed=0.272 (SE_RE=SE*sqrt(Q/df))"
+ },
+ {
+  "id": "SCALE_N_implied",
+  "status": "PASS",
+  "detail": "M3: N back-calculated from se_e=1/sqrt(N*2*MAF(1-MAF)) = 31873 -> harmonised beta_e is on the TRUE N=31,873 scale"
+ },
+ {
+  "id": "SCALE_factor",
+  "status": "PASS",
+  "detail": "M4: corrected/raw = 0.28228 ; sqrt(31873/400000) = 0.28228  (raw -1.1943 -> corrected -0.3371)"
+ },
+ {
+  "id": "SCALE_direction_claim",
+  "status": "PASS",
+  "detail": "M2: |raw|=1.1943 is 3.5426x LARGER than |corrected|=0.3371 -> manuscript Sec3.7 phrase 'the raw MR beta is 0.2823x of the true scale' is INVERTED (should be 3.5426x)"
+ },
+ {
+  "id": "TEXT_S37_scale_direction",
+  "status": "PASS",
+  "detail": "M2: Sec3.7 clause must say raw = 3.5426x true (raw -1.194 -> corrected -0.337), not 0.2823x; the 0.2823 factor is what you MULTIPLY raw by"
+ },
+ {
+  "id": "DERIVEDFILE_rescale_bug",
+  "status": "FAIL",
+  "detail": "M2/M4 derived-file vs independent recomputation: mr_results.csv: weighted median -1.390811 vs correct -0.364222; mr_results_corrected.csv: Egger-intercept SE 0.000972 vs invariant-correct 0.003445 (ratio 0.2823); mr_results_corrected.csv: Egger-intercept p 0.1575 vs correct 0.5581; mr_results_corrected.csv: weighted median -0.392599 vs correct -0.364222"
+ },
+ {
+  "id": "T4_BMD total->fracture_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.063 recomputed=0.0627 = 2.80*SE(0.0224)"
+ },
+ {
+  "id": "T4_BMD total->fracture_power",
+  "status": "PASS",
+  "detail": "achieved power text=1.0 recomputed=1.0000 (Phi(|z|-1.96), |z|=15.046)"
+ },
+ {
+  "id": "T4_BMD femoral neck->fracture_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.085 recomputed=0.0850 = 2.80*SE(0.0304)"
+ },
+ {
+  "id": "T4_BMD femoral neck->fracture_power",
+  "status": "PASS",
+  "detail": "achieved power text=1.0 recomputed=1.0000 (Phi(|z|-1.96), |z|=11.546)"
+ },
+ {
+  "id": "T4_BMD total->OA knee_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.01 recomputed=0.0103 = 2.80*SE(0.0037)"
+ },
+ {
+  "id": "T4_BMD total->OA knee_power",
+  "status": "PASS",
+  "detail": "achieved power text=1.0 recomputed=1.0000 (Phi(|z|-1.96), |z|=6.260)"
+ },
+ {
+  "id": "T4_Lumbar spine->OA knee_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.014 recomputed=0.0135 = 2.80*SE(0.0048)"
+ },
+ {
+  "id": "T4_Lumbar spine->OA knee_power",
+  "status": "PASS",
+  "detail": "achieved power text=1.0 recomputed=0.9999 (Phi(|z|-1.96), |z|=5.775)"
+ },
+ {
+  "id": "T4_Arms->OA knee_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.013 recomputed=0.0130 = 2.80*SE(0.0046)"
+ },
+ {
+  "id": "T4_Arms->OA knee_power",
+  "status": "PASS",
+  "detail": "achieved power text=1.0 recomputed=0.9976 (Phi(|z|-1.96), |z|=4.785)"
+ },
+ {
+  "id": "T4_Legs->OA knee_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.012 recomputed=0.0117 = 2.80*SE(0.0042)"
+ },
+ {
+  "id": "T4_Legs->OA knee_power",
+  "status": "PASS",
+  "detail": "achieved power text=0.99 recomputed=0.9885 (Phi(|z|-1.96), |z|=4.234)"
+ },
+ {
+  "id": "T4_Femoral neck->OA knee_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.014 recomputed=0.0140 = 2.80*SE(0.0050)"
+ },
+ {
+  "id": "T4_Femoral neck->OA knee_power",
+  "status": "PASS",
+  "detail": "achieved power text=0.93 recomputed=0.9273 (Phi(|z|-1.96), |z|=3.416)"
+ },
+ {
+  "id": "T4_OA knee->fracture_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.304 recomputed=0.3033 = 2.80*SE(0.1083)"
+ },
+ {
+  "id": "T4_OA knee->fracture_power",
+  "status": "PASS",
+  "detail": "achieved power text=0.14 recomputed=0.1336 (Phi(|z|-1.96), |z|=0.851)"
+ },
+ {
+  "id": "T4_OA knee->BMD total_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.303 recomputed=0.3028 = 2.80*SE(0.1081)"
+ },
+ {
+  "id": "T4_OA knee->BMD total_power",
+  "status": "PASS",
+  "detail": "achieved power text=0.17 recomputed=0.1639 (Phi(|z|-1.96), |z|=0.981)"
+ },
+ {
+  "id": "T4_OA knee->BMD femoral neck_mde",
+  "status": "PASS",
+  "detail": "MDE text=0.303 recomputed=0.3028 = 2.80*SE(0.1081)"
+ },
+ {
+  "id": "T4_OA knee->BMD femoral neck_power",
+  "status": "PASS",
+  "detail": "achieved power text=0.26 recomputed=0.2585 (Phi(|z|-1.96), |z|=1.312)"
+ },
+ {
+  "id": "OR_point",
+  "status": "PASS",
+  "detail": "M5: OR per 1-SD lower BMD = exp(-beta) = 1.4009 (text 1.40)"
+ },
+ {
+  "id": "OR_ci",
+  "status": "PASS",
+  "detail": "M5: 95% CI = 1.341-1.464 (text 1.34-1.46)"
+ },
+ {
+  "id": "T1_h2_OA_knee†",
+  "status": "PASS",
+  "detail": "h2 text=0.0354 vs rg_h2_trueN.csv[OA_knee]=0.0354"
+ },
+ {
+  "id": "T1_h2_OA_selfrep",
+  "status": "PASS",
+  "detail": "h2 text=0.0223 vs rg_h2_trueN.csv[OA_selfrep]=0.0223"
+ },
+ {
+  "id": "T1_h2_BMD total",
+  "status": "PASS",
+  "detail": "h2 text=0.391 vs rg_h2_trueN.csv[BMD_total]=0.3912"
+ },
+ {
+  "id": "T1_h2_BMD spine",
+  "status": "PASS",
+  "detail": "h2 text=0.357 vs rg_h2_trueN.csv[BMD_spine]=0.3572"
+ },
+ {
+  "id": "T1_h2_BMD arms",
+  "status": "PASS",
+  "detail": "h2 text=0.325 vs rg_h2_trueN.csv[BMD_arms]=0.3250"
+ },
+ {
+  "id": "T1_h2_BMD pelvis",
+  "status": "PASS",
+  "detail": "h2 text=0.358 vs rg_h2_trueN.csv[BMD_pelvis]=0.3576"
+ },
+ {
+  "id": "T1_h2_BMD rib",
+  "status": "PASS",
+  "detail": "h2 text=0.303 vs rg_h2_trueN.csv[BMD_rib]=0.3031"
+ },
+ {
+  "id": "T1_h2_BMD trunk",
+  "status": "PASS",
+  "detail": "h2 text=0.366 vs rg_h2_trueN.csv[BMD_trunk]=0.3657"
+ },
+ {
+  "id": "RG_BMDBMD",
+  "status": "PASS",
+  "detail": "M6: BMDxBMD r_g 0.689..0.960 (Table2 0.689-0.960), n=45"
+ },
+ {
+  "id": "RG_OABMD",
+  "status": "PASS",
+  "detail": "M6: OAxBMD r_g 0.117..0.250 (Table2 +0.117..+0.250), n=20"
+ },
+ {
+  "id": "RG_FXBMD",
+  "status": "PASS",
+  "detail": "M6: fracturexBMD r_g -0.596..-0.446 (Table2 -0.596..-0.446), n=10"
+ },
+ {
+  "id": "RG_OAOAFRAC",
+  "status": "PASS",
+  "detail": "M6: OAxfracture r_g 0.148..0.211 (Table2 +0.148..+0.211)"
+ },
+ {
+  "id": "RG_npairs",
+  "status": "PASS",
+  "detail": "M6: unique off-diagonal pairs counted = 78 (manuscript 78)"
+ },
+ {
+  "id": "SEC26_F_mean",
+  "status": "PASS",
+  "detail": "Sec2.6 'mean F ranged 44-75': recomputed mean-F across 10 pairs 43.7..74.6"
+ },
+ {
+  "id": "SEC26_F_min",
+  "status": "PASS",
+  "detail": "Sec2.6 'minimum per-SNP F ~30': recomputed min-F across 10 pairs = 29.8"
+ },
+ {
+  "id": "GATE_v19_reads_manuscript",
+  "status": "WARN",
+  "detail": "audit_v19_fresh.py references the manuscript text: False -> it compares recomputation vs constants hard-coded at audit_v19_fresh.py:133-145, so '236/236 PASS' does NOT verify the text"
+ }
+]
