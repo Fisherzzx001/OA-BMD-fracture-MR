@@ -60,18 +60,19 @@ REF_PHENO = "OA_knee"          # 等位基因对齐 + 方向校正的基准表�
 MAF_MIN, MAF_MAX = 0.01, 0.99
 
 # ---------------------------------------------------------------------------
-# Z 方向校正（**关键**）
+# Z 方向校正（**关键** —— 2026-09-26 整改后已不再需要全局翻转）
 # ---------------------------------------------------------------------------
-# sumstats_oa_selfrep.sumstats.gz 的 Z 列与其 A1 列符号相反：在 A1 完全相同的前提下，
-# 已知 OA 位点 Z 全部反号 —— GDF5 (rs224333) OA_knee=-13.675 vs OA_selfrep=+4.244；
-# FTO (rs9930333) OA_knee=+12.905 vs OA_selfrep=-2.201。
+# 历史：早期 OA_selfrep 文件（占位 N=350,000）的 Z 与 A1 整体反号，曾用
+#   SIGN_FLIP={"OA_selfrep":-1} 校正（依据为 GDF5/FTO 两个哨兵位点 + 外部文献锚点）。
+# 2026-09-26 该文件经重新 munge，N 已更正为真实 462,933（IEU ukb-b-14486），
+# 且等位基因方向变为与独立 GO Consortium 2025 膝 OA GWAS 一致。
 #
-# 定向依据（外部文献锚点，见 docs/07_遗传相关矩阵_方法与结果.md §4.3）：
-#   · Hackinger 2017 HMG : LDSC rg(OA 髋/膝, 腰椎 BMD) = +0.18
-#   · Zhou 2025 Front Genet : LDSC rg(髋 OA, 股骨颈 BMD) = +0.132；HDL = +0.1697
-#   本管线得 OA_knee~BMD_lumbar = +0.143、OA_knee~BMD_femur_neck = +0.173，与文献吻合
-#   → 判定 OA_knee 与 10 个 BMD 方向正确，OA_selfrep 整体反号。
-SIGN_FLIP = {"OA_selfrep": -1}
+# 独立验证（见 docs/11_补充材料_OA_selfrep_Z校正.md）：在 OA_knee 全部 1,980 个
+# 基因组显著位点（|Z|>5.45）上，当前 OA_selfrep 的 Z 符号与独立 OA_knee 的
+# 一致性为 94.4%（原始，未翻转）；按染色体分解同样呈 84–100% 一致。两个 OA
+# 表型遗传相关必为正，故当前文件已 concordant，**live 管线不再施加全局翻转**。
+# 下列 SIGN_FLIP 留空，仅为历史可读性保留接口。
+SIGN_FLIP = {}
 
 
 def _is_palindromic(a1, a2):
