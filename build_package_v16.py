@@ -38,6 +38,7 @@ SUPP_FIGS = [
     ("SupplFig5", "SupplFig5_OA_knee_N_sensitivity"),
     ("SupplFig6", "SupplFig6_fracture_N_decision"),
     ("SupplFig7", "SupplFig7_pleiotropy_diagnostics"),
+    ("SupplFig8", "SupplFig8_coloc_power"),
 ]
 EXTS = [".pdf", ".png", ".tif"]
 

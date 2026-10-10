@@ -23,3 +23,9 @@ Figures_Package_v2/Figures_Original/
 
 # ---- archived superseded artefacts (see archive/README.md; safe to delete) ----
 archive/
+
+# ---- raw GWAS downloads (re-obtainable; too large for git) ----
+data/
+
+# ---- transient embedded-figure docx variants (do not submit) ----
+Manuscript_with_Figures_*.docx
