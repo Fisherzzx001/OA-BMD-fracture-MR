@@ -1,6 +1,6 @@
 # Bone Mineral Density and Osteoarthritis Share Genetic Architecture, but Evidence for an Osteoarthritis-to-Fracture Causal Pathway Remains Limited: A Cross-Trait Analysis of 13 Skeletal Phenotypes
 
-**Manuscript draft — target journal: *Osteoarthritis and Cartilage* (aspirational) / *Bone* or *Osteoporosis International* (realistic)**
+**Manuscript draft — target journal: *Osteoarthritis and Cartilage* (aspirational) / *Bone* or *Osteoporosis International* (realistic)**  
 **Status: ready for submission (all checklist items 1–9 addressed; see §5). Author/affiliation/funding/COI finalised 2026-09-17.**
 
 ---
@@ -51,6 +51,7 @@ LDSC was implemented natively in Python 3 with formulas transcribed from the off
 - **Standard errors.** Delete-one-block jackknife (100 contiguous genomic blocks) to correct the anticonservative analytical WLS SE induced by LD between SNPs.
 - **Reference.** 1000 Genomes Phase 3 EUR LD scores (`eur_w_ld_chr`), LD-score–estimated SNP total M=1,290,050.
 
+
 ### 2.4 SNP intersection and allele harmonisation
 
 All 13 phenotypes were analysed on a common set of 690,150 SNPs, so that every cell of the r_g matrix is estimated on the same variants and the cells can be compared with one another (the official tool uses pairwise intersections, which cannot). Palindromic SNPs (A/T, C/G) were excluded as strand-ambiguous. Alleles were harmonised by name against a single reference phenotype, and SNPs that could not be matched in either orientation were dropped. One dataset required a global Z-sign correction, which was applied and is documented in Supplement S2 (OA_selfrep Z-sign correction).
@@ -63,11 +64,12 @@ Seventy-eight unique phenotype pairs were tested. Both Bonferroni (α = 0.05/78 
 
 Instruments were selected from each exposure GWAS at p < 5×10⁻⁸. We compared two selection strategies against the 1000 Genomes Phase 3 European reference panel (1kg.v3; 503 EUR individuals, 8,550,156 variants, GRCh37). The primary analysis used strict clumping equivalent to `plink --clump --clump-p1 5e-8 --clump-p2 5e-8 --clump-r2 0.001 --clump-kb 10000`; a conservative 1-Mb window was used as a sensitivity analysis. No PLINK binary was available in the analysis environment, so clumping was re-implemented in Python by reading the PLINK 1 `.bed` bitstream directly (a pure-Python PLINK-equivalent `.bed` reader in the project code repository); the greedy algorithm and all thresholds match PLINK's. Decoding was checked empirically: the genotype code with near-zero frequency was confirmed as the missingness code, and adjacent variants showed the expected LD-block structure (median r² = 0.041, with 23% of pairs within 100 kb at r² > 0.8). Of the genome-wide-significant SNPs, 99.4% were present in the reference panel; strict clumping retained 20–35 independent instruments per BMD exposure and 116 for knee OA. After joining with each outcome GWAS on chromosome:position and harmonising alleles, the final instrument counts were 16–31 per BMD exposure and 69 for knee OA (Table 3); the losses reflect SNPs absent from, or palindromic in, the outcome files. The MR-PRESSO global (distortion) test (Verbanck et al. 2018) was then applied to the strict instrument sets. Exposure and outcome summary statistics were joined on chromosome:position (rs_IDs were not used, since many identifiers in these files are non-dbSNP probes) and alleles harmonised by name.
 
-Five estimators were computed: inverse-variance weighted (IVW) with both fixed and random effects, MR-Egger (with intercept test for directional pleiotropy), weighted median (Bowden 2016 [7]: weights ∝ (β_exp/se_out)²; the estimate is the ordered ratio at which the cumulative weight evaluated at each ratio's mid-point, (Σ_{h≤j} w_h − ½w_j)/Σ_h w_h, first reaches 0.5 — the non-extrapolated form of the Bowden estimator), and leave-one-out sensitivity. Heterogeneity was assessed by Cochran's Q and I². Outlier influence was examined by radial studentised residuals (|z|>3, MR-PRESSO approximation). **Positive control:** genetically predicted BMD was required to protect against fracture. MR was run for the five BMD sites with the clearest prior link to OA or with axial/appendicular coverage (total body, femoral neck, lumbar spine, arms, legs); the remaining five BMD sites (femoral total, spine, pelvis, rib, trunk) were analysed for genetic correlation (Table 2) but omitted from MR to keep the exposure set focused. OA_selfrep was not used as an MR exposure because its global Z-sign required correction (supplement: OA_selfrep Z-sign correction) and because its self-reported definition is less suited as an instrument for a clinically defined outcome. Instrument strength was high: the per-SNP F statistic (mean (β_exp/se_exp)²) ranged 44–75 across exposures (minimum per-SNP F ≈ 30), far above the F>10 threshold, so weak-instrument bias is unlikely for the well-powered pairs; the wide SEs of the underpowered reverse pairs reflect small true effects rather than weak instruments.
+Five estimators were computed: inverse-variance weighted (IVW) with both fixed and random effects, MR-Egger (with intercept test for directional pleiotropy), weighted median (Bowden 2016 [7]: weights ∝ (β_exp/se_out)²; the estimate is the ordered ratio at which the cumulative weight evaluated at each ratio's mid-point, (Σ\_{h≤j} w_h − ½w_j)/Σ_h w_h, first reaches 0.5 — the non-extrapolated form of the Bowden estimator), and leave-one-out sensitivity. Heterogeneity was assessed by Cochran's Q and I². Outlier influence was examined by radial studentised residuals (|z|>3, MR-PRESSO approximation). **Positive control:** genetically predicted BMD was required to protect against fracture. MR was run for the five BMD sites with the clearest prior link to OA or with axial/appendicular coverage (total body, femoral neck, lumbar spine, arms, legs); the remaining five BMD sites (femoral total, spine, pelvis, rib, trunk) were analysed for genetic correlation (Table 2) but omitted from MR to keep the exposure set focused. OA_selfrep was not used as an MR exposure because its global Z-sign required correction (supplement: OA_selfrep Z-sign correction) and because its self-reported definition is less suited as an instrument for a clinically defined outcome. Instrument strength was high: the per-SNP F statistic (mean (β_exp/se_exp)²) ranged 44–75 across exposures (minimum per-SNP F ≈ 30), far above the F>10 threshold, so weak-instrument bias is unlikely for the well-powered pairs; the wide SEs of the underpowered reverse pairs reflect small true effects rather than weak instruments.
 
 ### 2.7 Software
 
 Analyses were performed in Python 3.13 with numpy, pandas, scipy and matplotlib. The sample-overlap correction (§2.8) was run in R 4.6.1 using MRlap v0.0.3.3 (Mounier & Kutalik 2023 [15]) with GenomicSEM, 1000 Genomes Phase 3 European LD scores and the HapMap3 SNP list; the rsID assignment that MRlap requires is implemented in `code/prep_mrlap_gwas.py`. All code is available at the project repository (see Data availability), together with the strict-clumping command template and MR-PRESSO implementation. This MR study followed the STROBE-MR reporting guideline (Skrivankova et al., *BMJ* 2021); the full study flow is illustrated in Supplementary Fig. S4.
+
 
 ### 2.8 Assessment of sample overlap in two-sample MR
 
@@ -81,18 +83,18 @@ We addressed overlap in four ways. First, we report MR-Egger, weighted median an
 
 MRlap completed for all ten pairs (Table S-MRlap; `code/ref/mrlap_out/mrlap_overlap_results.csv`). The cross-trait LDSC intercept was small throughout (|λ| ≤ 0.037), and the genetic correlations it estimated agreed with the primary LDSC analysis (r_g = −0.49 total-body and −0.51 femoral-neck BMD versus fracture; +0.15 to +0.20 BMD versus knee OA; +0.12 knee OA versus fracture), supporting the overlap estimates. In every pair the corrected estimate retained the sign of the observed estimate and was further from the null, by 3% to 25% (median 20%): overlap and winner's curse biased the observed estimates *toward* the null, not away from it (Figure 10a–c). MRlap's independently estimated h² for the seven traits entering these pairs tracked the primary LDSC values closely (Pearson r = 0.999; Figure 10d), with a systematic ≈10% downward offset attributable to its different LD reference panel and HapMap3 SNP set, so the agreement is in rank and magnitude rather than in absolute value., and the nine of ten pairs whose observed and corrected estimates differed significantly confirm that the correction is data-driven rather than cosmetic.
 
-| Pair | Observed β (SE) | Corrected β (SE) | Corrected p | Corrected/observed | p (difference) | IVs | r_g |
-|---|---|---|---|---|---|---|---|
-| BMD total → fracture | −0.122 (0.012) | −0.141 (0.014) | 1.0×10⁻²⁴ | 1.15 | 1.7×10⁻¹³ | 48 | −0.49 |
-| BMD femoral neck → fracture | −0.103 (0.023) | −0.123 (0.027) | 5.2×10⁻⁶ | 1.19 | 6.7×10⁻⁴ | 34 | −0.51 |
-| BMD total → knee OA | +0.0241 (0.0063) | +0.0284 (0.0074) | 1.4×10⁻⁴ | 1.18 | 2.0×10⁻⁴ | 46 | +0.16 |
-| BMD femoral neck → knee OA | +0.0222 (0.0090) | +0.0270 (0.0109) | 0.013 | 1.22 | 0.013 | 33 | +0.19 |
-| BMD lumbar spine → knee OA | +0.0333 (0.0083) | +0.0406 (0.0103) | 8.6×10⁻⁵ | 1.22 | <10⁻¹⁰⁰ | 33 | +0.15 |
-| BMD arms → knee OA | +0.0281 (0.0090) | +0.0343 (0.0109) | 1.6×10⁻³ | 1.22 | 7.2×10⁻⁴ | 31 | +0.17 |
-| BMD legs → knee OA | +0.0253 (0.0085) | +0.0302 (0.0101) | 2.7×10⁻³ | 1.20 | 5.7×10⁻³ | 35 | +0.20 |
-| Knee OA → fracture | +0.0384 (0.0344) | +0.0398 (0.0418) | 0.34 | 1.03 | 0.89 | 156 | +0.12 |
-| Knee OA → BMD total | +0.2742 (0.1103) | +0.3435 (0.1359) | 0.011 | 1.25 | 5.7×10⁻³ | 156 | +0.16 |
-| Knee OA → BMD femoral neck | +0.2608 (0.1007) | +0.3210 (0.1237) | 9.5×10⁻³ | 1.23 | 0.015 | 156 | +0.19 |
+| Pair                        | Observed β (SE)  | Corrected β (SE) | Corrected p | Corrected/observed | p (difference) | IVs | r_g   |
+| --------------------------- | ---------------- | ---------------- | ----------- | ------------------ | -------------- | --- | ----- |
+| BMD total → fracture        | −0.122 (0.012)   | −0.141 (0.014)   | 1.0×10⁻²⁴   | 1.15               | 1.7×10⁻¹³      | 48  | −0.49 |
+| BMD femoral neck → fracture | −0.103 (0.023)   | −0.123 (0.027)   | 5.2×10⁻⁶    | 1.19               | 6.7×10⁻⁴       | 34  | −0.51 |
+| BMD total → knee OA         | +0.0241 (0.0063) | +0.0284 (0.0074) | 1.4×10⁻⁴    | 1.18               | 2.0×10⁻⁴       | 46  | +0.16 |
+| BMD femoral neck → knee OA  | +0.0222 (0.0090) | +0.0270 (0.0109) | 0.013       | 1.22               | 0.013          | 33  | +0.19 |
+| BMD lumbar spine → knee OA  | +0.0333 (0.0083) | +0.0406 (0.0103) | 8.6×10⁻⁵    | 1.22               | <10⁻¹⁰⁰        | 33  | +0.15 |
+| BMD arms → knee OA          | +0.0281 (0.0090) | +0.0343 (0.0109) | 1.6×10⁻³    | 1.22               | 7.2×10⁻⁴       | 31  | +0.17 |
+| BMD legs → knee OA          | +0.0253 (0.0085) | +0.0302 (0.0101) | 2.7×10⁻³    | 1.20               | 5.7×10⁻³       | 35  | +0.20 |
+| Knee OA → fracture          | +0.0384 (0.0344) | +0.0398 (0.0418) | 0.34        | 1.03               | 0.89           | 156 | +0.12 |
+| Knee OA → BMD total         | +0.2742 (0.1103) | +0.3435 (0.1359) | 0.011       | 1.25               | 5.7×10⁻³       | 156 | +0.16 |
+| Knee OA → BMD femoral neck  | +0.2608 (0.1007) | +0.3210 (0.1237) | 9.5×10⁻³    | 1.23               | 0.015          | 156 | +0.19 |
 
 The consequence is that the primary estimates are conservative with respect to overlap. Both positive-control protective effects strengthen after correction (total-body BMD→fracture −0.141, p = 1.0×10⁻²⁴; femoral-neck −0.123, p = 5.2×10⁻⁶), and all five BMD→knee-OA effects remain positive and significant, increasing from +0.022 to +0.033 (observed) to +0.027 to +0.041 (corrected). For the reverse direction, knee OA→fracture is essentially unchanged (p for difference = 0.89) and remains null (corrected p = 0.34). For knee OA→BMD, MRlap's 500-kb distance pruning retains 156 instruments — more than twice the 69 obtained by strict LD clumping (r²<0.001 over 10 Mb) — and does not remove residual LD, so its standard errors are anti-conservative; these two pairs were already nominally significant in MRlap's own *uncorrected* IVW (p = 0.013 and 0.0096) before any correction was applied, so the correction is not what produces that nominal significance. We therefore retain the primary strict-clumped estimates (β = +0.106, p = 0.33 and β = +0.142, p = 0.19) as the reported results for the reverse direction and do not reinterpret it on the basis of MRlap's less stringent instrument set.
 
@@ -142,13 +144,13 @@ Two-sample MR using 31 independent instruments for total-body BMD showed that ge
 
 Across five BMD exposures, MR supported a positive causal effect on knee OA (Table 3):
 
-| Exposure | IVW β (fixed) per SD | p | IVW β (random) p | Egger intercept p | Weighted median | n_snp |
-|---|---|---|---|---|---|---|
-| BMD total | +0.023 | 3.9×10⁻¹⁰ | 6.2×10⁻³ | 0.810 | +0.019 | 31 |
-| Lumbar spine | +0.028 | 7.7×10⁻⁹ | 1.7×10⁻² | 0.295 | +0.037 | 21 |
-| Arms | +0.022 | 1.7×10⁻⁶ | 6.9×10⁻² | 0.982 | +0.031 | 16 |
-| Legs | +0.018 | 2.3×10⁻⁵ | 9.8×10⁻² | 0.815 | +0.025 | 24 |
-| Femoral neck | +0.017 | 6.4×10⁻⁴ | 5.5×10⁻² | 0.875 | +0.015 | 25 |
+| Exposure     | IVW β (fixed) per SD | p         | IVW β (random) p | Egger intercept p | Weighted median | n_snp |
+| ------------ | -------------------- | --------- | ---------------- | ----------------- | --------------- | ----- |
+| BMD total    | +0.023               | 3.9×10⁻¹⁰ | 6.2×10⁻³         | 0.810             | +0.019          | 31    |
+| Lumbar spine | +0.028               | 7.7×10⁻⁹  | 1.7×10⁻²         | 0.295             | +0.037          | 21    |
+| Arms         | +0.022               | 1.7×10⁻⁶  | 6.9×10⁻²         | 0.982             | +0.031          | 16    |
+| Legs         | +0.018               | 2.3×10⁻⁵  | 9.8×10⁻²         | 0.815             | +0.025          | 24    |
+| Femoral neck | +0.017               | 6.4×10⁻⁴  | 5.5×10⁻²         | 0.875             | +0.015          | 25    |
 
 β is per 1-SD higher BMD on the standardised (reconstructed) outcome scale; knee-OA slopes are on the linear-model scale of the source GWAS and are not odds ratios and are not exponentiated (§3.5, Figure 6). A linear rather than logit link is retained because the source analysis reports effects on that observed linear scale; converting to an odds ratio would require assuming a population prevalence K and a logit link that the source GWAS did not use, and would rescale the effect without changing its direction, significance or power (|β|/SE is scale-invariant; §3.7). The p-values are unaffected by the sample-scale correction in §3.7. The β and n_snp shown are the strict-clumped primary estimates; full statistics, including the reverse and null pairs, are in Table 3.
 
@@ -212,15 +214,15 @@ Jointly analysing 13 skeletal phenotypes gave a consistent architecture: the BMD
 
 ### 4.2 Resolving the OA–BMD paradox
 
-These findings resolve a long-standing clinical tension. High BMD protects against fracture, confirmed here as a positive control, yet the same variants that raise BMD also raise OA risk. The biology is consistent with this: subchondral bone sclerosis and osteophyte formation are hallmarks of OA and are localised bone-formation phenotypes, which may share regulatory programs with systemic bone accrual. That BMD protects against fracture yet raises OA risk implies that a single BMD-increasing genetic profile has opposing consequences at the two endpoints, so bone mass alone is not a sufficient proxy for skeletal health across endpoints. One mechanistic reading is that shared effectors link systemic bone accrual to the localised bone-formation phenotypes of OA. We tested that hypothesis rather than assuming it, and the data do not support it at the loci where it has been proposed. The *WNT16*, *SOX6* and *GDF5* loci are each established for BMD or for OA, and our lead instrument SNPs rs3779381 (*WNT16*), rs7108738 (*SOX6*) and rs224333 (*GDF5*) lie in these genes (§2.2), but colocalisation shows the three cases to be asymmetric rather than shared: *WNT16* and *SOX6* carry strong BMD signals and no knee-OA signal at all (§3.9), whereas *GDF5* carries a strong OA signal and no genome-wide-significant BMD signal within ±500 kb. They are therefore not supported as the mediators of the BMD→OA effect, and we do not nominate replacements from these data — across all 31 BMD instrument loci, none reached PP.H4 ≥ 0.8 with knee OA and six instead favoured distinct causal variants (§3.9). Excluding single-SNP shared-effector models at these loci does not, however, refute a pathway-level mechanism: WNT/β-catenin, TGF-β/BMP (including *GDF5*) and sclerostin jointly coordinate the subchondral-bone and cartilage crosstalk that drives OA [24,27], and such a program can act through many variants or through the whole bone-remodelling axis rather than through one shared SNP (§4.3). What the colocalisation analysis also shows is that this negative result carries almost no information about biology: the knee-OA z expected at a BMD instrument under our own MR estimate is 0.30 (median) to 0.85 at the strongest locus, and resolving even that locus would require about 5.0×10⁷ participants, roughly 42 times the present sample (§3.9). A systemic and polygenic mechanism is accordingly the reading most consistent with what is measurable here — an effect distributed across many variants, each far too weak to resolve individually, which is also why the genetic correlation is detectable in aggregate (§3.2) while no single locus is. Distinguishing a shared effector from coordinated polygenic action will require either outcome samples of the order quantified above, or joint-specific functional validation; neither is available here, so the shared-effector hypothesis remains untested rather than refuted.
+These findings resolve a long-standing clinical tension. High BMD protects against fracture, confirmed here as a positive control, yet the same variants that raise BMD also raise OA risk. The biology is consistent with this: subchondral bone sclerosis and osteophyte formation are hallmarks of OA and are localised bone-formation phenotypes, which may share regulatory programs with systemic bone accrual (§4.3). That BMD protects against fracture yet raises OA risk implies that a single BMD-increasing genetic profile has opposing consequences at the two endpoints, so bone mass alone is not a sufficient proxy for skeletal health across endpoints. One mechanistic reading is that shared effectors link systemic bone accrual to the localised bone-formation phenotypes of OA. We tested that hypothesis rather than assuming it, and the data do not support it at the loci where it has been proposed. The *WNT16*, *SOX6* and *GDF5* loci are each established for BMD or for OA, and our lead instrument SNPs rs3779381 (*WNT16*), rs7108738 (*SOX6*) and rs224333 (*GDF5*) lie in these genes (§2.2), but colocalisation shows the three cases to be asymmetric rather than shared: *WNT16* and *SOX6* carry strong BMD signals and no knee-OA signal at all (§3.9), whereas *GDF5* carries a strong OA signal and no genome-wide-significant BMD signal within ±500 kb. They are therefore not supported as the mediators of the BMD→OA effect, and we do not nominate replacements from these data — across all 31 BMD instrument loci, none reached PP.H4 ≥ 0.8 with knee OA and six instead favoured distinct causal variants (§3.9). What the colocalisation analysis also shows is that this negative result carries almost no information about biology: the knee-OA z expected at a BMD instrument under our own MR estimate is 0.30 (median) to 0.85 at the strongest locus, and resolving even that locus would require about 5.0×10⁷ participants, roughly 42 times the present sample (§3.9). A systemic and polygenic mechanism is accordingly the reading most consistent with what is measurable here — an effect distributed across many variants, each far too weak to resolve individually, which is also why the genetic correlation is detectable in aggregate (§3.2) while no single locus is. Distinguishing a shared effector from coordinated polygenic action will require either outcome samples of the order quantified above, or joint-specific functional validation; neither is available here, so the shared-effector hypothesis remains untested rather than refuted.
 
-A second, non-exclusive explanation — that the BMD→OA effect is partly driven by skeletal size rather than by bone mass — can now be quantified rather than only hypothesised. Areal BMD (DXA) is bone mineral content divided by projected bone area and is therefore confounded by skeletal size [18]; larger bones yield higher areal BMD at unchanged volumetric density, and larger joints may be more prone to OA through joint geometry. We tested this with multivariable MR conditioning the BMD→OA effect on height as a skeletal-size proxy (§2.10). Across the five BMD sites, conditioning attenuated the estimate by only 9.8–21.2% (primary n_h = 100; §3.10, Supplementary Table S9), and the positive control confirmed that a true mass effect is left intact by the same conditioning (BMD→fracture attenuation −2.8%). Because the size proxy itself carried a positive direct OA effect (θ_H = +0.0426, p = 7.0×10⁻¹⁶), the attenuation reflects genuine size confounding captured by height, not dilution by a null covariate; the subgroup split and the stable grid both bound the size-attributable fraction to roughly 10–20%. At least 80% of the BMD→OA causal estimate is therefore attributable to the BMD phenotype itself — its bone geometry, remodelling and crosstalk with cartilage — rather than to general skeletal size (stature), which height captures only coarsely (§2.10, §4.3). This does not fully close the question: height is a coarse proxy for size and does not capture bone area or femoral geometry, the attenuation lower bound is set by instrument strength, and the reconstructed β scale (§3.7) widens the credible interval on the exact percentage. What it does establish is that the BMD→OA effect is predominantly an effect of the clinically measured BMD phenotype rather than of stature, and that separating the residual mass-from-size components will require volumetric-BMD or hip-geometry GWAS and conditional MR (§2.10), not merely a larger sample of areal BMD.
+A second, non-exclusive explanation — that the BMD→OA effect is partly driven by skeletal size rather than by bone mass — can now be quantified rather than only hypothesised. Areal BMD (DXA) is bone mineral content divided by projected bone area and is therefore confounded by skeletal size [18]; larger bones yield higher areal BMD at unchanged volumetric density, and larger joints may be more prone to OA through joint geometry. We tested this with multivariable MR conditioning the BMD→OA effect on height as a skeletal-size proxy (§2.10). Across the five BMD sites, conditioning attenuated the estimate by only 9.8–21.2% (primary n_h = 100; §3.10, Supplementary Table S9), and the positive control confirmed that a true mass effect is left intact by the same conditioning (BMD→fracture attenuation −2.8%). Because the size proxy itself carried a positive direct OA effect (θ_H = +0.0426, p = 7.0×10⁻¹⁶), the attenuation reflects genuine size confounding captured by height, not dilution by a null covariate; the subgroup split and the stable grid both bound the size-attributable fraction to roughly 10–20%. The positive direct height effect is not an artefact of our conditioning model. Taller stature is an established epidemiological risk factor for knee OA: in the Northern Finland Birth Cohort 1966 the top height quartile carried a 2.5-fold (men) and 1.8-fold (women) higher hazard of knee OA than the bottom quartile [24], and in the Beijing Osteoarthritis Study greater leg (knee) height raised knee-OA prevalence through increased joint torque [25]. An independent multivariable-MR study reached the same conclusion genetically — genetically predicted height increased OA risk (univariable OR 1.115, 95% CI 1.054–1.180), an effect that attenuated towards the null after adjustment for waist circumference [26] — which mirrors our own 9.8–21.2% size attenuation and provides external, genetics-based corroboration of the positive θ_H reported here. At least 80% of the BMD→OA causal estimate is therefore attributable to the areal-BMD phenotype as measured, not to skeletal size alone. This does not fully close the question: height is a coarse proxy for size and does not capture bone area or femoral geometry, the attenuation lower bound is set by instrument strength, and the reconstructed β scale (§3.7) widens the credible interval on the exact percentage. What it does establish is that the BMD→OA effect is predominantly an effect of the clinically measured BMD phenotype rather than of stature, and that separating the residual mass-from-size components will require volumetric-BMD or hip-geometry GWAS and conditional MR (§2.10), not merely a larger sample of areal BMD.
 
 Site also matters for direction: Zhou et al. [5] reported that higher femoral-neck BMD *protected* against hip OA (a negative MR effect), whereas our ten-site analysis shows higher BMD *raises* knee-OA risk (positive). This reversal is a hip-versus-knee contrast rather than a contradiction of the literature — hip OA is a localised disease of a heavily weight-bearing joint whose subchondral bone responds to load differently from the knee — and it cautions against generalising any single BMD→OA estimate across joints. Direct measurements of bone quality (microarchitecture, turnover, cortical porosity) were not made here and are a direction for future work.
 
-### 4.3 Biological substrate of the BMD→OA effect
+### 4.3 Biological context: the osteochondral unit and systemic bone formation in OA
 
-The direction of the effect — higher genetically determined BMD raising OA risk — is biologically coherent once the joint is viewed as an osteochondral unit rather than as isolated cartilage. Osteoarthritis is now understood as a whole-organ disease in which subchondral bone is an active driver, not a passive substrate: subchondral sclerosis and osteophyte formation are localised bone-formation phenotypes that share regulatory programs with systemic bone accrual [24–26]. Experimentally, the subchondral-bone response to cartilage injury — resorption followed by unbalanced formation that remodels the osteochondral interface and raises its stiffness — precedes and drives cartilage degeneration, and locally blocking subchondral-bone TGF-β signalling abrogates OA in a mouse model [24]. The molecular crosstalk is channelled through WNT/β-catenin, TGF-β/BMP (including the OA-susceptibility locus *GDF5*) and sclerostin, the same pathways that govern systemic BMD and couple osteoblast activity to chondrocyte behaviour and osteophyte formation [24,27]. Our genetic architecture is consistent with this substrate. The estimated effect was largest for lumbar-spine BMD and least attenuated by height (§3.10, Supplementary Table S9), which argues against a purely local subchondral-plate mechanism and instead favours a systemic bone-formation/remodelling program expressed in the joint as sclerosis and osteophytes — the hypertrophic, osteophyte-predominant OA phenotype that high BMD is known to associate with [29]. This reading also resolves the apparent paradox that the same BMD-increasing alleles protect against fracture yet promote OA [11,12]: the profile strengthens cortical and trabecular integrity (fracture protection) while amplifying the bone-formation program at the osteochondral interface (OA risk). The BMD→fracture positive control, left essentially unchanged by height conditioning (§3.10), shows the proxy did not erode a true bone-mass effect, reinforcing that the substrate of the BMD→OA association is the bone itself — its geometry, remodelling and crosstalk with cartilage — not merely skeletal stature. A BMI-independent causal effect of BMD on OA, with latent-causal-variable evidence pointing to a direct action of bone on the joint rather than to shared aetiology, has been reported independently [28], supporting this interpretation. We stress that this is a mechanistic reading of the genetic findings, anchored in the published bone–cartilage literature, and not a direct test of the pathway; formal validation would require tissue-enrichment and eQTL-colocalisation analyses (e.g. LDSC-SEG, MAGMA, eQTLGen), planned as a follow-up.
+OA is increasingly understood not as isolated cartilage loss but as a disorder of the osteochondral unit — the integrated cartilage, calcified cartilage and subchondral bone compartment in which the two tissues signal to one another biochemically and mechanically [27]. This reframing is central to interpreting the present results, because the BMD→OA effect we report is, at heart, a bone-phenotype effect on a cartilage-joint outcome. Subchondral bone in OA is remodelled early and abnormally: it becomes sclerotic, its turnover is increased, and it contributes osteophytes and altered load transfer that feed cartilage degradation [28]. At the cellular level, subchondral bone mesenchymal stromal cells acquire an activated TGF-β signalling programme that drives ectopic cartilage and bone formation beneath the articular surface and propagates OA [29], while WNT/β-catenin and TGF-β/BMP crosstalk mediate the biochemical dialogue between the tissues [30]. A systemic, polygenic programme that increases bone accrual would therefore be expected to raise OA risk precisely through this osteochondral axis — the same variants that build systemic bone also feed the localised subchondral bone-formation phenotypes of OA. This reconciles the positive BMD→OA MR estimate with the osteochondral-unit literature and is consistent with the positive θ_H reported in §4.2: taller individuals have larger bones and greater joint torque, and the height proxy captured a genuine, direct OA-raising effect. The site gradient of the univariable estimate — lumbar-spine BMD gave the largest per-SD effect (β = +0.0223) among the five sites — is compatible with a systemic bone-formation mechanism acting through high-turnover trabecular and subchondral bone. Our colocalisation analysis qualifies, rather than contradicts, this picture: the osteochondral dialogue was not driven by the specific *WNT16*, *SOX6* or *GDF5* loci nominated a priori (§3.9), which is consistent with the unit being a polygenic, downstream integrator rather than the product of one or two effector loci. A limitation must be stated plainly: every BMD phenotype here is an areal DXA measurement and does not resolve subchondral microarchitecture or turnover, so the osteochondral mechanism is inferred from the genetic architecture and the published biology, not measured directly; testing it will require subchondral-bone GWAS and MR on bone-quality traits (§4.6).
 
 ### 4.4 Why evidence for a genetic link from OA to fracture remains limited
 
@@ -240,9 +242,10 @@ Genetically higher BMD protects against fracture and, on the pleiotropy-robust e
 
 ---
 
+
 ## Figure legends
 
-**Figure 1.** Heatmap of LDSC genetic correlations (r_g) across 13 skeletal phenotypes. Rows/columns are ordered OA (knee, self-reported), fracture, then ten BMD sites. Cell text shows r_g; asterisks denote BH-FDR significance (* q<0.05, ** q<0.01, *** q<0.001 across 78 pairs). Black lines separate the three phenotype groups. The colour scale is diverging and centred on zero.
+**Figure 1.** Heatmap of LDSC genetic correlations (r_g) across 13 skeletal phenotypes. Rows/columns are ordered OA (knee, self-reported), fracture, then ten BMD sites. Cell text shows r_g; asterisks denote BH-FDR significance (* q<0.05, \** q<0.01, \*\** q<0.001 across 78 pairs). Black lines separate the three phenotype groups. The colour scale is diverging and centred on zero.
 
 **Figure 2.** Forest plot of key genetic correlations. Top panel: any-fracture versus ten BMD sites (all negative). Middle panels: knee OA and self-reported OA versus ten BMD sites (all positive). Bottom panels: the two OA definitions with each other (r_g=+0.84) and each with fracture (both non-significant). Error bars are 95% confidence intervals from block jackknife. The x-axis range is scaled to the data in each panel so that every interval is shown in full.
 
@@ -260,7 +263,7 @@ Genetically higher BMD protects against fracture and, on the pleiotropy-robust e
 
 **Supplementary Figure S2.** Leave-one-out stability of the IVW estimate for all ten MR pairs. Black points show the IVW estimate using all instruments (whiskers, 95% CI); the shaded blue band spans the minimum-to-maximum range of the estimates obtained by dropping each instrument in turn, with individual leave-one-out estimates as light blue dots. No leave-one-out estimate crosses the null line (dashed) for any pair, excluding single-instrument drivers of any conclusion.
 
-**Figure 8.** Statistical power of the two-sample MR design (§3.8, Table 4). (a) Achieved power as a function of the standardised effect size \|β\|/SE at two-sided α = 0.05 (solid line), with the ten observed MR pairs overlaid. Filled blue circles are the seven pairs underlying the positive-control and BMD→OA findings; red open circles are the three null pairs. The dashed grey line marks 80% power and the dotted orange line the corresponding detection threshold \|z\| = 2.80 (MDE = 2.80 × SE). (b) Achieved power for each pair at its observed point estimate (K = strict instrument count). Blue bars meet or exceed the 80% threshold (dotted orange line); red bars fall below it. The three null pairs (knee OA → fracture, knee OA → total BMD, knee OA → femoral-neck BMD) reach only 0.14–0.26 power and can exclude only \|β\| ≥ 0.303, so their non-significant results are an absence of evidence rather than evidence of absence.
+**Figure 8.** Statistical power of the two-sample MR design (§3.8, Table 4). (a) Achieved power as a function of the standardised effect size |β|/SE at two-sided α = 0.05 (solid line), with the ten observed MR pairs overlaid. Filled blue circles are the seven pairs underlying the positive-control and BMD→OA findings; red open circles are the three null pairs. The dashed grey line marks 80% power and the dotted orange line the corresponding detection threshold |z| = 2.80 (MDE = 2.80 × SE). (b) Achieved power for each pair at its observed point estimate (K = strict instrument count). Blue bars meet or exceed the 80% threshold (dotted orange line); red bars fall below it. The three null pairs (knee OA → fracture, knee OA → total BMD, knee OA → femoral-neck BMD) reach only 0.14–0.26 power and can exclude only |β| ≥ 0.303, so their non-significant results are an absence of evidence rather than evidence of absence.
 
 **Figure 9.** Sample-overlap diagnostics for the ten MR pairs (§2.8). (a) ρ_GE, the correlation between SNP–exposure and SNP–outcome z-statistics across the harmonised instruments (`overlap_statistics.csv`, Supplementary). Positive bars (blue) are the BMD→OA pairs; negative bars (red) are the BMD→fracture pairs. ρ_GE shares the sign of the MR effect in all ten pairs, so no pair owes its direction to a single anti-correlated instrument. (b) ρ_GE against the signed IVW z-statistic; shaded regions are the sign-concordant quadrants, and all ten pairs fall within them (10/10 concordant). Because the exposure and outcome GWAS share UK Biobank participants, ρ_GE also reflects the sample-overlap component of the summary-statistic correlation; such overlap inflates IVW magnitudes toward r_g without changing signs, p-values or directions [14].
 
@@ -284,56 +287,56 @@ Genetically higher BMD protects against fracture and, on the pleiotropy-robust e
 
 ## Table 1. SNP-based heritabilities and LDSC intercepts
 
-| Phenotype | N used | h² (observed) | SE | Intercept |
-|---|---|---|---|---|
-| OA_knee† | 1,208,397 | 0.0354 | 0.0007 | 1.069 |
-| OA_selfrep | 462,933§ | 0.0223 | 0.0016 | 1.035 |
-| fracture | 264,973§§ | 0.0258 | 0.0014 | 0.960 |
-| BMD total | 31,873‡ | 0.391 | 0.012 | 1.025 |
-| BMD femoral neck | 31,873‡ | 0.257 | 0.009 | 1.027 |
-| BMD femoral total | 31,873‡ | 0.317 | 0.011 | 1.031 |
-| BMD lumbar spine | 31,873‡ | 0.350 | 0.013 | 1.014 |
-| BMD spine | 31,873‡ | 0.357 | 0.014 | 1.016 |
-| BMD arms | 31,873‡ | 0.325 | 0.012 | 1.009 |
-| BMD legs | 31,873‡ | 0.325 | 0.012 | 1.025 |
-| BMD pelvis | 31,873‡ | 0.358 | 0.014 | 1.027 |
-| BMD rib | 31,873‡ | 0.303 | 0.011 | 1.012 |
-| BMD trunk | 31,873‡ | 0.366 | 0.013 | 1.020 |
+| Phenotype         | N used    | h² (observed) | SE     | Intercept |
+| ----------------- | --------- | ------------- | ------ | --------- |
+| OA_knee†          | 1,208,397 | 0.0354        | 0.0007 | 1.069     |
+| OA_selfrep        | 462,933§  | 0.0223        | 0.0016 | 1.035     |
+| fracture          | 264,973§§ | 0.0258        | 0.0014 | 0.960     |
+| BMD total         | 31,873‡   | 0.391         | 0.012  | 1.025     |
+| BMD femoral neck  | 31,873‡   | 0.257         | 0.009  | 1.027     |
+| BMD femoral total | 31,873‡   | 0.317         | 0.011  | 1.031     |
+| BMD lumbar spine  | 31,873‡   | 0.350         | 0.013  | 1.014     |
+| BMD spine         | 31,873‡   | 0.357         | 0.014  | 1.016     |
+| BMD arms          | 31,873‡   | 0.325         | 0.012  | 1.009     |
+| BMD legs          | 31,873‡   | 0.325         | 0.012  | 1.025     |
+| BMD pelvis        | 31,873‡   | 0.358         | 0.014  | 1.027     |
+| BMD rib           | 31,873‡   | 0.303         | 0.011  | 1.012     |
+| BMD trunk         | 31,873‡   | 0.366         | 0.013  | 1.020     |
 
-§§ Fracture N adopted as 264,973 (37,857 cases / 227,116 controls; GEFOS discovery, Trajanoska et al. 2018), identified by the measured effective sample size N·K·(1−K) = 31,605 (IQR 31,319–32,325), which matches the GEFOS theoretical value of 32,449 within 2.6%, closer than any UKB scenario gives. Sensitivity across candidate N: 0.026 (264,973) / 0.017 (400k) / 0.012 (562k); see Supplementary Figure S6 and `N_sensitivity_decision.csv`. This does not affect r_g or MR (N-invariance).
-‡ BMD N verified per site in the GWAS Catalog (Qian et al. 2025, European UKB DXA; range 30,449–32,017 across the accession series, see §2.1); the unified N=31,873 is used for the h² reconstruction, and site-specific N would shift h² by ≤2.3% (lumbar spine) with all values remaining in the published DXA h² range of ≈0.25–0.40 (the 10 sites span 0.26–0.39). The h² values tabulated were computed at the rounded unified N=32,000; because h² ∝ 1/N, the 0.4% difference from 31,873 shifts h² by <0.5% and changes no value at the precision reported. Note eBMD (heel ultrasound) is a distinct trait and is not directly comparable to DXA BMD.
-§ OA_selfrep N confirmed at 462,933 (38,472 cases / 424,461 controls; IEU OpenGWAS `ukb-b-14486`, MRC-IEU/Ben Elsworth 2018), replacing the earlier placeholder of 350,000.
-† OA_knee h² is reported at the representative proband-subset N = 1,208,397; the LDSC regression uses the per-SNP N column (range 10,167–1,316,504; §2.1/§3.7) and r_g is N-invariant (§5.2), so this N choice affects only OA_knee's own h² (∝ 1/N, a lower effective N would raise it proportionally) and no r_g, MR direction or conclusion.
+§§ Fracture N adopted as 264,973 (37,857 cases / 227,116 controls; GEFOS discovery, Trajanoska et al. 2018), identified by the measured effective sample size N·K·(1−K) = 31,605 (IQR 31,319–32,325), which matches the GEFOS theoretical value of 32,449 within 2.6%, closer than any UKB scenario gives. Sensitivity across candidate N: 0.026 (264,973) / 0.017 (400k) / 0.012 (562k); see Supplementary Figure S6 and `N_sensitivity_decision.csv`. This does not affect r_g or MR (N-invariance).  
+‡ BMD N verified per site in the GWAS Catalog (Qian et al. 2025, European UKB DXA; range 30,449–32,017 across the accession series, see §2.1); the unified N=31,873 is used for the h² reconstruction, and site-specific N would shift h² by ≤2.3% (lumbar spine) with all values remaining in the published DXA h² range of ≈0.25–0.40 (the 10 sites span 0.26–0.39). The h² values tabulated were computed at the rounded unified N=32,000; because h² ∝ 1/N, the 0.4% difference from 31,873 shifts h² by <0.5% and changes no value at the precision reported. Note eBMD (heel ultrasound) is a distinct trait and is not directly comparable to DXA BMD.  
+§ OA_selfrep N confirmed at 462,933 (38,472 cases / 424,461 controls; IEU OpenGWAS `ukb-b-14486`, MRC-IEU/Ben Elsworth 2018), replacing the earlier placeholder of 350,000.  
+† OA_knee h² is reported at the representative proband-subset N = 1,208,397; the LDSC regression uses the per-SNP N column (range 10,167–1,316,504; §2.1/§3.7) and r_g is N-invariant (§5.2), so this N choice affects only OA_knee's own h² (∝ 1/N, a lower effective N would raise it proportionally) and no r_g, MR direction or conclusion.  
 **Liability scale (Lee et al. 2011, Eq 23):** OA_knee h²_liab = 0.094 (K=0.12); OA_selfrep h²_liab = **0.073** (K=0.083, from 38,472/462,933); fracture h²_liab = **0.062** (K=0.143, from 37,857/264,973). BMD is a quantitative trait and is not liability-converted. LDSC intercepts are near 1.0 (1.01–1.07) for the 12 completed phenotypes; the fracture intercept is 0.96, marginally below unity, consistent with a small degree of χ² inflation or slightly upward-biased N, but still within the range that does not indicate substantial uncorrected confounding (the r_g and MR conclusions are N-scale-invariant and unaffected).
 
 ---
 
 ## Table 2. Genetic correlations by phenotype block
 
-| Block | n pairs | r_g range | r_g mean | Significant (q<0.05) |
-|---|---|---|---|---|
-| OA × OA | 1 | +0.838 | +0.838 | 1/1 |
-| OA × BMD | 20 | +0.117 to +0.250 | +0.169 | 20/20 |
-| Fracture × BMD | 10 | −0.596 to −0.446 | −0.531 | 10/10 |
-| BMD × BMD | 45 | +0.689 to +0.960 | +0.812 | 45/45 |
-| OA × Fracture | 2 | +0.148 to +0.211 | +0.180 | 0/2 |
+| Block          | n pairs | r_g range        | r_g mean | Significant (q<0.05) |
+| -------------- | ------- | ---------------- | -------- | -------------------- |
+| OA × OA        | 1       | +0.838           | +0.838   | 1/1                  |
+| OA × BMD       | 20      | +0.117 to +0.250 | +0.169   | 20/20                |
+| Fracture × BMD | 10      | −0.596 to −0.446 | −0.531   | 10/10                |
+| BMD × BMD      | 45      | +0.689 to +0.960 | +0.812   | 45/45                |
+| OA × Fracture  | 2       | +0.148 to +0.211 | +0.180   | 0/2                  |
 
 ---
 
 ## Table 3. Two-sample Mendelian randomisation estimates
 
-| Exposure → Outcome | n_snp | IVW β (fixed) | SE | p | IVW p (random) | Egger β | Egger intercept p | Weighted median | I² | LOO sign flips |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **BMD total → fracture** (positive control) | 31 | −0.337 | 0.022 | 3.7×10⁻⁵¹ | 2.4×10⁻¹² | −0.337 | 0.558 | −0.364 | 78% | 0 |
-| BMD femoral neck → fracture | 25 | −0.351 | 0.030 | 7.7×10⁻³¹ | 2.3×10⁻⁶ | −0.343 | 0.018 | −0.365 | 83% | 0 |
-| **BMD total → OA knee** | 31 | +0.023 | 0.004 | 3.9×10⁻¹⁰ | 6.2×10⁻³ | +0.023 | 0.810 | +0.019 | 81% | 0 |
-| Lumbar spine → OA knee | 21 | +0.028 | 0.005 | 7.7×10⁻⁹ | 1.7×10⁻² | +0.026 | 0.295 | +0.037 | 83% | 0 |
-| Arms → OA knee | 16 | +0.022 | 0.005 | 1.7×10⁻⁶ | 7.0×10⁻² | +0.022 | 0.982 | +0.031 | 86% | 0 |
-| Legs → OA knee | 24 | +0.018 | 0.004 | 2.3×10⁻⁵ | 9.8×10⁻² | +0.017 | 0.815 | +0.025 | 85% | 0 |
-| Femoral neck → OA knee | 25 | +0.017 | 0.005 | 6.4×10⁻⁴ | 5.5×10⁻² | +0.017 | 0.875 | +0.015 | 68% | 0 |
-| OA knee → fracture | 69 | +0.092 | 0.108 | 0.395 | 0.542 | +0.106 | 0.476 | +0.118 | 49% | 0 |
-| OA knee → BMD total | 69 | +0.106 | 0.108 | 0.326 | 0.481 | +0.123 | 0.376 | +0.112 | 49% | 0 |
-| OA knee → BMD femoral neck | 69 | +0.142 | 0.108 | 0.190 | 0.272 | +0.164 | 0.169 | +0.113 | 30% | 0 |
+| Exposure → Outcome                          | n_snp | IVW β (fixed) | SE    | p         | IVW p (random) | Egger β | Egger intercept p | Weighted median | I²  | LOO sign flips |
+| ------------------------------------------- | ----- | ------------- | ----- | --------- | -------------- | ------- | ----------------- | --------------- | --- | -------------- |
+| **BMD total → fracture** (positive control) | 31    | −0.337        | 0.022 | 3.7×10⁻⁵¹ | 2.4×10⁻¹²      | −0.337  | 0.558             | −0.364          | 78% | 0              |
+| BMD femoral neck → fracture                 | 25    | −0.351        | 0.030 | 7.7×10⁻³¹ | 2.3×10⁻⁶       | −0.343  | 0.018             | −0.365          | 83% | 0              |
+| **BMD total → OA knee**                     | 31    | +0.023        | 0.004 | 3.9×10⁻¹⁰ | 6.2×10⁻³       | +0.023  | 0.810             | +0.019          | 81% | 0              |
+| Lumbar spine → OA knee                      | 21    | +0.028        | 0.005 | 7.7×10⁻⁹  | 1.7×10⁻²       | +0.026  | 0.295             | +0.037          | 83% | 0              |
+| Arms → OA knee                              | 16    | +0.022        | 0.005 | 1.7×10⁻⁶  | 7.0×10⁻²       | +0.022  | 0.982             | +0.031          | 86% | 0              |
+| Legs → OA knee                              | 24    | +0.018        | 0.004 | 2.3×10⁻⁵  | 9.8×10⁻²       | +0.017  | 0.815             | +0.025          | 85% | 0              |
+| Femoral neck → OA knee                      | 25    | +0.017        | 0.005 | 6.4×10⁻⁴  | 5.5×10⁻²       | +0.017  | 0.875             | +0.015          | 68% | 0              |
+| OA knee → fracture                          | 69    | +0.092        | 0.108 | 0.395     | 0.542          | +0.106  | 0.476             | +0.118          | 49% | 0              |
+| OA knee → BMD total                         | 69    | +0.106        | 0.108 | 0.326     | 0.481          | +0.123  | 0.376             | +0.112          | 49% | 0              |
+| OA knee → BMD femoral neck                  | 69    | +0.142        | 0.108 | 0.190     | 0.272          | +0.164  | 0.169             | +0.113          | 30% | 0              |
 
 *Abbreviations:* IVW, inverse-variance weighted; RE, random effects. β is per 1 SD higher exposure on the standardised (reconstructed) outcome scale. The BMD-exposure (forward) MR estimates are corrected for the placeholder exposure N = 400,000 used in the source files (true 31,873; §3.7): the reconstructed BMD β is 0.2823× of the true SD scale (underestimated 3.5426-fold), so the forward MR β is multiplied by 0.2823 (÷3.5426) to recover the true scale. Reverse MR (BMD as outcome) is reported on the same reconstructed scale as the per-SNP slopes in Figure 6, because the BMD-outcome reconstruction shares the same N uncertainty and only its direction and p-value are interpreted (§3.5). In both directions p-values, Egger-intercept p, I² and LOO sign flips are N-scale-invariant and unchanged. All estimates use the strict PLINK-equivalent clumping of §2.6 (K = strict instrument count); the Egger, I² and weighted-median columns were previously drawn from the 1-Mb sensitivity set and are here unified to the primary strict set. The BMD→fracture positive control yields OR = 1.40 (total) and 1.42 (femoral neck) per 1 SD *lower* BMD, corresponding to the published GEFOS benchmark of 1.55 (§3.7). For BMD femoral neck → fracture the MR-Egger intercept is significant (p=0.018), indicating directional pleiotropy; the MR-Egger slope (−0.343) and weighted median (−0.365) are the pleiotropy-robust estimates for that pair, and the IVW point estimate may be modestly inflated (see §3.3).
 
@@ -341,20 +344,20 @@ Genetically higher BMD protects against fracture and, on the pleiotropy-robust e
 
 ## Table 4. Statistical power of the two-sample MR estimates
 
-| Exposure → Outcome | K | IVW β | SE | abs z | MDE (80% power) | Achieved power | Interpretation |
-|---|---|---|---|---|---|---|---|
-| BMD total → fracture | 31 | −0.337 | 0.022 | 15.05 | 0.063 | 1.00 | powered |
-| BMD femoral neck → fracture | 25 | −0.351 | 0.030 | 11.55 | 0.085 | 1.00 | powered |
-| BMD total → OA knee | 31 | +0.023 | 0.004 | 6.26 | 0.010 | 1.00 | powered |
-| Lumbar spine → OA knee | 21 | +0.028 | 0.005 | 5.77 | 0.014 | 1.00 | powered |
-| Arms → OA knee | 16 | +0.022 | 0.005 | 4.78 | 0.013 | 1.00 | powered |
-| Legs → OA knee | 24 | +0.018 | 0.004 | 4.23 | 0.012 | 0.99 | powered |
-| Femoral neck → OA knee | 25 | +0.017 | 0.005 | 3.42 | 0.014 | 0.93 | powered |
-| OA knee → fracture | 69 | +0.092 | 0.108 | 0.85 | 0.304 | 0.14 | underpowered |
-| OA knee → BMD total | 69 | +0.106 | 0.108 | 0.98 | 0.303 | 0.17 | underpowered |
-| OA knee → BMD femoral neck | 69 | +0.142 | 0.108 | 1.31 | 0.303 | 0.26 | underpowered |
+| Exposure → Outcome          | K  | IVW β  | SE    | abs z | MDE (80% power) | Achieved power | Interpretation |
+| --------------------------- | -- | ------ | ----- | ----- | --------------- | -------------- | -------------- |
+| BMD total → fracture        | 31 | −0.337 | 0.022 | 15.05 | 0.063           | 1.00           | powered        |
+| BMD femoral neck → fracture | 25 | −0.351 | 0.030 | 11.55 | 0.085           | 1.00           | powered        |
+| BMD total → OA knee         | 31 | +0.023 | 0.004 | 6.26  | 0.010           | 1.00           | powered        |
+| Lumbar spine → OA knee      | 21 | +0.028 | 0.005 | 5.77  | 0.014           | 1.00           | powered        |
+| Arms → OA knee              | 16 | +0.022 | 0.005 | 4.78  | 0.013           | 1.00           | powered        |
+| Legs → OA knee              | 24 | +0.018 | 0.004 | 4.23  | 0.012           | 0.99           | powered        |
+| Femoral neck → OA knee      | 25 | +0.017 | 0.005 | 3.42  | 0.014           | 0.93           | powered        |
+| OA knee → fracture          | 69 | +0.092 | 0.108 | 0.85  | 0.304           | 0.14           | underpowered   |
+| OA knee → BMD total         | 69 | +0.106 | 0.108 | 0.98  | 0.303           | 0.17           | underpowered   |
+| OA knee → BMD femoral neck  | 69 | +0.142 | 0.108 | 1.31  | 0.303           | 0.26           | underpowered   |
 
-MDE = (1.96 + 0.84) × SE is the minimum \|β\| detectable at 80% power with a two-sided α = 0.05; achieved power is computed for the observed point estimate. \|β\|/SE is invariant to the N-scale correction (§3.7), so all power statements are unaffected by it. For the fracture outcome the MDE corresponds to OR ≈ 1.07 per 1-SD lower total-body BMD, OR ≈ 1.09 per 1-SD lower femoral-neck BMD, and OR ≈ 1.36 per unit of the knee-OA exposure contrast as scaled in Table 3 (see the scale caveats in §3.5 and §3.7). K = strict instrument count.
+MDE = (1.96 + 0.84) × SE is the minimum |β| detectable at 80% power with a two-sided α = 0.05; achieved power is computed for the observed point estimate. |β|/SE is invariant to the N-scale correction (§3.7), so all power statements are unaffected by it. For the fracture outcome the MDE corresponds to OR ≈ 1.07 per 1-SD lower total-body BMD, OR ≈ 1.09 per 1-SD lower femoral-neck BMD, and OR ≈ 1.36 per unit of the knee-OA exposure contrast as scaled in Table 3 (see the scale caveats in §3.5 and §3.7). K = strict instrument count.
 
 ---
 
@@ -362,39 +365,39 @@ MDE = (1.96 + 0.84) × SE is the minimum \|β\| detectable at 80% power with a t
 
 Regions are ±500 kb around each strict-clumped total-body BMD instrument. PP.H0–PP.H4 are the posterior probabilities of the five coloc.abf hypotheses under priors p1 = p2 = 1×10⁻⁴, p12 = 5×10⁻⁶ (§2.9). “z OA exp. under MR” is the knee-OA z predicted at that instrument by the MR estimate itself, z_o = z_e × 0.023 × √(N_o·s(1−s)/N_e) (§3.9); “z OA obs.” is the z actually observed. No locus reaches PP.H4 ≥ 0.8; six loci instead favour distinct causal variants (PP.H3 ≥ 0.8), and at every locus the observed knee-OA |z| is far below genome-wide significance except where the MR prediction itself is exceeded by an order of magnitude, which marks those loci as candidates for locus-specific rather than systemic effects.
 
-| Index SNP | Locus (hg19) | SNPs in region | PP.H0 | PP.H1 | PP.H2 | PP.H3 | PP.H4 | Top SNP (BMD) | z BMD | z OA obs. | z OA exp. under MR |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| rs11228269 | 11:68,289,796 | 270 | 0.000 | 0.156 | 0.000 | 0.045 | **0.799** | rs11228269 | -8.65 | -4.06 | -0.40 |
-| rs9594759 | 13:43,032,593 | 438 | 0.000 | 0.000 | 0.000 | 0.372 | **0.627** | rs9594759 | 7.36 | 4.98 | 0.34 |
-| rs12600549 | 17:41,776,686 | 200 | 0.003 | 0.371 | 0.001 | 0.073 | **0.553** | rs12600549 | 5.65 | 3.05 | 0.26 |
-| rs9293511 | 5:88,416,354 | 155 | 0.000 | 0.467 | 0.000 | 0.081 | **0.452** | rs1427970 | -6.38 | -4.09 | -0.29 |
-| rs6040061 | 20:10,640,306 | 392 | 0.000 | 0.700 | 0.000 | 0.006 | **0.294** | rs6040061 | -6.15 | -3.48 | -0.28 |
-| rs1262476 | 6:126,986,996 | 118 | 0.007 | 0.768 | 0.000 | 0.001 | **0.225** | rs1262476 | -5.76 | 3.38 | -0.27 |
-| rs884205 | 18:60,054,857 | 246 | 0.000 | 0.813 | 0.000 | 0.035 | **0.151** | rs884205 | -6.98 | -3.20 | -0.32 |
-| rs777355 | 2:166,554,037 | 352 | 0.000 | 0.907 | 0.000 | 0.006 | **0.087** | rs777355 | -9.07 | -3.05 | -0.42 |
-| rs2414095 | 15:51,524,292 | 306 | 0.000 | 0.000 | 0.002 | 0.972 | **0.026** | rs12595627 | -5.73 | 6.67 | -0.26 |
-| rs4974056 | 3:41,068,497 | 142 | 0.001 | 0.979 | 0.000 | 0.004 | **0.016** | rs4974056 | 6.12 | 2.45 | 0.28 |
-| rs3929244 | 11:27,355,031 | 217 | 0.000 | 0.120 | 0.000 | 0.864 | **0.016** | rs11029951 | -6.25 | -0.75 | -0.29 |
-| rs7010267 | 8:119,946,656 | 283 | 0.000 | 0.919 | 0.000 | 0.066 | **0.015** | rs7010267 | 11.81 | 2.38 | 0.55 |
-| rs10048146 | 16:86,710,660 | 507 | 0.004 | 0.979 | 0.000 | 0.005 | **0.012** | rs10048146 | -5.92 | -2.09 | -0.27 |
-| rs930900 | 12:53,727,545 | 187 | 0.000 | 0.807 | 0.000 | 0.186 | **0.007** | rs930900 | 6.47 | 2.05 | 0.30 |
-| rs17212655 | 11:86,901,237 | 336 | 0.000 | 0.992 | 0.000 | 0.002 | **0.005** | rs17212655 | -7.18 | 1.72 | -0.33 |
-| rs6956946 | 7:38,110,032 | 408 | 0.002 | 0.989 | 0.000 | 0.004 | **0.005** | rs6956946 | -5.70 | -1.00 | -0.26 |
-| rs10931982 | 2:202,832,130 | 236 | 0.011 | 0.982 | 0.000 | 0.005 | **0.003** | rs10931982 | -5.75 | -1.26 | -0.27 |
-| rs6679677 | 1:114,303,808 | 269 | 0.021 | 0.941 | 0.001 | 0.035 | **0.002** | rs6679677 | 5.57 | -0.39 | 0.26 |
-| rs876701 | 11:46,370,767 | 93 | 0.000 | 0.997 | 0.000 | 0.001 | **0.002** | rs876701 | 6.42 | 0.48 | 0.30 |
-| rs3779381 | 7:120,966,790 | 233 | 0.000 | 0.997 | 0.000 | 0.002 | **0.002** | rs3779381 | 18.32 | 0.94 | 0.85 |
-| rs17150506 | 5:122,943,848 | 365 | 0.000 | 0.966 | 0.000 | 0.033 | **0.002** | rs17150506 | -7.27 | 0.77 | -0.34 |
-| rs2566755 | 1:68,635,390 | 310 | 0.000 | 0.988 | 0.000 | 0.010 | **0.002** | rs2566755 | 8.61 | -0.53 | 0.40 |
-| rs12568930 | 1:22,702,231 | 270 | 0.000 | 0.988 | 0.000 | 0.010 | **0.002** | rs7524102 | 9.85 | 0.06 | 0.45 |
-| rs7277076 | 21:37,836,973 | 310 | 0.015 | 0.963 | 0.000 | 0.020 | **0.001** | rs7277076 | 5.71 | 0.91 | 0.26 |
-| rs6846509 | 4:88,840,386 | 307 | 0.000 | 0.985 | 0.000 | 0.013 | **0.001** | rs6846509 | 8.60 | 0.71 | 0.40 |
-| rs9515218 | 13:111,109,859 | 485 | 0.004 | 0.965 | 0.000 | 0.029 | **0.001** | rs9515218 | -5.73 | -0.76 | -0.26 |
-| rs7938055 | 11:16,253,187 | 177 | 0.000 | 0.968 | 0.000 | 0.031 | **0.001** | rs7938055 | 8.80 | -0.63 | 0.41 |
-| rs3755955 | 4:994,414 | 231 | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs3755955 | -8.65 | -3.41 | -0.40 |
-| rs4846607 | 1:220,093,188 | 237 | 0.000 | 0.000 | 0.001 | 0.999 | **0.000** | rs4846607 | -6.09 | -2.12 | -0.28 |
-| rs3020333 | 6:152,010,254 | 298 | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs3020333 | 9.52 | 2.00 | 0.44 |
-| rs10808100 | 7:96,130,553 | 242 | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs10808100 | -10.40 | -0.19 | -0.48 |
+| Index SNP  | Locus (hg19)   | SNPs in region | PP.H0 | PP.H1 | PP.H2 | PP.H3 | PP.H4     | Top SNP (BMD) | z BMD  | z OA obs. | z OA exp. under MR |
+| ---------- | -------------- | -------------- | ----- | ----- | ----- | ----- | --------- | ------------- | ------ | --------- | ------------------ |
+| rs11228269 | 11:68,289,796  | 270            | 0.000 | 0.156 | 0.000 | 0.045 | **0.799** | rs11228269    | -8.65  | -4.06     | -0.40              |
+| rs9594759  | 13:43,032,593  | 438            | 0.000 | 0.000 | 0.000 | 0.372 | **0.627** | rs9594759     | 7.36   | 4.98      | 0.34               |
+| rs12600549 | 17:41,776,686  | 200            | 0.003 | 0.371 | 0.001 | 0.073 | **0.553** | rs12600549    | 5.65   | 3.05      | 0.26               |
+| rs9293511  | 5:88,416,354   | 155            | 0.000 | 0.467 | 0.000 | 0.081 | **0.452** | rs1427970     | -6.38  | -4.09     | -0.29              |
+| rs6040061  | 20:10,640,306  | 392            | 0.000 | 0.700 | 0.000 | 0.006 | **0.294** | rs6040061     | -6.15  | -3.48     | -0.28              |
+| rs1262476  | 6:126,986,996  | 118            | 0.007 | 0.768 | 0.000 | 0.001 | **0.225** | rs1262476     | -5.76  | 3.38      | -0.27              |
+| rs884205   | 18:60,054,857  | 246            | 0.000 | 0.813 | 0.000 | 0.035 | **0.151** | rs884205      | -6.98  | -3.20     | -0.32              |
+| rs777355   | 2:166,554,037  | 352            | 0.000 | 0.907 | 0.000 | 0.006 | **0.087** | rs777355      | -9.07  | -3.05     | -0.42              |
+| rs2414095  | 15:51,524,292  | 306            | 0.000 | 0.000 | 0.002 | 0.972 | **0.026** | rs12595627    | -5.73  | 6.67      | -0.26              |
+| rs4974056  | 3:41,068,497   | 142            | 0.001 | 0.979 | 0.000 | 0.004 | **0.016** | rs4974056     | 6.12   | 2.45      | 0.28               |
+| rs3929244  | 11:27,355,031  | 217            | 0.000 | 0.120 | 0.000 | 0.864 | **0.016** | rs11029951    | -6.25  | -0.75     | -0.29              |
+| rs7010267  | 8:119,946,656  | 283            | 0.000 | 0.919 | 0.000 | 0.066 | **0.015** | rs7010267     | 11.81  | 2.38      | 0.55               |
+| rs10048146 | 16:86,710,660  | 507            | 0.004 | 0.979 | 0.000 | 0.005 | **0.012** | rs10048146    | -5.92  | -2.09     | -0.27              |
+| rs930900   | 12:53,727,545  | 187            | 0.000 | 0.807 | 0.000 | 0.186 | **0.007** | rs930900      | 6.47   | 2.05      | 0.30               |
+| rs17212655 | 11:86,901,237  | 336            | 0.000 | 0.992 | 0.000 | 0.002 | **0.005** | rs17212655    | -7.18  | 1.72      | -0.33              |
+| rs6956946  | 7:38,110,032   | 408            | 0.002 | 0.989 | 0.000 | 0.004 | **0.005** | rs6956946     | -5.70  | -1.00     | -0.26              |
+| rs10931982 | 2:202,832,130  | 236            | 0.011 | 0.982 | 0.000 | 0.005 | **0.003** | rs10931982    | -5.75  | -1.26     | -0.27              |
+| rs6679677  | 1:114,303,808  | 269            | 0.021 | 0.941 | 0.001 | 0.035 | **0.002** | rs6679677     | 5.57   | -0.39     | 0.26               |
+| rs876701   | 11:46,370,767  | 93             | 0.000 | 0.997 | 0.000 | 0.001 | **0.002** | rs876701      | 6.42   | 0.48      | 0.30               |
+| rs3779381  | 7:120,966,790  | 233            | 0.000 | 0.997 | 0.000 | 0.002 | **0.002** | rs3779381     | 18.32  | 0.94      | 0.85               |
+| rs17150506 | 5:122,943,848  | 365            | 0.000 | 0.966 | 0.000 | 0.033 | **0.002** | rs17150506    | -7.27  | 0.77      | -0.34              |
+| rs2566755  | 1:68,635,390   | 310            | 0.000 | 0.988 | 0.000 | 0.010 | **0.002** | rs2566755     | 8.61   | -0.53     | 0.40               |
+| rs12568930 | 1:22,702,231   | 270            | 0.000 | 0.988 | 0.000 | 0.010 | **0.002** | rs7524102     | 9.85   | 0.06      | 0.45               |
+| rs7277076  | 21:37,836,973  | 310            | 0.015 | 0.963 | 0.000 | 0.020 | **0.001** | rs7277076     | 5.71   | 0.91      | 0.26               |
+| rs6846509  | 4:88,840,386   | 307            | 0.000 | 0.985 | 0.000 | 0.013 | **0.001** | rs6846509     | 8.60   | 0.71      | 0.40               |
+| rs9515218  | 13:111,109,859 | 485            | 0.004 | 0.965 | 0.000 | 0.029 | **0.001** | rs9515218     | -5.73  | -0.76     | -0.26              |
+| rs7938055  | 11:16,253,187  | 177            | 0.000 | 0.968 | 0.000 | 0.031 | **0.001** | rs7938055     | 8.80   | -0.63     | 0.41               |
+| rs3755955  | 4:994,414      | 231            | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs3755955     | -8.65  | -3.41     | -0.40              |
+| rs4846607  | 1:220,093,188  | 237            | 0.000 | 0.000 | 0.001 | 0.999 | **0.000** | rs4846607     | -6.09  | -2.12     | -0.28              |
+| rs3020333  | 6:152,010,254  | 298            | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs3020333     | 9.52   | 2.00      | 0.44               |
+| rs10808100 | 7:96,130,553   | 242            | 0.000 | 0.000 | 0.000 | 1.000 | **0.000** | rs10808100    | -10.40 | -0.19     | -0.48              |
 
 ---
 
@@ -402,16 +405,16 @@ Regions are ±500 kb around each strict-clumped total-body BMD instrument. PP.H0
 
 The primary configuration uses n_h = 100 height instruments with the strict-clumped BMD instruments of §2.6 (EUR height source; Yengo et al. 2022, ref 19). "MVMR β_BMD" is the BMD→outcome effect estimated jointly with height (β_BMD|H in §3.10). "Atten. %" is the percentage attenuation of the BMD→outcome IVW β when height is added as a second exposure: 100 × (β_MVMR − β_uni)/β_uni. θ_H is the MVMR direct effect of height on the outcome; Fc(BMD) and Fc(H) are the Sanderson–Smith conditional F statistics (both exposures require Fc ≥ 10; Hartley et al. 2021, ref 22); "Egger p" is the MVMR-Egger intercept p-value; I² is the MVMR heterogeneity. Full n_h ∈ {0, 100, 300, 1,000} grids for both the EUR and EUR_noUKB height sources are in `mvmr_height_grid.csv`.
 
-| Exposure → Outcome | n_BMD | n_H | Uni β | MVMR β_BMD | Atten. % | θ_H | θ_H p | Fc(BMD) | Fc(H) | Egger p | I² |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| BMD total → OA knee | 27 | 100 | +0.0207 | +0.0187 | 9.8 | +0.0426 | 7.0×10⁻¹⁶ | 25.1 | 661.7 | 0.98 | 0.82 |
-| Femoral-neck BMD → OA knee | 23 | 100 | +0.0171 | +0.0146 | 14.6 | +0.0486 | 1.4×10⁻¹⁹ | 15.8 | 561.8 | 0.85 | 0.80 |
-| Lumbar-spine BMD → OA knee | 19 | 100 | +0.0223 | +0.0202 | 9.5 | +0.0451 | 2.5×10⁻¹⁷ | 16.8 | 823.5 | 0.80 | 0.83 |
-| Arms BMD → OA knee | 15 | 100 | +0.0216 | +0.0192 | 11.0 | +0.0468 | 1.4×10⁻¹⁸ | 19.4 | 889.5 | 0.99 | 0.83 |
-| Legs BMD → OA knee | 21 | 100 | +0.0150 | +0.0118 | 21.2 | +0.0449 | 4.7×10⁻¹⁷ | 20.7 | 448.7 | 0.99 | 0.83 |
+| Exposure → Outcome | n_BMD | n_H | Uni β | MVMR β_BMD | Atten. % | θ_H | θ_H p | Fc(BMD) | Fc(H) | Egger p | I² |  
+|---|---|---|---|---|---|---|---|---|---|---|---|---|  
+| BMD total → OA knee | 27 | 100 | +0.0207 | +0.0187 | 9.8 | +0.0426 | 7.0×10⁻¹⁶ | 25.1 | 661.7 | 0.98 | 0.82 |  
+| Femoral-neck BMD → OA knee | 23 | 100 | +0.0171 | +0.0146 | 14.6 | +0.0486 | 1.4×10⁻¹⁹ | 15.8 | 561.8 | 0.85 | 0.80 |  
+| Lumbar-spine BMD → OA knee | 19 | 100 | +0.0223 | +0.0202 | 9.5 | +0.0451 | 2.5×10⁻¹⁷ | 16.8 | 823.5 | 0.80 | 0.83 |  
+| Arms BMD → OA knee | 15 | 100 | +0.0216 | +0.0192 | 11.0 | +0.0468 | 1.4×10⁻¹⁸ | 19.4 | 889.5 | 0.99 | 0.83 |  
+| Legs BMD → OA knee | 21 | 100 | +0.0150 | +0.0118 | 21.2 | +0.0449 | 4.7×10⁻¹⁷ | 20.7 | 448.7 | 0.99 | 0.83 |  
 | **BMD total → fracture (positive control)** | 27 | 100 | −0.333 | −0.343 | −2.8 | +0.166 | 1.0×10⁻⁷ | 25.1 | 661.7 | 0.31 | 0.64 |
 
-β is per 1 SD higher exposure on the reconstructed outcome scale (§3.7). The near-zero attenuation of the fracture positive control shows that conditioning on height does not erode a true bone-mass effect, so the 9.8–21.2% attenuation of the BMD→OA pairs reflects genuine size confounding captured by the height proxy; at least 80% of the BMD→OA causal estimate is attributable to the BMD phenotype itself — bone geometry, remodelling and osteochondral crosstalk — rather than to general skeletal size (§3.10, §4.3). The subgroup split and the full grid are in `mvmr_height_subgroup.csv` and `mvmr_height_grid.csv`.
+β is per 1 SD higher exposure on the reconstructed outcome scale (§3.7). The near-zero attenuation of the fracture positive control shows that conditioning on height does not erode a true bone-mass effect, so the 9.8–21.2% attenuation of the BMD→OA pairs reflects genuine size confounding captured by the height proxy; at least 80% of the BMD→OA causal estimate is attributable to the areal-BMD phenotype itself (§3.10, §4.2). The subgroup split and the full grid are in `mvmr_height_subgroup.csv` and `mvmr_height_grid.csv`.
 
 ---
 
@@ -419,7 +422,7 @@ The primary configuration uses n_h = 100 height instruments with the strict-clum
 
 1. Hatzikotoulas K, Southam L, Stefansdottir L, et al. Translational genomics of osteoarthritis in 1,962,069 individuals. *Nature*. 2025;641(8065):1217–1224. doi:10.1038/s41586-025-08771-z. PMID 40205036.
 2. Qian Y, Xia J, Wang P, et al. Genome-wide Association Studies of over 30,000 Samples with Bone Mineral Density at Multiple Skeletal Sites and Its Clinical Relevance. *Genomics Proteomics Bioinformatics*. 2025;23(5):qzaf097. doi:10.1093/gpbjnl/qzaf097. PMID 41206123.
-3. Elsworth B, Lyon M, Alexander T, et al. The MRC-IEU UK Biobank GWAS pipeline. *bioRxiv*. 2018. doi:10.1101/340232. (Self-reported OA accessed as `ukb-b-14486` via OpenGWAS, https://gwas.mrcieu.ac.uk/datasets/ukb-b-14486/.)
+3. Elsworth B, Lyon M, Alexander T, et al. The MRC-IEU UK Biobank GWAS pipeline. *bioRxiv*. 2018. doi:10.1101/340232. (Self-reported OA accessed as `ukb-b-14486` via OpenGWAS, <https://gwas.mrcieu.ac.uk/datasets/ukb-b-14486/>.)
 4. Hackinger S, Trajanoska K, Styrkarsdottir U, et al. Evaluation of shared genetic aetiology between osteoarthritis and bone mineral density identifies SMAD3 as a novel osteoarthritis risk locus. *Hum Mol Genet*. 2017;26(19):3850–3858. doi:10.1093/hmg/ddx285.
 5. Zhou J, Na J, Jiang Z, et al. Deciphering the shared genetic structure between hip osteoarthritis and femoral neck bone mineral density. *Front Genet*. 2025;16:1597005. doi:10.3389/fgene.2025.1597005.
 6. Bulik-Sullivan B, Finucane HK, Anttila V, et al. An atlas of genetic correlations across human diseases and traits. *Nat Genet*. 2015;47(11):1236–1241. doi:10.1038/ng.3401.
@@ -440,57 +443,58 @@ The primary configuration uses n_h = 100 height instruments with the strict-clum
 21. Burgess S, Jenkins DA, Davies NM, et al. Multivariable Mendelian randomization: the use of pleiotropic variants to estimate causal effects of multiple risk factors on a single outcome. *Am J Epidemiol*. 2015;181(4):251–260. doi:10.1093/aje/kwu283.
 22. Hartley A, Hill WG, Thom H, et al. Multivariable Mendelian randomization using summary statistics: testing the role of pleiotropic traits on human aging. *Int J Epidemiol*. 2021;51(4):1254–1267. doi:10.1093/ije/dyab251.
 23. Dillon CF, Rasch EK, Gu Q, Hirsch R. Prevalence of knee osteoarthritis in the United States: arthritis data from the Third National Health and Nutrition Examination Survey 1991–94. *J Rheumatol*. 2006;33(11):2271–2279. PMID 17013996.
-24. Zhen G, Wen C, Jia X, et al. Inhibition of TGF-β signaling in mesenchymal stem cells of subchondral bone attenuates osteoarthritis. *Nat Med*. 2013;19(8):1047–1053. doi:10.1038/nm.3143.
-25. Wang Y, Li Y, Wang R, et al. Bone–cartilage crosstalk: a conversation for understanding osteoarthritis. *Bone Res*. 2016;4:16028. doi:10.1038/boneres.2016.28.
-26. Burr DB. Anatomy and pathophysiology of osteoarthritis. *Bone*. 2004;35 Suppl 2:S27–S31. doi:10.1016/j.bone.2004.01.002.
-27. Nalesso G, Thomas BL, Sherwood JC, et al. WNT16 antagonises excessive canonical WNT activation and protects articular cartilage. *Ann Rheum Dis*. 2017;76(12):2183–2191. doi:10.1136/annrheumdis-2017-211251.
-28. Hartley AE, Sanderson EC, Granell R, et al.; Genetics of Osteoarthritis Consortium. Using multivariable Mendelian randomization to estimate the causal effect of bone mineral density on osteoarthritis risk, independent of body mass index. *Int J Epidemiol*. 2022;51(4):dyab251. doi:10.1093/ije/dyab251. PMID 34897459.
-29. Nevitt MC, Felson DT. High bone density and radiographic osteoarthritis: questions answered and unanswered. *Osteoarthritis Cartilage*. 2020;28(9):1137–1142. doi:10.1016/j.joca.2020.05.007. PMID 32417559.
+24. Welling M, Auvinen J, Lehenkari P, Männikkö M, Karppinen J, Eskola PJ. Association between height and osteoarthritis of the knee and hip: the Northern Finland Birth Cohort 1966 Study. *Int J Rheum Dis*. 2017;20(9):1095–1104. doi:10.1111/1756-185X.13059. PMID 28296269.
+25. Hunter DJ, Niu J, Zhang Y, Nevitt MC, Xu L, Lui LY, Yu W, Aliabadi P, Buchanan TS, Felson DT. Knee height, knee pain, and knee osteoarthritis: the Beijing Osteoarthritis Study. *Arthritis Rheum*. 2005;52(5):1418–1423. doi:10.1002/art.21017. PMID 15880346.
+26. Sun Y, Li Y, Yu T, Zhang J. Causal associations of anthropometric measurements with osteoarthritis: a Mendelian randomization study. *PLoS One*. 2023;18(1):e0279198. doi:10.1371/journal.pone.0279198. PMID 36716300.
+27. Goldring MB, Goldring SR. Articular cartilage and subchondral bone in the pathogenesis of osteoarthritis. *Nat Rev Rheumatol*. 2016;12(11):632–644. doi:10.1038/nrrheum.2016.148. PMID 27652499.
+28. Burr DB, Gallant MA. Bone remodelling in osteoarthritis. *Nat Rev Rheumatol*. 2012;8(11):665–673. doi:10.1038/nrrheum.2012.130. PMID 22868925.
+29. Zhen G, Cao X. Targeting TGFβ signaling in subchondral bone and articular cartilage for osteoarthritis treatment. *Nat Med*. 2013;19(6):704–712. doi:10.1038/nm.3143. PMID 23685840.
+30. Findlay DM, Kuliwaba JS. Bone–cartilage crosstalk: a conversation for understanding osteoarthritis. *Bone Res*. 2016;4:16028. doi:10.1038/boneres.2016.28. PMID 27672480.
 
 ## Author contributions (CRediT)
 
 Contributions are reported under the CRediT (Contributor Roles Taxonomy). # equal contribution; * corresponding author.
 
-| Author | Conceptualization | Data curation | Formal analysis | Funding acquisition | Investigation | Methodology | Project administration | Resources | Software | Supervision | Validation | Visualization | Writing – original draft | Writing – review & editing |
-|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| Zhenxin Zheng¹# | ✓ | | ✓ | | ✓ | ✓ | | | ✓ | | ✓ | ✓ | ✓ | ✓ |
-| Song Chen¹# | ✓ | ✓ | | | ✓ | | | ✓ | | | ✓ | | ✓ | ✓ |
-| Shenbo Huang¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
-| Chao Qian¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
-| Hang Yuan¹ | | ✓ | | | ✓ | | | ✓ | | | ✓ | | | ✓ |
-| Huricha Bao¹* | ✓ | | | ✓ | | ✓ | ✓ | | | ✓ | | | | ✓ |
-| Qiuyan Jiang²* | ✓ | | | ✓ | | ✓ | ✓ | | | ✓ | | | | ✓ |
+| Author          | Conceptualization | Data curation | Formal analysis | Funding acquisition | Investigation | Methodology | Project administration | Resources | Software | Supervision | Validation | Visualization | Writing – original draft | Writing – review & editing |
+| --------------- | :---------------: | :-----------: | :-------------: | :-----------------: | :-----------: | :---------: | :--------------------: | :-------: | :------: | :---------: | :--------: | :-----------: | :----------------------: | :------------------------: |
+| Zhenxin Zheng¹# |         ✓         |               |        ✓        |                     |       ✓       |      ✓      |                        |           |     ✓    |             |      ✓     |       ✓       |             ✓            |              ✓             |
+| Song Chen¹#     |         ✓         |       ✓       |                 |                     |       ✓       |             |                        |     ✓     |          |             |      ✓     |               |             ✓            |              ✓             |
+| Shenbo Huang¹   |                   |       ✓       |                 |                     |       ✓       |             |                        |     ✓     |          |             |      ✓     |               |                          |              ✓             |
+| Chao Qian¹      |                   |       ✓       |                 |                     |       ✓       |             |                        |     ✓     |          |             |      ✓     |               |                          |              ✓             |
+| Hang Yuan¹      |                   |       ✓       |                 |                     |       ✓       |             |                        |     ✓     |          |             |      ✓     |               |                          |              ✓             |
+| Huricha Bao¹*   |         ✓         |               |                 |          ✓          |               |      ✓      |            ✓           |           |          |      ✓      |            |               |                          |              ✓             |
+| Qiuyan Jiang²*  |         ✓         |               |                 |          ✓          |               |      ✓      |            ✓           |           |          |      ✓      |            |               |                          |              ✓             |
 
 This statement is provided for CRediT compliance and should be confirmed by all authors before submission.
 
 ## Authors, affiliations, funding and competing interests
 
-- **Authors.** Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹*, Qiuyan Jiang²*.
-  - # Zhenxin Zheng and Song Chen contributed equally to this work.
-  - * Corresponding authors: Huricha Bao, MD (baohuricha@126.com) and Qiuyan Jiang, MD (after9951023@gmail.com).
+- **Authors.** Zhenxin Zheng¹#, Song Chen¹#, Shenbo Huang¹, Chao Qian¹, Hang Yuan¹, Huricha Bao¹\*, Qiuyan Jiang²\*.
+  -
+  -
 - **Affiliations.** ¹ Department of Orthopedics, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China; ² Department of Surgery, The Quzhou Affiliated Hospital of Wenzhou Medical University, Quzhou People's Hospital, Quzhou, Zhejiang Province, 324000, China.
 - **Funding.** None.
 - **Competing interests.** The authors declare no competing interests.
-- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; provenance and accessions are listed in §2.1 and the GWAS Catalog. The analysis code is deposited at the project repository (https://github.com/&lt;owner&gt;/OA-BMD-fracture-MR; archived at Zenodo, doi:10.5281/zenodo.XXXXXXX) for reproducibility, including the MRlap sample-overlap correction pipeline (code/prep_mrlap_gwas.py, code/fix_mrlap_inputs.py, code/run_mrlap.R; executed in R 4.6.1, results in code/output/mrlap_overlap_results.csv). All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
+- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; provenance and accessions are listed in §2.1 and the GWAS Catalog. The analysis code is deposited at the project repository (<https://github.com/\&lt;owner\&gt;/OA-BMD-fracture-MR>; archived at Zenodo, doi:10.5281/zenodo.XXXXXXX) for reproducibility, including the MRlap sample-overlap correction pipeline (code/prep_mrlap_gwas.py, code/fix_mrlap_inputs.py, code/run_mrlap.R; executed in R 4.6.1, results in code/output/mrlap_overlap_results.csv). All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
 
 ## §5 Pre-submission checklist — status and journal positioning
 
 ### 5.1 Item status
 
-| # | Item | Status | Action taken |
-|---|---|---|---|
-| 1 | Confirm per-trait N & recompute h² | ✅ **Done** | All three trait groups resolved. BMD ≈31,873 (Qian 2025) → h² 0.26–0.39. OA_selfrep **462,933** (38,472/424,461; `ukb-b-14486`) → h²_obs 0.0223, h²_liab 0.073 (K=0.083). **fracture 264,973** (GEFOS discovery, 37,857/227,116) → h²_obs 0.0258, h²_liab 0.062 (K=0.143), identified by the **measured** effective sample size N·K·(1−K)=31,605 vs GEFOS theoretical 32,449 (2.6%). Table 1 fully updated. |
-| 2 | Cite original GWAS (consortium + accession) | ✅ **Done** | GO Consortium 2025 (Ref 1), Qian 2025 (Ref 2), IEU OpenGWAS `ukb-b-14486` for OA_selfrep (Ref 3), GEFOS 2018 for fracture (Ref 10), Hackinger 2017 (Ref 4), Zhou 2025 (Ref 5); full provenance/accessions in `docs/10_参考文献与原始GWAS来源.md`. |
+| # | Item                                             | Status                     | Action taken                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| - | ------------------------------------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | Confirm per-trait N & recompute h²               | ✅ **Done**                 | All three trait groups resolved. BMD ≈31,873 (Qian 2025) → h² 0.26–0.39. OA_selfrep **462,933** (38,472/424,461; `ukb-b-14486`) → h²_obs 0.0223, h²_liab 0.073 (K=0.083). **fracture 264,973** (GEFOS discovery, 37,857/227,116) → h²_obs 0.0258, h²_liab 0.062 (K=0.143), identified by the **measured** effective sample size N·K·(1−K)=31,605 vs GEFOS theoretical 32,449 (2.6%). Table 1 fully updated.                                                   |
+| 2 | Cite original GWAS (consortium + accession)      | ✅ **Done**                 | GO Consortium 2025 (Ref 1), Qian 2025 (Ref 2), IEU OpenGWAS `ukb-b-14486` for OA_selfrep (Ref 3), GEFOS 2018 for fracture (Ref 10), Hackinger 2017 (Ref 4), Zhou 2025 (Ref 5); full provenance/accessions in `docs/10_参考文献与原始GWAS来源.md`.                                                                                                                                                                                                                      |
 | 3 | Strict PLINK clump (r²<0.001, 10 Mb) + MR-PRESSO | ✅ **Done (both executed)** | Strict clump **run** against 1000G Phase 3 EUR (503 samples, 8,550,156 variants, GRCh37) via a validated pure-Python PLINK `.bed` reader (`code/18_plink_clump_pure.py`; 99.4% of GWS SNPs matched the panel). Retained 20–35 instruments per BMD exposure, 116 for knee OA. MR + MR-PRESSO re-run on strict sets (`code/17`): **all directions and significance unchanged** vs the 1-Mb version (§3.6, `mr_presso_results.csv`, `strict_clump_summary.csv`). |
-| 4 | Figure 3 (MR forest) | ✅ **Done** | `Figure3_MR_forest.png` produced (`code/14_figure3_mr_forest.py`); legend updated. |
-| 5 | OA h² → liability scale | ✅ **Done** | `oa_h2_liability.csv`: OA_knee h²_liab=0.094 (K=0.12). OA_selfrep **updated** to h²_liab=**0.073** with the confirmed K=0.083 (was 0.051 at the placeholder K=0.25); Table 1 footnote updated. |
-| 6 | Code repo + data availability | ✅ **Done** | `code/README.md` (repo structure, run order, data-availability statement, git push commands). |
-| 7 | Authors / affiliations / funding / COI | ✅ **Done** | Block finalised (§Authors): Zheng Z & Chen S equal contribution (#); Bao H & Jiang Q joint corresponding (*); both affiliations at Quzhou People's Hospital (Wenzhou Medical Univ.); Funding: None; Competing interests: none declared. |
-| 8 | OA_selfrep global Z-sign correction | ✅ **Done** | Evidence + correction documented in `docs/11_补充材料_OA_selfrep_Z校正.md` (GDF5 rs224333, FTO rs9930333 opposite signs; rg(OA_knee,OA_selfrep)=+0.84 post-correction). |
+| 4 | Figure 3 (MR forest)                             | ✅ **Done**                 | `Figure3_MR_forest.png` produced (`code/14_figure3_mr_forest.py`); legend updated.                                                                                                                                                                                                                                                                                                                                                                            |
+| 5 | OA h² → liability scale                          | ✅ **Done**                 | `oa_h2_liability.csv`: OA_knee h²_liab=0.094 (K=0.12). OA_selfrep **updated** to h²_liab=**0.073** with the confirmed K=0.083 (was 0.051 at the placeholder K=0.25); Table 1 footnote updated.                                                                                                                                                                                                                                                                |
+| 6 | Code repo + data availability                    | ✅ **Done**                 | `code/README.md` (repo structure, run order, data-availability statement, git push commands).                                                                                                                                                                                                                                                                                                                                                                 |
+| 7 | Authors / affiliations / funding / COI           | ✅ **Done**                 | Block finalised (§Authors): Zheng Z & Chen S equal contribution (#); Bao H & Jiang Q joint corresponding (*); both affiliations at Quzhou People's Hospital (Wenzhou Medical Univ.); Funding: None; Competing interests: none declared.                                                                                                                                                                                                                       |
+| 8 | OA_selfrep global Z-sign correction              | ✅ **Done**                 | Evidence + correction documented in `docs/11_补充材料_OA_selfrep_Z校正.md` (GDF5 rs224333, FTO rs9930333 opposite signs; rg(OA_knee,OA_selfrep)=+0.84 post-correction).                                                                                                                                                                                                                                                                                             |
 
 | 9 | Correct MR effect magnitudes for the BMD placeholder N | ✅ **Done** | BMD files carried N=400,000 (placeholder) while true N=31,873 → munged β underestimated 3.54-fold (0.2823× of true). Forward MR β (BMD exposure, denominator of ratio) recovered by ×0.2823 (÷3.5426); reverse-MR β (BMD outcome) reported on the reconstructed scale, only direction/p interpreted (§3.7). Corrected in `code/21_mr_corrected_N.py` → `mr_corrected_N.csv`; Table 3 unified to the strict instrument set. **p-values unchanged** (β and SE scale identically). Corrected BMD→fracture OR per SD = 1.40–1.42, corresponding to the GEFOS benchmark of 1.55 within 8.4% (§3.7). |
 
-| 10 | Colocalisation of the candidate shared-effectors | ✅ **Done** | Bayesian colocalisation (coloc.abf, Giambartolomei 2014) implemented natively (`code/29_colocalization.py`, `code/30_coloc_power.py`, `code/31_figure_coloc.py`) over the full munged summary statistics, at the three loci nominated in §4.2 and at all 31 BMD instrument loci, with a BMD–fracture pipeline control (PP.H4 = 0.999–1.000 at *WNT16*) and a formal power analysis (§2.9, §3.9, Supplementary Table S8, Supplementary Figure S8). The shared-effector claim at *WNT16*/*SOX6*/*GDF5* is **not supported at the single-SNP level** and is reported as untested rather than refuted (§4.2, §4.3); the null is quantified as a power limitation rather than presented as evidence of absence, and the WNT/TGF-β/BMP pathway remains a candidate molecular substrate of the BMD→OA effect (§4.3). |
+| 10 | Colocalisation of the candidate shared-effectors | ✅ **Done** | Bayesian colocalisation (coloc.abf, Giambartolomei 2014) implemented natively (`code/29_colocalization.py`, `code/30_coloc_power.py`, `code/31_figure_coloc.py`) over the full munged summary statistics, at the three loci nominated in §4.2 and at all 31 BMD instrument loci, with a BMD–fracture pipeline control (PP.H4 = 0.999–1.000 at *WNT16*) and a formal power analysis (§2.9, §3.9, Supplementary Table S8, Supplementary Figure S8). The shared-effector claim at *WNT16*/*SOX6*/*GDF5* is **not supported** and has been withdrawn from §4.2; the null is quantified as a power limitation rather than presented as evidence of absence. |
 
 ### 5.2 Strategic note A — N-invariance of r_g and MR
 
