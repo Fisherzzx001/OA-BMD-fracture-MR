@@ -54,9 +54,8 @@ def main():
         for c in df.columns:
             if c in ("exposure", "outcome", "note", "n_snp"):
                 continue
-            if c.endswith("_p") or c.endswith("_se") or c in ("ivw", "egger", "wmed",
-                                                              "ivw_re", "ivw_radial"):
-                df.at[i, c] = r[c] * f
+        if c.endswith("_se") or c in ("ivw", "egger", "wmed", "ivw_radial"):
+            df.at[i, c] = r[c] * f
     df.to_csv(CSV_OUT, index=False)
     print("✅ 校正后 MR 结果 ->", CSV_OUT)
     print(df[["exposure", "outcome", "n_snp", "ivw", "ivw_se", "ivw_p"]].to_string(index=False))
