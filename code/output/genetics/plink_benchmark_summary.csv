@@ -1,0 +1,7 @@
+exposure,plink_kept,self_kept,shared,precision,recall,jaccard,f1
+BMD_arms,20,20,20,1.0,1.0,1.0,1.0
+BMD_femur_neck,28,28,28,1.0,1.0,1.0,1.0
+BMD_leg,26,26,26,1.0,1.0,1.0,1.0
+BMD_lumbar,24,23,23,0.9583,1.0,0.9583,0.9787
+BMD_total,35,35,35,1.0,1.0,1.0,1.0
+OA_knee,116,116,114,0.9828,0.9828,0.9661,0.9828

@@ -1,0 +1,11 @@
+cohort,rank,hub_disease,degree_centrality,module
+CHARLS,1,Chronic back pain,0.4,musculoskeletal
+CHARLS,2,Diabetes,0.333,metabolic
+CHARLS,3,Heart disease,0.333,cardiovascular
+CHARLS,4,Digestive disease,0.333,organ_other
+CHARLS,5,Cancer,0.333,organ_other
+UKB,1,Hypertension,1.0,metabolic
+UKB,2,Dyslipidaemia,0.933,metabolic
+UKB,3,Chronic lung disease,0.933,respiratory
+UKB,4,Digestive disease,0.933,organ_other
+UKB,5,Stroke,0.867,cardiovascular

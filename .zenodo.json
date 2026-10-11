@@ -1,0 +1,31 @@
+{
+  "title": "Genetically higher bone mineral density raises knee osteoarthritis but protects against fracture: Mendelian randomisation of 13 skeletal phenotypes",
+  "upload_type": "software",
+  "publication_date": "2026-10-11",
+  "description": "Analysis code, configuration, and reproduction material for the manuscript \"Genetically higher bone mineral density raises knee osteoarthritis but protects against fracture: Mendelian randomisation of 13 skeletal phenotypes\" (submitted to Osteoarthritis and Cartilage). The repository contains the full Python/R pipeline (LDSC genetic correlation across 78 phenotype pairs, two-sample Mendelian randomisation with MR-Egger / weighted median / MR-PRESSO / leave-one-out, multivariable MR conditioning on adult height, colocalisation, MRlap sample-overlap correction, and statistical power) and the derived outputs needed to reproduce every table and figure, including the multivariable-MR height grid and the colocalisation contrast. Raw GWAS summary statistics are not redistributed; they are publicly published (cited in the manuscript) and re-derived by the pipeline.",
+  "access_right": "open",
+  "license": "mit",
+  "version": "submission-v1",
+  "creators": [
+    { "name": "Zheng, Zhenxin", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Chen, Song", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Huang, Shenbo", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Qian, Chao", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Yuan, Hang", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Bao, Huricha", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
+    { "name": "Jiang, Qiuyan", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" }
+  ],
+  "keywords": [
+    "osteoarthritis",
+    "bone mineral density",
+    "fracture",
+    "Mendelian randomisation",
+    "linkage disequilibrium score regression",
+    "genetic correlation",
+    "multivariable MR"
+  ],
+  "related_identifiers": [
+    { "identifier": "https://github.com/<OWNER>/OA-BMD-fracture-MR", "relation": "isSupplementTo", "resource_type": "software" }
+  ],
+  "notes": "Snapshot archived from the GitHub repository OA-BMD-fracture-MR. Corresponds to the submission to Osteoarthritis and Cartilage. No raw GWAS data are included; all inputs are publicly available and cited in the manuscript. Replace <OWNER> with the real GitHub owner before deposition."
+}

@@ -1,0 +1,5 @@
+cohort,sex,n_cases,avg_deg_OA,avg_deg_CT,metabolic_OE_OA,metabolic_OE_CT
+CHARLS,Male,1321,1.5,0.75,1.453,1.75
+CHARLS,Female,1595,3.75,1.625,1.429,1.79
+UKB,Male,5933,8.5,3.375,1.363,1.419
+UKB,Female,7018,9.125,5.25,1.38,1.471

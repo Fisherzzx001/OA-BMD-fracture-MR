@@ -1,0 +1,3 @@
+cohort,hypothesis,delta_average_degree,p_permutation,n_permutation
+CHARLS,H1 (OA vs control),2.5,0.08596,2000
+UKB,H1 (OA vs control),2.875,0.002999,2000

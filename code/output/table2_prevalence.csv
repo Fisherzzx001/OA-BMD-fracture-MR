@@ -1,0 +1,33 @@
+cohort,disease,prev_oa,prev_control,matched_OR,p_mcnemar,discordant_b,discordant_c
+CHARLS,Hypertension,59.83,42.1,2.076,2.12e-43,1034,498
+CHARLS,Diabetes,24.45,13.33,2.115,3.36e-27,609,288
+CHARLS,Dyslipidaemia,42.63,27.31,1.959,1.67e-33,905,462
+CHARLS,Heart disease,15.67,10.18,1.6,3.05e-09,408,255
+CHARLS,Stroke,7.58,5.04,1.649,5.88e-06,216,131
+CHARLS,Asthma,4.61,3.33,1.352,0.0368,119,88
+CHARLS,Chronic lung disease,7.04,5.01,1.329,0.0107,194,146
+CHARLS,Liver disease,4.07,3.19,1.386,0.0225,122,88
+CHARLS,Kidney disease,5.07,3.5,1.421,0.00997,135,95
+CHARLS,Digestive disease,11.53,10.2,1.104,0.247,307,278
+CHARLS,Cancer,3.16,2.88,1.049,0.816,85,81
+CHARLS,Depression,15.0,9.99,1.586,9.6e-09,395,249
+CHARLS,Dementia,2.79,2.5,1.302,0.135,82,63
+CHARLS,Chronic back pain,33.8,25.49,1.454,1.58e-10,711,489
+CHARLS,Neck/shoulder pain,22.31,17.38,1.387,9.97e-07,534,385
+CHARLS,Multisite joint pain,14.61,12.54,1.217,0.0129,364,299
+UKB,Hypertension,43.8,36.57,1.371,2.66e-35,3627,2646
+UKB,Diabetes,16.89,12.67,1.427,5.62e-24,1936,1357
+UKB,Dyslipidaemia,30.46,24.74,1.341,1.52e-25,2947,2198
+UKB,Heart disease,13.75,11.74,1.219,1.16e-07,1591,1305
+UKB,Stroke,6.55,5.59,1.205,0.000369,810,672
+UKB,Asthma,4.9,3.91,1.239,0.000484,602,486
+UKB,Chronic lung disease,8.79,7.05,1.273,1.93e-07,1058,831
+UKB,Liver disease,3.44,2.81,1.271,0.000968,436,343
+UKB,Kidney disease,4.74,3.4,1.448,6.53e-09,598,413
+UKB,Digestive disease,11.93,10.08,1.248,2.93e-08,1408,1128
+UKB,Cancer,2.98,2.62,1.209,0.0124,393,325
+UKB,Depression,17.69,12.73,1.42,2.26e-23,1931,1360
+UKB,Dementia,3.44,2.34,1.497,7.91e-08,440,294
+UKB,Chronic back pain,55.86,37.12,2.136,1.54e-196,4540,2125
+UKB,Neck/shoulder pain,41.44,24.29,2.216,5.61e-189,4046,1826
+UKB,Multisite joint pain,33.66,19.64,2.098,4.68e-146,3496,1666

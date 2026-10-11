@@ -1,0 +1,13 @@
+exposure,SNP,CHR,BP,found_by_rsid,found_by_pos,pos_rsid,beta_h,se_h,p_h
+BMD_total,rs9293511,5,88416354,False,False,,,,
+BMD_total,rs7938055,11,16253187,False,False,,,,
+BMD_total,rs9594759,13,43032593,False,False,,,,
+BMD_total,rs12600549,17,41776686,False,False,,,,
+BMD_femur_neck,rs13409420,2,42233150,False,False,,,,
+BMD_femur_neck,rs10876528,12,54421476,False,False,,,,
+BMD_lumbar,rs7938055,11,16253187,False,False,,,,
+BMD_lumbar,rs9594759,13,43032593,False,False,,,,
+BMD_arms,rs12600549,17,41776686,False,False,,,,
+BMD_leg,rs9293511,5,88416354,False,False,,,,
+BMD_leg,rs7938055,11,16253187,False,False,,,,
+BMD_leg,rs9594759,13,43032593,False,False,,,,
