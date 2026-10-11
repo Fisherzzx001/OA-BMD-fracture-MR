@@ -29,3 +29,22 @@ data/
 
 # ---- transient embedded-figure docx variants (do not submit) ----
 Manuscript_with_Figures_*.docx
+
+# ---- publish-ready excludes: regenerable bulky intermediates (full set archived in Zenodo) ----
+code/output/genetics/*_clump_input.txt
+code/output/genetics/fracture_raw_extract.csv
+code/output/cohort_ukb.csv
+code/output/genetics/sumstats/_demo_*
+code/output/genetics/harmonised/
+code/output/genetics/sumstats/
+
+# ---- plink / MR intermediates ----
+*.log
+*.nosex
+*_clump_in.txt
+
+# ---- secrets / scratch / backups (never commit) ----
+.github_token
+*.token
+docs/*.bak-reverted-*
+docs/99_*
