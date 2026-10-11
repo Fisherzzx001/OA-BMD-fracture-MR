@@ -20,7 +20,7 @@ Equal contribution; * joint corresponding authors.
 
 ## Abstract
 
-Whether higher bone mineral density (BMD) reflects shared aetiology with or causation of osteoarthritis (OA is unsettled, although people with OA tend to have higher BMD. We quantified genetic sharing and causal direction across 13 skeletal phenotypes (two OA definitions, ten regional BMD sites, any-fracture) using linkage-disequilibrium score regression across 78 phenotype pairs and two-sample Mendelian randomisation (IVW, MR-Egger, weighted median, MR-PRESSO, leave-one-out), with BMD's protection against fracture as a positive control. BMD sites inter-correlated strongly (r_g 0.69–0.96) and negatively with fracture (r_g −0.45 to −0.60); both OA definitions correlated positively with every BMD site (r_g 0.12–0.25) and with each other (r_g 0.84). Mendelian randomisation reproduced the positive control (OR 1.40 per SD, p=3.7×10⁻⁵¹) and showed genetically higher BMD raising knee-OA risk (β +0.017 to +0.028 per SD; p_IVW ≤6.4×10⁻⁴). Because heterogeneity was high (I² 68–86%) and only 2 of 5 pairs survived random effects, the causal reading rests on pleiotropy-robust estimators (MR-Egger intercepts p>0.24; MR-PRESSO-clean). Conditioning on height removed 6–33% of the effect, leaving 67–94% independent of the height–size pathway. Reverse MR was null and underpowered (power 0.14–0.26). One BMD-raising profile thus protects against fracture yet raises knee-OA risk; the asymmetry is provisional and rests on the forward estimates, and residual sample overlap cannot be fully excluded.
+Whether higher bone mineral density (BMD) reflects shared aetiology with or causation of osteoarthritis (OA is unsettled, although people with OA tend to have higher BMD. We quantified genetic sharing and causal direction across 13 skeletal phenotypes (two OA definitions, ten regional BMD sites, any-fracture) using linkage-disequilibrium score regression across 78 phenotype pairs and two-sample Mendelian randomisation (IVW, MR-Egger, weighted median, MR-PRESSO, leave-one-out), with BMD's protection against fracture as a positive control. BMD sites inter-correlated strongly (r_g 0.69–0.96) and negatively with fracture (r_g −0.45 to −0.60); both OA definitions correlated positively with every BMD site (r_g 0.12–0.25) and with each other (r_g 0.84). Mendelian randomisation reproduced the positive control (OR 1.40 per 1 SD lower BMD, p=3.7×10⁻⁵¹) and showed genetically higher BMD raising knee-OA risk (β +0.017 to +0.028 per SD; p_IVW ≤6.4×10⁻⁴). Because heterogeneity was high (I² 68–86%) and only 2 of 5 pairs survived random effects, the causal reading rests on pleiotropy-robust estimators (MR-Egger intercepts p>0.24; MR-PRESSO-clean). Conditioning on height removed 6–33% of the effect, leaving 67–94% independent of the height–size pathway. Reverse MR was null and underpowered (power 0.14–0.26). One BMD-raising profile thus protects against fracture yet raises knee-OA risk; the asymmetry is provisional and rests on the forward estimates, and residual sample overlap cannot be fully excluded.
 
 ---
 
@@ -50,7 +50,7 @@ This study followed the STROBE-MR reporting guideline [Skrivankova et al., BMJ 2
 
 **Colocalisation.** Bayesian colocalisation (coloc.abf; Giambartolomei et al. 2014) tested the three a priori loci (WNT16, SOX6, GDF5) and all 31 BMD instrument loci (±500 kb; PP.H4≥0.8), with a BMD–fracture pipeline control.
 
-**MVMR.** Multivariable MR conditioned the BMD→OA effect on adult height (Yengo et al. 2022, N=5.0M) [19] as a skeletal-size proxy, using the MVMR-IVW estimator [20] and MVMR-Egger [21], judged by the Sanderson–Smith conditional F (Fc≥10). The primary configuration used n_h=100 height instruments; a grid (n_h ∈ {0,100,300,1,000}) and both EUR and EUR_noUKB height sources are in the Supplementary Material.
+**MVMR.** Multivariable MR conditioned the BMD→OA effect on adult height (Yengo et al. 2022, N=5.0M) [19] as a skeletal-size proxy, using the MVMR-IVW estimator [20] and MVMR-Egger [21], judged by the Sanderson–Smith conditional F (Fc≥10). The primary configuration requested up to n_h=100 height instruments (49–50 survived harmonisation; Yengo et al. 2022); a grid (n_h ∈ {0,100,300,1,000}) and both EUR and EUR_noUKB height sources are in the Supplementary Material.
 
 ## 3. Results
 
@@ -82,7 +82,7 @@ This study followed the STROBE-MR reporting guideline [Skrivankova et al., BMJ 2
 
 **Limited genetic evidence for OA→fracture.** Neither r_g (+0.15, +0.21, non-significant) nor MR (β=+0.092, p=0.40) supported a causal OA→fracture link; this is the first direct test of OA→any-fracture to our knowledge. The null is weakly powered and excludes large but not moderate effects.
 
-**Strengths and limitations.** Strengths: ten BMD sites with two OA definitions, an internal BMD–fracture positive control, dual FDR/Bonferroni correction, and a common SNP set throughout. Limitations: absolute MR magnitudes are provisional because exposure β were reconstructed from a placeholder N (directions, significance and robustness are unaffected); high heterogeneity (I² 68–86%) leaves the causal claim resting on pleiotropy-robust estimators rather than fixed-effect p-values; areal BMD confounds size with mass; every BMD phenotype is a DXA measure; residual sample overlap cannot be fully excluded as a contributor to the forward-effect magnitude, although it is bounded and acts in the observed direction.
+**Strengths and limitations.** Strengths: ten BMD sites with two OA definitions, an internal BMD–fracture positive control, dual FDR/Bonferroni correction, and a common SNP set throughout. Limitations: absolute MR magnitudes are provisional because exposure β were reconstructed from a placeholder N=400,000 (true ≈31,873) and scaled down 3.54-fold (×0.2823); directions, significance and robustness are unaffected; high heterogeneity (I² 68–86%) leaves the causal claim resting on pleiotropy-robust estimators rather than fixed-effect p-values; areal BMD confounds size with mass; every BMD phenotype is a DXA measure; residual sample overlap cannot be fully excluded as a contributor to the forward-effect magnitude, although it is bounded and acts in the observed direction.
 
 **Conclusion.** Genetically higher BMD protects against fracture and, on the pleiotropy-robust evidence, raises knee-OA risk. The BMD→OA effect pertains to the clinically measured areal-BMD phenotype, whose mass-versus-size split we could not separate, and no well-powered evidence supports reverse causation or an OA→fracture pathway. Trials of treatments that raise areal BMD should record incident OA at the joint of interest, not fracture alone.
 
@@ -256,5 +256,28 @@ Contributions are reported under the CRediT (Contributor Roles Taxonomy). # equa
 
 - **Funding.** None.
 - **Competing interests.** The authors declare no competing interests.
-- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3) and were not redistributed; provenance and accessions are listed above. The analysis code will be deposited in a public repository and archived with a Zenodo DOI before submission; the repository URL and DOI will be inserted here once the repository is made public. Deposited material will include every script under `code/` and every file under `code/output/` needed to reproduce the tables and figures, including the MRlap sample-overlap correction pipeline. All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
+- **Data availability.** Summary statistics are from publicly published GWAS (Refs 1–3,10) and were not redistributed; provenance and accessions are listed above. The analysis code and all reproduction material will be deposited in a public GitHub repository (repository URL to be inserted here) and archived with a Zenodo DOI (DOI to be inserted here) before acceptance. The deposit will include every script under `code/` and every output under `code/output/` needed to reproduce the tables and figures (including the MRlap sample-overlap correction), together with the supplementary files enumerated in the Supplementary Material section (STROBE-MR checklist, Table S10 MVMR grid, Table S11 SOS predictions and falsifying tests). All source GWAS were approved by their original ethics committees; this secondary analysis required no new ethical approval.
 - **Declaration of competing interest.** The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+---
+
+## Supplementary Material
+
+The following supplementary files accompany this article and are referenced in the text; all are provided as machine-readable Markdown/CSV in the submission repository (`docs/Supplementary/`).
+
+- **Figure S1.** Per-SNP scatter plots for the six remaining MR pairs.
+- **Figure S2.** Leave-one-out stability of all ten pairs.
+- **Figure S3.** External validation of the reconstructed BMD scale against GEFOS.
+- **Figure S4.** Study design and MR flow (STROBE-MR).
+- **Figure S5.** Sensitivity of OA_knee h² to representative N (r_g is N-invariant).
+- **Figure S6.** Fracture sample-size decision.
+- **Figure S7.** Pleiotropy and heterogeneity diagnostics.
+- **Figure S8.** Colocalisation of BMD with knee OA and its power.
+- **Table S8.** Colocalisation of total-body BMD with knee OA at all 31 instrument loci.
+- **Table S9.** Multivariable MR of BMD→knee OA and BMD→fracture, conditioning on height (primary n_h=100 / EUR configuration).
+- **Table S10.** Multivariable MR grid — full sensitivity grid (EUR and EUR_noUKB; n_h ∈ {0,100,300,1,000}).
+- **Table S11.** Systemic Osteogenic Set-point (SOS) theory — predictions (P1–P6) and falsifying tests (F1–F5).
+- **STROBE-MR checklist.** 22-item reporting-compliance table (Skrivankova et al., BMJ 2021).
+- **Graphical Abstract.** The OA–BMD–fracture triangle: higher BMD protects against fracture yet raises knee-OA risk.
+
+Supplementary figures S1–S8 and the Graphical Abstract are provided as high-resolution PNG in the submission repository (`Figures/`); supplementary tables S8–S11 and the STROBE-MR checklist are provided as Markdown/CSV.
