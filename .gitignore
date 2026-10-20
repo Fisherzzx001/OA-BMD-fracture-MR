@@ -48,3 +48,22 @@ code/output/genetics/sumstats/
 *.token
 docs/*.bak-reverted-*
 docs/99_*
+
+# ============================================================================
+# HISTORY-CLEANUP GUARD (added 2026-10-20)
+# The following were accidentally committed before ignore rules existed and have
+# since been stripped from ALL git history with git-filter-repo (.git 221M->26M).
+# They are deliberately KEPT ON DISK locally (regenerable from data/, which stays
+# outside git) but must never re-enter the repository — the deliverable zips are
+# distributed as GitHub Release / Zenodo assets instead.
+# Recoverable from the pre-cleanup mirror if ever needed.
+# ============================================================================
+build/
+data/
+Figures_v17_Nature/Figures_Original_v14/
+*.tif
+*.tiff
+*.zip
+*.log
+*.nosex
+*_clump_in.txt
