@@ -15,10 +15,13 @@ work = load("docs/08_投稿稿_OA_BMD_fracture.md")
 # (label, regex) -- first match in each version is compared exactly.
 patterns = [
     ("tb beta +0.078", r"β=\+0\.078"),
-    ("ls beta +0.095", r"β=\+0\.095"),
-    ("arms beta +0.075", r"β=\+0\.075"),
-    ("legs beta +0.060", r"β=\+0\.060"),
-    ("fn beta +0.058", r"β=\+0\.058"),
+    # NOTE (2026-10-21): these four sub-site betas are written WITHOUT the 'β=' prefix
+    # in Results ("lumbar-spine +0.095 (p=7.7x10^-9)"), so they are matched with their
+    # site label AND trailing p-value -- this also tightens the check.
+    ("ls beta +0.095", r"lumbar-spine \+0\.095 \(p=7\.7×10⁻⁹\)"),
+    ("arms beta +0.075", r"arms \+0\.075 \(p=1\.7×10⁻⁶\)"),
+    ("legs beta +0.060", r"legs \+0\.060 \(p=2\.3×10⁻⁵\)"),
+    ("fn beta +0.058", r"femoral-neck \+0\.058 \(p=6\.4×10⁻⁴\)"),
     ("fracture IVW beta -0.337", r"β=−0\.337"),
     ("fracture fn beta -0.351", r"β=−0\.351"),
     ("fracture OR 1.40", r"OR 1\.40, 95% CI 1\.34–1\.46"),
