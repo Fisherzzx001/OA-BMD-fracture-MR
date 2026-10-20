@@ -37,11 +37,11 @@ CL = os.path.join(ROOT, "docs", "cover_letter_OAC.md")
 
 
 def main():
-    if os.path.exists(OUT):
-        shutil.rmtree(OUT)
-    os.makedirs(os.path.join(OUT, "Figures", "Main"))
-    os.makedirs(os.path.join(OUT, "Figures", "Supplementary"))
-    os.makedirs(os.path.join(OUT, "Supplementary"))
+    # Rebuild in place (no rmtree): overwrite derived files. The file SET is
+    # stable across builds, so stale leftovers are not expected.
+    os.makedirs(os.path.join(OUT, "Figures", "Main"), exist_ok=True)
+    os.makedirs(os.path.join(OUT, "Figures", "Supplementary"), exist_ok=True)
+    os.makedirs(os.path.join(OUT, "Supplementary"), exist_ok=True)
 
     # ---- 稿件与投稿信 ----
     shutil.copy2(DOC, os.path.join(OUT, "01_Manuscript.md"))
@@ -112,8 +112,8 @@ protects against fracture: Mendelian randomisation of 13 skeletal phenotypes
 - Consistency gate `audit_v18_full.py`: **460 checks / 0 fails / 1 warn**
   (the single warn is a disclosed 0.40% h²/N rounding note)
 - Figure-to-data traceability `code/115_audit_figures_v18.py`: **187 checks / 0 failures**
-- OAC format check `code/49_oac_wordcount.py`: **COMPLIANT**
-  (body 2736/4000 words; abstract 221/250; 5 highlights all ≤85 characters)
+- OAC format check `code/148_oac_compliance.py`: **COMPLIANT**
+  (body 3973/4000 words; abstract 320/350; 5 highlights all ≤85 characters; references 38/50; display items 8/8)
 - Numeric integrity after copy-editing `code/134_verify_humanize.py`: **PASS**
   (1263-number multiset identical before and after; 27 citation markers unchanged)
 - Placeholders in this folder: **{len(ph)}**

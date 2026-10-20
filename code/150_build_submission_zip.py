@@ -69,9 +69,9 @@ with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED) as zf:
     manifest = (
         f"Submission_Package_2026-10-17\n"
         f"Built: {datetime.datetime.now().isoformat(timespec='seconds')}\n"
-        f"Manuscript main body words: 3839 (OAC cap 4000)\n"
-        f"Abstract words: 322 (OAC cap 350, structured)\n"
-        f"References: 37 (OAC cap 50)\n"
+        f"Manuscript main body words: 3973 (OAC cap 4000)\n"
+        f"Abstract words: 320 (OAC cap 350, structured)\n"
+        f"References: 38 (OAC cap 50)\n"
         f"Display items: Figure 1-5 + Table 1-3 = 8 (OAC cap 8)\n"
         f"audit_v18_full.py: 494 checks / 0 fails / 0 warns\n"
         f"code/115_audit_figures_v18.py: 189 checks / 0 fails\n"

@@ -20,8 +20,8 @@ protects against fracture: Mendelian randomisation of 13 skeletal phenotypes
 - Consistency gate `audit_v18_full.py`: **460 checks / 0 fails / 1 warn**
   (the single warn is a disclosed 0.40% h²/N rounding note)
 - Figure-to-data traceability `code/115_audit_figures_v18.py`: **187 checks / 0 failures**
-- OAC format check `code/49_oac_wordcount.py`: **COMPLIANT**
-  (body 2736/4000 words; abstract 221/250; 5 highlights all ≤85 characters)
+- OAC format check `code/148_oac_compliance.py`: **COMPLIANT**
+  (body 3973/4000 words; abstract 320/350; 5 highlights all ≤85 characters; references 38/50; display items 8/8)
 - Numeric integrity after copy-editing `code/134_verify_humanize.py`: **PASS**
   (1263-number multiset identical before and after; 27 citation markers unchanged)
 - Placeholders in this folder: **0**
