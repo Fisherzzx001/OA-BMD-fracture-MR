@@ -1,0 +1,7 @@
+exposure_outcome,n_bmd,n_bmi_used,n_bmd_primary,beta_uni_table2,mvmr_beta_bmd,atten_pct_vs_table2,p_bmd_fe,p_bmd_re,theta_bmi,p_bmi_fe,Fcond_bmd,Fcond_bmi,egger_int_p
+BMD total->OA knee,30,62,31,0.078,0.069,11.9,2.629e-08,0.006405,0.692,2.2e-133,22.2,102.8,0.38
+Femoral-neck BMD->OA knee,25,63,25,0.058,0.060,-3.7,0.000255,0.04932,0.685,1.7e-137,13.2,112.2,0.36
+Lumbar-spine BMD->OA knee,21,61,21,0.095,0.090,5.1,1.311e-08,0.005626,0.684,1.3e-133,16.2,117.7,0.03
+Arms BMD->OA knee,15,62,16,0.075,0.041,46.0,0.007928,0.2152,0.682,3.4e-133,16.4,125.6,0.41
+Legs BMD->OA knee,23,63,24,0.060,0.043,27.6,0.00191,0.1409,0.689,3.6e-136,18.5,113.2,0.27
+BMD total->fracture (positive control),30,62,31,-0.337,-0.334,0.9,1.435e-51,9.015e-22,-0.026,0.6108,22.2,102.8,0.12

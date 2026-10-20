@@ -18,7 +18,7 @@ import numpy as np
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "output", "genetics")
-CSV = os.path.join(OUT, "mr_results.csv")
+CSV = os.path.join(OUT, "mr_results_corrected.csv")
 PNG = os.path.join(OUT, "Figure3_MR_forest.png")
 
 df = pd.read_csv(CSV)

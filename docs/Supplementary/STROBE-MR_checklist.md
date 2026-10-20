@@ -19,7 +19,7 @@
 | 12 | **Methods – Statistical analysis:** MR estimators, heterogeneity, sensitivity, software | Reported | §2 MR / LDSC / Colocalisation / MVMR (IVW, MR-Egger, weighted median, MR-PRESSO, LOO; Python 3.13; MRlap R 4.6.1) |
 | 13 | **Methods – Sample overlap:** assessment and handling | Reported | §2 Sample overlap (Burgess approximation; bound 2.6% BMD→OA, 12% BMD→fracture; MRlap correction) |
 | 14 | **Results – GWAS descriptives:** N, cases, h², intercept, population | Reported | Table 1; §3 Genetic-correlation architecture (intercepts 1.01–1.07) |
-| 15 | **Results – Exposure instrument:** SNPs, F-statistic, R² | Reported | §2 MR (counts); Table 3 (n_snp); S9 (Fc≥10) |
+| 15 | **Results – Exposure instrument:** SNPs, F-statistic, R² | Reported | §2 MR (counts); Table 3 (n_snp); Table S13 (univariate F_min, F_agg, R²_exposure); S9 (MVMR conditional F ≥10) |
 | 16 | **Results – Outcome instrument:** same | Reported | Table 3 (knee OA 69 SNPs); §2 Data sources |
 | 17 | **Results – Assumption testing:** heterogeneity (Cochran Q/I²), pleiotropy (MR-Egger, MR-PRESSO), sensitivity | Reported | §3 (I² 68–86%; MR-Egger intercept p>0.24; MR-PRESSO 9/10 significant, 0–3 outliers); Table 3 |
 | 18 | **Results – Main MR estimates:** with CIs, p-values, direction | Reported | Table 3 (IVW β, SE, p, random-effects p, Egger, weighted median, I², LOO); §3 |

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-09_rg_matrix.py — 12 表型 LDSC 遗传相关矩阵（原生 Python 3 实现）
+09_rg_matrix.py — 13 表型 LDSC 遗传相关矩阵（原生 Python 3 实现）
 
 算法严格对齐官方 LDSC (Bulik-Sullivan et al. 2015, regressions.py)：
   h2      : IRWLS，het_w = 1/[2*(intercept + (h2*N/M)*l)^2]，oc_w = 1/l
@@ -13,10 +13,21 @@
 与调用官方 ldsc 相比，本实现的额外保障：
   1. 等位基因对齐：以参考表型为基准翻转 z，避免 z1*z2 符号翻转导致 rg 错号；
   2. 丢弃回文 SNP（A/T、C/G），链方向不可判定；
-  3. 12 表型取共同 SNP 交集，保证矩阵内各格估计基于同一变异集（官方为逐对交集）。
+  3. 13 表型取共同 SNP 交集，保证矩阵内各格估计基于同一变异集（官方为逐对交集）。
+
+表型构成（G8 修复，2026-10-20）：PHENOS 原仅 12 项（缺 fracture），稿件 13×13/78 对
+矩阵实际由 code/10（骨折行）+ code/12（合并）产出，重跑 code/09 复现不出稿件。
+现将 fracture（sumstats_fracture.sumstats.gz，与其余 12 表型同一 munge 格式、
+同一 HapMap3 SNP 集，13 表型交集恒为 690,150，与 12 表型交集一致）补入 PHENOS，
+使 code/09 一键复现 13×13 全矩阵；其骨折行与 code/10 由原始骨折 GWAS 桥接的
+结果同源（Z 一致，实测中位 |ΔZ|≈1e-16）。
+
+N 口径注意：BMD×10 与 fracture 的 munge 文件 N 为占位值 400,000（真实 N 分别
+≈31,873 与 264,973）。rg 与 N 无关（比值），矩阵不受影响；rg_h2.csv 中的 h²
+为占位 N 口径，真实 N 口径的 h² 由 code/16 / code/16b 重算（rg_h2_trueN.csv）。
 
 用法：
-  python 09_rg_matrix.py            # 全量（12 表型，66 对）
+  python 09_rg_matrix.py            # 全量（13 表型，78 对）
   python 09_rg_matrix.py --quick    # 快速自检（2 表型，降低 jackknife 块数）
 """
 import os
@@ -45,6 +56,7 @@ OUT_DIR = os.path.join(ROOT, "output", "genetics")
 PHENOS = {
     "OA_knee":        "sumstats_oa_knee.sumstats.gz",
     "OA_selfrep":     "sumstats_oa_selfrep.sumstats.gz",
+    "fracture":       "sumstats_fracture.sumstats.gz",   # G8: 补入以使 13×13 可复现
     "BMD_total":      "sumstats_total.sumstats.gz",
     "BMD_femur_neck": "sumstats_femur_neck.sumstats.gz",
     "BMD_femur_total": "sumstats_femur_total.sumstats.gz",

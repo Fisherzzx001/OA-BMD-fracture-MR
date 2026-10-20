@@ -46,11 +46,11 @@ EXTS = [".pdf", ".png", ".tif"]
 TABLES = {
     "Table1_h2_ldsc_intercept": ["rg_h2_trueN.csv", "oa_h2_liability.csv"],
     "Table2_genetic_correlations": ["rg_matrix_13.csv", "rg_p_matrix_13.csv", "rg_se_matrix_13.csv"],
-    "Table3_MR_estimates": ["table3_corrected.csv", "mr_results.csv"],
+    "Table3_MR_estimates": ["table3_corrected.csv", "mr_results_corrected.csv"],
     "Table4_MR_power": ["mr_power.csv"],
 }
 SUPP_DATA = [
-    "mr_presso_results.csv",
+    "mr_presso_results_corrected.csv",
     "overlap_statistics.csv",
     "strict_clump_summary.csv",
     "N_sensitivity_decision.csv",

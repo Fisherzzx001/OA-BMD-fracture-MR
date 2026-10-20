@@ -1,0 +1,12 @@
+BMD_site,n_gws_loci_p5e-8,n_strict_instruments,entered_MR,reason
+Total body,514,35,Yes,Strict-clumped; >=15 independent instruments; entered MR
+Femoral neck,170,28,Yes,Strict-clumped; >=15 independent instruments; entered MR
+Femoral total,262,NA,No,Strong GWS signal present but strict PLINK-equivalent clumping not completed at submission (1000G EUR panel unavailable in compute environment); deferred to avoid non-prespecified ad hoc instrument set
+Lumbar spine,301,23,Yes,Strict-clumped; >=15 independent instruments; entered MR
+Spine (total),291,NA,No,Strong GWS signal present but strict PLINK-equivalent clumping not completed at submission (1000G EUR panel unavailable in compute environment); deferred to avoid non-prespecified ad hoc instrument set
+Arms,246,20,Yes,Strict-clumped; >=15 independent instruments; entered MR
+Legs,277,26,Yes,Strict-clumped; >=15 independent instruments; entered MR
+Pelvis,345,NA,No,Strong GWS signal present but strict PLINK-equivalent clumping not completed at submission (1000G EUR panel unavailable in compute environment); deferred to avoid non-prespecified ad hoc instrument set
+Rib,229,NA,No,Strong GWS signal present but strict PLINK-equivalent clumping not completed at submission (1000G EUR panel unavailable in compute environment); deferred to avoid non-prespecified ad hoc instrument set
+Trunk,344,NA,No,Strong GWS signal present but strict PLINK-equivalent clumping not completed at submission (1000G EUR panel unavailable in compute environment); deferred to avoid non-prespecified ad hoc instrument set
+Head (excluded a priori),20,NA,No,"Excluded a priori: not a load-bearing skeletal region; head BMD is genetically correlated with intracranial aneurysm in the source GWAS (Qian et al. 2025), a non-skeletal pleiotropy risk. Genome-wide signal was present (20 SNPs at p<5e-8), so the exclusion is principled rather than instrument-driven."

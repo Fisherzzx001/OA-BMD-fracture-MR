@@ -57,7 +57,7 @@ All genome-wide summary statistics analysed in this study are publicly available
 
 ### Code availability / 代码可用性
 
-★ The complete analysis pipeline (LD score regression; strict PLINK-equivalent clumping at r²<0.001 over 10 Mb; two-sample MR with IVW, MR-Egger, weighted median, Cochran's Q, radial outlier removal and leave-one-out; the MR-PRESSO global distortion test; sample-scale N reconstruction and correction; and all figure-generation scripts, written in Python 3) is available from the corresponding authors on request and will be deposited in a public GitHub repository with a Zenodo DOI upon publication.
+★ The complete analysis pipeline (LD score regression; strict PLINK-equivalent clumping at r²<0.001 over 10 Mb; two-sample MR with IVW, MR-Egger, weighted median, Cochran's Q, radial outlier removal and leave-one-out; the MR-PRESSO global distortion test; sample-scale N reconstruction and correction; and all figure-generation scripts, written in Python 3) is openly available in a public GitHub repository (https://github.com/Fisherzzx001/OA-BMD-fracture-MR), archived with a Zenodo DOI (https://doi.org/10.5281/zenodo.23400861).
 
 ### Author contributions (CRediT) ★草拟，请确认★
 

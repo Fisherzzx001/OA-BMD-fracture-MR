@@ -22,8 +22,34 @@ SE 同步按同一因子缩放，故 z / p / 方向 / 显著性 **完全不变**
 --------
   · BMD（10 个）：beta, se  ×  sqrt(400000/31873)  = ×3.5428
   · OA_selfrep ：beta, se  ×  sqrt(350000/462933)  = ×0.8695
-  · OA_knee    ：**不校正**（文件内 N 为 per-SNP，107,795 个唯一值，真实 meta 分析）
+  · OA_knee    ：beta, se  ×  1/sqrt(K(1-K))      = ×3.3887   ← **G6 修正（2026-10-20）**
   · fracture   ：**不校正**（原始文件直接给 log-OR 的 beta）
+
+OA_knee 的 case-control 修正（G6）
+---------------------------------
+旧口径认为 OA_knee 的 munge 文件里 N 是 per-SNP 真实值，故"无需校正"。
+这是错的：per-SNP 的 N 是**总**样本量，而二分类结局（logistic 回归）的
+效应量满足
+
+        se_logOR = 1 / sqrt( N_eff · 2 f (1-f) ),   N_eff = N_total · K(1-K)
+
+直接用 N_total 重构得到的是**线性概率尺度**的效应，比真实 log-OR 小
+1/sqrt(K(1-K)) 倍。骨折结局因为原始文件直接给了 log-OR 的 beta/se 而幸免，
+OA 结局则没有——同一条流水线对两个结局用了不一致的尺度处理。
+
+K 的校准（实测，不假设）：
+  取 GO Consortium 2025 膝 OA 真实汇总统计中与 munged 文件可匹配的 39 个 SNP，
+  逐点比对得  |Z_true / Z_munged| = 1.000000（std 5e-14，确认同源），且
+  |beta_true| = |Z_munged| × se_true（误差 <1e-16），
+  故 K(1-K) = N_eff_true / N_munged，逐 SNP 中位 **0.087082**（IQR 0.0835–0.0881）
+  → K = 0.0964（膝 OA 病例约 116,500 / 1,208,397，与 GO 联盟量级一致）
+  → 校正因子 1/sqrt(0.087082) = **3.3887**
+
+  校准脚本：code/_probe_g6b.py；逐 SNP 明细：output/genetics/_g6_k_estimation.csv
+
+影响：只改 β / SE / OR 的绝对值；z、p、方向、显著性、Cochran Q、I²、τ²、
+Egger 斜率与截距、加权中位数、PRESSO、留一法**全部不变**（尺度不变量）。
+
 
 外部基准：GEFOS（Trajanoska BMJ 2018, PMID 30158200）
     股骨颈 BMD 每降低 1 SD → 骨折 OR = 1.55（95% CI 1.48–1.63）
@@ -47,6 +73,12 @@ N_FILE_SELF, N_TRUE_SELF = 350_000.0, 462_933.0
 F_BMD = float(np.sqrt(N_FILE_BMD / N_TRUE_BMD))      # 3.5428
 F_SELF = float(np.sqrt(N_FILE_SELF / N_TRUE_SELF))   # 0.8695
 
+# --- G6：OA_knee 的 case-control（有效样本量）修正 -------------------------
+# K(1-K) 由 39 个 SNP 的真实 log-OR 与 munged Z 逐点比对实测得到（见文件头）
+K_OA_KNEE = 0.0964                                   # 膝 OA 病例比例
+KC_OA_KNEE = K_OA_KNEE * (1 - K_OA_KNEE)             # 0.087082（实测中位）
+F_OA_KNEE = float(1.0 / np.sqrt(KC_OA_KNEE))         # 3.3887
+
 GEFOS_OR_PER_SD = 1.55        # 股骨颈 BMD 每降 1 SD 的骨折 OR
 GEFOS_CI = (1.48, 1.63)
 
@@ -54,7 +86,9 @@ GEFOS_CI = (1.48, 1.63)
 def trait_factor(name):
     """返回该表型 beta/se 的校正因子。"""
     if name.startswith("OA_knee"):
-        return 1.0                      # per-SNP N，真实 meta 分析，无需校正
+        # G6：per-SNP 的 N 是总样本量；二分类结局须换为 N_eff = N·K(1-K)，
+        # 否则重构出的效应落在线性概率尺度，比真实 log-OR 小 1/sqrt(K(1-K)) 倍。
+        return F_OA_KNEE
     if name.startswith("OA_selfrep"):
         return F_SELF
     if name.startswith("fracture"):

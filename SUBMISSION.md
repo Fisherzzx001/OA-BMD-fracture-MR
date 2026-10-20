@@ -21,10 +21,10 @@ This file tracks what is required to submit the manuscript and what has been pre
 | Colocalisation table | `docs/08` Table S8 (in-manuscript) | S8 |
 | CRediT author contributions | `docs/08` Author contributions table | |
 
-## Pre-submission actions still requiring the author's account
-1. **Public GitHub repository** — create `OA-BMD-fracture-MR` and push the repository (scripts + small derived outputs + figures). The bulky regenerable intermediates (`code/output/genetics/*_clump_input.txt`, raw extracts) are excluded from git and archived in Zenodo instead (see `.gitignore`).
-2. **Zenodo DOI** — after the GitHub repo exists, create a Zenodo upload linked to the repo (or upload the full `code/output/` archive directly) to obtain a DOI.
-3. **Backfill Data availability** — replace the two `to be inserted here` placeholders in `docs/08` with the repository URL and the Zenodo DOI.
+## Pre-submission actions — status
+1. **Public GitHub repository** — DONE: <https://github.com/Fisherzzx001/OA-BMD-fracture-MR> (scripts + small derived outputs + figures). Bulky regenerable intermediates (`code/output/genetics/*_clump_input.txt`, raw extracts) are excluded from git (see `.gitignore`).
+2. **Zenodo DOI** — DONE: `10.5281/zenodo.23400861` (<https://doi.org/10.5281/zenodo.23400861>), minted via the GitHub–Zenodo integration from release `V1.0`.
+3. **Backfill Data availability** — DONE: `docs/08` now carries the real repository URL and DOI; the same values were written into `docs/cover_letter_OAC.md` and `preprint_package/01_medRxiv_标题页与必填声明.md`.
 
 ## Commands (run by the author, or by the assistant once a token path is provided)
 ```bash

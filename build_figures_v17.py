@@ -487,10 +487,10 @@ def fig5():
           "Protective\nβ = −0.337 (total), −0.351 (femoral neck)\nOR 1.40–1.42 per 1-SD lower BMD",
           7.55, 4.85, rad=-0.10)
     arrow(3.9, 7.4, 2.4, 2.7, C["vermillion"],
-          "Increases risk\nβ = +0.017 to +0.028\n5 BMD sites, 5/5 significant",
+          "Increases risk\nβ = +0.058 to +0.095\n5 BMD sites, 5/5 significant",
           3.72, 4.55, rad=0.10)
     arrow(3.35, 2.25, 6.65, 2.25, C["grey"],
-          "No well-powered evidence (power 0.14; excludes |β| ≥ 0.303)",
+          "No well-powered evidence (power 0.14; excludes |β| ≥ 0.09)",
           5.0, 1.25, rad=0.0, ls=(0, (4, 2.2)), lw=1.8)
     arrow(2.30, 3.10, 3.75, 6.95, C["grey"],
           "Genetic correlation only\nr_g = +0.12 to +0.25 (20/20 q<0.05)",
@@ -972,7 +972,7 @@ def suppl4():
          "1-Mb window retained as a sensitivity analysis; F = 44–75"),
         ("4   Two-sample MR", C["orange"],
          "Ten exposure–outcome pairs; IVW (primary), MR-Egger, weighted median;\n"
-         "N-scale correction applied to reconstruct the true BMD effect scale (§3.7)"),
+         "BMD effect scale verified at N=31,873 (per-SNP SE check); no rescaling applied"),
         ("5   Sensitivity & diagnostics", C["vermillion"],
          "MR-PRESSO outliers, leave-one-out, Cochran Q / I², sample-overlap ρ_GE,\n"
          "MRlap overlap + winner's-curse correction (§2.8), Bonferroni and BH-FDR"),
@@ -1182,7 +1182,7 @@ def graphical_abstract():
     node(7.6, 1.9, 2.9, 1.25, "Fracture", C["sky"])
 
     arrow(6.95, 6.0, 6.95, 2.5, C["blue"], "Protective\nOR 1.40–1.42", 8.95, 4.2, rad=-0.12)
-    arrow(6.6, 6.2, 3.6, 7.0, C["vermillion"], "Causal ↑ risk\nβ +0.017 to +0.028", 4.95, 8.05, rad=0.16)
+    arrow(6.6, 6.2, 3.6, 7.0, C["vermillion"], "Causal ↑ risk\nβ +0.058 to +0.095", 4.95, 8.05, rad=0.16)
     ax.add_patch(FancyArrowPatch((3.4, 5.4), (6.4, 6.1), arrowstyle="-|>", mutation_scale=11,
                  color=C["grey"], lw=1.6, ls=(0, (3.5, 2.2)), zorder=1,
                  connectionstyle="arc3,rad=-0.22",

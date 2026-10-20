@@ -117,13 +117,19 @@ def main():
     names = list(Zdf.columns)
 
     def run_one(N_fx):
-        h2, i2, _, _ = m08.compute_h2(Zdf["fracture"].values, ell, N_fx, M,
+        # G8 审计（2026-10-20，docs/123 §8）：原解包 `h2, i2, _, _` 把 compute_h2 的
+        # 第 2 个返回值（h² 的 SE）误当作截距传入 gencov 权重（i_h1/i_h2），截距项
+        # 缩小约 1000 倍、低 LD SNP 权重暴增，fracture 行 rg 与 SE 全部被污染
+        # （旧值如 rg=+0.148/SE=0.149；正确值见 code/09 13 表型重跑 +0.119/SE=0.020，
+        # 与 munged 口径及两种参数顺序均一致，审计 164–168）。
+        # compute_h2 返回 (hsq, h2_SE, intercept, intercept_SE) —— 截距是第 3 个返回值。
+        h2, _, i2, _ = m08.compute_h2(Zdf["fracture"].values, ell, N_fx, M,
                                       3, args.blocks)
         rows = []
         for nm in names:
             if nm == "fracture":
                 continue
-            h1, ih1, _, _ = m08.compute_h2(Zdf[nm].values, ell, Ns[nm], M,
+            h1, _, ih1, _ = m08.compute_h2(Zdf[nm].values, ell, Ns[nm], M,
                                            3, args.blocks)
             gc, gse, ig, _ = m08.compute_gencov(
                 Zdf["fracture"].values, Zdf[nm].values, ell, N_fx, Ns[nm], M,

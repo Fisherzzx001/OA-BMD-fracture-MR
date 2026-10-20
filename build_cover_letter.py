@@ -9,7 +9,7 @@ OUT = (os.environ.get("OUTDIR", "submission_package") + r"/Cover_Letter.docx").r
 TITLE = ("Bone Mineral Density and Osteoarthritis Share Genetic Architecture, but "
          "Evidence for an Osteoarthritis-to-Fracture Causal Pathway Remains Limited: "
          "A Cross-Trait Analysis of 13 Skeletal Phenotypes")
-JOURNAL = "Bone"  # adjust to Osteoporosis International if preferred
+JOURNAL = "Osteoarthritis and Cartilage"  # target journal per P6 ruling (docs/103_期刊选定_P6裁决); OAC cover letter also at docs/cover_letter_OAC.md
 
 def line(doc, text, bold=False, size=11, space=6, align=None):
     p = doc.add_paragraph()
@@ -63,13 +63,13 @@ def main():
         "bone mass is increased.")
     line(doc, "")
     line(doc,
-        "This manuscript fits " + JOURNAL + " because it centres on the genetics of bone "
-        "density and fracture and their skeletal comorbidity with OA, and because it "
-        "independently reproduces the established BMD\u2013fracture relationship and extends it "
-        "to OA causality. All summary statistics come from publicly published, consortium-"
-        "approved GWAS and were not redistributed; full provenance, accessions and "
-        "reproducibility commands are provided in the Data availability statement and "
-        "Supplementary material.")
+        "This manuscript fits " + JOURNAL + " because it addresses a core question for the "
+        "osteochondral unit \u2014 whether higher BMD reflects shared aetiology with or causation "
+        "of OA \u2014 and because it independently reproduces the established BMD\u2013fracture "
+        "relationship and extends it to OA causality. All summary statistics come from "
+        "publicly published, consortium-approved GWAS and were not redistributed; full "
+        "provenance, accessions and reproducibility commands are provided in the Data "
+        "availability statement and Supplementary material.")
     line(doc, "")
     line(doc,
         "Funding: None. Competing interests: The authors declare no competing interests. "

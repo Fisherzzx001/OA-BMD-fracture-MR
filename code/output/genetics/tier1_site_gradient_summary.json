@@ -1,0 +1,72 @@
+{
+  "method": "existing validated harmonised BMD_*__OA_knee.csv (beta correctly scaled; OA binary linear-probability scale)",
+  "T3a_arms_minus_femur_neck": {
+    "diff": 0.0172,
+    "se": 0.0231,
+    "p_one_sided": 0.2278,
+    "conclusion": "non-significant ordering clause (true one-sided p=0.228; independent hand-calc 0.2264)"
+  },
+  "T3b_arms_vs_WBmean": {
+    "arms_beta": 0.0751,
+    "arms_se": 0.0157,
+    "WB_weighted_beta": 0.0729,
+    "WB_se": 0.0073,
+    "diff": 0.0023,
+    "se": 0.0173,
+    "p_one_sided": 0.4477
+  },
+  "T3c_5site_Q": {
+    "Q": 3.56,
+    "df": 4,
+    "P": 0.4682,
+    "I2": 0.0
+  },
+  "per_site": {
+    "BMD_arms": {
+      "beta": 0.0751,
+      "se": 0.0157,
+      "re_p": 0.0699,
+      "n": 16,
+      "Qp": 0.0,
+      "I2": 0.8565,
+      "egger_int_p": 0.982
+    },
+    "BMD_femur_neck": {
+      "beta": 0.0579,
+      "se": 0.017,
+      "re_p": 0.0547,
+      "n": 25,
+      "Qp": 0.0,
+      "I2": 0.6837,
+      "egger_int_p": 0.8748
+    },
+    "BMD_leg": {
+      "beta": 0.06,
+      "se": 0.0142,
+      "re_p": 0.0976,
+      "n": 24,
+      "Qp": 0.0,
+      "I2": 0.8469,
+      "egger_int_p": 0.8155
+    },
+    "BMD_lumbar": {
+      "beta": 0.0946,
+      "se": 0.0164,
+      "re_p": 0.0166,
+      "n": 21,
+      "Qp": 0.0,
+      "I2": 0.8279,
+      "egger_int_p": 0.2947
+    },
+    "BMD_total": {
+      "beta": 0.0783,
+      "se": 0.0125,
+      "re_p": 0.0062,
+      "n": 31,
+      "Qp": 0.0,
+      "I2": 0.8088,
+      "egger_int_p": 0.8099
+    }
+  },
+  "note": "full 10-site gradient reconstruction directional-only due to OA linear-scale reconstruction noise in load_munged; validated 5-site set (incl. only non-WB site arms) used for formal test"
+}

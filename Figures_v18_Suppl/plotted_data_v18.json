@@ -1,0 +1,407 @@
+{
+ "SupplFig10_MVMR_decomposition": {
+  "source": "code/output/genetics/mvmr_height_grid.csv :: spec=='EUR|n_h=100'",
+  "atten_definition": {
+   "vs_Table3": "100*(ref_uni_beta - mvmr_beta)/ref_uni_beta",
+   "vs_MVMRset": "100*(uni_beta - mvmr_beta)/uni_beta"
+  },
+  "rows": {
+   "BMD_total|OA_knee": {
+    "exp": "BMD_total",
+    "out": "OA_knee",
+    "n_bmd": 27,
+    "n_h_req": 100,
+    "beta_t3": 0.0783359657069612,
+    "beta_uni": 0.0702860270136285,
+    "se_uni": 0.0127784065108866,
+    "beta_mv": 0.0634048003265839,
+    "se_mv": 0.0128068185765471,
+    "atten_t3": 19.060421666634888,
+    "atten_set": 9.790319611763419,
+    "theta_h": 0.144501779259929,
+    "theta_h_p": 6.980445452504251e-16,
+    "fc_bmd": 25.05140469585119,
+    "fc_h": 661.6800940752865
+   },
+   "BMD_femur_neck|OA_knee": {
+    "exp": "BMD_femur_neck",
+    "out": "OA_knee",
+    "n_bmd": 23,
+    "n_h_req": 100,
+    "beta_t3": 0.0579049158275072,
+    "beta_uni": 0.057890753367421,
+    "se_uni": 0.0167544553821073,
+    "beta_mv": 0.0494492734688184,
+    "se_mv": 0.0167803877842468,
+    "atten_t3": 14.602633019754816,
+    "atten_set": 14.581741310268011,
+    "theta_h": 0.1646164000965932,
+    "theta_h_p": 1.4025190482208792e-19,
+    "fc_bmd": 15.821055375632897,
+    "fc_h": 561.8120245718121
+   },
+   "BMD_lumbar|OA_knee": {
+    "exp": "BMD_lumbar",
+    "out": "OA_knee",
+    "n_bmd": 19,
+    "n_h_req": 100,
+    "beta_t3": 0.0945656056609554,
+    "beta_uni": 0.0756633040127188,
+    "se_uni": 0.0169125118451252,
+    "beta_mv": 0.068448326716849,
+    "se_mv": 0.0169339636232894,
+    "atten_t3": 27.61815859113119,
+    "atten_set": 9.535636052394672,
+    "theta_h": 0.1529273509444738,
+    "theta_h_p": 2.5107742363906677e-17,
+    "fc_bmd": 16.751770392002896,
+    "fc_h": 823.5279235638018
+   },
+   "BMD_arms|OA_knee": {
+    "exp": "BMD_arms",
+    "out": "OA_knee",
+    "n_bmd": 15,
+    "n_h_req": 100,
+    "beta_t3": 0.0751510259247578,
+    "beta_uni": 0.073035391347845,
+    "se_uni": 0.0154168076255503,
+    "beta_mv": 0.0650306214203901,
+    "se_mv": 0.0154436470553845,
+    "atten_t3": 13.466754950891,
+    "atten_set": 10.96012464605092,
+    "theta_h": 0.1585466694908287,
+    "theta_h_p": 1.4239908575488084e-18,
+    "fc_bmd": 19.443774701444347,
+    "fc_h": 889.4908641064901
+   },
+   "BMD_leg|OA_knee": {
+    "exp": "BMD_leg",
+    "out": "OA_knee",
+    "n_bmd": 21,
+    "n_h_req": 100,
+    "beta_t3": 0.0600395031283457,
+    "beta_uni": 0.0508851588058478,
+    "se_uni": 0.0145569618208304,
+    "beta_mv": 0.0400840944204771,
+    "se_mv": 0.0146137110129302,
+    "atten_t3": 33.237131668478625,
+    "atten_set": 21.226354872119266,
+    "theta_h": 0.1522371932741489,
+    "theta_h_p": 4.6644722680649405e-17,
+    "fc_bmd": 20.739188910233587,
+    "fc_h": 448.71793174748353
+   },
+   "BMD_total|fracture": {
+    "exp": "BMD_total",
+    "out": "fracture",
+    "n_bmd": 27,
+    "n_h_req": 100,
+    "beta_t3": -0.33713,
+    "beta_uni": -0.3333896783938168,
+    "se_uni": 0.0229213585444109,
+    "beta_mv": -0.3427384105551757,
+    "se_mv": 0.0229884320597991,
+    "atten_t3": -1.6635750467699972,
+    "atten_set": -2.8041456491390537,
+    "theta_h": 0.1663148610400327,
+    "theta_h_p": 9.956659380246349e-08,
+    "fc_bmd": 25.05140469585119,
+    "fc_h": 661.6800940752865
+   },
+   "BMD_femur_neck|fracture": {
+    "exp": "BMD_femur_neck",
+    "out": "fracture",
+    "n_bmd": 23,
+    "n_h_req": 100,
+    "beta_t3": -0.35066,
+    "beta_uni": -0.3515056681297709,
+    "se_uni": 0.0298826603755257,
+    "beta_mv": -0.3613347328203374,
+    "se_mv": 0.0299456735730527,
+    "atten_t3": -3.0441832031989313,
+    "atten_set": -2.796274877404748,
+    "theta_h": 0.1602460647332894,
+    "theta_h_p": 4.143526376951147e-07,
+    "fc_bmd": 15.821055375632897,
+    "fc_h": 561.8120245718121
+   }
+  },
+  "CI": "beta +/- 1.959964*SE"
+ },
+ "SupplFig11_robustness_grid": {
+  "sources": [
+   "code/output/genetics/AUDIT_mr_recomputed.csv (= Table 3)",
+   "code/output/genetics/harmonised/*.csv (presso_outlier column; PRESSO-out IVW recomputed)",
+   "code/output/mrlap_overlap_results.csv",
+   "code/output/genetics/mvmr_height_grid.csv :: spec=='EUR|n_h=100'"
+  ],
+  "encoding": {
+   "sig": "● p<0.05",
+   "ns": "○ p≥0.05",
+   "dir": "◊ direction only",
+   "na": "not applicable"
+  },
+  "details": {
+   "BMD_total__fracture": {
+    "n_outliers": 2,
+    "n_after": 29,
+    "presso_out_beta": -0.3519764456790938,
+    "presso_out_se": 0.02341937267588893,
+    "presso_out_p": 4.7206777969229975e-51,
+    "mrlap_observed": -0.122245826778434,
+    "mrlap_corrected": -0.140900537773009,
+    "mrlap_se": 0.0137300633841028,
+    "mrlap_p": 1.04312262809619e-24,
+    "mvmr_beta": -0.3427384105551757,
+    "mvmr_p": 2.87307467468041e-50
+   },
+   "BMD_femur_neck__fracture": {
+    "n_outliers": 3,
+    "n_after": 22,
+    "presso_out_beta": -0.34470944532568915,
+    "presso_out_se": 0.032876253328361554,
+    "presso_out_p": 1.0118283202556833e-25,
+    "mrlap_observed": -0.103184223088857,
+    "mrlap_corrected": -0.123221110111867,
+    "mrlap_se": 0.0270349886924167,
+    "mrlap_p": 5.16827729348029e-06,
+    "mvmr_beta": -0.3613347328203374,
+    "mvmr_p": 1.5904872234608514e-33
+   },
+   "BMD_total__OA_knee": {
+    "n_outliers": 3,
+    "n_after": 28,
+    "presso_out_beta": 0.08843054373220201,
+    "presso_out_se": 0.012841856108681323,
+    "presso_out_p": 5.733521097844643e-12,
+    "mrlap_observed": 0.0240680011672381,
+    "mrlap_corrected": 0.0283777154549236,
+    "mrlap_se": 0.0074394850185456,
+    "mrlap_p": 0.0001364738028574,
+    "mvmr_beta": 0.0634048003265839,
+    "mvmr_p": 7.388522018167554e-07
+   },
+   "BMD_lumbar__OA_knee": {
+    "n_outliers": 3,
+    "n_after": 18,
+    "presso_out_beta": 0.11330674467432279,
+    "presso_out_se": 0.01790894970844868,
+    "presso_out_p": 2.5026106422786196e-10,
+    "mrlap_observed": 0.0333440404325205,
+    "mrlap_corrected": 0.0406176274487469,
+    "mrlap_se": 0.0103466269492847,
+    "mrlap_p": 8.64822562168934e-05,
+    "mvmr_beta": 0.068448326716849,
+    "mvmr_p": 5.298060435111311e-05
+   },
+   "BMD_arms__OA_knee": {
+    "n_outliers": 2,
+    "n_after": 14,
+    "presso_out_beta": 0.0866197286269225,
+    "presso_out_se": 0.016147263035585505,
+    "presso_out_p": 8.123683145403771e-08,
+    "mrlap_observed": 0.0280956361188278,
+    "mrlap_corrected": 0.0342721057082809,
+    "mrlap_se": 0.0108548834406388,
+    "mrlap_p": 0.0015923832331664,
+    "mvmr_beta": 0.0650306214203901,
+    "mvmr_p": 2.54430581294924e-05
+   },
+   "BMD_leg__OA_knee": {
+    "n_outliers": 3,
+    "n_after": 21,
+    "presso_out_beta": 0.04940011040853196,
+    "presso_out_se": 0.014685842541810698,
+    "presso_out_p": 0.00076879636067267,
+    "mrlap_observed": 0.0252929569252701,
+    "mrlap_corrected": 0.0302253213471325,
+    "mrlap_se": 0.0100624747588122,
+    "mrlap_p": 0.0026666017589082,
+    "mvmr_beta": 0.0400840944204771,
+    "mvmr_p": 0.00608973693026
+   },
+   "BMD_femur_neck__OA_knee": {
+    "n_outliers": 3,
+    "n_after": 22,
+    "presso_out_beta": 0.07080694069168457,
+    "presso_out_se": 0.01797508618121053,
+    "presso_out_p": 8.176359317810018e-05,
+    "mrlap_observed": 0.0221904930496266,
+    "mrlap_corrected": 0.0269720737583307,
+    "mrlap_se": 0.0108530037109969,
+    "mrlap_p": 0.0129472336469285,
+    "mvmr_beta": 0.0494492734688184,
+    "mvmr_p": 0.0032102964709851
+   },
+   "OA_knee__fracture": {
+    "n_outliers": 2,
+    "n_after": 67,
+    "presso_out_beta": 0.059070194641702024,
+    "presso_out_se": 0.0325597843438977,
+    "presso_out_p": 0.0696458346840348,
+    "mrlap_observed": 0.0384461366257827,
+    "mrlap_corrected": 0.0397664447496672,
+    "mrlap_se": 0.0417570297418777,
+    "mrlap_p": 0.340929980303337
+   },
+   "OA_knee__BMD_total": {
+    "n_outliers": 1,
+    "n_after": 68,
+    "presso_out_beta": 0.05057735835852026,
+    "presso_out_se": 0.03223143190552135,
+    "presso_out_p": 0.11660282279894278,
+    "mrlap_observed": 0.274201010203373,
+    "mrlap_corrected": 0.343544761549853,
+    "mrlap_se": 0.135925164393087,
+    "mrlap_p": 0.0114892486004106
+   },
+   "OA_knee__BMD_femur_neck": {
+    "n_outliers": 0,
+    "n_after": 69,
+    "presso_out_beta": 0.04187528830644764,
+    "presso_out_se": 0.0319168877677061,
+    "presso_out_p": 0.18951662955809323,
+    "mrlap_observed": 0.260778181139752,
+    "mrlap_corrected": 0.320960403705487,
+    "mrlap_se": 0.123697701387208,
+    "mrlap_p": 0.0094669110382262
+   }
+  }
+ },
+ "SupplFig9_instrument_flow": {
+  "sources": [
+   "strict_clump_summary.csv (n_gws, n_kept_strict)",
+   "*_plink.clumped (strict clump counts; blank trailing lines skipped)",
+   "harmonised/*.csv (analysed K, asserted == Table 3)"
+  ],
+  "erratum": "22-37/118 (wc -l artifact) corrected to 20-35/116 on 2026-10-16",
+  "rows": [
+   {
+    "exposure": "BMD total",
+    "outcome": "knee OA",
+    "n_gws": 514,
+    "n_clumped": 35,
+    "K": 31,
+    "retained_pct": 88.6
+   },
+   {
+    "exposure": "BMD total",
+    "outcome": "fracture",
+    "n_gws": 514,
+    "n_clumped": 35,
+    "K": 31,
+    "retained_pct": 88.6
+   },
+   {
+    "exposure": "Femoral neck",
+    "outcome": "knee OA",
+    "n_gws": 170,
+    "n_clumped": 28,
+    "K": 25,
+    "retained_pct": 89.3
+   },
+   {
+    "exposure": "Femoral neck",
+    "outcome": "fracture",
+    "n_gws": 170,
+    "n_clumped": 28,
+    "K": 25,
+    "retained_pct": 89.3
+   },
+   {
+    "exposure": "Lumbar spine",
+    "outcome": "knee OA",
+    "n_gws": 301,
+    "n_clumped": 24,
+    "K": 21,
+    "retained_pct": 87.5
+   },
+   {
+    "exposure": "Arms",
+    "outcome": "knee OA",
+    "n_gws": 246,
+    "n_clumped": 20,
+    "K": 16,
+    "retained_pct": 80.0
+   },
+   {
+    "exposure": "Legs",
+    "outcome": "knee OA",
+    "n_gws": 277,
+    "n_clumped": 26,
+    "K": 24,
+    "retained_pct": 92.3
+   },
+   {
+    "exposure": "Knee OA",
+    "outcome": "BMD total",
+    "n_gws": 1980,
+    "n_clumped": 116,
+    "K": 69,
+    "retained_pct": 59.5
+   },
+   {
+    "exposure": "Knee OA",
+    "outcome": "femoral neck",
+    "n_gws": 1980,
+    "n_clumped": 116,
+    "K": 69,
+    "retained_pct": 59.5
+   },
+   {
+    "exposure": "Knee OA",
+    "outcome": "fracture",
+    "n_gws": 1980,
+    "n_clumped": 116,
+    "K": 69,
+    "retained_pct": 59.5
+   }
+  ]
+ },
+ "SupplFig12_literature_comparison": {
+  "sources": [
+   "code/output/genetics/AUDIT_mr_recomputed.csv (this study; OR=exp(beta))",
+   "Hartley 2022 IJE 51(4):1254-1267 (1SMR, eBMD per SD): hip 1.28 (1.05-1.57), knee 1.40 (1.20-1.63)",
+   "Funck-Brentano 2019 Arthritis Rheumatol 71(10):1634-1641: femoral neck BMD->OA, all-OA OR 1.14 (1.06-1.22)",
+   "Zhou 2025 Front Genet 16:1597005: FN-BMD->hip OA beta=-2.17, P<0.01 (no OR reported)"
+  ],
+  "ours": {
+   "BMD_total": {
+    "beta": 0.0783401043836728,
+    "se": 0.0125149304614772,
+    "OR": 1.0814904157599392,
+    "lo": 1.0552854419303421,
+    "hi": 1.1083461146219538
+   },
+   "BMD_lumbar": {
+    "beta": 0.09457452908649,
+    "se": 0.0163765847889891,
+    "OR": 1.0991910817874946,
+    "lo": 1.064469989348581,
+    "hi": 1.1350447136800466
+   },
+   "BMD_arms": {
+    "beta": 0.0751462874223946,
+    "se": 0.0157053117736418,
+    "OR": 1.0780418433126326,
+    "lo": 1.0453632597241025,
+    "hi": 1.1117419759324867
+   },
+   "BMD_leg": {
+    "beta": 0.0600319308602547,
+    "se": 0.0141769780984595,
+    "OR": 1.06187045244106,
+    "lo": 1.0327710859509116,
+    "hi": 1.0917897229173354
+   },
+   "BMD_femur_neck": {
+    "beta": 0.0579052025315587,
+    "se": 0.0169527054585103,
+    "OR": 1.0596145421728707,
+    "lo": 1.0249855453409704,
+    "hi": 1.0954134749390234
+   }
+  },
+  "scale_caveat": "eBMD scale vs areal-BMD reconstructed per-SD scale; not directly comparable"
+ }
+}

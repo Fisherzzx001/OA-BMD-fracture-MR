@@ -55,6 +55,10 @@ def main():
 
     rows = []
     for nm in Zdf.columns:
+        if nm == "fracture":
+            continue        # G8 后 PHENOS 含 fracture；其 h² 在下方按原始骨折
+                             # GWAS 单独计算（占位 N 口径，行名 fracture_any），
+                             # 避免在 rg_h2_trueN.csv 中产生重复行。
         N = TRUE_N.get(nm, Ns[nm])
         r = m08.compute_h2(Zdf[nm].values, ell, N, M, n_iter=3, n_blocks=100)
         rows.append((nm, N, r[0], r[1], r[2], r[3]))

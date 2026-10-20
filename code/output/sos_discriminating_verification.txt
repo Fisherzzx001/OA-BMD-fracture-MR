@@ -1,0 +1,142 @@
+[load] BMD_total        n= 31  (C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT\code\output\genetics\harmonised\BMD_total__OA_knee.csv)
+[load] BMD_femur_neck   n= 25  (C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT\code\output\genetics\harmonised\BMD_femur_neck__OA_knee.csv)
+[load] BMD_lumbar       n= 21  (C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT\code\output\genetics\harmonised\BMD_lumbar__OA_knee.csv)
+[load] BMD_arms         n= 16  (C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT\code\output\genetics\harmonised\BMD_arms__OA_knee.csv)
+[load] BMD_leg          n= 24  (C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT\code\output\genetics\harmonised\BMD_leg__OA_knee.csv)
+
+==============================================================================
+1. Per-site IVW recomputation (validation against Table 3)
+==============================================================================
+  Total body     IVW beta=+0.023121  SE=0.003694  p=3.856e-10   Table3 OK
+  Femoral neck   IVW beta=+0.017090  SE=0.005003  p=6.362e-04   Table3 OK
+  Lumbar spine   IVW beta=+0.027913  SE=0.004833  p=7.696e-09   Table3 OK
+  Arms           IVW beta=+0.022179  SE=0.004635  p=1.712e-06   Table3 OK
+  Legs           IVW beta=+0.017718  SE=0.004184  p=2.291e-05   Table3 OK
+
+==============================================================================
+2. Instrument overlap between site sets (shared SNPs)
+==============================================================================
+                 total  femur_ne    lumbar      arms       leg
+       total        31         6        15        12        15
+    femur_ne         6        25         6         4         4
+      lumbar        15         6        21         7         9
+        arms        12         4         7        16         9
+         leg        15         4         9         9        24
+  (the five estimates share instruments AND the OA_knee outcome GWAS,
+   so the naive independence-assumption heterogeneity test is anti-conservative)
+
+==============================================================================
+3. Exact covariance matrix of the five site estimates
+   cov(A,B) = sum_{i in A&B} beta_e,i^A * beta_e,i^B / (W_A*W_B*se_o,i^2)
+==============================================================================
+  diagonal validated: cov(i,i) == 1/W == Table-3 SE^2  (all 5 OK)
+  correlation matrix implied by shared instruments:
+                 total  femur_ne    lumbar      arms       leg
+       total     1.000     0.276     0.659     0.689     0.713
+    femur_ne     0.276     1.000     0.250     0.328     0.281
+      lumbar     0.659     0.250     1.000     0.451     0.522
+        arms     0.689     0.328     0.451     1.000     0.661
+         leg     0.713     0.281     0.522     0.661     1.000
+
+==============================================================================
+4. F6 cross-site readout homogeneity
+   H0 (SOS): one set-point -> identical per-SD effect at every site
+   Falsification: Q rejects homogeneity (p<0.05)
+==============================================================================
+  conservative rho=0.3: Q=  7.102  (df=4)
+  conservative rho=0.5: Q=  7.653  (df=4)
+  pooled theta (exact) = +0.02083
+  Q naive (independence)      =   3.564  df=4
+  Q exact (shared-instr cov)  =   6.924  df=4
+  p (naive)  = 0.4682
+  p (exact)  = 0.1399
+  (implied pairwise correlations from shared instruments are 0.25-0.71,
+   so the naive form is anti-conservative in expectation; the exact form is valid.)
+  cross-check (Cholesky): Q=6.9242  (matches direct form: True)
+
+  Verdict: homogeneity NOT rejected -> the per-SD BMD->knee-OA effect is
+  statistically indistinguishable across the five readout sites,
+  as the single-set-point claim requires; a site-specific /
+  local-architecture rival predicts heterogeneity and is not supported.
+
+  random-effects (DL): tau^2=0.00e+00  theta_RE=+0.02163 (95% CI +0.01778 to +0.02547)
+  tau^2 = 0 -> no detectable between-site variance.
+
+==============================================================================
+5. Paired within-SNP homogeneity tests (exact variance of the difference)
+==============================================================================
+  pair                         n_shared beta_A - beta_B   SE_diff       z  p_two-sided
+  Total body - Femoral neck           6        +0.00603   0.00533   +1.13       0.2583
+  Total body - Lumbar spine          15        -0.00479   0.00367   -1.30       0.1919
+  Total body - Arms                  12        +0.00094   0.00340   +0.28       0.7814
+  Total body - Legs                  15        +0.00540   0.00302   +1.79       0.0733
+  Femoral neck - Lumbar spine         6        -0.01082   0.00602   -1.80       0.0724
+  Femoral neck - Arms                 4        -0.00509   0.00559   -0.91       0.3630
+  Femoral neck - Legs                 4        -0.00063   0.00555   -0.11       0.9099
+  Lumbar spine - Arms                 7        +0.00573   0.00496   +1.16       0.2480
+  Lumbar spine - Legs                 9        +0.01019   0.00444   +2.29       0.0217
+  Arms - Legs                         9        +0.00446   0.00365   +1.22       0.2220
+  (one of the ten contrasts - lumbar spine vs legs, p=0.022 - reaches nominal
+   significance; under ten tests this is compatible with chance (Bonferroni
+   alpha=0.005), and the pre-specified omnibus Q above stays non-significant.)
+
+==============================================================================
+6. P2 pre-specified clauses
+==============================================================================
+  clause (comparative): arms >= femoral neck
+    beta_arms - beta_femneck = +0.00509  SE=0.00559  z=+0.91
+    one-sided p=0.182, two-sided p=0.363
+    -> directionally observed but UNDER-POWERED (consistent with S11);
+       the systemic content of P2 does not rest on this contrast.
+
+  clause (systemic-not-local): non-weight-bearing arms effect != 0
+    beta_arms = +0.02218  SE=0.00464  z=+4.78  p=1.71e-06
+    -> a local-mechanical rival (effect runs through knee loading /
+       joint-proximal bone) predicts a null arm-site effect; the observed
+       highly significant positive effect falsifies that rival.
+  consistency: pairwise-difference variances match the exact covariance matrix
+                (Sig[A,A]+Sig[B,B]-2*Sig[A,B]) for all 10 pairs
+
+==============================================================================
+7. F7 joint-locus exclusion sensitivity (rival R-C: joint pleiotropy)
+==============================================================================
+  (a) GDF5 rs224333 (chr20:34.0Mb), the archetypal joint-development /
+      osteoarthritis locus, as a BMD instrument:
+      Total body    : in instrument set = False
+      Femoral neck  : in instrument set = False
+      Lumbar spine  : in instrument set = False
+      Arms          : in instrument set = False
+      Legs          : in instrument set = False
+      tophits_Total_BMD.csv       : rs224333 present in top-hits (GWS) = False
+      tophits_Femur_neck_BMD.csv  : rs224333 present in top-hits (GWS) = False
+      tophits_Arms_BMD.csv        : rs224333 present in top-hits (GWS) = False
+      tophits_LS_BMD.csv          : rs224333 present in top-hits (GWS) = False
+      tophits_Leg_BMD.csv         : rs224333 present in top-hits (GWS) = False
+      -> GDF5 is not a genome-wide-significant BMD instrument at any site
+         and contributes nothing to any of the five forward estimates.
+
+  (b) leave-one-locus-out IVW (drop the locus, recompute):
+      WNT16 (bone-formation locus)     Total body    : beta +0.02312 -> +0.02649 (+14.6%), SE 0.00369 -> 0.00409, p -> 9.04e-11, dropped-SNP ratio=+0.0081
+      WNT16 (bone-formation locus)     Femoral neck  : beta +0.01709 -> +0.01702 (-0.4%), SE 0.00500 -> 0.00518, p -> 1.02e-03, dropped-SNP ratio=+0.0180
+      WNT16 (bone-formation locus)     Lumbar spine  : beta +0.02791 -> +0.02840 (+1.7%), SE 0.00483 -> 0.00497, p -> 1.11e-08, dropped-SNP ratio=+0.0195
+      WNT16 (bone-formation locus)     Arms          : beta +0.02218 -> +0.02934 (+32.3%), SE 0.00464 -> 0.00566, p -> 2.17e-07, dropped-SNP ratio=+0.0076
+      WNT16 (bone-formation locus)     Legs          : beta +0.01772 -> +0.02123 (+19.8%), SE 0.00418 -> 0.00486, p -> 1.27e-05, dropped-SNP ratio=+0.0077
+      SOX6 (chondrogenesis TF)         Femoral neck  : beta +0.01709 -> +0.01859 (+8.8%), SE 0.00500 -> 0.00530, p -> 4.47e-04, dropped-SNP ratio=+0.0046
+      SOX6 (chondrogenesis TF)         Arms          : beta +0.02218 -> +0.02328 (+4.9%), SE 0.00464 -> 0.00479, p -> 1.16e-06, dropped-SNP ratio=+0.0056
+      -> every leave-one-locus-out estimate stays positive and statistically
+         significant; no single annotated locus drives the effect.
+
+==============================================================================
+8. Summary
+==============================================================================
+  F6 homogeneity: Q_exact=6.92 (df=4), p=0.140 -> NOT rejected
+     naive Q=3.56 (anti-conservative, shown for comparison)
+     most anti-homogeneity covariance (rho>=0.5): Q=7.65, p=0.105 -> also not rejected
+     random-effects tau^2=0.0e+00 -> no between-site variance
+     pairwise: 1 of 10 contrasts nominally significant (lumbar vs legs, p=0.022;
+               Bonferroni alpha=0.005) -> chance-compatible
+  P2 comparative clause (arms >= femoral neck): z=+0.91, one-sided p=0.182 (under-powered)
+  P2 systemic-not-local clause: arms beta=+0.02218, p=1.7e-06 -> local-mechanical rival falsified
+  F7: GDF5 not an instrument at any site; WNT16/SOX6 leave-one-out moves beta
+      by -0.4% to +32.3% (never changes direction or significance); the effect
+      does not depend on any single locus, joint or bone

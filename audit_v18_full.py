@@ -317,9 +317,17 @@ for t, (hs, ss, isx) in T1.items():
 # BMD h² 实际计算用的 N（rg_h2_trueN 的 N_used）与 Table 1 声称的 31,873 是否一致
 N_USED = {p: float(H2.loc[p, "N_used"]) for p in H2.index}
 print("rg_h2_trueN N_used:", {k: int(v) for k, v in N_USED.items()})
-if abs(N_USED["BMD_total"] - 31873) > 1:
-    WARNS.append(f"Table 1 声称 BMD N=31,873，但 h² 实际按 N={int(N_USED['BMD_total'])} 计算 "
-                 f"(h² ∝ 1/N，差 {100*abs(N_USED['BMD_total']/31873-1):.2f}%)")
+# 2026-10-16 第十一轮清理：该条长期悬挂为 WARN。实因为 h² 用的是 representative N=32,000
+# （BMD 各位点真实 N=31,873），差 0.40%，远小于报告 SE。Table 1 的 "N used" 列已改标实际
+# 使用的 32,000 并补 ‡ 脚注；门禁改为核验「列值 = 计算值」+「舍入已披露」，不再静默 WARN。
+if abs(N_USED["BMD_total"] - 32000) > 1:
+    WARNS.append(f"Table 1 标注 BMD N used=32,000，但 h² 实际按 N={int(N_USED['BMD_total'])} 计算")
+else:
+    ck("T1 BMD 'N used' 列 = 32,000（h² representative N，与 rg_h2_trueN 一致）",
+       "| 32,000‡" in md, "Table 1 应把 h² 实际使用的 representative N=32,000 写入 N used 列")
+    ck("T1 ‡ 脚注披露 31,873→32,000 的 0.40% 舍入（h² ∝ 1/N）",
+       "0.40%" in md and "representative N of 32,000" in md,
+       "应披露 per-site N=31,873 与 representative N=32,000 的 0.40% 差异")
 
 for t, (rep, K) in {"OA_knee": ("0.094", 0.12), "OA_selfrep": ("0.073", None),
                     "fracture": ("0.062", None)}.items():
@@ -505,15 +513,39 @@ for (e, o), claim in CLAIM36.items():
     ck(f"§3.6 {e}->{o} post-outlier β", ok, f"稿件='{claim}' 重算={s} (raw {after:+.6f})")
     print(f"        {e:16s}->{o:12s} 稿件 {claim}  重算 {s}")
 # null 对移除离群后变化（稿件未报告）
+#
+# FIX 2026-10-16 (trust-but-verify audit F3):
+#   b0 came from the strict-set recomputation (RE[...]) while b1 came from
+#   mr_presso_results.csv, and those two sources are NOT on the same numerical
+#   scale for the OA_knee-exposure rows. The mismatched pair produced spurious
+#   magnitudes AND reversed signs (e.g. -71.8% for a row from which zero
+#   outliers had actually been removed).
+#   Both quantities are now derived from the SAME harmonised SNP files on one
+#   consistent scale, and the outlier count is cross-checked against the
+#   MR-PRESSO result file.
 for e, o in [("OA_knee", "fracture"), ("OA_knee", "BMD_total"), ("OA_knee", "BMD_femur_neck")]:
+    _d = pd.read_csv(os.path.join(GEN, "harmonised", f"{e}__{o}.csv"))
+    _d["_b"] = _d.beta_o / _d.beta_e
+    _d["_s"] = (_d.se_o / _d.beta_e).abs()
+
+    def _ivw(df):
+        _w = 1.0 / df._s ** 2
+        return float((_w * df._b).sum() / _w.sum())
+
+    b0 = _ivw(_d)
+    _n_out = int(_d.presso_outlier.astype(float).sum())
+    b1 = _ivw(_d[_d.presso_outlier.astype(float) == 0])
     row = PRESS[(PRESS.exposure == e) & (PRESS.outcome == o)].iloc[0]
-    b0 = RE[(e, o)]["beta"]
-    b1 = float(row.b_ivw_out)
-    print(f"        {e:16s}->{o:12s} 全样本 β={b0:+.4f}  移除{int(row.n_outlier)}个离群后 β={b1:+.4f}"
+    ck(f"§3.6 {e}->{o} outlier count consistent",
+       _n_out == int(row.n_outlier),
+       f"harmonised={_n_out} presso_results={int(row.n_outlier)}")
+    print(f"        {e:16s}->{o:12s} 全样本 β={b0:+.4f}  移除{_n_out}个离群后 β={b1:+.4f}"
           f"  (变化 {100*(b1/b0-1):+.1f}%)")
     if abs(b1 / b0 - 1) > 0.5:
-        WARNS.append(f"§3.6 {e}->{o}: 移除离群后 β 由 {b0:+.3f} 变为 {b1:+.3f} "
-                     f"({100*(b1/b0-1):+.0f}%)，稿件仅称 'remained non-significant'，未报告幅度")
+        # 稿件 §3.4 已报告幅度（+0.171 / +0.200）；若不再含则恢复 WARN
+        if ("total-body BMD to +0.171" not in md) or ("fracture to +0.200" not in md):
+            WARNS.append(f"§3.6 {e}->{o}: 移除离群后 β 由 {b0:+.3f} 变为 {b1:+.3f} "
+                         f"({100*(b1/b0-1):+.0f}%)，稿件未报告幅度")
 
 # 6.4 §3.2：多重检验计数
 RL2 = pd.read_csv(os.path.join(GEN, "rg_results_long_13.csv"))
@@ -531,10 +563,9 @@ ck("§3.2 Bonferroni 不显著对数=3(修正后)", len(nb) == 3, f"实际 {len(
 # 6.5 §3.3 weighted median 与 Table 3
 wm_strict = RE[("BMD_total", "fracture")]["wmed"]
 print(f"\n[§3.3] total-body→fracture 加权中位数：严格集 {wm_strict:+.4f} "
-      f"(§3.3 正文称 −0.39；Table 3 报 −0.364)")
-ck("§3.3 weighted median 与 Table 3 一致", format(wm_strict, ".2f") == "-0.39" or
-   format(wm_strict, ".3f") == "-0.364",
-   f"正文 −0.39 与 Table 3 −0.364 不一致（严格集重算 {wm_strict:+.4f}）")
+      f"(稿件 §3.3 与 Table 3 均报 −0.364)")
+ck("§3.3 weighted median 与 Table 3 一致", format(wm_strict, ".3f") == "-0.364",
+   f"重算 {wm_strict:+.4f} 与 Table 3 −0.364 不一致")
 
 # 6.6 over-claim 扫描
 print("\n[全文] over-claim 扫描")
@@ -551,6 +582,145 @@ for pat, label in PATTERNS:
         ctx = md[max(0, m.start() - 90):m.end() + 90].replace("\n", " ")
         print(f"        L{ln:4d} [{label}] ...{ctx}...")
         WARNS.append(f"L{ln} 残留断言 [{label}]")
+
+# ============================================================ 6.7 附属文件 vs 稿件 一致性
+# 本轮新增：此前门禁不校验附属文件，导致 cover letter / Table S11 落后稿件一整个版本而静默通过。
+print("\n[\u00a76.7] \u9644\u5c5e\u6587\u4ef6 vs \u7a3f\u4ef6 \u6570\u503c\u4e00\u81f4\u6027")
+import io as _io
+_anc = {
+    "cover letter": os.path.join(PROJ, "docs", "cover_letter_OAC.md"),
+    "Table S11": os.path.join(PROJ, "docs", "Supplementary",
+                              "01_predictions_and_falsification.md"),
+}
+_anc_txt = {}
+for _k, _p in _anc.items():
+    _anc_txt[_k] = _io.open(_p, encoding="utf-8").read() if os.path.exists(_p) else ""
+
+_ck = lambda n, ok, d: ck(n, ok, d)
+
+# --- G1/G2: MVMR \u8870\u51cf\u8303\u56f4\u5fc5\u987b\u4e0e\u7a3f\u4ef6\u540c\u6b65 ---
+ck("\u00a76.7 G1 cover letter MVMR \u8303\u56f4\u4e0e\u7a3f\u4ef6\u4e00\u81f4",
+   "9.5\u201333.2%" in _anc_txt.get("cover letter", "")
+   and "67\u201391%" in _anc_txt.get("cover letter", ""),
+   "cover letter \u5e94\u4e3a 9.5\u201333.2% / 67\u201391%")
+
+ck("\u00a76.7 G2 Table S11 \u8870\u51cf\u8303\u56f4\u4e0e\u7a3f\u4ef6\u4e00\u81f4",
+   "9.5\u201333.2%" in _anc_txt.get("Table S11", ""),
+   "Table S11 P4 \u884c\u5e94\u4e3a 9.5\u201333.2%")
+
+ck("\u00a76.7 G3 Table S11 \u9633\u6027\u5bf9\u7167\u4e0a\u754c\u4e0e\u7a3f\u4ef6\u4e00\u81f4",
+   "\u22121.7% to \u22123.0%" in _anc_txt.get("Table S11", ""),
+   "Table S11 \u5e94\u4e3a \u22121.7% to \u22123.0%")
+
+# --- G4: \u65e7\u503c\u6b8b\u7559 ---
+for _old, _lab in [("6\u201333%", "MVMR 6-33%"), ("67\u201394%", "MVMR 67-94%"),
+                   ("22\u201337", "\u5de5\u5177\u6570 22-37"), ("118 for knee OA", "\u5de5\u5177\u6570 118")]:
+    ck(f"\u00a76.7 G4 \u7a3f\u4ef6\u4e0d\u6b8b\u7559\u65e7\u503c {_lab}",
+       _old not in md, f"\u627e\u5230\u6b8b\u7559: {_lab}")
+    for _k, _t in _anc_txt.items():
+        ck(f"\u00a76.7 G4 {_k} \u4e0d\u6b8b\u7559\u65e7\u503c {_lab}",
+           _old not in _t, f"{_k} \u6b8b\u7559: {_lab}")
+
+# --- G5: \u7a7a\u6d1e\u81ea\u8d2c\u8bcd ---
+for _w in ["provisional", "cannot be fully excluded", "cannot decompose",
+           "better described as absence of evidence"]:
+    ck(f"\u00a76.7 G5 \u7a3f\u4ef6\u4e0d\u542b\u7a7a\u6d1e\u81ea\u8d2c \u201c{_w}\u201d",
+       _w not in md, f"\u7a3f\u4ef6\u6b8b\u7559: {_w}")
+
+# --- G6: Highlights \u4e0d\u5e94\u628a\u975e\u663e\u8457\u5f53\u96f6\u6548\u5e94 ---
+_hl = md.split("## Highlights")[1].split("**Keywords**")[0] if "## Highlights" in md else ""
+ck("\u00a76.7 G6 Highlights \u4e0d\u542b \u201cwere null\u201d\uff08\u975e\u663e\u8457\u5f53\u96f6\u6548\u5e94\uff09",
+   "were null" not in _hl, "Highlights \u5e94\u7528 non-significant")
+
+# --- G7: \u5b9e\u8d28\u62ab\u9732\u4e0d\u5f97\u88ab\u5220\uff08\u9632\u6b62\u4e0b\u8f6e\u6539\u52a8\u8d70\u5411\u53e6\u4e00\u6781\u7aef\uff09 ---
+for _must in ["0.14\u20130.26", "I\u00b2 68\u201386%", "9.5\u201333.2%",
+              "MR-Egger", "positive control"]:
+    ck(f"\u00a76.7 G7 \u5b9e\u8d28\u62ab\u9732\u4fdd\u7559 \u201c{_must}\u201d",
+       _must in md, f"\u7a3f\u4ef6\u7f3a\u5c11\u5fc5\u8981\u62ab\u9732: {_must}")
+
+# --- G8: \u9633\u6027\u5bf9\u7167\u5f02\u8d28\u6027\u5bf9\u7167\u5df2\u8865\u5165\uff08\u672c\u8f6e\u6838\u5fc3\u53d1\u73b0\uff09 ---
+ck("\u00a76.7 G8 \u5df2\u8865\u5165\u9633\u6027\u5bf9\u7167\u5f02\u8d28\u6027\u5bf9\u7167",
+   "positive control was comparably heterogeneous" in md,
+   "\u9633\u6027\u5bf9\u7167 I\u00b2 78/83% \u4e0e BMD\u2192OA 68\u201386% \u540c\u91cf\u7ea7\uff1b\u5fc5\u987b\u663e\u5f0f\u5199\u5165")
+
+
+# --- G9: \u5168\u6587\u62ec\u53f7\u5e73\u8861\uff08\u6458\u8981\u7b2c\u4e00\u53e5\u66fe\u7f3a\u53f3\u62ec\u53f7\uff09 ---
+_bad = []
+for _ln, _line in enumerate(md.split("\n"), 1):
+    if _line.startswith("|"):
+        continue
+    if _line.count("(") != _line.count(")"):
+        _bad.append(f"L{_ln}")
+ck("\u00a76.7 G9 \u5168\u6587\u62ec\u53f7\u5e73\u8861", not _bad,
+   f"\u4e0d\u5e73\u8861\u884c: {_bad}")
+
+# --- G10: \u8fc7\u5ea6\u65ad\u8a00\u7981\u7528\uff08\u7b2c\u5341\u8f6e\uff1aopposing-endpoints \u65b0\u610f\u951a\u5b9a + forming/size \u672a\u5206\u79bb\uff09---
+for _w, _lab in [("mass-attributable", "\u6b8b\u5dee\u88ab\u5f53\u4f5c mass \u7684\u65ad\u8a00"),
+                 ("explains the opposing", "set-point \u88ab\u8bf4\u6210\u89e3\u91ca\u5bf9\u7acb\u7aef\u70b9"),
+                 ("independent of skeletal size", "height-independent \u88ab\u5077\u6362\u4e3a size-independent"),
+                 ("explained by skeletal size", "\u8870\u51cf\u88ab\u8bf4\u6210 explained by skeletal size"),
+                 ("mass effect intact", "\u9633\u6027\u5bf9\u7167\u88ab\u8bf4\u6210 mass effect intact"),
+                 ("true mass effect survives", "\u5bf9\u7167\u88ab\u8bf4\u6210\u8bc1\u5b9e true mass effect")]:
+    ck(f"\u00a76.7 G10 \u7a3f\u4ef6\u4e0d\u542b\u8fc7\u5ea6\u65ad\u8a00 \u201c{_w}\u201d\uff08{_lab}\uff09",
+       _w not in md, f"\u7a3f\u4ef6\u6b8b\u7559: {_w}")
+    for _k, _t in _anc_txt.items():
+        ck(f"\u00a76.7 G10 {_k} \u4e0d\u542b\u8fc7\u5ea6\u65ad\u8a00 \u201c{_w}\u201d", _w not in _t, f"{_k} \u6b8b\u7559: {_w}")
+
+# --- G11: \u4e25\u683c\u672f\u8bed\u4e0e forming/size \u672a\u5206\u79bb\u62ab\u9732\u5fc5\u987b\u5b58\u5728\uff08\u9632\u4e0b\u8f6e\u56de\u9000\u5230\u65e7\u53d9\u4e8b\uff09---
+ck("\u00a76.7 G11 \u7a3f\u4ef6\u542b\u4e25\u683c\u672f\u8bed height-independent",
+   "height-independent" in md, "\u5e94\u4f7f\u7528 height-independent \u800c\u975e size-independent")
+ck("\u00a76.7 G11 \u7a3f\u4ef6\u62ab\u9732 height \u4e0d\u542b\u9aa8\u5bbd/\u51e0\u4f55\uff08bone width / geometry\uff09",
+   "bone width" in md and "geometry" in md,
+   "\u5e94\u62ab\u9732 height \u4e0d\u542b\u9aa8\u5bbd/\u51e0\u4f55\uff0c\u6b8b\u5dee\u672a\u9274\u522b\u4e3a mass")
+ck("\u00a76.7 G11 \u7a3f\u4ef6\u542b size \u5f52\u56e0\u4e0b\u754c\u8868\u8ff0\uff08lower bound\uff09",
+   "lower bound" in md, "9.5\u201333.2% \u5e94\u8868\u8ff0\u4e3a size \u5f52\u56e0\u4e0b\u754c")
+ck("\u00a76.7 G11 Table S11 \u540c\u6b65 forming/size \u672a\u5206\u79bb\u8fb9\u754c",
+   "bone width" in _anc_txt.get("Table S11", ""),
+   "S11 \u6838\u5fc3\u547d\u9898/\u8fb9\u754c\u6bb5\u5e94\u540c\u6b65 height \u7c97\u7cd9\u4ee3\u7406\u62ab\u9732")
+
+# --- G12–G18: 第十一轮整改项防回退（第九轮预审报告 P0/P1/P2 与逐条批评）---
+# G12 首例声明必须带 hedge（R3#1）
+ck("\u00a76.7 G12 \u9996\u4f8b\u58f0\u660e\u5df2\u8f6f\u5316\uff08among the first\uff09",
+   "To our knowledge this is among the first" in md,
+   "\u7a3d\u4ef6\u5e94\u4e3a 'To our knowledge this is among the first'")
+ck("\u00a76.7 G12 \u4e0d\u6b8b\u7559\u7edd\u5bf9\u9996\u4f8b\u58f0\u660e",
+   "This is the first direct MR test" not in md,
+   "\u7edd\u5bf9\u9996\u4f8b\u58f0\u660e\u662f\u4f2a\u521b\u65b0\u89e6\u53d1\u70b9")
+
+# G13 femoral-neck\u2192fracture \u7684 Egger intercept p=0.018 \u5df2\u5728\u6b63\u6587\u70b9\u660e\uff08R2#6\uff09
+ck("\u00a76.7 G13 \u6b63\u6587\u70b9\u660e femoral-neck intercept p=0.018",
+   "intercept was not null (p=0.018)" in md,
+   "\u9633\u6027\u5bf9\u7167\u4e0d\u5e94\u53ea\u62a5 total-body \u7684 null intercept")
+
+# G14 MR-Egger \u529f\u7387\u9650\u5b9a\uff08R2#5\uff09
+ck("\u00a76.7 G14 MR-Egger \u622a\u8ddd\u68c0\u9a8c\u5df2\u9644\u529f\u7387\u9650\u5b9a",
+   "limited power" in md and "16\u201331 instruments" in md,
+   "intercept \u4e0d\u663e\u8457 \u2260 \u65e0\u591a\u6548\u6027\uff1b\u9700\u5199\u660e 16\u201331 \u5de5\u5177\u4e0b\u529f\u7387\u6709\u9650")
+
+# G15 \u70b9\u4f4d\u7279\u5f02\u6027\u9650\u5b9a\u4e3a\u5df2\u5206\u6790\u4f4d\u70b9\uff08R2#4\uff09
+ck("\u00a76.7 G15 \u70b9\u4f4d\u7ed3\u8bba\u9650\u5b9a\u4e3a analysed sites",
+   "analysed sites" in md,
+   "\u5e94\u4e3a 'all five analysed sites'\uff0c\u4e0d\u5f97\u88f8\u79f0 all five sites")
+ck("\u00a76.7 G15 \u70b9\u4f4d\u9009\u62e9\u89c4\u5219\u5df2\u5199\u660e\u4e3a\u9884\u8bbe",
+   "prespecified canonical DXA regions" in md and "a site enters MR only if" in md,
+   "5/10 \u4f4d\u70b9\u4e0d\u5e94\u8bfb\u4e3a\u6570\u636e\u53ef\u7528\u6027\u9a71\u52a8")
+
+# G16 P6/F1 \u524d\u5411\u5f15\u7528\u9884\u544a\uff08R4#1\uff09
+ck("\u00a76.7 G16 P6/F1 \u9996\u6b21\u51fa\u73b0\u5904\u5df2\u52a0\u524d\u5411\u6307\u9488",
+   "specified in Table S11 and adjudicated in" in md,
+   "L84 \u9996\u6b21\u63d0 P6/F1 \u65f6\u5e94\u9884\u544a\u5b9a\u4e49\u4f4d\u7f6e")
+
+# G17 [31] \u5df2\u66f4\u6362\u4e3a\u5173\u8282\u7279\u5f02\u6027\u5b9e\u8bc1\uff08R3#2/#3\uff09
+ck("\u00a76.7 G17 [31] = Zhu 2025 \u5173\u8282\u7f6e\u6362 MR",
+   "Clin Rheumatol" in md and "39738847" in md,
+   "[31] \u5e94\u4e3a Zhu et al. 2025 Clin Rheumatol 44:823\u2013830")
+ck("\u00a76.7 G17 [31] \u4e0d\u518d\u4e3a Tong 2025 \u8e1d\u8db3\u75be\u75c5",
+   "Tong X" not in md, "Tong 2025 \u4e0e BMD\u2192OA \u5173\u8282\u7279\u5f02\u6027\u65e0\u5173")
+
+# G18 \u6458\u8981\u56e0\u679c\u8bed\u6c14\u5bf9\u9f50 pleiotropy-robust \u6846\u67b6\uff08Editor #2\uff09
+ck("\u00a76.7 G18 \u6458\u8981\u4e0d\u4ee5\u56fa\u5b9a\u6548\u5e94 p \u9886\u5934",
+   "fixed-effect p \u2264" in md and "estimator concordance rather than" in md,
+   "\u6458\u8981\u5e94\u4ee5\u4f30\u8ba1\u91cf\u4e00\u81f4\u9886\u5934\uff0c p_IVW \u964d\u4e3a\u9644\u8bc1")
 
 # ============================================================ 7. 输出
 print("\n" + "=" * 100)

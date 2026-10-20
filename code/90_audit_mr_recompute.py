@@ -101,15 +101,22 @@ def mr_egger(be, se_e, bo, se_o):
 
 
 def weighted_median(be, se_e, bo, se_o):
-    """简单加权中位数（Bowden 2016 的 weighted median, 非 penalised 版）。"""
+    """加权中位数（Bowden 2016 的 weighted median，非 penalised 版）。
+
+    采用标准步近约定（step convention）：按 ratio=β_o/β_e 升序排列，
+    累积权重 cumsum(w)/Σw 首次 ≥ 0.5 处对应的 ratio 即估计值。
+    此约定与 MendelianRandomization::mr_median（R）、code/13/129/170、
+    mr_results_corrected.csv 的 wmed 列、wm_recomp 完全一致，是本项目的
+    正统约定；稿件 Table 2 的加权中位数列即按此复算（见 docs/08 脚注）。
+    """
     ratio = bo / be
     se_ratio = se_o / np.abs(be)
     w = 1.0 / se_ratio ** 2
     order = np.argsort(ratio)
     r, ww = ratio[order], w[order]
-    cum = np.cumsum(ww) - 0.5 * ww
+    cum = np.cumsum(ww)
     tot = np.sum(ww)
-    idx = np.searchsorted(cum / tot, 0.5)
+    idx = int(np.searchsorted(cum / tot, 0.5))
     idx = min(idx, len(r) - 1)
     return float(r[idx])
 

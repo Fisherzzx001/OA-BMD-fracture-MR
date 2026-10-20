@@ -1,0 +1,11 @@
+pair,n_snp,F_min,F_agg,R2_exposure,Steiger_z,Steiger_p,direction_supported
+BMD_arms -> OA_knee,16,29.8,73.7,0.0375,3.34,4.12e-04,Yes
+BMD_femur_neck -> OA_knee,25,30.1,44.2,0.0343,3.05,1.13e-03,Yes
+BMD_femur_neck -> fracture,25,30.1,44.2,0.0343,3.3,4.84e-04,Yes
+BMD_leg -> OA_knee,24,29.9,65.8,0.0485,4.35,6.75e-06,Yes
+BMD_lumbar -> OA_knee,21,30.7,58.7,0.0389,3.46,2.70e-04,Yes
+BMD_total -> OA_knee,31,31.1,63.8,0.0629,5.68,6.57e-09,Yes
+BMD_total -> fracture,31,31.1,63.8,0.0629,6.11,5.04e-10,Yes
+OA_knee -> BMD_femur_neck,69,29.8,46.5,0.0003,0.01,4.95e-01,No
+OA_knee -> BMD_total,69,29.8,46.5,0.0003,0.02,4.94e-01,No
+OA_knee -> fracture,69,29.8,46.5,0.0003,0.06,4.76e-01,No

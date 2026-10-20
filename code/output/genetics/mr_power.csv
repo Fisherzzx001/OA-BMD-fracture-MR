@@ -1,11 +1,11 @@
 exposure,outcome,K,beta,se,abs_z,MDE_beta_80pct,power_observed,OR_bound_fracture,verdict
 BMD_total,fracture,31,-0.3371,0.0224,15.05,0.0628,1.0,1.065,powered
 BMD_femur_neck,fracture,25,-0.3507,0.0304,11.55,0.0851,1.0,1.089,powered
-BMD_total,OA_knee,31,0.0231,0.0037,6.26,0.0103,1.0,,powered
-BMD_femur_neck,OA_knee,25,0.0171,0.005,3.42,0.014,0.927,,powered
-BMD_lumbar,OA_knee,21,0.0279,0.0048,5.77,0.0135,1.0,,powered
-BMD_arms,OA_knee,16,0.0222,0.0046,4.78,0.013,0.998,,powered
-BMD_leg,OA_knee,24,0.0177,0.0042,4.23,0.0117,0.989,,powered
-OA_knee,fracture,69,0.0922,0.1083,0.85,0.3035,0.136,1.355,underpowered (uninformative null)
-OA_knee,BMD_total,69,0.1061,0.1081,0.98,0.303,0.166,,underpowered (uninformative null)
-OA_knee,BMD_femur_neck,69,0.1419,0.1081,1.31,0.303,0.259,,underpowered (uninformative null)
+BMD_total,OA_knee,31,0.07826820103074415,0.012536465100162486,6.26,0.03489880825180367,1.0,,powered
+BMD_femur_neck,OA_knee,25,0.05793879816561581,0.01694116905427363,3.42,0.04743527335196616,0.927,,powered
+BMD_lumbar,OA_knee,21,0.09453172332284684,0.01626352229210268,5.77,0.0457411564465388,1.0,,powered
+BMD_arms,OA_knee,16,0.07521879060097492,0.015585875529931738,4.78,0.04404703954111143,0.998,,powered
+BMD_leg,OA_knee,24,0.059971738452128644,0.014230582005589847,4.23,0.03964233558700029,0.989,,powered
+OA_knee,fracture,69,0.027211817468033993,0.03196355565930674,0.85,0.08957469199076265,0.136,1.355,underpowered (uninformative null)
+OA_knee,BMD_total,69,0.031314249819505494,0.031904527855688446,0.98,0.08942712248171691,0.166,,underpowered (uninformative null)
+OA_knee,BMD_femur_neck,69,0.0418802266671803,0.031904527855688446,1.31,0.08942712248171691,0.259,,underpowered (uninformative null)

@@ -1,0 +1,759 @@
+{
+ "n_hits": 48,
+ "section_density": {
+  "Highlights": {
+   "sent": 13,
+   "hit": 1,
+   "neg": 1,
+   "dis": 0
+  },
+  "Abstract": {
+   "sent": 10,
+   "hit": 3,
+   "neg": 2,
+   "dis": 2
+  },
+  "Introduction": {
+   "sent": 20,
+   "hit": 4,
+   "neg": 3,
+   "dis": 0
+  },
+  "Methods": {
+   "sent": 33,
+   "hit": 3,
+   "neg": 2,
+   "dis": 3
+  },
+  "Results": {
+   "sent": 38,
+   "hit": 15,
+   "neg": 8,
+   "dis": 8
+  },
+  "Discussion": {
+   "sent": 35,
+   "hit": 8,
+   "neg": 4,
+   "dis": 4
+  },
+  "Figure legends": {
+   "sent": 39,
+   "hit": 7,
+   "neg": 6,
+   "dis": 1
+  },
+  "Tables": {
+   "sent": 103,
+   "hit": 5,
+   "neg": 1,
+   "dis": 4
+  },
+  "Back matter": {
+   "sent": 277,
+   "hit": 2,
+   "neg": 0,
+   "dis": 1
+  }
+ },
+ "theme_counts": {
+  "mass_vs_size": 8,
+  "heterogeneity": 14,
+  "underpowered_reverse": 11,
+  "sample_overlap": 14,
+  "scale_areal_bmd": 13,
+  "coloc_null": 15
+ },
+ "theme_lines": {
+  "mass_vs_size": [
+   13,
+   29,
+   71,
+   77,
+   81,
+   85,
+   87
+  ],
+  "heterogeneity": [
+   23,
+   45,
+   59,
+   61,
+   65,
+   75,
+   85,
+   87,
+   101,
+   113,
+   149,
+   162,
+   189,
+   274
+  ],
+  "underpowered_reverse": [
+   23,
+   63,
+   75,
+   83,
+   85,
+   107,
+   166,
+   175,
+   176,
+   177,
+   179
+  ],
+  "sample_overlap": [
+   23,
+   31,
+   39,
+   47,
+   67,
+   79,
+   85,
+   109,
+   111,
+   113,
+   210,
+   217,
+   224,
+   259
+  ],
+  "scale_areal_bmd": [
+   29,
+   49,
+   67,
+   77,
+   81,
+   85,
+   87,
+   162,
+   221
+  ],
+  "coloc_null": [
+   51,
+   69,
+   113,
+   181,
+   183,
+   234,
+   275,
+   280
+  ]
+ },
+ "hits": [
+  {
+   "line": 14,
+   "text": "- Reverse OA→BMD and OA→fracture estimates were non-significant, as predicted.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significant"
+    ]
+   }
+  },
+  {
+   "line": 23,
+   "text": "Whether higher bone mineral density (BMD) reflects shared aetiology with or causation of osteoarthritis (OA is unsettled, although people with OA tend to have higher BMD.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "unsettled"
+    ]
+   }
+  },
+  {
+   "line": 23,
+   "text": "Reverse MR was null and underpowered (power 0.14–0.26).",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ],
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 23,
+   "text": "One BMD-raising profile thus protects against fracture yet raises knee-OA risk; the asymmetry rests on the forward estimates, whose overlap-induced bias is bounded at ≤2.6%.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "rests on"
+    ]
+   }
+  },
+  {
+   "line": 29,
+   "text": "The direction matters clinically: if high BMD predisposes to OA, treatments that increase areal BMD may carry an OA cost — though whether that cost is mediated by bone mass or by skeletal size has not been partitioned.",
+   "cats": [
+    "HEDGE"
+   ],
+   "matches": {
+    "HEDGE": [
+     "may"
+    ]
+   }
+  },
+  {
+   "line": 33,
+   "text": "Three questions remain open.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "remain open"
+    ]
+   }
+  },
+  {
+   "line": 33,
+   "text": "First, most analyses included at most two BMD sites, so site specificity is unknown, even though OA is joint-localised and BMD is regulated site by site.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "unknown"
+    ]
+   }
+  },
+  {
+   "line": 33,
+   "text": "Second, OA has usually been represented by a single definition, leaving it unclear whether radiographic OA and self-reported OA relate to bone in the same way.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "unclear"
+    ]
+   }
+  },
+  {
+   "line": 45,
+   "text": "Harmonisation against each outcome — exclusion of palindromic and strand-ambiguous variants and of instruments absent from the outcome GWAS — reduced the analysed sets to 16–31 instruments per forward pair and 69 per knee-OA-exposure pair; 47 of the 116 knee-OA instruments (41%) were lost at this step, an attrition we report explicitly (Supplementary Fig.",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "absent"
+    ],
+    "DIS": [
+     "attrition"
+    ]
+   }
+  },
+  {
+   "line": 47,
+   "text": "**Sample overlap.** All pairs share UK Biobank participants, partially violating the two-sample assumption.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "violating"
+    ]
+   }
+  },
+  {
+   "line": 47,
+   "text": "We report MR-Egger, weighted median and MR-PRESSO alongside IVW and applied an overlap-robust correction (MRlap) [15] to all ten pairs; MRlap moved every estimate further from the null (median 20%), so the primary estimates are conservative with respect to overlap.",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ],
+    "DIS": [
+     "conservative"
+    ]
+   }
+  },
+  {
+   "line": 57,
+   "text": "Any-fracture correlated negatively with every BMD site (r_g −0.45 to −0.60; all q_FDR<0.001) and positively but non-significantly with both OA definitions (+0.15, +0.21).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significantly"
+    ]
+   }
+  },
+  {
+   "line": 57,
+   "text": "Of 78 pairs, 76 were significant at BH-FDR and 75 at Bonferroni; the two OA–fracture pairs were the expected null.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 59,
+   "text": "The estimate held under random effects (p=2.4×10⁻¹²), the MR-Egger intercept was null (p=0.558), weighted median agreed (−0.364), and leave-one-out produced no sign reversal.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 59,
+   "text": "The femoral-neck set (25 SNPs) gave a concordant result (β=−0.351; OR 1.42, 1.34–1.51); the conservative 1-Mb set gave β=−0.366 (OR 1.44).",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "conservative"
+    ]
+   }
+  },
+  {
+   "line": 61,
+   "text": "Heterogeneity was high (I²=68–86%), and under random-effects IVW only two of five exposures remained significant (total-body p=0.006, lumbar-spine p=0.017); this count depends on the random-effects convention, because a DerSimonian–Laird additive-τ² implementation additionally retains the arms exposure under random effects (p=0.033).",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "depends on"
+    ]
+   }
+  },
+  {
+   "line": 61,
+   "text": "We therefore base the causal reading on the concordance of pleiotropy-robust estimators rather than on fixed-effect p-values; all five effects remained positively causal after MR-PRESSO outlier removal, with four of five strengthening.",
+   "cats": [
+    "DIS",
+    "HEDGE"
+   ],
+   "matches": {
+    "DIS": [
+     "rather than on"
+    ],
+    "HEDGE": [
+     "We therefore base"
+    ]
+   }
+  },
+  {
+   "line": 63,
+   "text": "**Reverse MR and OA→fracture are null and underpowered.** Knee OA as exposure gave non-significant effects on total-body BMD (β=+0.106, p=0.33), femoral-neck BMD (β=+0.142, p=0.19) and fracture (β=+0.092, p=0.40).",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significant",
+     "null"
+    ],
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 63,
+   "text": "These three estimates were weakly powered (achieved power 0.14–0.26; Table 4), excluding |β|≥0.30 but not moderate effects.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "weakly powered"
+    ]
+   }
+  },
+  {
+   "line": 63,
+   "text": "Removing the MR-PRESSO outliers flagged for these pairs moved two of the three point estimates substantially (total-body BMD to +0.171, fracture to +0.200) without altering their non-significance, so the nulls reflect both low power and sensitivity to instrument selection.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "sensitivity to"
+    ]
+   }
+  },
+  {
+   "line": 65,
+   "text": "**MR-PRESSO and robustness.** The distortion test was significant for 9/10 pairs (expected from high I²) and identified 0–3 outliers per pair; removing outliers did not reverse any direction, and strict-clumped estimates reproduced the conservative 1-Mb clumping.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "conservative"
+    ]
+   }
+  },
+  {
+   "line": 67,
+   "text": "MRlap confirmed every estimate moved further from the null (median 20%).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 69,
+   "text": "One locus fell marginally short: rs11228269 (chr11:68.29 Mb, in the LRP5 region; BMD z=−8.65, knee-OA z=−4.06, direction-concordant) gave PP.H4=0.799, i.e. 0.0006 below the pre-specified threshold, with the residual posterior mass on a BMD-only signal (PP.H1=0.156).",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "fell marginally short",
+     "marginally short",
+     "residual"
+    ]
+   }
+  },
+  {
+   "line": 69,
+   "text": "We retain the pre-specified threshold and do not count this as colocalisation, but report it explicitly because the posterior is continuous and the 0.8 cut-off is a convention; a reader applying a 0.75 threshold would read this locus as shared.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "not count"
+    ]
+   }
+  },
+  {
+   "line": 69,
+   "text": "The knee-OA null reflects power — under the MR estimate, the expected knee-OA z at the strongest instrument is 0.85, and reaching genome-wide significance would require ~5×10⁷ participants (~42× the present sample).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 71,
+   "text": "Because conditioning on height captured a genuine, direct OA-raising height effect (θ_H=+0.043 to +0.049, p≈10⁻¹⁶ to 10⁻¹⁹), the attenuation reflects size confounding, not dilution by a null covariate.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 75,
+   "text": "On the pleiotropy-robust evidence, genetically higher BMD raises knee-OA risk; the reverse (OA→BMD) and OA→fracture estimates were non-significant and underpowered.",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significant"
+    ],
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 77,
+   "text": "Subchondral bone sclerosis and osteophyte formation are hallmarks of OA and may share regulatory programs with systemic bone accrual [27–30].",
+   "cats": [
+    "HEDGE"
+   ],
+   "matches": {
+    "HEDGE": [
+     "may"
+    ]
+   }
+  },
+  {
+   "line": 77,
+   "text": "MVMR conditioning on height attenuated the effect by 9.5–33.2%, while the fracture positive control moved only −1.7% to −3.0%, and height itself carried a direct OA-raising effect consistent with established epidemiology [24,25].",
+   "cats": [
+    "HEDGE"
+   ],
+   "matches": {
+    "HEDGE": [
+     "consistent with"
+    ]
+   }
+  },
+  {
+   "line": 79,
+   "text": "This cautions against generalising any single BMD→OA estimate across joints.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "cautions against"
+    ]
+   }
+  },
+  {
+   "line": 79,
+   "text": "We therefore restate P6 as a magnitude claim rather than a directional one, and pre-register the decision rule (a hip effect that is positive and at least as large as the knee's would fail P6).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "fail"
+    ]
+   }
+  },
+  {
+   "line": 81,
+   "text": "The set-point is operationalised as areal BMD, a composite of volumetric density and size that we partition only partially here (67–91% height-independent); it is a latent tendency indexed by areal BMD, not a directly measured quantity.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "not a directly measured"
+    ]
+   }
+  },
+  {
+   "line": 85,
+   "text": "**Strengths and limitations.** Strengths: ten BMD sites with two OA definitions; an internal BMD–fracture positive control calibrated against the published GEFOS estimate (OR 1.40–1.42 vs 1.55); dual FDR/Bonferroni correction; a common SNP set throughout; and directional concordance across IVW, MR-Egger, weighted median and MR-PRESSO.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "limitations"
+    ]
+   }
+  },
+  {
+   "line": 85,
+   "text": "Limitations: areal BMD conflates size with mass, and although height-conditioning bounds the size-attributable share at 9.5–33.2%, a direct volumetric decomposition is not yet available; heterogeneity is high across all pairs including the positive control, so the causal claim rests on estimator concordance rather than on fixed-effect p-values; the reverse and OA→fracture estimates are null but weakly powered (0.14–0.26), excluding only |β|≥0.30; and residual sample overlap, although bounded at ≤2.6% for BMD→OA and acting in the observed direction, cannot be removed with summary data alone.",
+   "cats": [
+    "DIS",
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "cannot",
+     "null"
+    ],
+    "DIS": [
+     "Limitations",
+     "rather than on",
+     "residual",
+     "rests on",
+     "weakly powered"
+    ]
+   }
+  },
+  {
+   "line": 95,
+   "text": "**Figure 2.** Forest plot of key genetic correlations: any-fracture versus ten BMD sites (all negative); knee OA and self-reported OA versus ten BMD sites (all positive); the two OA definitions with each other (r_g=+0.84) and each with fracture (both non-significant).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significant"
+    ]
+   }
+  },
+  {
+   "line": 97,
+   "text": "Lower panel: reverse/null pairs (all non-significant, p=0.19–0.40).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "non-significant",
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 97,
+   "text": "Points are IVW fixed-effects estimates with 95% CI; blue = protective, red = risk-increasing, grey = null.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 103,
+   "text": "(d) Knee OA→total-body BMD (flat/null).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 107,
+   "text": "Filled blue circles are the seven well-powered pairs; red open circles the three null pairs (power 0.14–0.26, excluding only |β|≥0.303).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 111,
+   "text": "**Figure 10.** MRlap sample-overlap and winner's-curse correction of the ten MR pairs; every pair moves away from the null (median +20.5%).",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "null"
+    ]
+   }
+  },
+  {
+   "line": 113,
+   "text": "**Supplementary Figure S1.** Per-SNP scatter plots for the six remaining MR pairs. **S2.** Leave-one-out stability of all ten pairs. **S3.** External validation of the reconstructed BMD scale against GEFOS. **S4.** Study design and MR flow (STROBE-MR). **S5.** Sensitivity of OA_knee h² to representative N (r_g is N-invariant). **S6.** Fracture sample-size decision. **S7.** Pleiotropy and heterogeneity diagnostics. **S8.** Colocalisation of BMD with knee OA and its power. **S9.** Instrument selection and attrition flow (STROBE-MR), tallied from the deposited clump and harmonised instrument tables. **S10.** Multivariable MR decomposition of the BMD→OA effect conditional on height: (a) univariable vs MVMR estimates; (b) attenuation percentages with the BMD→fracture positive control. **S11.** Multi-estimator robustness grid for the ten MR pairs (IVW fixed/random, MR-Egger, weighted median, PRESSO outlier-removed, MRlap-corrected, MVMR). **S12.** Quantitative comparison with published MR estimates (Hartley 2022; Funck-Brentano 2018; Zhou 2025) on their native scales. **Graphical Abstract.** The OA–BMD–fracture triangle: higher BMD protects against fracture yet raises knee-OA risk.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "attrition"
+    ]
+   }
+  },
+  {
+   "line": 175,
+   "text": "| OA knee → fracture          | 69 | +0.092 | 0.108 | 0.85  | 0.304           | 0.14           | underpowered   |",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 176,
+   "text": "| OA knee → BMD total         | 69 | +0.106 | 0.108 | 0.98  | 0.303           | 0.17           | underpowered   |",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 177,
+   "text": "| OA knee → BMD femoral neck  | 69 | +0.142 | 0.108 | 1.31  | 0.303           | 0.26           | underpowered   |",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "underpowered"
+    ]
+   }
+  },
+  {
+   "line": 183,
+   "text": "The highest single-locus PP.H4 was 0.799 (rs11228269, chr11:68.29 Mb; BMD z=−8.65, knee-OA z=−4.06, direction-concordant; PP.H1=0.156), i.e. one locus fell 0.0006 short of the threshold; the pre-specified 0.8 cut-off is retained.",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "fell 0.0006 short"
+    ]
+   }
+  },
+  {
+   "line": 187,
+   "text": "Primary configuration n_h=100 (EUR height; Yengo et al. 2022). n_H as tabulated (49–50) is the number that survived harmonisation, not the requested cap; n_BMD is 27/23/19/15/21 of 31/25/21/16/24 because six instruments are absent from the height GWAS.",
+   "cats": [
+    "NEG"
+   ],
+   "matches": {
+    "NEG": [
+     "absent"
+    ]
+   }
+  },
+  {
+   "line": 260,
+   "text": "- **Declaration of competing interest.** The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+   "cats": [
+    "HEDGE"
+   ],
+   "matches": {
+    "HEDGE": [
+     "could"
+    ]
+   }
+  },
+  {
+   "line": 276,
+   "text": "- **Figure S9.** Instrument selection and attrition flow (STROBE-MR).",
+   "cats": [
+    "DIS"
+   ],
+   "matches": {
+    "DIS": [
+     "attrition"
+    ]
+   }
+  }
+ ]
+}

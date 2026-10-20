@@ -1,0 +1,12 @@
+bmd_site,n_snp,ivw_beta,se,z,p,shared_instruments_with_total
+BMD_total,31,0.023121,0.003694,6.260,3.856e-10,31
+BMD_femur_neck,25,0.017090,0.005003,3.416,6.362e-04,6
+BMD_lumbar,21,0.027913,0.004833,5.775,7.696e-09,15
+BMD_arms,16,0.022179,0.004635,4.785,1.712e-06,12
+BMD_leg,24,0.017718,0.004184,4.234,2.291e-05,15
+
+Q_naive,3.5641,p,0.4682
+Q_exact_shared_instrument_covariance,6.9242,p,0.1399
+tau2_random_effects,0.000e+00
+theta_pooled_exact,0.020835
+theta_random_effects,0.021626
