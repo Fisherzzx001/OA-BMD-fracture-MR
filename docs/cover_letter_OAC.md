@@ -1,6 +1,6 @@
 # Cover Letter — *Osteoarthritis and Cartilage*
 
-**Date:** 11 October 2026
+**Date:** 21 October 2026
 
 **To:** Editor-in-Chief, *Osteoarthritis and Cartilage*
 Elsevier Ltd.
@@ -32,7 +32,8 @@ We submit the above full-length original research article for consideration as a
 - **Ethics:** all source GWAS were approved by their original ethics committees; this secondary analysis of publicly available summary statistics required no new ethical approval (IRB waiver).
 - **Funding:** none.
 - **Competing interests:** the authors declare no competing interests.
-- **Data availability:** summary statistics are from publicly published GWAS (cited in-text) and were not redistributed; analysis code and reproduction material have been deposited in a public GitHub repository (https://github.com/Fisherzzx001/OA-BMD-fracture-MR) and archived with a Zenodo DOI (https://doi.org/10.5281/zenodo.23400861).
+- **Data availability:** summary statistics are from publicly published GWAS (cited in-text) and were not redistributed; analysis code and reproduction material have been deposited in a public GitHub repository (https://github.com/Fisherzzx001/OA-BMD-fracture-MR) and archived with a Zenodo DOI (https://doi.org/10.5281/zenodo.23400860; concept DOI, always resolves to the most recent version).
+- **Preregistration:** this study was preregistered; the protocol is archived in the same Zenodo deposit under the concept DOI **10.5281/zenodo.23400860** (https://doi.org/10.5281/zenodo.23400860). It declares P1–P6 as derived predictions and F1–F10 as registered tests (F4 cross-trait and eQTLGen arms, and F6–F9, executed with decision rules fixed before execution; F1–F3, F5 and F10 prospective, requiring external data). An OSF mirror is being deposited.
 
 Thank you for considering our work. We look forward to your response.
 
