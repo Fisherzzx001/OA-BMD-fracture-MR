@@ -97,15 +97,19 @@ protects against fracture: Mendelian randomisation of 13 skeletal phenotypes
 
 **Target journal.** *Osteoarthritis and Cartilage* (full-length original article)
 
+**Archive.** Code and reproduction material: <https://github.com/Fisherzzx001/OA-BMD-fracture-MR>;
+archived under the Zenodo concept DOI **<https://doi.org/10.5281/zenodo.23400860>**
+(preregistration protocol P1–P6 / F1–F10 is archived in the same deposit).
+
 ## Contents
 
 | File | Item |
 |---|---|
 | `01_Manuscript.md` | Full manuscript: title page, highlights, abstract, Introduction, Methods, Results, Discussion, figure legends, Tables 1–4, declarations, references, supplementary-material list |
 | `02_Cover_letter.md` | Cover letter (no placeholders) |
-| `Figures/Main/` | Figure 1–10 and Graphical Abstract ({n_main} PNG) |
-| `Figures/Supplementary/` | Supplementary Figures S1–S12 ({n_supp} PNG) |
-| `Supplementary/` | Table S10 (MVMR grid), Table S11 (predictions and falsifying tests), STROBE-MR checklist (md/docx/pdf) |
+| `Figures/Main/` | Figure 1–10, Graphical Abstract and Supplementary Figures S1–S8 ({n_main} PNG) |
+| `Figures/Supplementary/` | Supplementary Figures S9–S17 ({n_supp} PNG) |
+| `Supplementary/` | Tables S8–S9 and S12–S16, Table S10 (MVMR grid), Table S11 (predictions and falsifying tests), STROBE-MR checklist (md/docx/pdf) |
 
 ## Verification state at build time
 
