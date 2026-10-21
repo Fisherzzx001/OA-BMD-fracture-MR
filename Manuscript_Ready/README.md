@@ -21,7 +21,7 @@ protects against fracture: Mendelian randomisation of 13 skeletal phenotypes
   (the single warn is a disclosed 0.40% h²/N rounding note)
 - Figure-to-data traceability `code/115_audit_figures_v18.py`: **187 checks / 0 failures**
 - OAC format check `code/148_oac_compliance.py`: **COMPLIANT**
-  (body 3987/4000 words; abstract 303/350 by code-148 token count, 326/350 by Word-style count incl. numbers; 5 highlights all ≤85 characters; references 39/50; display items 8/8)
+  (body 3987/4000 words; abstract 303/350 by code-148 token count, 326/350 by Word-style count incl. numbers; 5 highlights all ≤85 characters; references 40/50; display items 8/8)
 - Numeric integrity after copy-editing `code/134_verify_humanize.py`: **PASS**
   (1263-number multiset identical before and after; 27 citation markers unchanged)
 - Placeholders in this folder: **0**
