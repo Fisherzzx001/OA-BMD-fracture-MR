@@ -101,10 +101,48 @@ defined = set(int(re.match(r"^(\d+)\.\s", l.strip()).group(1))
 never = sorted(defined - cited)
 record("C. 引用完整性", f"参考文献 1..{len(defined)} 全部被引", not never,
        ("never-cited: " + str(never)) if never else "全部被引")
-record("C. 引用完整性", "[7] 加权中位数 (Bowden 2016)", "[7]" in t, "")
-record("C. 引用完整性", "[9] liability-scale (Lee 2011)", "[9]" in t, "")
-record("C. 引用完整性", "[39] coloc.abf (Giambartolomei 2014)", "[39]" in t, "")
-record("C. 引用完整性", "[40] MR-Egger (Bowden 2015)", "[40]" in t, "")
+
+# 关键方法学文献：按作者名在文献表定位编号，再验证正文引用了该编号。
+# 用语义锚点而非写死编号——任一次重编号后本检查自动跟随，不会误报 FAIL。
+def refnum(anchor):
+    for l in t.splitlines():
+        mm = re.match(r"^(\d+)\.\s+(.*)$", l.strip())
+        if mm and mm.group(2).startswith(anchor):
+            return int(mm.group(1))
+    return None
+
+
+works = [
+    ("加权中位数 (Bowden 2016)", "Bowden J, Davey Smith G, Haycock PC"),
+    ("MR-Egger (Bowden 2015)", "Bowden J, Davey Smith G, Burgess S"),
+    ("liability-scale (Lee 2011)", "Lee SH, Wray NR"),
+    ("coloc.abf (Giambartolomei 2014)", "Giambartolomei C"),
+    ("STROBE-MR (Skrivankova 2021)", "Skrivankova VW"),
+]
+for label, anchor in works:
+    n = refnum(anchor)
+    if n is None:
+        record("C. 引用完整性", f"{label} 在文献表中", False, "文献缺失")
+    else:
+        record("C. 引用完整性", f"{label} → [{n}] 且正文已引", f"[{n}]" in t, "")
+
+# OAC 强制：参考文献按正文首次出现顺序编号（Guide for Authors 明文要求）
+body_for_order = t[:t.index("\n## References")] if "\n## References" in t else t
+first = {}
+for m in re.finditer(r"\[(\d+(?:[–\-]\d+)?(?:,\s*\d+)*)\]", body_for_order):
+    for p in m.group(1).split(","):
+        p = p.strip()
+        if "–" in p or "-" in p:
+            a, b = re.split(r"[–-]", p)
+            nums = list(range(int(a), int(b) + 1))
+        else:
+            nums = [int(p)]
+        for n in nums:
+            first.setdefault(n, m.start())
+order = sorted(first, key=lambda n: first[n])
+record("C. 引用完整性", "OAC 顺序编码制（按首次出现编号）",
+       order == sorted(first) == list(range(1, len(first) + 1)),
+       f"首次出现顺序 {'升序连续' if order == sorted(first) else str(order)}")
 
 # ---------------------------------------------------------------- Section D
 # Theoretical framing (R1 revision)

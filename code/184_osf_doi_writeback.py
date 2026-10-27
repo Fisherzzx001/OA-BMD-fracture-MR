@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-VENV_PY = Path(r"C:/Users/Administrator/.workbuddy/binaries/python/envs/default/Scripts/python.exe")
+VENV_PY = Path(r"C:/Users/Administrator/.workbuddy/binaries/python/envs/direction1/Scripts/python.exe")
 PLAIN_PY = Path(r"C:/Users/Administrator/.workbuddy/binaries/python/versions/3.13.12/python.exe")
 
 MANUSCRIPT = ROOT / "docs" / "08_投稿稿_OA_BMD_fracture.md"
