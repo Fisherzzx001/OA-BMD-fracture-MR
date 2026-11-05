@@ -1,0 +1,10 @@
+{
+  "drop_allele_mismatch": 3378,
+  "drop_no_rsid": 8049649,
+  "drop_non_biallelic": 3199164,
+  "drop_palindromic": 2852694,
+  "elapsed_sec": 203.8,
+  "kept": 7088958,
+  "output": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_munge_input\\OA_spine.munge_input.tsv.gz",
+  "rows_total": 21193843
+}

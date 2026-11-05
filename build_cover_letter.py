@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Generate Cover_Letter.docx for the OA/BMD/fracture manuscript."""
+"""DEPRECATED — do NOT run this script. It writes submission_package/Cover_Letter.docx
+from a stale hardcoded title and body (no Zenodo DOI, no OSF wording), which drops
+two code/182 checks to FAIL. Use code/180_cover_letter_md_to_docx.py instead; it
+tracks docs/cover_letter_OAC.md, the live source of truth.
+"""
+import sys as _sys
+print("Refusing to run: build_cover_letter.py is deprecated. Use code/180_cover_letter_md_to_docx.py.", file=_sys.stderr)
+raise SystemExit(2)
+
 from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH

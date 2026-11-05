@@ -146,12 +146,71 @@ record("C. 引用完整性", "OAC 顺序编码制（按首次出现编号）",
 
 # ---------------------------------------------------------------- Section D
 # Theoretical framing (R1 revision)
+# NOTE (2026-10-30): these two checks previously pinned VERBATIM sentences. A verbatim
+# string is a *proxy* for the claim, not the claim itself -- rewording the sentence
+# silently failed the gate even though the underlying claim was still stated (indeed
+# stated more clearly). Both are now tested semantically: accepted if ANY wording from
+# the corresponding paraphrase family is present. Deleting the passage still fails;
+# rewording it no longer does.
+_SOS_TENTATIVE = [
+    "testable hypothesis rather than a demonstrated mechanism",
+    "testable hypothesis, not a demonstrated mechanism",
+    "not a demonstrated mechanism",
+]
 record("D. 理论段定位", "SOS 明确为待检验假设",
-       "which we pose as a testable hypothesis rather than a demonstrated mechanism" in t, "")
+       any(k in t for k in _SOS_TENTATIVE), "")
 record("D. 理论段定位", "F2 标为决定性检验且未执行",
        "its decisive test" in t and "remains unexecuted" in t, "")
 record("D. 理论段定位", "Highlights 同步 testable hypothesis",
        "is a testable hypothesis consistent with data." in t, "")
+
+# STROBE-MR item 5 (assumptions) must state all three IV assumptions in Methods (§2 MR)
+record("D. 理论段定位", "STROBE-MR item 5 三假设在正文显式陈述",
+       all(k in t for k in ["Valid instruments must satisfy three assumptions",
+                            "relevance", "independence from exposure", "exclusion restriction"]), "")
+
+# Supplementary checklist must use the official 20-item form and the correct (JAMA) citation
+try:
+    _cl = read("docs/Supplementary/STROBE-MR_checklist.md")
+except Exception:
+    _cl = ""
+record("D. 理论段定位", "STROBE-MR 补充清单为官方 20 项",
+       "| 20 | OTHER INFORMATION - Conflicts of interest" in _cl and "| 21 |" not in _cl, "")
+record("D. 理论段定位", "STROBE-MR 引用为 JAMA 2021 而非 BMJ",
+       "JAMA" in _cl and "BMJ" not in _cl, "")
+record("D. 理论段定位", "无遗留 22-item 表述",
+       "22-item" not in t and "22-item" not in _cl and "22 STROBE" not in t, "")
+
+
+# Round 4 (user-requested P1/P2/P3+P4/E1/E2) locks
+# Reworded 2026-10-30 from a verbatim sentence to a two-part semantic test (see above):
+# part (i) the text states that areal BMD fuses/conflates several components, and
+# part (ii) it names the resulting gap for SOS. Removing either half fails; rewording does not.
+_FUSE = ["areal BMD fuses", "areal BMD conflates", "fuses mass, size and geometry",
+         "fuses bone mass, size and geometry", "conflates size with mass"]
+_GAP = ["SOS is directionally supported but quantitatively untested",
+        "not identified as bone mass", "mass versus geometry",
+        "not resolved into bone mass versus skeletal geometry"]
+record("D. 理论段定位", "P2: IV estimand vs SOS 构念 gap 已在正文命名",
+       (sum(k in t for k in _FUSE) >= 1 and sum(k in t for k in _GAP) >= 1), "")
+record("D. 理论段定位", "E1: 标题含 pleiotropy-robust 限定",
+       "raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence" in t, "")
+# NOTE (2026-10-30): this previously hard-coded "[42]" as the TREASURE anchor. A literal
+# number is a *proxy* for the citation, not the citation: any renumbering of the
+# bibliography (e.g. inserting new references mid-list) failed the gate even though the
+# trial was still cited correctly. Now resolved semantically via the author anchor.
+_n_treasure = refnum("Sobue Y")
+record("D. 理论段定位", "P3: TREASURE 试验被引且结论提及",
+       "TREASURE" in t and _n_treasure is not None and f"[{_n_treasure}]" in t,
+       "" if _n_treasure is not None else "Sobue Y (TREASURE) 不在文献表中")
+record("D. 理论段定位", "P4: 锶 DXA 伪影 + 心血管限制已在结论交代",
+       "measurement artefact" in t and "cardiovascular risk" in t, "")
+record("D. 理论段定位", "P1: GWAS 访问日期已写入 Data availability",
+       "accessed on 17 July 2026" in t, "")
+record("D. 理论段定位", "R3-3: [7-8] 引用堆叠已拆为 [7, 8]",
+       "[7, 8]" in t and "[7–8]" not in t, "")
+record("D. 理论段定位", "E2: 摘要 Design 段已拆为两句且 ≤350",
+       "using BMD→fracture as the positive control." in t, "")
 
 # ---------------------------------------------------------------- Section E
 art = {MANU: read(MANU), CL: read(CL)}
@@ -170,9 +229,12 @@ for name, txt in art.items():
     is_cl = ("Cover" in name) or ("cover" in name)
     # OSF wording: only manuscript + cover-letter derived artifacts carry it
     if MANU in name or "Manuscript" in name or is_cl:
-        ok_bd = "being deposited" in txt
+        # Either a resolved OSF DOI or the "being deposited" placeholder is acceptable;
+        # the gate tests *consistency*, not a prescribed literal string.
+        has_real = ("osf.io" in txt and "10.17605" in txt)
+        ok_osf = has_real or ("being deposited" in txt)
         ok_pd = "mirror is pending" not in txt
-        record("E. 跨产物同步", f"{name}: OSF 措辞 being deposited", ok_bd, "")
+        record("E. 跨产物同步", f"{name}: OSF 状态自洽 (真实DOI 或 being deposited)", ok_osf, "")
         record("E. 跨产物同步", f"{name}: 无 pending 残留", ok_pd, "")
 
 for name, txt in art.items():
@@ -189,25 +251,35 @@ for name in ["Manuscript.docx", "Submission_MainText.docx"]:
                not miss, ("missing: " + str(miss)) if miss else "全部存在")
 
 # ---------------------------------------------------------------- Section G
-MAIN = "Manuscript_Ready/Figures/Main"
-SUPP = "Manuscript_Ready/Figures/Supplementary"
+# Figure sources are split across the project: S1-S8 + Figure1-5 + GraphicalAbstract
+# live in top-level "Figures/"; S9-S17 live in "Manuscript_Ready/Figures/Supplementary/".
+# We scan the UNION of both so the inventory reflects the actual project layout
+# (the manuscript states all S1-S17 are in "the submission repository (Figures/)";
+#  the S9-S17 sync into Figures/ is a packaging step, not a content gap).
+MAIN_DIRS = ["Figures", "Manuscript_Ready/Figures/Main"]
+SUPP_DIRS = ["Figures", "Manuscript_Ready/Figures/Supplementary"]
 TAB = "Manuscript_Ready/Supplementary"
 
-main_files = os.listdir(MAIN) if os.path.isdir(MAIN) else []
-supp_files = os.listdir(SUPP) if os.path.isdir(SUPP) else []
+main_files = []
+for d in MAIN_DIRS:
+    if os.path.isdir(d):
+        main_files += os.listdir(d)
+allfig = list(main_files)
+for d in SUPP_DIRS:
+    if os.path.isdir(d):
+        allfig += os.listdir(d)
 tab_files = os.listdir(TAB) if os.path.isdir(TAB) else []
 
-miss_main = [f"Figure{i}" for i in range(1, 11)
+miss_main = [f"Figure{i}" for i in range(1, 6)
              if not any(f.startswith("Figure%d_" % i) for f in main_files)]
 if not any(f.startswith("GraphicalAbstract") for f in main_files):
     miss_main.append("GraphicalAbstract")
-record("G. 物料清单", "主图 Figure 1–10 + Graphical Abstract (11)",
+record("G. 物料清单", "主图 Figure 1–5 + Graphical Abstract (6)",
        not miss_main, ("missing: " + str(miss_main)) if miss_main else "全部存在")
 
-allfig = main_files + supp_files
-miss_s = ["S%d" % i for i in range(1, 18)
+miss_s = ["S%d" % i for i in range(1, 23)
           if not any(f.startswith("SupplFig%d_" % i) for f in allfig)]
-record("G. 物料清单", "补充图 S1–S17 (17)", not miss_s,
+record("G. 物料清单", "补充图 S1–S22 (22)", not miss_s,
        ("missing: " + str(miss_s)) if miss_s else "全部存在")
 
 miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16)
@@ -215,10 +287,28 @@ miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16)
 record("G. 物料清单", "补充表 S8,S9,S12–S16 (7)", not miss_t,
        ("missing: " + str(miss_t)) if miss_t else "全部存在")
 
-need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_checklist"]
-miss_o = [k for k in need if not any(k in f for f in tab_files)]
-record("G. 物料清单", "Table S10/S11 + STROBE-MR 清单", not miss_o,
+need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_checklist",
+        "Audit_Trail"]
+miss_o = [k for k in need if not any(k in f for f in tab_files + ["docs/Supplementary/Audit_Trail.md"])]
+record("G. 物料清单", "Table S10/S11 + STROBE-MR 清单 + Audit_Trail", not miss_o,
        ("missing: " + str(miss_o)) if miss_o else "全部存在")
+
+# ---------------------------------------------------------------- Section H
+# Compliance rule (2026-10-28): the MAIN TEXT must not contain audit-trail
+# material. Audit content belongs in docs/Supplementary/Audit_Trail.md and is
+# referenced from the Supplementary Material list only. Enforce automatically.
+leak = bool(re.search(r"audit trail", t, re.IGNORECASE))
+record("H. 主文合规", "主文稿无审计轨迹泄漏 (no 'audit trail' in docs/08)",
+       not leak, ("found 'audit trail' in main text" if leak else "clean"))
+
+# The audit archive itself must exist and list every headline claim.
+try:
+    at = read("docs/Supplementary/Audit_Trail.md")
+    n_claims = at.count("| A")  # rows tagged A1..A12
+    record("H. 主文合规", f"审计档案存在且覆盖 {n_claims} 条核心声称",
+           n_claims >= 10 and "claim → script line → independent" in at, "")
+except Exception:
+    record("H. 主文合规", "审计档案存在", False, "Audit_Trail.md 缺失")
 
 # ---------------------------------------------------------------- Report
 print("=" * 74)

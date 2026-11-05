@@ -15,8 +15,8 @@ archived under the Zenodo concept DOI **<https://doi.org/10.5281/zenodo.23400860
 |---|---|
 | `01_Manuscript.md` | Full manuscript: title page, highlights, abstract, Introduction, Methods, Results, Discussion, figure legends, Tables 1–4, declarations, references, supplementary-material list |
 | `02_Cover_letter.md` | Cover letter (no placeholders) |
-| `Figures/Main/` | Figure 1–10, Graphical Abstract and Supplementary Figures S1–S8 (19 PNG) |
-| `Figures/Supplementary/` | Supplementary Figures S9–S17 (9 PNG) |
+| `Figures/Main/` | Figure 1–10, Graphical Abstract and Supplementary Figures S1–S8 (14 PNG) |
+| `Figures/Supplementary/` | Supplementary Figures S9–S17 (14 PNG) |
 | `Supplementary/` | Tables S8–S9 and S12–S16, Table S10 (MVMR grid), Table S11 (predictions and falsifying tests), STROBE-MR checklist (md/docx/pdf) |
 
 ## Verification state at build time
@@ -25,7 +25,7 @@ archived under the Zenodo concept DOI **<https://doi.org/10.5281/zenodo.23400860
   (the single warn is a disclosed 0.40% h²/N rounding note)
 - Figure-to-data traceability `code/115_audit_figures_v18.py`: **187 checks / 0 failures**
 - OAC format check `code/148_oac_compliance.py`: **COMPLIANT**
-  (body 3987/4000 words; abstract 303/350 by code-148 token count, 326/350 by Word-style count incl. numbers; 5 highlights all ≤85 characters; references 41/50; display items 8/8)
+  (body 3999/4000 words; abstract 310/350 by code-148 token count; 5 highlights all ≤85 characters; references 45/50; display items 8/8; supplementary Table S29 newly added)
 - Numeric integrity after copy-editing `code/134_verify_humanize.py`: **PASS**
   (1263-number multiset identical before and after; 27 citation markers unchanged)
 - Placeholders in this folder: **0**

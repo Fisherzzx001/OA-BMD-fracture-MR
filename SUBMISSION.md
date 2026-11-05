@@ -13,7 +13,7 @@ This file tracks what is required to submit the manuscript and what has been pre
 | --- | --- | --- |
 | Manuscript (full text) | `docs/08_投稿稿_OA_BMD_fracture.md` | convert to .docx/.pdf at upload |
 | Cover letter | `docs/cover_letter_OAC.md` | fill reviewer names + corresponding-author email |
-| STROBE-MR checklist | `docs/Supplementary/STROBE-MR_checklist.docx` (or `.pdf`) | 22 items, all Reported |
+| STROBE-MR checklist | `docs/Supplementary/STROBE-MR_checklist.docx` (or `.pdf`/`.md`) | Official 20 STROBE-MR items; 18 Reported, 2 Reported with one N/A sub-item each (11c, 17b) |
 | Main figures | `Figures/Figure1.png` … `Figure10.png` (+ `.pdf` vectors) | 10 main figures |
 | Graphical Abstract | `Figures/GraphicalAbstract.png` (+ `.pdf`) | |
 | Supplementary figures | `Figures/SupplFig1.png` … `SupplFig8.png` (+ `.pdf`) | S1–S8 |

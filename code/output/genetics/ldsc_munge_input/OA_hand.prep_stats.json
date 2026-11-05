@@ -1,0 +1,10 @@
+{
+  "drop_allele_mismatch": 2337,
+  "drop_no_rsid": 3262132,
+  "drop_non_biallelic": 2456756,
+  "drop_palindromic": 1941852,
+  "elapsed_sec": 168.7,
+  "kept": 7025711,
+  "output": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_munge_input\\OA_hand.munge_input.tsv.gz",
+  "rows_total": 14688788
+}

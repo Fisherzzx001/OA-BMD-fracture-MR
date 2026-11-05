@@ -70,6 +70,93 @@ for label, pat in patterns:
     else:
         print(f"[OK] {label}: {w!r}")
 
+# NEW (2026-10-30): externally sourced values added by the R1 theory-deepening round.
+# These are absent from HEAD by construction, so they cannot go through the identical-
+# between-versions path above (they would read as MISMATCH). They are therefore
+# protected a different way: they MUST be present in the working tree, which catches
+# accidental deletion or transcription drift. Both were verified against source:
+#   Faber 2025 HMG 34(3):207-217, HSM2 -> hip fracture OR(IVW) 1.27 [1.12-1.44], P=1.79e-4
+#   Hardcastle 2014 Arthritis Rheumatol 66(9):2429-39, enthesophytes grade>=1 in HBM:
+#       adjusted OR 3.00 [1.96-4.58]
+#
+# NEW (2026-10-30, R2/R3 review round). Same construction: these are either transcribed
+# external values or recomputed summary counts that are absent from HEAD by construction.
+#   Cui 2022 Adv Rheumatol 62:22 (PMID 35761320), knee replacement in bisphosphonate
+#       users vs non-users: RR 0.71 [0.66-0.77]; adjusted HR 0.76 [0.70-0.83].
+#   Colocalisation threshold sensitivity, recomputed from coloc_screen_all_loci.csv by
+#       code/187: knee-OA counts 0/31 at PP.H4>=0.8 and 1/31 at >=0.7.
+external = [
+    ("Faber HSM2 hip-fracture OR", r"HSM2 OR 1\.27, 1\.12–1\.44"),
+    ("Hardcastle enthesophyte OR", r"OR 3\.00, 95% CI 1\.96–4\.58"),
+    ("Cui bisphosphonate knee-replacement RR", r"RR 0\.71, 0\.66–0\.77"),
+    ("coloc 0.7-threshold sensitivity", r"1/31 even at a 0\.7 threshold"),
+]
+for label, pat in external:
+    mw = re.search(pat, work)
+    if not mw:
+        print(f"[ABSENT external] {label}: pattern {pat!r}")
+        flags += 1
+    else:
+        print(f"[OK external] {label}: {mw.group(0)!r}")
+
+# ======================================================================
+# NEW (2026-11-02, Finding D): derived-OR internal consistency.
+# Gate 149b previously compared beta/SE/p but NOT the derived OR column,
+# which let the Finding-A sign flip (OA_knee->fracture OR=0.973=exp(-beta)
+# while beta=+0.027) pass undetected. We now verify, within the WORKING tree,
+# that every reported OR equals exp(|IVW beta|) and the 95% CI equals
+# exp(|beta| +/- 1.96*SE). This is a self-consistency check, independent of
+# HEAD, so it catches a flip even if both versions happened to share it.
+import math
+
+def _to_float(s):
+    return float(s.strip().replace("−", "-").replace("–", "-").replace("—", "-"))
+
+def _row_or(cells):
+    # Table-2 layout after split('|'):
+    #   [0]'' [1]exp->out [2]n_snp [3]IVW beta [4]SE [5]p [6]p_rand [7]OR(95% CI) ...
+    try:
+        beta = _to_float(cells[3])
+        se   = _to_float(cells[4])
+        orc  = cells[7].strip()
+    except (IndexError, ValueError):
+        return None
+    if orc in ("", "—", "-"):
+        return None
+    m = re.match(r"([\d.]+)\s*\(([\d.]+)[-]([\d.]+)\)", orc.replace("−", "-").replace("–", "-"))
+    if not m:
+        return None
+    return beta, se, float(m.group(1)), float(m.group(2)), float(m.group(3))
+
+or_flags = 0
+print()
+print("=" * 96)
+print("DERIVED-OR CONSISTENCY (Finding D): OR must equal exp(|IVW beta|), "
+      "CI = exp(|beta| +/- 1.96 SE)")
+print("=" * 96)
+for line in work.splitlines():
+    if not line.strip().startswith("|") or "→" not in line:
+        continue
+    res = _row_or(line.split("|"))
+    if res is None:
+        continue
+    beta, se, or_rep, ci_lo, ci_hi = res
+    b = abs(beta)
+    or_exp = math.exp(b)
+    lo_exp = math.exp(b - 1.96 * se)
+    hi_exp = math.exp(b + 1.96 * se)
+    label = line.split("|")[1].strip()
+    ok = (abs(or_exp - or_rep) <= 0.015 and
+          abs(lo_exp - ci_lo) <= 0.030 and
+          abs(hi_exp - ci_hi) <= 0.030)
+    if not ok:
+        print(f"[OR MISMATCH] {label}: beta={beta:+.3f} exp(|b|)={or_exp:.4f} "
+              f"reported OR={or_rep} (CI {ci_lo}-{ci_hi} vs exp {lo_exp:.3f}-{hi_exp:.3f})")
+        or_flags += 1
+    else:
+        print(f"[OK] {label}: OR={or_rep} ~ exp(|{beta:+.3f}|)={or_exp:.4f}")
+flags += or_flags
+
 # explicit: 3.6-5.8 must still appear >=1 (line 69 retained)
 n658 = len(re.findall(r"3\.6–5\.8", work))
 print(f"\n'3.6–5.8' occurrences in working: {n658} (expected >=1; line 91 trim is intentional)")

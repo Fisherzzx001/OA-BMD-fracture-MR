@@ -28,7 +28,7 @@ We submit the above full-length original research article for consideration as a
 - **Translational value.** The opposing-endpoint pattern speaks directly to the osteochondral unit — a core theme of the journal — and quantifies a potential OA cost of bone-targeted (anti-resorptive or anabolic) therapy acting through a systemic bone-forming set-point, motivating joint-specific safety monitoring in trials and pharmacogenetic designs.
 
 **Compliance and declarations.**
-- **Reporting:** the manuscript follows the STROBE-MR guideline (Skrivankova et al., *BMJ* 2021); the completed 22-item checklist is submitted as supplementary material.
+- **Reporting:** the manuscript follows the STROBE-MR guideline (Skrivankova et al., *JAMA* 2021;326(16):1614–1621); the completed 20-item checklist, with each item located in the manuscript, is submitted as supplementary material.
 - **Ethics:** all source GWAS were approved by their original ethics committees; this secondary analysis of publicly available summary statistics required no new ethical approval (IRB waiver).
 - **Funding:** none.
 - **Competing interests:** the authors declare no competing interests.

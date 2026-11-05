@@ -1,0 +1,40 @@
+{
+  "primary_N": 31986,
+  "sensitivity_N": 31873,
+  "placeholder_N": 400000,
+  "merge_alleles": "C:/Users/Administrator/WorkBuddy/2026-09-08-20-17-24/OA_FLAGSHIP/07_reference/ldsc/w_hm3.snplist",
+  "ref_ld_chr": "C:/Users/Administrator/WorkBuddy/2026-09-08-20-17-24/OA_FLAGSHIP/07_reference/ldsc/eur_w_ld_chr_[1-22]",
+  "max_abs_delta_rg": 0.0002,
+  "snp_sets_identical": true,
+  "valid_allele_counts": [
+    685462,
+    685469,
+    685477,
+    685394
+  ],
+  "elapsed_sec": 82.9,
+  "steps": [
+    {
+      "step": "h2_BMD_N31986",
+      "rc": 0
+    },
+    {
+      "step": "rg_BMD_N31986_vs_OA_sites",
+      "rc": 0
+    },
+    {
+      "step": "h2_BMD_N31873",
+      "rc": 0
+    },
+    {
+      "step": "rg_BMD_N31873_vs_OA_sites",
+      "rc": 0
+    }
+  ],
+  "outputs": [
+    "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg_verified\\verified_results.csv",
+    "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg_verified\\COMPARISON.md"
+  ],
+  "docs_08_modified": false,
+  "reported_beta_SE_p_OR_CI_modified": false
+}

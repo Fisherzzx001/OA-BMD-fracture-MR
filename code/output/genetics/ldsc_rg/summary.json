@@ -1,0 +1,78 @@
+{
+  "mode": "full",
+  "weights_mode": "standard",
+  "ref_ld": "C:/Users/Administrator/WorkBuddy/2026-09-08-20-17-24/OA_FLAGSHIP/07_reference/ldsc/eur_w_ld_chr_[1-22]",
+  "w_ld": "C:/Users/Administrator/WorkBuddy/2026-09-08-20-17-24/OA_FLAGSHIP/07_reference/ldsc/eur_w_ld_chr_[1-22]",
+  "merge_alleles": "C:/Users/Administrator/WorkBuddy/2026-09-08-20-17-24/OA_FLAGSHIP/07_reference/ldsc/w_hm3.snplist",
+  "sites": [
+    "hip",
+    "knee",
+    "spine",
+    "hand"
+  ],
+  "limit": null,
+  "weight_files_ready": true,
+  "fallback_M_used": false,
+  "boundaries": [
+    "BMD N=400000 is a placeholder: h2 NOT quotable; rg invariant to global N",
+    "BMD sumstats was munged WITHOUT --merge-alleles (asymmetry, see docstring)",
+    "results are exploratory / post-submission; docs/08 untouched"
+  ],
+  "started": "2026-11-04 20:13:19",
+  "steps": [
+    {
+      "step": "prep",
+      "rc": 0
+    },
+    {
+      "step": "munge_hip",
+      "rc": 0,
+      "file": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg\\munged\\OA_hip.sumstats.gz"
+    },
+    {
+      "step": "munge_knee",
+      "rc": 0,
+      "file": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg\\munged\\OA_knee.sumstats.gz"
+    },
+    {
+      "step": "munge_spine",
+      "rc": 0,
+      "file": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg\\munged\\OA_spine.sumstats.gz"
+    },
+    {
+      "step": "munge_hand",
+      "rc": 0,
+      "file": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg\\munged\\OA_hand.sumstats.gz"
+    },
+    {
+      "step": "h2_BMD_total",
+      "rc": 0
+    },
+    {
+      "step": "h2_OA_hip",
+      "rc": 0
+    },
+    {
+      "step": "h2_OA_knee",
+      "rc": 0
+    },
+    {
+      "step": "h2_OA_spine",
+      "rc": 0
+    },
+    {
+      "step": "h2_OA_hand",
+      "rc": 0
+    },
+    {
+      "step": "rg_BMD_vs_OA",
+      "rc": 0
+    },
+    {
+      "step": "rg_OA_site_vs_site",
+      "rc": 0
+    }
+  ],
+  "elapsed_sec": 1198.6,
+  "outdir": "C:/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT\\code\\output\\genetics\\ldsc_rg"
+}
