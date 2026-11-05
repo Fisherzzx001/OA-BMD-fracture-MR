@@ -67,3 +67,4 @@ Figures_v17_Nature/Figures_Original_v14/
 *.log
 *.nosex
 *_clump_in.txt
+.workbuddy/
