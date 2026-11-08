@@ -277,14 +277,14 @@ if not any(f.startswith("GraphicalAbstract") for f in main_files):
 record("G. 物料清单", "主图 Figure 1–5 + Graphical Abstract (6)",
        not miss_main, ("missing: " + str(miss_main)) if miss_main else "全部存在")
 
-miss_s = ["S%d" % i for i in range(1, 23)
+miss_s = ["S%d" % i for i in range(1, 25)
           if not any(f.startswith("SupplFig%d_" % i) for f in allfig)]
-record("G. 物料清单", "补充图 S1–S22 (22)", not miss_s,
+record("G. 物料清单", "补充图 S1–S24 (24)", not miss_s,
        ("missing: " + str(miss_s)) if miss_s else "全部存在")
 
-miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16)
+miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16, 17, 26, 27, 29)
           if not any(f.startswith("Table_S%d_" % i) for f in tab_files)]
-record("G. 物料清单", "补充表 S8,S9,S12–S16 (7)", not miss_t,
+record("G. 物料清单", "补充表 S8,S9,S12–S17,S26,S27,S29 (11, 独立文件)", not miss_t,
        ("missing: " + str(miss_t)) if miss_t else "全部存在")
 
 need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_checklist",
@@ -292,6 +292,15 @@ need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_ch
 miss_o = [k for k in need if not any(k in f for f in tab_files + ["docs/Supplementary/Audit_Trail.md"])]
 record("G. 物料清单", "Table S10/S11 + STROBE-MR 清单 + Audit_Trail", not miss_o,
        ("missing: " + str(miss_o)) if miss_o else "全部存在")
+
+# S25/S28/S30/S31 are delivered inline inside docs/08 (not as standalone files);
+# verify their headers are present so the declared supplementary-table range is complete.
+t08 = read(MANU)
+inline_tables = ["## Supplementary Table S25", "## Supplementary Table S28",
+                 "## Supplementary Table S30", "## Supplementary Table S31"]
+miss_inline = [t for t in inline_tables if t not in t08]
+record("G. 物料清单", "内联补充表 S25/S28/S30/S31 (docs/08)", not miss_inline,
+       ("missing: " + str(miss_inline)) if miss_inline else "全部内联存在")
 
 # ---------------------------------------------------------------- Section H
 # Compliance rule (2026-10-28): the MAIN TEXT must not contain audit-trail
