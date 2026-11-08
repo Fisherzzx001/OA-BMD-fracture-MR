@@ -92,8 +92,7 @@ def main():
     # ---- README ----
     readme = f"""# Manuscript package — ready for submission
 
-**Title.** Genetically higher bone mineral density raises knee osteoarthritis but
-protects against fracture: Mendelian randomisation of 13 skeletal phenotypes
+**Title.** Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence
 
 **Target journal.** *Osteoarthritis and Cartilage* (full-length original article)
 

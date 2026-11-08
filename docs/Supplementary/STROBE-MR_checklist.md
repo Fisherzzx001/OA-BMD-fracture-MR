@@ -1,6 +1,6 @@
 # STROBE-MR Checklist (Skrivankova et al., *JAMA* 2021;326(16):1614-1621; Ref. 13)
 
-**Study:** Genetically higher bone mineral density raises knee osteoarthritis yet protects against fracture: genetic correlation and bidirectional Mendelian randomisation across 13 skeletal phenotypes.
+**Study:** Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence.
 **Reporting guideline:** STROBE-MR statement (Skrivankova VW et al. JAMA 2021;326(16):1614-1621, doi:10.1001/jama.2021.18236) - 20 main items, 30 subitems.
 Each item is marked **Reported**, with the location given as a section or display item of the main manuscript (`docs/08_投稿稿_OA_BMD_fracture.md`); sub-items that cannot apply to this design are marked N/A.
 

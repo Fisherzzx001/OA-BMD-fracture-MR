@@ -48,6 +48,10 @@ code/output/genetics/sumstats/
 *.token
 docs/*.bak-reverted-*
 docs/99_*
+# internal compliance/audit archive — never publish (separate from manuscript)
+compliance_internal/
+# ad-hoc backups created during revision (keep on disk, do not commit)
+*.bak_*
 
 # ============================================================================
 # HISTORY-CLEANUP GUARD (added 2026-10-20)

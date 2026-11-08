@@ -1,6 +1,6 @@
 # OA-BMD-fracture-MR
 
-**Genetically higher bone mineral density raises knee osteoarthritis but protects against fracture: Mendelian randomisation of 13 skeletal phenotypes**
+**Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence**
 
 This repository holds the analysis code and reproduction material for the manuscript submitted to *Osteoarthritis and Cartilage* (`docs/08_投稿稿_OA_BMD_fracture.md`).
 
@@ -36,4 +36,4 @@ Code: MIT (see `LICENSE`). Manuscript text is governed by the publisher. Summary
 
 ## Citation
 
-Zheng Z, Chen S, Huang S, Qian C, Yuan H, Bao H, Jiang Q. Genetically higher bone mineral density raises knee osteoarthritis but protects against fracture: Mendelian randomisation of 13 skeletal phenotypes. *Osteoarthritis and Cartilage*. (submitted).
+Zheng Z, Chen S, Huang S, Qian C, Yuan H, Bao H, Jiang Q. Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence. *Osteoarthritis and Cartilage*. (submitted).

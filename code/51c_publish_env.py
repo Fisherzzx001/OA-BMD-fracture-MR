@@ -73,7 +73,7 @@ def main():
     data = {
         "name": OWNER_REPO,
         "private": False,
-        "description": "Reproducible code, figures and supplementary material for: Genetically higher bone mineral density raises knee osteoarthritis but protects against fracture (Mendelian randomisation of 13 skeletal phenotypes).",
+        "description": "Reproducible code, figures and supplementary material for: Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence.",
         "auto_init": False,
         "has_issues": True,
         "license_template": "mit",

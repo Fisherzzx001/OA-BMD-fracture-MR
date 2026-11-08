@@ -92,17 +92,39 @@ for label, ratio, kk in scenarios:
         f"{ors[1]:.3f} | {ors[0]:.3f} |"
     )
 
+# K provenance (R2 must-fix #1, 2026-11-08): K(1-K) is identified by the deposited
+# log-odds SE, NOT by the Z ratio, which is exactly 1 for any common rescaling of
+# beta and SE. Read the exact per-SNP distribution from the G6 probe artefact so the
+# regenerated note reproduces the manuscript verbatim.
+try:
+    _kc = pd.read_csv(os.path.join(OUT, "_g6_k_estimation.csv"))["Kc"]
+    KC_MED, KC_Q1, KC_Q3 = _kc.median(), _kc.quantile(.25), _kc.quantile(.75)
+except Exception:
+    KC_MED, KC_Q1, KC_Q3 = NEFF_RATIO_MEDIAN, *NEFF_RATIO_IQR
+KC_FACTOR = factor(KC_MED)
+
 lines += [
     "",
     "Reported values sit in the row 'Reported (median)' (factor 3.389, OR 1.060–1.099). "
     "Because the reconstruction multiplies beta and SE by the *same* constant, z and therefore every "
     "p-value, significance call, Cochran Q, I², Egger-intercept test, PRESSO call and power value are "
     "exactly invariant to K; only the absolute effect size moves. Across the inter-quartile range of the "
-    "39 SNPs carrying both a deposited log-odds effect and the reconstructed Z, the scale factor varies by "
+    "39 SNPs with deposited GO-Consortium log-odds standard errors, the scale factor varies by "
     f"{(factor(NEFF_RATIO_IQR[0]) / f0 - 1) * 100:+.2f}% to {(factor(NEFF_RATIO_IQR[1]) / f0 - 1) * 100:+.2f}%, "
     "which shifts the headline odds ratios by less than 0.3% in absolute terms. Even a deliberately "
     "pessimistic ±10% mis-specification of K moves the odds ratios by no more than about ±0.5%, well inside "
     "their stated confidence intervals, and changes no inference.",
+    "",
+    "**How K was estimated.** K(1−K) is the per-SNP ratio of N_eff = 1/[SE²·2f(1−f)] — inverted from "
+    "the deposited GO-Consortium knee-OA log-odds SE — to the munged total N (`code/_probe_g6b.py`; "
+    "per-SNP detail in `code/output/genetics/_g6_k_estimation.csv`); the median is "
+    f"{KC_MED:.6f} (IQR {KC_Q1:.6f}–{KC_Q3:.6f}), implying K = {K_MEDIAN:.4f} and a scale factor of "
+    f"{KC_FACTOR:.4f}, reported as {SCALE_FACTOR:.3f}. The ratio of deposited to reconstructed Z is "
+    "exactly 1 by construction: Z is invariant to any common rescaling of beta and SE, so this ratio "
+    "confirms only that the two files share a source and carries no information about K. The SE ratio, "
+    "not the Z ratio, identifies K; scaling the deposited beta and SE together by any constant leaves "
+    "every Z unchanged while changing K(1−K) by the square of that constant. No reported beta, SE, "
+    "p-value or odds ratio depends on this clarification.",
     "",
 ]
 

@@ -8,7 +8,7 @@ Elsevier Ltd.
 **Dear Editor,**
 
 **Manuscript type:** Full length original research article
-**Title:** "Genetically higher bone mineral density raises knee osteoarthritis risk yet protects against fracture: genetic correlation and bidirectional Mendelian randomisation across 13 skeletal phenotypes"
+**Title:** "Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence"
 
 We submit the above full-length original research article for consideration as an Original Article in *Osteoarthritis and Cartilage*. The work has not been published previously, is not under consideration for publication elsewhere, and all authors have approved the manuscript and agree with its submission.
 

@@ -28,7 +28,7 @@
 1. **GitHub classic token**（非 fine-grained）：`https://github.com/settings/tokens` →
    Generate new token (classic) → 勾选 `repo`（整组）→ 复制保存。
    （此前 fine-grained token 因无 `repo` scope 被拒，务必用 classic。）
-2. **终端用 Git Bash（Git for Windows），不要用原生 PowerShell**：本机 PowerShell 的 PATH 里没有 git，`git` 会报“无法将 git 项识别为 cmdlet”；且 PowerShell 5.1 不支持 `&&`。Git Bash 里 `git` 与 `&&` 均正常（本 runbook 全部命令均按 Git Bash 语法写）。开始先 `cd` 到项目目录 `OA_B_PROJECT`，**不要在家目录 `C:\Users\Administrator` 下跑**（否则 `.gitignore` 会写错位置）。
+2. **终端用 Git Bash（Git for Windows），不要用原生 PowerShell**：本机 PowerShell 的 PATH 里没有 git，`git` 会报“无法将 git 项识别为 cmdlet”；且 PowerShell 5.1 不支持 `&&`。Git Bash 里 `git` 与 `&&` 均正常（本 runbook 全部命令均按 Git Bash 语法写）。**若本机未装 Git for Windows（开始菜单搜不到 Git Bash）：去 https://git-scm.com/download/win 下载 64-bit 版、双击默认安装即可**，装完就有 Git Bash。若不想装软件，也可在 PowerShell 里临时把 WorkBuddy 内置 git 加进 PATH（见文末“备选：不装 Git for Windows”）。开始先 `cd` 到项目目录（Git Bash 用正斜杠 `/c/Users/...`，**不要在家目录 `C:\Users\Administrator` 下跑**，否则 `.gitignore` 会写错位置）。
 3. **务必推送 `master`**，**不要推送 `publish` 分支**（`publish` 仅领先 2 个初始提交，缺失 70+ 个 OAC/S29/引用提交，已过时）。
 
 ---
@@ -38,7 +38,7 @@
 在**联网终端**执行：
 
 ```bash
-cd C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT
+cd /c/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT
 
 git switch master
 
@@ -80,7 +80,7 @@ OSF 不自动 mint，需手动建项目拿 GUID，再用脚本回填到稿件与
 - `docs/cover_letter_OAC.md`。
 
 ```bash
-cd C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT
+cd /c/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT
 
 # 干跑确认替换目标存在（可选）
 python code/184_osf_doi_writeback.py --dry-run 10.17605/OSF.IO/ABCDE
@@ -103,7 +103,7 @@ git push origin master
 回写后重跑三连门禁确认仍全绿，并重跑 docx 重建（OSF DOI 需进稿）：
 
 ```bash
-cd C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT
+cd /c/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT
 
 python code/148_oac_compliance.py        # 期望 OAC COMPLIANT（body≤4000 / refs≤50 / 显示项 8/8）
 python code/149b_verify_reported_values.py   # 期望 SAFE（β/SE/p/OR/CI 未动）
@@ -129,7 +129,7 @@ python code/135_build_manuscript_ready.py # → Manuscript_Ready 镜像（与 do
 > ```
 
 ```bash
-cd C:\Users\Administrator\WorkBuddy\2026-09-08-22-17-40\OA_B_PROJECT
+cd /c/Users/Administrator/WorkBuddy/2026-09-08-22-17-40/OA_B_PROJECT
 
 # 1) 加入忽略
 echo ".workbuddy/" >> .gitignore
