@@ -101,3 +101,40 @@ These entries are deliberately kept out of the A-series above: A1–A20 archive 
 - **Inserted into `docs/08` on 2026-11-05 (author decision: 纳入 S29).** The earlier hesitation — that the 4000-word OAC body (3999/4000) would force equal-word compression — proved unnecessary: gate 148 counts prose only between the end of the Abstract and `## Figure legends`, and all supplementary tables (S8–S29) sit *after* `## Figure legends`, so they are excluded from the body word count. S29 was embedded after S28 (before `## References`) with no change to body words. The supplementary-table list was updated (S28 → S29; range sentence S23–S29), `Manuscript_Ready/01_Manuscript.md` rebuilt via `code/135` (md5-identical to docs/08), and both `submission_package/*.docx` rebuilt. Re-running 148/149b/182 returned OAC COMPLIANT, 149b SAFE, and 182 = 64/64 PASS with zero fails. No reported β/SE/p/OR/CI was altered.
 - **Non-corroboration.** E2's r_g (genome-wide polygenic sharing) must not be used to corroborate the MR estimates of Table 2/S28 or the 0/31 colocalisation count of F4; the site gradient of r_g (spine > knee > hip > hand) in fact contradicts the MR site gradient (spine/hand > knee), which is the layer's principal negative result.
 
+
+## Methodology addendum (2026-11-08) — F10 European-restricted investigation & reference swap
+
+These are process notes, not new main-text claims. They explain why F10's execution
+face could not be completed as staged and how the reference list was expanded within the
+50-reference OAC gate.
+
+- **F10 (cross-ancestry transportability) — honest status.** The staged outcome file
+  `GCST90566811` (Hatzikotoulas 2025, knee OA) was inspected to run the European-restricted
+  sensitivity. Direct probing showed it is the **X-chromosome knee-OA GWAS**
+  (522,341 SNPs, all on chr23; 0/31 autosomal BMD instruments matched; no GDF5/WNT16
+  signal; per-variant NCASES, not study-level). It is **not** a European-restricted
+  autosomal knee-OA outcome. The genuine autosomal knee-OA GWAS is `GCST90566800`
+  (mixed: 161,228 EUR cases + 965,985 EUR controls + EAS/AFR/SAS/AMR; 86.31% European),
+  and **no separate European-only knee-OA GWAS was released** by Hatzikotoulas 2025
+  (confirmed via GWAS Catalog GCST list + study page). The intended F10
+  European-replication therefore **could not be executed** — no fabrication was entered.
+  The reproducibility script `code/312_f10_eur_sensitivity.py` nonetheless independently
+  re-derived the manuscript headline from the mixed outcome: IVW β=+0.0781 (SE 0.0124,
+  P=3.31×10⁻¹⁰), OR/SD = exp(0.0781) = 1.0812, matching the reported BMD→knee-OA estimate
+  exactly, confirming the harmonisation/orientation pipeline. F10 transportability rests on
+  (i) the already-stated 86.31% European composition of `GCST90566800`, and (ii) ref [14]'s
+  ancestry-stratified null (no ancestry-specific study-wide significant associations),
+  documented in the S23 figure legend and F10 text. F10 remains honestly "partial".
+- **Reference swap ([11] Zhu 2025 → Yu 2025).** To insert directional supporting evidence
+  without breaching the 50-reference OAC gate, ref [11] was swapped by **equivalent
+  replacement** (not added): Zhu R et al., *Clin Rheumatol* 2025 (femoral-neck BMD→hip- but
+  not knee-replacement) → Yu H, Wang J, Xu X, Li H, Guo J., "Revealing the mediating
+  mechanisms between BMI and osteoarthritis: a Mendelian randomization and mediation
+  analysis", *Aging Clin Exp Res* 2025;37(1):119, doi:10.1007/s40520-025-03035-2 (total BMD
+  a significant positive mediator of knee-OA risk, mediation proportion 3.59%). The inline
+  Introduction sentence (line 37) was rewritten accordingly. Ref [7] Alhassan (scoping
+  review) was deliberately retained and kept paired with [8] at line 37 to preserve the
+  R3-3 gate ("[7, 8]" co-occurrence) and the accurate "scoping and methodological review"
+  framing. Reference count stays exactly 50. All four gates (148/149b/182/310) re-passed;
+  derived docx + mirror synced via `code/313_ref_swap_sync.py` (idempotent, run-level
+  replacement, python-docx joined-run verification).
