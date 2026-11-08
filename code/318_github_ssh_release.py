@@ -196,14 +196,35 @@ def push():
     if body.get("commit", {}).get("sha") != local:
         raise SystemExit("remote SHA != local SHA after push -- stopping before tag")
 
-    # annotated tag (idempotent)
+    # If the tag is already published on GitHub, never repoint/force it:
+    # a release is immutable and later master commits must not move v2.0.
+    rc_tags, remote_tags = api("GET", f"/repos/{OWNER}/{REPO}/tags")
+    published = isinstance(remote_tags, list) and any(
+        t.get("name") == TAG for t in remote_tags)
+    if published:
+        print(f"[push] tag {TAG} already published on GitHub -- leaving it untouched")
+        st["release_done"] = True
+        save_state(st)
+        return
+
+    # annotated tag (idempotent).  A pre-existing LOCAL tag may point at an old
+    # commit whose tree still contains the >100 MB blobs; repoint it to HEAD so
+    # the tag push cannot re-introduce them.
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     tags = subprocess.check_output(["git", "tag", "-l", TAG], cwd=ROOT, text=True).strip()
-    if not tags:
+    need_create = not tags
+    if tags:
+        tgt = subprocess.check_output(["git", "rev-parse", TAG], cwd=ROOT, text=True).strip()
+        if tgt == head:
+            print(f"[push] tag {TAG} already points at HEAD")
+        else:
+            print(f"[push] repointing stale local tag {TAG}: {tgt[:12]} -> {head[:12]}")
+            git(["tag", "-d", TAG])
+            need_create = True
+    if need_create:
         rc, out, err = git(["tag", "-a", TAG, "-m",
                             "Submission-ready OAC manuscript: S29 rg + S32 F10 ancestry proxy (Zenodo submission-v2)"])
-        print("[push] tag created:", rc, err)
-    else:
-        print("[push] tag already exists locally")
+        print("[push] tag created at HEAD:", rc, err)
     rc, out, err = git(["push", REMOTE, TAG], env=env, timeout=300)
     print(f"[push] git push tag {TAG} rc={rc}\n  out: {out[:300]}\n  err: {err[:300]}")
     if rc != 0:
@@ -242,9 +263,11 @@ def cleanup():
     if os.path.isdir(TMP):
         shutil.rmtree(TMP, ignore_errors=True)
         print("[cleanup] temporary key/config directory removed")
+    # Never write the PAT into origin; only report a redacted URL.
     origin = subprocess.check_output(["git", "remote", "get-url", "origin"],
                                      cwd=ROOT, text=True).strip()
-    print("[cleanup] origin unchanged, token never written to it:", "ghp_" not in origin)
+    safe = re.sub(r"//[^/@]+@github\.com", "//***@github.com", origin)
+    print("[cleanup] origin (redacted):", safe)
 
 
 if __name__ == "__main__":
