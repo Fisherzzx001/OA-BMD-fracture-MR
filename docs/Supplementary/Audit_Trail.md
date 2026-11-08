@@ -138,3 +138,51 @@ face could not be completed as staged and how the reference list was expanded wi
   framing. Reference count stays exactly 50. All four gates (148/149b/182/310) re-passed;
   derived docx + mirror synced via `code/313_ref_swap_sync.py` (idempotent, run-level
   replacement, python-docx joined-run verification).
+
+## Methodology addendum (2026-11-09) — F10 executed robustness proxy (S32)
+
+These are process notes, not new unreviewed main-text claims. They record the
+replacement of the blocked F10 European-replication design with a genuinely
+executable sensitivity on the mixed-ancestry outcome.
+
+- **Why the original F10 design was replaced.** `GCST90566811` (staged as a
+  European-restricted knee-OA outcome) is the X-chromosome knee-OA GWAS
+  (522,341 variants, all chr23; 0/31 autosomal BMD instruments matched).
+  Hatzikotoulas 2025 released site-stratified (hip/knee/spine/hand) but **no**
+  ancestry-stratified OA summary statistics, so no European-only or
+  non-European outcome exists publicly. A registered cross-ancestry replication
+  cannot be executed and no result was fabricated for it.
+- **Executed replacement (`code/314_f10_ancestry_proxy.py`, Table S32).** On the
+  mixed-ancestry knee-OA GWAS `GCST90566800`, per-variant `NCASES+NCONTROLS`
+  ranges 817,610–1,315,578 across the 31 BMD instruments. In a multi-ancestry
+  meta-analysis this is the sum over contributing cohorts and is used as an
+  explicitly labelled **proxy** for the amount of ancestry-diverse contribution
+  (also affected by imputation/array coverage). Eight analyses were run with the
+  identical 31 instruments and the identical `code/13` IVW engine: P0 full-set
+  validation (exactly reproduces the locked OR/SD 1.0812); P1/P2 N-median-split
+  strata; P3 between-stratum Q; P4 relative-European-purity-weighted IVW; P5/P6
+  deletion sensitivities; P7 1000G-EUR allele-frequency-concordance restriction;
+  P8 a two-component mixture bound. The generalised weighted IVW was verified to
+  reduce bit-for-bit to `code/13::_ivw` when w=1/se_o².
+- **Results.** All 7 IVW rows are positive and nominally significant, OR/SD
+  1.0711–1.0917. European-core (β=+0.0687, SE 0.0214) versus
+  multi-ancestry-enriched (β=+0.0828, SE 0.0152) strata do not differ
+  (Q_between=0.29, 1 df, P=0.592). 1000G EUR EAF matched 31/31 loci
+  (r=0.9825, max |ΔEAF|=0.0446). Under β_EUR=0 the 12.69% non-European component
+  would need β=+0.6152 (OR/SD 1.850; 7.88× the pooled estimate), incompatible with
+  ref [14]'s ancestry-stratified null.
+- **Honest boundary (carried into S32).** This is robustness to differential
+  cohort contribution *within one mixed-ancestry GWAS*, NOT a cross-ancestry
+  replication and NOT evidence of transportability to non-European populations.
+  The registered F10 test remains **unexecuted**; the S23 verdict "9/10 executed
+  tests" is unchanged because a proxy is not a registered-test execution. F2's
+  volumetric arm and F5's hip-osteophyte arm remain pending on Faber/Tobias data.
+- **Artefacts and synchronisation.** `docs/Supplementary/Table_S32_f10_ancestry_proxy.md`,
+  inline S32 in `docs/08`, `code/output/genetics/L7_F10_ancestry_proxy.json`,
+  updated S23 figure (`code/300`: verdict + F10 box now say "proxy: S32",
+  regenerated to all figure directories), `build_submission.py`/`build_maintext.py`
+  rebuild of both docx, byte-identical `Manuscript_Ready` mirror, and standalone
+  S32 copied into `Manuscript_Ready/Supplementary/` — all via
+  `code/315_sync_f10_s32.py`. Data availability and the Supplementary Material
+  list (S25–S32) were updated. No previously reported β/SE/p/OR/CI was changed;
+  refs stay at 50/50.

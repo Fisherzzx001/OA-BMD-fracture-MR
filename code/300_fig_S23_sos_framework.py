@@ -10,7 +10,7 @@ Outputs (reproducible):
   submission_package/Figures/SupplFig23_SOS_framework.png
 
 All numbers are taken verbatim from docs/08_投稿稿_OA_BMD_fracture.md
-(§4, Table S11 / S26-S30).
+(§4, Table S11 / S26-S32).
 """
 import os
 import matplotlib
@@ -79,7 +79,7 @@ BOT = [
     ("F6", "Cross-site homogeneity", "tests P6",
         ["Q=6.92, p=0.14;", "t2=0"], GREEN, GREEN_F, 5),
     ("F10", "Ancestry sensitivity", "external validity",
-        ["Not executed:", "no public", "stratified data"], RED, RED_F, None),
+        ["Registered test", "unexecuted;", "proxy: S32"], RED, RED_F, None),
 ]
 
 OUTCOME_LEGEND = [
@@ -184,7 +184,7 @@ def main():
     # and replace "SOS survives 9/10" with the weaker, non-completeness claim.
     verdict_lines = [
         "Verdict: 9/10 executed tests do not refute SOS (F2 partial \u2014 volume arm untested; "
-        "F9 non-discriminating; F10 unexecuted).",
+        "F9 non-discriminating; F10 registered test unexecuted, ancestry-composition proxy in S32).",
         "Kernel: one inherited variant set must fix opposite signs at whole-bone and joint endpoints; "
         "distinct variant sets or concordant signs refute it.",
         "Priority closing tests: F2 volumetric arm (true vBMD instruments) and F10 cross-ancestry "

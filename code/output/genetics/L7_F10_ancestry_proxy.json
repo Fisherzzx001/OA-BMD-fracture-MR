@@ -1,0 +1,153 @@
+{
+  "design": "F10 ancestry-composition robustness PROXY (not a cross-ancestry replication)",
+  "outcome": "GCST90566800 mixed-ancestry knee OA (87.31% European, Table S14)",
+  "instrument_source": "bmd_instruments.json (31 European-only total-body BMD instruments)",
+  "locked_headline_OR": 1.0812,
+  "N_proxy": {
+    "min": 817610.0,
+    "max": 1315578.0,
+    "median": 1267074.0,
+    "EUR_fraction_anchor": 0.8731,
+    "caveat": "per-variant N also reflects imputation/array coverage; it is a proxy, not a measured ancestry fraction"
+  },
+  "P0_reproduces_headline": true,
+  "results": [
+    {
+      "label": "P0 All 31 instruments (reference, locked)",
+      "n": 31,
+      "beta": 0.07807442305442486,
+      "se": 0.012425097415641745,
+      "p": 3.3080737414195336e-10,
+      "OR": 1.0812031221146798,
+      "lo": 1.0551904079577703,
+      "hi": 1.1078571056507516,
+      "Q": 156.64364641684188,
+      "Q_df": 30,
+      "Q_p": 4.398702669058786e-19,
+      "egger_intercept": 0.00043040443443597776,
+      "egger_intercept_p": 0.8353529223709604,
+      "wmed": 0.0657048789047515
+    },
+    {
+      "label": "P1 European-core stratum (N <= median, n=16)",
+      "n": 16,
+      "beta": 0.06872455643049576,
+      "se": 0.021432230768439003,
+      "p": 0.001343143701728541,
+      "OR": 1.0711411295751534,
+      "lo": 1.0270774933372608,
+      "hi": 1.1170951821166848,
+      "Q": 112.37249712334653,
+      "Q_df": 15,
+      "Q_p": 5.641375598613897e-17,
+      "egger_intercept": 0.003244279633659398,
+      "egger_intercept_p": 0.3891275925324038,
+      "wmed": 0.04589788733372676
+    },
+    {
+      "label": "P2 Multi-ancestry-enriched stratum (N > median, n=15)",
+      "n": 15,
+      "beta": 0.08280774172826452,
+      "se": 0.015249216884445553,
+      "p": 5.626106588677498e-08,
+      "OR": 1.086332931977726,
+      "lo": 1.0543445314453612,
+      "hi": 1.1192918480655858,
+      "Q": 43.98448635027502,
+      "Q_df": 14,
+      "Q_p": 5.9539603851011756e-05,
+      "egger_intercept": -0.0018156209607478307,
+      "egger_intercept_p": 0.3955359866668995,
+      "wmed": 0.0657048789047515
+    },
+    {
+      "label": "P4 relative-European-purity-weighted IVW",
+      "n": 31,
+      "beta": 0.07878528640516788,
+      "se": 0.021635296635722372,
+      "p": 0.0002710369099027515,
+      "OR": 1.0819719830340475,
+      "lo": 1.0370499594579845,
+      "hi": 1.1288398995574698,
+      "Q": NaN,
+      "Q_df": 0,
+      "Q_p": NaN,
+      "egger_intercept": NaN,
+      "egger_intercept_p": NaN,
+      "wmed": NaN
+    },
+    {
+      "label": "P5 Delete 10 most multi-ancestry instruments (n=21)",
+      "n": 21,
+      "beta": 0.08770998059741411,
+      "se": 0.018336869297110755,
+      "p": 1.7247633310842436e-06,
+      "OR": 1.0916714702052217,
+      "lo": 1.0531331956786287,
+      "hi": 1.1316200113624568,
+      "Q": 124.02236853854623,
+      "Q_df": 20,
+      "Q_p": 5.1064967026752325e-17,
+      "egger_intercept": 0.0009768942546929354,
+      "egger_intercept_p": 0.7370208205255839,
+      "wmed": 0.0657048789047515
+    },
+    {
+      "label": "P6 Delete 10 most European-core instruments (n=21)",
+      "n": 21,
+      "beta": 0.07725586731769778,
+      "se": 0.01412106612401065,
+      "p": 4.4759012192567436e-08,
+      "OR": 1.080318459218846,
+      "lo": 1.0508281606461023,
+      "hi": 1.1106363695196337,
+      "Q": 71.03447728066405,
+      "Q_df": 20,
+      "Q_p": 1.233422699019481e-07,
+      "egger_intercept": -0.001119897795296802,
+      "egger_intercept_p": 0.5733563357810099,
+      "wmed": 0.0657048789047515
+    },
+    {
+      "label": "P7 1000G-EUR-EAF-concordant subset (abs dEAF <= median, n=16)",
+      "n": 16,
+      "beta": 0.07933467554450511,
+      "se": 0.015622756041258444,
+      "p": 3.8113070802007643e-07,
+      "OR": 1.0825665700054505,
+      "lo": 1.0499201080504632,
+      "hi": 1.1162281487012322,
+      "Q": 72.84663295760706,
+      "Q_df": 15,
+      "Q_p": 1.383064110504833e-09,
+      "egger_intercept": 0.0011609037759361324,
+      "egger_intercept_p": 0.6797947786182397,
+      "wmed": 0.04589788733372676
+    }
+  ],
+  "P3_between_stratum": {
+    "label": "P3 Between-stratum heterogeneity",
+    "Q": 0.28666294322028485,
+    "Q_df": 1,
+    "p": 0.5923669738278127,
+    "delta_beta": -0.014083185297768766,
+    "interpretation": "no detectable ancestry-composition dependence"
+  },
+  "P7_EAF": {
+    "matched": 31,
+    "r": 0.9825227869078066,
+    "max_abs_diff": 0.04462698412698407
+  },
+  "P8_mixture_bound": {
+    "beta_nonEUR_required_if_EUR_null": 0.6152436804919216,
+    "OR_nonEUR_required": 1.8501073797093273,
+    "fold_increase": 7.880220646178092,
+    "EUR_fraction": 0.8731
+  },
+  "verdict": {
+    "n_rows": 7,
+    "n_positive_significant": 7,
+    "all_stable": true,
+    "F10_registered_test": "UNEXECUTED (no public ancestry-stratified OA GWAS)"
+  }
+}
