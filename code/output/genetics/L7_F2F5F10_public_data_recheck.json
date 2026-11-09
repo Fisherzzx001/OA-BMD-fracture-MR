@@ -1,0 +1,125 @@
+{
+  "generated_utc": "2026-11-09T01:25:19+00:00",
+  "source": "GWAS Catalog REST v2 /studies?reportedTrait=<term> (exact); legacy v1 /gwas/rest/api returns HTTP 410 Gone",
+  "corpus_studies": 442,
+  "fresh_query_terms": [
+    "volumetric bone mineral density",
+    "trabecular bone mineral density",
+    "cortical bone mineral density",
+    "bone area",
+    "bone width",
+    "osteophyte",
+    "heel bone mineral density"
+  ],
+  "fresh_studies": 69,
+  "new_accessions_since_corpus": [],
+  "query_errors": [],
+  "registered_specs": {
+    "F2_volume": {
+      "registered": "Areal BMD replaced by a volumetric / area-conditioned BMD instrument, tested against the same hip and knee OA outcomes.",
+      "need": "Common-SNP GWAS of true volumetric BMD (vBMD), cortical/trabecular vBMD, bone area or bone width with full summary statistics and enough genome-wide significant loci to build >=10 independent instruments; ideally site-matched to the OA outcomes."
+    },
+    "F5_hip_osteophyte": {
+      "registered": "Stratify the OA outcome by osteophyte-predominant versus joint-space-narrowing subtype; registered endpoint is hip osteophyte.",
+      "need": "Hip-osteophyte GWAS with common-SNP summary statistics (the OARSI 2024 abstract, 52,024 participants, IGFBP3 locus, has no deposited file)."
+    },
+    "F10_cross_ancestry": {
+      "registered": "Re-run BMD->OA MR in non-European (EAS) OA with ancestry-matched instruments / ancestry-stratified outcome.",
+      "need": "De novo non-European BMD instruments plus an ancestry-stratified KNEE-OA outcome (Hatzikotoulas 2025 knee OA, GCST90566800), or an adequately powered non-European total-body DXA BMD GWAS paired with the same outcome definition."
+    }
+  },
+  "candidate_counts": {
+    "F2_volume": 8,
+    "F5_hip_osteophyte": 7,
+    "F10_nonEUR_BMD": 60,
+    "F10_ancestry_stratified_OA": 59
+  },
+  "adjudication": [
+    {
+      "test": "F2_volume",
+      "accession": "GCST90826226..GCST90826232",
+      "label": "Garg 2026 AJHG CNV PheWAS: pelvis / legs / femoral-neck bone area",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Bone-area traits are measured, but the variants are copy-number burden calls from sequencing read depth (N=39,704 EUR), not common SNPs. They cannot serve as the areal-BMD-replacing volumetric instrument set and would not overlap the 31 BMD instruments."
+    },
+    {
+      "test": "F2_volume",
+      "accession": "GCST007014",
+      "label": "Nielson 2016 trabecular lumbar-spine BMD, N=12,287 EUR",
+      "public": false,
+      "verdict": "NOT FIT",
+      "reason": "True volumetric/trabecular BMD phenotype, but summaryStatistics=NA in the Catalog; no instrument set can be reconstructed."
+    },
+    {
+      "test": "F2_volume",
+      "accession": "GCST010299",
+      "label": "Zhang 2020 'BMD (hip) and hip bone size' bivariate GWAS",
+      "public": false,
+      "verdict": "NOT FIT",
+      "reason": "Bivariate (pleiotropy-selected) statistic with no deposited file; even if available it is not a pure volumetric BMD instrument."
+    },
+    {
+      "test": "F5_hip_osteophyte",
+      "accession": "GCST90080462/64, GCST90084448/50",
+      "label": "Backman 2021 UKB exome: knee / any-site osteophyte ICD10 burden",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Exome-wide rare coding-variant / gene-burden files, not common-SNP GWAS; 0/31 exact chr:bp matches against the locked BMD instruments (verified 2026-11-09), and the endpoint is knee or any-site, not hip."
+    },
+    {
+      "test": "F5_hip_osteophyte",
+      "accession": "GCST005278, GCST90080463, GCST90084449",
+      "label": "Lumbar spondylosis osteophytes / ankle-foot osteophyte",
+      "public": false,
+      "verdict": "NOT FIT",
+      "reason": "Wrong anatomical site and (for GCST005278) no deposited summary statistics; the registered hip-osteophyte GWAS remains only an OARSI 2024 conference abstract."
+    },
+    {
+      "test": "F10_cross_ancestry",
+      "accession": "GCST90692328",
+      "label": "Pan-UKB 2025 Central/South Asian heel BMD (UKB f.3148), N=2,633",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Non-European BMD summary statistics do exist (harmonised 484 MB, GRCh37, .tbi), but N=2,633 heel quantitative ultrasound is a different bone phenotype from total-body DXA areal BMD and is far too small for de novo instrument discovery; using European instruments against it would be a portability check, not replication."
+    },
+    {
+      "test": "F10_cross_ancestry",
+      "accession": "GCST005348 / GCST007691",
+      "label": "Medina-Gomez 2018 total-body BMD (incl. 1,333 AA) / GEFOS 2012 FN BMD",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Deposited files are pooled multi-ancestry or European-dominant meta-analyses, not ancestry-specific instrument-discovery GWAS."
+    },
+    {
+      "test": "F10_cross_ancestry",
+      "accession": "GCST90134280/81/82/87",
+      "label": "MVP+UKB McDonald 2022 ancestry-stratified OA (SAS 7,162; EAS 1,704; AFR 7,188/35,753)",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Ancestry-stratified OA summary statistics DO exist, but the trait is all-site osteoarthritis, not the knee-OA endpoint of the registered test; harmonised files are 0.79-1.0 GB and no ancestry-matched BMD instrument set exists to pair with them."
+    },
+    {
+      "test": "F10_cross_ancestry",
+      "accession": "GCST90727231",
+      "label": "Genes & Health 2026 British South Asian OA excluding spine, N=44,026",
+      "public": true,
+      "verdict": "NOT FIT",
+      "reason": "Large non-European OA GWAS with deposited harmonised statistics, but exome-wide sequencing of rare coding variants (GRCh38), an 'excluding spine' all-site endpoint, and no knee-OA definition; common-SNP BMD instruments cannot be harmonised to it."
+    },
+    {
+      "test": "F10_cross_ancestry",
+      "accession": "GCST90566811",
+      "label": "Previously staged 'European-restricted knee OA' file",
+      "public": true,
+      "verdict": "MISIDENTIFIED",
+      "reason": "This is the X-chromosome knee-OA GWAS (all rows chr23), not a European-restricted autosomal outcome; 0/31 autosomal BMD instruments match. The S11 sentence claiming a staged EUR file was factually wrong and has been corrected."
+    }
+  ],
+  "conclusion": {
+    "F2_volume": "UNEXECUTED - no fit-for-purpose common-SNP volumetric BMD summary statistics; geometry arm and conditional MVMR stand.",
+    "F5_hip_osteophyte": "UNEXECUTED - no hip-osteophyte common-SNP GWAS; site-stratified surrogate (Table S29) stands.",
+    "F10_cross_ancestry": "UNEXECUTED - non-European / ancestry-stratified files now exist but none are fit for purpose; Table S32 ancestry-composition proxy stands and is NOT a replication; S23 verdict 9/10 unchanged."
+  },
+  "wording_note": "Blanket phrases such as 'no public ancestry-stratified data' and 'no non-European BMD exposure summary statistics are available' are imprecise as of 2026-11-09 and were replaced by 'no fit-for-purpose / no ancestry-stratified summary statistics for this outcome study'."
+}

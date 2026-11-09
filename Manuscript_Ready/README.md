@@ -7,6 +7,7 @@
 **Archive.** Code and reproduction material: <https://github.com/Fisherzzx001/OA-BMD-fracture-MR>;
 archived under the Zenodo concept DOI **<https://doi.org/10.5281/zenodo.23400860>**
 (preregistration protocol P1–P6 / F1–F10 is archived in the same deposit).
+The independent OSF preregistration is **<https://doi.org/10.17605/OSF.IO/CSMP7>**.
 
 ## Contents
 
@@ -14,19 +15,18 @@ archived under the Zenodo concept DOI **<https://doi.org/10.5281/zenodo.23400860
 |---|---|
 | `01_Manuscript.md` | Full manuscript: title page, highlights, abstract, Introduction, Methods, Results, Discussion, figure legends, Tables 1–4, declarations, references, supplementary-material list |
 | `02_Cover_letter.md` | Cover letter (no placeholders) |
-| `Figures/Main/` | Figure 1–10, Graphical Abstract and Supplementary Figures S1–S8 (23 PNG) |
-| `Figures/Supplementary/` | Supplementary Figures S9–S17 (16 PNG) |
-| `Supplementary/` | Tables S8–S9 and S12–S16, Table S10 (MVMR grid), Table S11 (predictions and falsifying tests), STROBE-MR checklist (md/docx/pdf) |
+| `Figures/Main/` | Figure 1–5 and Graphical Abstract (23 files) |
+| `Figures/Supplementary/` | Supplementary Figures S1–S24 (23 files, PNG/PDF/TIF) |
+| `Supplementary/` | Independent supplementary tables S8–S9, S12–S17, S26–S27, S29–S32; Table S10 (MVMR grid); Table S11 (SOS predictions and falsifying tests); STROBE-MR checklist; Audit_Trail |
 
 ## Verification state at build time
 
-- Consistency gate `audit_v18_full.py`: **460 checks / 0 fails / 1 warn**
-  (the single warn is a disclosed 0.40% h²/N rounding note)
-- Figure-to-data traceability `code/115_audit_figures_v18.py`: **187 checks / 0 failures**
-- OAC format check `code/148_oac_compliance.py`: **COMPLIANT**
-  (body 3999/4000 words; abstract 310/350 by code-148 token count; 5 highlights all ≤85 characters; references 45/50; display items 8/8; supplementary Table S29 newly added)
-- Numeric integrity after copy-editing `code/134_verify_humanize.py`: **PASS**
-  (1263-number multiset identical before and after; 27 citation markers unchanged)
+- OAC format gate `code/148_oac_compliance.py`: **COMPLIANT**
+  (body 3982/4000 words; abstract 318/350; references 50/50; display items 8/8; 5 highlights all ≤85 characters)
+- Reported-value integrity `code/149b_verify_reported_values.py`: **SAFE** — no reported β/SE/p/OR/CI changed
+- Final QC `code/182_final_qc.py`: **65/65 PASS — READY TO SUBMIT**
+- No-regression guard `code/310_assert_no_regression.py`: **30/30 PASS**
+- Supplementary figures S1–S24; inline supplementary tables S25, S28, S30, S31 and S32 in `01_Manuscript.md`
 - Placeholders in this folder: **0**
 
 ## Language-editing note

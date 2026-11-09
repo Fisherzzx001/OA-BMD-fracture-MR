@@ -231,7 +231,9 @@ for name, txt in art.items():
     if MANU in name or "Manuscript" in name or is_cl:
         # Either a resolved OSF DOI or the "being deposited" placeholder is acceptable;
         # the gate tests *consistency*, not a prescribed literal string.
-        has_real = ("osf.io" in txt and "10.17605" in txt)
+        # DOI prefixes are case-insensitive (OSF mints 10.17605/OSF.IO/<GUID>,
+        # DataCite canonicalises to 10.17605/osf.io/<guid>), so match case-insensitively.
+        has_real = bool(re.search(r"10\.17605/OSF\.IO/[A-Z0-9]{5,10}", txt, re.I))
         ok_osf = has_real or ("being deposited" in txt)
         ok_pd = "mirror is pending" not in txt
         record("E. 跨产物同步", f"{name}: OSF 状态自洽 (真实DOI 或 being deposited)", ok_osf, "")

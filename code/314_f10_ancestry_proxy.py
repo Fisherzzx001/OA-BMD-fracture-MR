@@ -447,9 +447,10 @@ def main():
         "ancestry-by-effect interaction test. (iii) F10 therefore changes from 'no executed analysis' to "
         "'an executed robustness proxy with the registered cross-ancestry replication still unexecuted'; "
         "the S23 verdict of 9/10 executed tests is unchanged because a proxy is not a registered-test "
-        "execution. (iv) Closing F10 still requires non-European BMD exposure summary statistics or "
-        "ancestry-stratified OA GWAS; F2's volumetric arm likewise awaits volumetric BMD/hip-osteophyte "
-        "data from the Faber/Tobias releases.",
+        "execution. (iv) Closing F10 still requires fit-for-purpose non-European BMD "
+        "instruments and site-matched ancestry-stratified knee-OA summary statistics; "
+        "F2's volumetric arm awaits volumetric BMD data and F5 awaits a hip-osteophyte "
+        "GWAS from the Faber/Tobias releases.",
         "",
         "Reproduce: `python3 code/314_f10_ancestry_proxy.py` → "
         "`code/output/genetics/L7_F10_ancestry_proxy.json`.",

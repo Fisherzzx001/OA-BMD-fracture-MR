@@ -186,3 +186,89 @@ executable sensitivity on the mixed-ancestry outcome.
   `code/315_sync_f10_s32.py`. Data availability and the Supplementary Material
   list (S25–S32) were updated. No previously reported β/SE/p/OR/CI was changed;
   refs stay at 50/50.
+
+## Methodology addendum (2026-11-09) — F2/F5/F10 public-data availability recheck
+
+- **Trigger.** The residual-item checklist asked whether the three unexecuted
+  registered arms could now be closed with public summary statistics. A read-only
+  recheck of the GWAS Catalog v2 REST API was run (`code/320_public_data_recheck.py`;
+  internal record `compliance_internal/public_data_recheck_2026-11-09.md` and
+  `.json`). Seven exact `reportedTrait` queries returned 69 studies (0 errors,
+  0 new accessions beyond the 442-study corpus); the legacy v1 REST endpoint
+  returns HTTP 410 Gone and was not used.
+- **Finding 1 — blanket wording was imprecise.** Non-European and
+  ancestry-stratified OA/BMD summary statistics DO now exist: Pan-UKB
+  GCST90692328 (Central/South Asian heel BMD, N=2,633), MVP+UKB
+  GCST90134280/81/82/87 (SAS 7,162; EAS 1,704; AFR 7,188/35,753 all-site OA),
+  Genes & Health GCST90727231 (British South Asian OA excluding spine, N=44,026).
+  None is fit for the registered F10: heel QUS is not total-body DXA areal BMD
+  and is too small for de novo instrument discovery; the OA files are all-site or
+  exome-wide rare-variant / gene-burden rather than site-matched knee-OA common-SNP
+  statistics; no ancestry-matched BMD instrument set can be paired with them.
+- **Finding 2 — F2 volume arm remains untested.** GCST90826226–GCST90826232
+  (2026 bone-area PheWAS) score CNV burden from read depth, not SNP genotypes;
+  GCST007014 (trabecular vBMD) has `summaryStatistics = NA`; GCST010299 is a
+  bivariate statistic with no deposited file. The geometry arm and the conditional
+  MVMR stand unchanged.
+- **Finding 3 — F5 remains unexecuted.** All 7 osteophyte studies are knee,
+  ankle/foot, lumbar spine or "any site"; the Backman 2021 exome files
+  GCST90080462/64 give 0/31 exact chr:bp matches to the locked BMD instruments.
+  The registered hip-osteophyte GWAS remains an OARSI 2024 abstract.
+- **Finding 4 — a factual error in S11 was corrected.** Table S11 stated that a
+  "European-restricted outcome file (GCST90566811, 89,555 cases) has been staged".
+  `GCST90566811` is the X-chromosome knee-OA GWAS (all rows chr23; 0/31 autosomal
+  BMD instruments match), not a European-restricted autosomal outcome. The sentence
+  was replaced with the fit-for-purpose account above. `docs/142` and the dated
+  2026-11-08 framework-audit snapshot retain the superseded claim as historical
+  process notes and are not submission material.
+- **Design decision.** A streaming trans-ancestry sign-concordance prototype
+  (`code/319_f10_cross_ancestry_probe.py`) was abandoned: with 31 European
+  instruments, N=2,633 heel QUS and all-site/exome OA it would be an underpowered
+  portability check, not the registered de novo replication. It produced no result
+  file and is explicitly marked ABANDONED. Reporting it as F10 evidence would
+  overstate the register.
+- **Wording edits only.** `code/321_public_data_wording_sync.py` replaced the
+  imprecise phrases in `docs/08` (Data availability, S23 legend, S27/S28 F2
+  conclusions, inline S32), standalone S32, Table S11, and the `code/314`
+  generator template; rebuilt `Manuscript_Ready` mirrors and both docx from
+  `docs/08`. Registered F10 status remains **UNEXECUTED**, the S23 "9/10 executed
+  tests" verdict is unchanged, refs remain 50/50, and body words remain
+  3982/4000 (all edited prose lies after `## Figure legends`). Four gates re-run:
+  148 COMPLIANT / 149b SAFE / 182 **65/65** / 310 **30/30**. No β/SE/p/OR/CI
+  was modified.
+
+## Methodology addendum (2026-11-09) — OSF DOI located and written back
+
+- **The DOI existed; the write-back had simply never been run.** Registration
+  `csmp7` ("OA–BMD–fracture Mendelian randomisation — Preregistration",
+  registered 2026-10-21, public, unembargoed) was found through the OSF v2
+  `filter[title]=BMD` route; prior searches used `osteoarthritis`, which its
+  title does not contain. `attributes.doi` is `None` on this registration, but
+  `/v2/registrations/csmp7/identifiers/` returns
+  `10.17605/OSF.IO/CSMP7`, DataCite shows `state: findable` (created
+  2026-10-24, URL `https://osf.io/csmp7/`), and `https://doi.org/10.17605/OSF.IO/CSMP7`
+  resolves. Its `registration_responses.summary` explicitly names P1–P6,
+  F1–F10, the GitHub repository and the Zenodo concept DOI, and states it is
+  the independent registration for *this* study (distinct from `hp9k6`, the
+  archived comorbidity-network protocol). `hp9k6` was correctly not used.
+- **Gate fix required first.** `code/182` Section E tested
+  `"osf.io" in txt` case-sensitively, while OSF mints uppercase `OSF.IO`; after
+  removing the "being deposited" placeholder every manuscript/cover artefact
+  would have failed. The check is now a case-insensitive DOI regex
+  `10\.17605/OSF\.IO/[A-Z0-9]{5,10}`. This changes the gate's robustness, not
+  its acceptance standard.
+- **Build-script hygiene.** `code/135`'s generated `Manuscript_Ready/README.md`
+  still reported superseded numbers (body 3999/4000, refs 45/50, S1–S17,
+  "460 checks / 187 checks"). Because `code/184` re-runs `code/135`, the stale
+  README would have shipped. The template now reports the live four-gate state
+  (3982/4000, 50/50, 65/65, 30/30), S1–S24, the actual delivered figure file
+  counts and the OSF DOI.
+- **Write-back executed.** `python3 code/184_osf_doi_writeback.py
+  10.17605/OSF.IO/CSMP7` (dry-run first) replaced the single
+  "An OSF mirror is being deposited." in `docs/08` and
+  `docs/cover_letter_OAC.md`, rebuilt all three docx and `Manuscript_Ready/`,
+  re-ran `code/182`, and ticked `docs/128`. Verified: DOI present and no
+  "being deposited" residual in all 5 markdown artefacts and all 3 docx; all
+  four mirrors byte-identical; four gates 148 COMPLIANT / 149b SAFE / 182
+  **65/65** / 310 **30/30**; `code/321 --check` still passes. Body words remain
+  3982/4000, refs 50/50, no β/SE/p/OR/CI changed.

@@ -101,3 +101,138 @@ These entries are deliberately kept out of the A-series above: A1–A20 archive 
 - **Inserted into `docs/08` on 2026-11-05 (author decision: 纳入 S29).** The earlier hesitation — that the 4000-word OAC body (3999/4000) would force equal-word compression — proved unnecessary: gate 148 counts prose only between the end of the Abstract and `## Figure legends`, and all supplementary tables (S8–S29) sit *after* `## Figure legends`, so they are excluded from the body word count. S29 was embedded after S28 (before `## References`) with no change to body words. The supplementary-table list was updated (S28 → S29; range sentence S23–S29), `Manuscript_Ready/01_Manuscript.md` rebuilt via `code/135` (md5-identical to docs/08), and both `submission_package/*.docx` rebuilt. Re-running 148/149b/182 returned OAC COMPLIANT, 149b SAFE, and 182 = 64/64 PASS with zero fails. No reported β/SE/p/OR/CI was altered.
 - **Non-corroboration.** E2's r_g (genome-wide polygenic sharing) must not be used to corroborate the MR estimates of Table 2/S28 or the 0/31 colocalisation count of F4; the site gradient of r_g (spine > knee > hip > hand) in fact contradicts the MR site gradient (spine/hand > knee), which is the layer's principal negative result.
 
+
+## Methodology addendum (2026-11-08) — F10 European-restricted investigation & reference swap
+
+These are process notes, not new main-text claims. They explain why F10's execution
+face could not be completed as staged and how the reference list was expanded within the
+50-reference OAC gate.
+
+- **F10 (cross-ancestry transportability) — honest status.** The staged outcome file
+  `GCST90566811` (Hatzikotoulas 2025, knee OA) was inspected to run the European-restricted
+  sensitivity. Direct probing showed it is the **X-chromosome knee-OA GWAS**
+  (522,341 SNPs, all on chr23; 0/31 autosomal BMD instruments matched; no GDF5/WNT16
+  signal; per-variant NCASES, not study-level). It is **not** a European-restricted
+  autosomal knee-OA outcome. The genuine autosomal knee-OA GWAS is `GCST90566800`
+  (mixed: 161,228 EUR cases + 965,985 EUR controls + EAS/AFR/SAS/AMR; 86.31% European),
+  and **no separate European-only knee-OA GWAS was released** by Hatzikotoulas 2025
+  (confirmed via GWAS Catalog GCST list + study page). The intended F10
+  European-replication therefore **could not be executed** — no fabrication was entered.
+  The reproducibility script `code/312_f10_eur_sensitivity.py` nonetheless independently
+  re-derived the manuscript headline from the mixed outcome: IVW β=+0.0781 (SE 0.0124,
+  P=3.31×10⁻¹⁰), OR/SD = exp(0.0781) = 1.0812, matching the reported BMD→knee-OA estimate
+  exactly, confirming the harmonisation/orientation pipeline. F10 transportability rests on
+  (i) the already-stated 86.31% European composition of `GCST90566800`, and (ii) ref [14]'s
+  ancestry-stratified null (no ancestry-specific study-wide significant associations),
+  documented in the S23 figure legend and F10 text. F10 remains honestly "partial".
+- **Reference swap ([11] Zhu 2025 → Yu 2025).** To insert directional supporting evidence
+  without breaching the 50-reference OAC gate, ref [11] was swapped by **equivalent
+  replacement** (not added): Zhu R et al., *Clin Rheumatol* 2025 (femoral-neck BMD→hip- but
+  not knee-replacement) → Yu H, Wang J, Xu X, Li H, Guo J., "Revealing the mediating
+  mechanisms between BMI and osteoarthritis: a Mendelian randomization and mediation
+  analysis", *Aging Clin Exp Res* 2025;37(1):119, doi:10.1007/s40520-025-03035-2 (total BMD
+  a significant positive mediator of knee-OA risk, mediation proportion 3.59%). The inline
+  Introduction sentence (line 37) was rewritten accordingly. Ref [7] Alhassan (scoping
+  review) was deliberately retained and kept paired with [8] at line 37 to preserve the
+  R3-3 gate ("[7, 8]" co-occurrence) and the accurate "scoping and methodological review"
+  framing. Reference count stays exactly 50. All four gates (148/149b/182/310) re-passed;
+  derived docx + mirror synced via `code/313_ref_swap_sync.py` (idempotent, run-level
+  replacement, python-docx joined-run verification).
+
+## Methodology addendum (2026-11-09) — F10 executed robustness proxy (S32)
+
+These are process notes, not new unreviewed main-text claims. They record the
+replacement of the blocked F10 European-replication design with a genuinely
+executable sensitivity on the mixed-ancestry outcome.
+
+- **Why the original F10 design was replaced.** `GCST90566811` (staged as a
+  European-restricted knee-OA outcome) is the X-chromosome knee-OA GWAS
+  (522,341 variants, all chr23; 0/31 autosomal BMD instruments matched).
+  Hatzikotoulas 2025 released site-stratified (hip/knee/spine/hand) but **no**
+  ancestry-stratified OA summary statistics, so no European-only or
+  non-European outcome exists publicly. A registered cross-ancestry replication
+  cannot be executed and no result was fabricated for it.
+- **Executed replacement (`code/314_f10_ancestry_proxy.py`, Table S32).** On the
+  mixed-ancestry knee-OA GWAS `GCST90566800`, per-variant `NCASES+NCONTROLS`
+  ranges 817,610–1,315,578 across the 31 BMD instruments. In a multi-ancestry
+  meta-analysis this is the sum over contributing cohorts and is used as an
+  explicitly labelled **proxy** for the amount of ancestry-diverse contribution
+  (also affected by imputation/array coverage). Eight analyses were run with the
+  identical 31 instruments and the identical `code/13` IVW engine: P0 full-set
+  validation (exactly reproduces the locked OR/SD 1.0812); P1/P2 N-median-split
+  strata; P3 between-stratum Q; P4 relative-European-purity-weighted IVW; P5/P6
+  deletion sensitivities; P7 1000G-EUR allele-frequency-concordance restriction;
+  P8 a two-component mixture bound. The generalised weighted IVW was verified to
+  reduce bit-for-bit to `code/13::_ivw` when w=1/se_o².
+- **Results.** All 7 IVW rows are positive and nominally significant, OR/SD
+  1.0711–1.0917. European-core (β=+0.0687, SE 0.0214) versus
+  multi-ancestry-enriched (β=+0.0828, SE 0.0152) strata do not differ
+  (Q_between=0.29, 1 df, P=0.592). 1000G EUR EAF matched 31/31 loci
+  (r=0.9825, max |ΔEAF|=0.0446). Under β_EUR=0 the 12.69% non-European component
+  would need β=+0.6152 (OR/SD 1.850; 7.88× the pooled estimate), incompatible with
+  ref [14]'s ancestry-stratified null.
+- **Honest boundary (carried into S32).** This is robustness to differential
+  cohort contribution *within one mixed-ancestry GWAS*, NOT a cross-ancestry
+  replication and NOT evidence of transportability to non-European populations.
+  The registered F10 test remains **unexecuted**; the S23 verdict "9/10 executed
+  tests" is unchanged because a proxy is not a registered-test execution. F2's
+  volumetric arm and F5's hip-osteophyte arm remain pending on Faber/Tobias data.
+- **Artefacts and synchronisation.** `docs/Supplementary/Table_S32_f10_ancestry_proxy.md`,
+  inline S32 in `docs/08`, `code/output/genetics/L7_F10_ancestry_proxy.json`,
+  updated S23 figure (`code/300`: verdict + F10 box now say "proxy: S32",
+  regenerated to all figure directories), `build_submission.py`/`build_maintext.py`
+  rebuild of both docx, byte-identical `Manuscript_Ready` mirror, and standalone
+  S32 copied into `Manuscript_Ready/Supplementary/` — all via
+  `code/315_sync_f10_s32.py`. Data availability and the Supplementary Material
+  list (S25–S32) were updated. No previously reported β/SE/p/OR/CI was changed;
+  refs stay at 50/50.
+
+## Methodology addendum (2026-11-09) — F2/F5/F10 public-data availability recheck
+
+- **Trigger.** The residual-item checklist asked whether the three unexecuted
+  registered arms could now be closed with public summary statistics. A read-only
+  recheck of the GWAS Catalog v2 REST API was run (`code/320_public_data_recheck.py`;
+  internal record `compliance_internal/public_data_recheck_2026-11-09.md` and
+  `.json`). Seven exact `reportedTrait` queries returned 69 studies (0 errors,
+  0 new accessions beyond the 442-study corpus); the legacy v1 REST endpoint
+  returns HTTP 410 Gone and was not used.
+- **Finding 1 — blanket wording was imprecise.** Non-European and
+  ancestry-stratified OA/BMD summary statistics DO now exist: Pan-UKB
+  GCST90692328 (Central/South Asian heel BMD, N=2,633), MVP+UKB
+  GCST90134280/81/82/87 (SAS 7,162; EAS 1,704; AFR 7,188/35,753 all-site OA),
+  Genes & Health GCST90727231 (British South Asian OA excluding spine, N=44,026).
+  None is fit for the registered F10: heel QUS is not total-body DXA areal BMD
+  and is too small for de novo instrument discovery; the OA files are all-site or
+  exome-wide rare-variant / gene-burden rather than site-matched knee-OA common-SNP
+  statistics; no ancestry-matched BMD instrument set can be paired with them.
+- **Finding 2 — F2 volume arm remains untested.** GCST90826226–GCST90826232
+  (2026 bone-area PheWAS) score CNV burden from read depth, not SNP genotypes;
+  GCST007014 (trabecular vBMD) has `summaryStatistics = NA`; GCST010299 is a
+  bivariate statistic with no deposited file. The geometry arm and the conditional
+  MVMR stand unchanged.
+- **Finding 3 — F5 remains unexecuted.** All 7 osteophyte studies are knee,
+  ankle/foot, lumbar spine or "any site"; the Backman 2021 exome files
+  GCST90080462/64 give 0/31 exact chr:bp matches to the locked BMD instruments.
+  The registered hip-osteophyte GWAS remains an OARSI 2024 abstract.
+- **Finding 4 — a factual error in S11 was corrected.** Table S11 stated that a
+  "European-restricted outcome file (GCST90566811, 89,555 cases) has been staged".
+  `GCST90566811` is the X-chromosome knee-OA GWAS (all rows chr23; 0/31 autosomal
+  BMD instruments match), not a European-restricted autosomal outcome. The sentence
+  was replaced with the fit-for-purpose account above. `docs/142` and the dated
+  2026-11-08 framework-audit snapshot retain the superseded claim as historical
+  process notes and are not submission material.
+- **Design decision.** A streaming trans-ancestry sign-concordance prototype
+  (`code/319_f10_cross_ancestry_probe.py`) was abandoned: with 31 European
+  instruments, N=2,633 heel QUS and all-site/exome OA it would be an underpowered
+  portability check, not the registered de novo replication. It produced no result
+  file and is explicitly marked ABANDONED. Reporting it as F10 evidence would
+  overstate the register.
+- **Wording edits only.** `code/321_public_data_wording_sync.py` replaced the
+  imprecise phrases in `docs/08` (Data availability, S23 legend, S27/S28 F2
+  conclusions, inline S32), standalone S32, Table S11, and the `code/314`
+  generator template; rebuilt `Manuscript_Ready` mirrors and both docx from
+  `docs/08`. Registered F10 status remains **UNEXECUTED**, the S23 "9/10 executed
+  tests" verdict is unchanged, refs remain 50/50, and body words remain
+  3982/4000 (all edited prose lies after `## Figure legends`). Four gates re-run:
+  148 COMPLIANT / 149b SAFE / 182 **65/65** / 310 **30/30**. No β/SE/p/OR/CI
+  was modified.
