@@ -1,0 +1,2693 @@
+[
+ {
+  "riskAllele": [
+   {
+    "key": "chr6:158783382",
+    "label": "chr6:158783382-AT"
+   }
+  ],
+  "riskFrequency": "0.334554",
+  "pValueExponent": -10,
+  "pValue": 2,
+  "beta": "0.0474554 unit increase",
+  "ci": "[0.033-0.062]",
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "chr6:35038589",
+    "label": "chr6:35038589-CCT"
+   }
+  ],
+  "riskFrequency": "0.984654",
+  "pValueExponent": -11,
+  "pValue": 7,
+  "beta": "0.201901 unit increase",
+  "ci": "[0.14-0.26]",
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs10083313",
+    "label": "rs10083313-A"
+   }
+  ],
+  "riskFrequency": "0.27153",
+  "pValueExponent": -10,
+  "pValue": 2,
+  "beta": "0.0477203 unit increase",
+  "ci": "[0.032-0.063]",
+  "mappedGenes": [
+   "DDHD1-DT"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "14:53451090"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs10123619",
+    "label": "rs10123619-A"
+   }
+  ],
+  "riskFrequency": "0.154029",
+  "pValueExponent": -9,
+  "pValue": 1,
+  "beta": "0.059371 unit increase",
+  "ci": "[0.041-0.078]",
+  "mappedGenes": [
+   "ASTN2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "9:116591332"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs1043515",
+    "label": "rs1043515-G"
+   }
+  ],
+  "riskFrequency": "0.569869",
+  "pValueExponent": -13,
+  "pValue": 2,
+  "beta": "0.0536665 unit increase",
+  "ci": "[0.04-0.067]",
+  "mappedGenes": [
+   "PIP4K2B"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:38765943"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs1074047",
+    "label": "rs1074047-G"
+   }
+  ],
+  "riskFrequency": "0.47627",
+  "pValueExponent": -10,
+  "pValue": 1,
+  "beta": "0.0465699 unit increase",
+  "ci": "[0.033-0.06]",
+  "mappedGenes": [
+   "AP3D1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "19:2158749"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs10828316",
+    "label": "rs10828316-C"
+   }
+  ],
+  "riskFrequency": "0.327475",
+  "pValueExponent": -9,
+  "pValue": 6,
+  "beta": "0.0461353 unit increase",
+  "ci": "[0.032-0.061]",
+  "mappedGenes": [
+   "PIP4K2A"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "10:22549460"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs10878984",
+    "label": "rs10878984-T"
+   }
+  ],
+  "riskFrequency": "0.342984",
+  "pValueExponent": -9,
+  "pValue": 8,
+  "beta": "0.0483762 unit increase",
+  "ci": "[0.034-0.063]",
+  "mappedGenes": [
+   "LINC02373"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:69434754"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs11046703",
+    "label": "rs11046703-C"
+   }
+  ],
+  "riskFrequency": "0.047989",
+  "pValueExponent": -9,
+  "pValue": 6,
+  "beta": "0.104538 unit increase",
+  "ci": "[0.073-0.136]",
+  "mappedGenes": [
+   "LINC02955"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:22961223"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs11049385",
+    "label": "rs11049385-G"
+   }
+  ],
+  "riskFrequency": "0.311745",
+  "pValueExponent": -14,
+  "pValue": 7,
+  "beta": "0.06038 unit increase",
+  "ci": "[0.046-0.075]",
+  "mappedGenes": [
+   "CCDC91"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:28167559"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs112540634",
+    "label": "rs112540634-T"
+   }
+  ],
+  "riskFrequency": "0.136075",
+  "pValueExponent": -9,
+  "pValue": 4,
+  "beta": "0.0637238 unit increase",
+  "ci": "[0.044-0.083]",
+  "mappedGenes": [
+   "ILRUN"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "6:34656128"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs112728585",
+    "label": "rs112728585-C"
+   }
+  ],
+  "riskFrequency": "0.019515",
+  "pValueExponent": -6,
+  "pValue": 3,
+  "beta": "0.13382 unit increase",
+  "ci": "[0.085-0.183]",
+  "mappedGenes": [
+   "CFAP299"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "4:80822235"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs11609223",
+    "label": "rs11609223-G"
+   }
+  ],
+  "riskFrequency": "0.675884",
+  "pValueExponent": -8,
+  "pValue": 1,
+  "beta": "0.0425548 unit increase",
+  "ci": "[0.028-0.057]",
+  "mappedGenes": [
+   "ERC1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:1309961"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs11684985",
+    "label": "rs11684985-A"
+   }
+  ],
+  "riskFrequency": "0.128054",
+  "pValueExponent": -9,
+  "pValue": 6,
+  "beta": "0.0602445 unit increase",
+  "ci": "[0.04-0.08]",
+  "mappedGenes": [
+   "EXOC6B"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "2:72668164"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs12776235",
+    "label": "rs12776235-T"
+   }
+  ],
+  "riskFrequency": "0.527393",
+  "pValueExponent": -7,
+  "pValue": 8,
+  "beta": "0.040358 unit increase",
+  "ci": "[0.027-0.054]",
+  "mappedGenes": [
+   "RPL17P34",
+   "XRCC6P1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "10:93260052"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs12889267",
+    "label": "rs12889267-A"
+   }
+  ],
+  "riskFrequency": "0.831035",
+  "pValueExponent": -8,
+  "pValue": 2,
+  "beta": "0.0546069 unit increase",
+  "ci": "[0.037-0.073]",
+  "mappedGenes": [
+   "ARHGEF40"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "14:21074607"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs143384",
+    "label": "rs143384-G"
+   }
+  ],
+  "riskFrequency": "0.405321",
+  "pValueExponent": -47,
+  "pValue": 2,
+  "beta": "0.101673 unit increase",
+  "ci": "[0.088-0.115]",
+  "mappedGenes": [
+   "GDF5"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "20:35437976"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs143778922",
+    "label": "rs143778922-GT"
+   }
+  ],
+  "riskFrequency": "0.087209",
+  "pValueExponent": -10,
+  "pValue": 1,
+  "beta": "0.0851991 unit increase",
+  "ci": "[0.061-0.109]",
+  "mappedGenes": [
+   "FAF1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "1:50571989"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs148066163",
+    "label": "rs148066163-CAA"
+   }
+  ],
+  "riskFrequency": "0.276008",
+  "pValueExponent": -7,
+  "pValue": 1,
+  "beta": "0.0436852 unit increase",
+  "ci": "[0.029-0.059]",
+  "mappedGenes": [
+   "SRSF8CP",
+   "TNS3"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "7:47129783"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs149142833",
+    "label": "rs149142833-C"
+   }
+  ],
+  "riskFrequency": "0.843089",
+  "pValueExponent": -7,
+  "pValue": 3,
+  "beta": "0.0532485 unit increase",
+  "ci": "[0.034-0.072]",
+  "mappedGenes": [
+   "CBFA2T2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "20:33600336"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs149882987",
+    "label": "rs149882987-G"
+   }
+  ],
+  "riskFrequency": "0.026699",
+  "pValueExponent": -9,
+  "pValue": 1,
+  "beta": "0.141927 unit increase",
+  "ci": "[0.099-0.184]",
+  "mappedGenes": [
+   "RN7SL569P",
+   "EZH2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "7:148887402"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs1507191",
+    "label": "rs1507191-C"
+   }
+  ],
+  "riskFrequency": "0.745291",
+  "pValueExponent": -10,
+  "pValue": 4,
+  "beta": "0.0490294 unit increase",
+  "ci": "[0.034-0.065]",
+  "mappedGenes": [
+   "LRBA"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "4:150326084"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs17235557",
+    "label": "rs17235557-T"
+   }
+  ],
+  "riskFrequency": "0.674166",
+  "pValueExponent": -8,
+  "pValue": 3,
+  "beta": "0.0417597 unit increase",
+  "ci": "[0.027-0.056]",
+  "mappedGenes": [
+   "ERC2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "3:56385838"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs17779649",
+    "label": "rs17779649-A"
+   }
+  ],
+  "riskFrequency": "0.87385",
+  "pValueExponent": -13,
+  "pValue": 1,
+  "beta": "0.0836377 unit increase",
+  "ci": "[0.063-0.104]",
+  "mappedGenes": [
+   "LINC00511"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:72376638"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs200675402",
+    "label": "rs200675402-A"
+   }
+  ],
+  "riskFrequency": "0.974017",
+  "pValueExponent": -8,
+  "pValue": 2,
+  "beta": "0.129058 unit increase",
+  "ci": "[0.084-0.174]",
+  "mappedGenes": [
+   "AGBL1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "15:86351683"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2820449",
+    "label": "rs2820449-G"
+   }
+  ],
+  "riskFrequency": "0.65649",
+  "pValueExponent": -12,
+  "pValue": 2,
+  "beta": "0.0520262 unit increase",
+  "ci": "[0.038-0.066]",
+  "mappedGenes": [
+   "LYPLAL1-AS1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "1:219541657"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs28705285",
+    "label": "rs28705285-G"
+   }
+  ],
+  "riskFrequency": "0.238802",
+  "pValueExponent": -9,
+  "pValue": 4,
+  "beta": "0.0482093 unit increase",
+  "ci": "[0.032-0.064]",
+  "mappedGenes": [
+   "ERCC6L2-AS1",
+   "PTCH1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "9:95517519"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs28929474",
+    "label": "rs28929474-T"
+   }
+  ],
+  "riskFrequency": "0.018453",
+  "pValueExponent": -7,
+  "pValue": 2,
+  "beta": "0.14371 unit increase",
+  "ci": "[0.093-0.194]",
+  "mappedGenes": [
+   "SERPINA1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "14:94378610"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs30224",
+    "label": "rs30224-T"
+   }
+  ],
+  "riskFrequency": "0.348214",
+  "pValueExponent": -8,
+  "pValue": 1,
+  "beta": "0.0441464 unit increase",
+  "ci": "[0.03-0.058]",
+  "mappedGenes": [
+   "MIR193BHG"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "16:14312262"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs31778",
+    "label": "rs31778-T"
+   }
+  ],
+  "riskFrequency": "0.29449",
+  "pValueExponent": -11,
+  "pValue": 4,
+  "beta": "0.0515982 unit increase",
+  "ci": "[0.037-0.066]",
+  "mappedGenes": [
+   "FGFR4"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "5:177095035"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs34275932",
+    "label": "rs34275932-C"
+   }
+  ],
+  "riskFrequency": "0.586587",
+  "pValueExponent": -9,
+  "pValue": 7,
+  "beta": "0.0423287 unit increase",
+  "ci": "[0.029-0.056]",
+  "mappedGenes": [
+   "CPED1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "7:121176275"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs3740237",
+    "label": "rs3740237-G"
+   }
+  ],
+  "riskFrequency": "0.858203",
+  "pValueExponent": -8,
+  "pValue": 3,
+  "beta": "0.0567739 unit increase",
+  "ci": "[0.037-0.076]",
+  "mappedGenes": [
+   "EPC1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "10:32268664"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs4141079",
+    "label": "rs4141079-A"
+   }
+  ],
+  "riskFrequency": "0.737025",
+  "pValueExponent": -10,
+  "pValue": 5,
+  "beta": "0.051731 unit increase",
+  "ci": "[0.036-0.067]",
+  "mappedGenes": [
+   "TBX4"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:61454041"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs42039",
+    "label": "rs42039-T"
+   }
+  ],
+  "riskFrequency": "0.244086",
+  "pValueExponent": -15,
+  "pValue": 8,
+  "beta": "0.0643761 unit increase",
+  "ci": "[0.048-0.08]",
+  "mappedGenes": [
+   "CDK6"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "7:92615108"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs4369779",
+    "label": "rs4369779-C"
+   }
+  ],
+  "riskFrequency": "0.789004",
+  "pValueExponent": -8,
+  "pValue": 4,
+  "beta": "0.0483367 unit increase",
+  "ci": "[0.032-0.065]",
+  "mappedGenes": [
+   "CABLES1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "18:23155444"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs4968440",
+    "label": "rs4968440-C"
+   }
+  ],
+  "riskFrequency": "0.361604",
+  "pValueExponent": -7,
+  "pValue": 7,
+  "beta": "0.0402193 unit increase",
+  "ci": "[0.026-0.054]",
+  "mappedGenes": [
+   "NACA2",
+   "TBX4"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:61535897"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs5029277",
+    "label": "rs5029277-G"
+   }
+  ],
+  "riskFrequency": "0.778099",
+  "pValueExponent": -16,
+  "pValue": 4,
+  "beta": "0.0725675 unit increase",
+  "ci": "[0.056-0.089]",
+  "mappedGenes": [
+   "PTHLH",
+   "RN7SKP15"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:27869122"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "chr14:103855865",
+    "label": "chr14:103855865-C"
+   }
+  ],
+  "riskFrequency": "0.325689",
+  "pValueExponent": -8,
+  "pValue": 3,
+  "beta": "0.0423967 unit increase",
+  "ci": "[0.028-0.057]",
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs57121650",
+    "label": "rs57121650-T"
+   }
+  ],
+  "riskFrequency": "0.520253",
+  "pValueExponent": -8,
+  "pValue": 3,
+  "beta": "0.0394637 unit increase",
+  "ci": "[0.026-0.053]",
+  "mappedGenes": [
+   "RPS20P10",
+   "DYSF"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "2:71717717"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs59932020",
+    "label": "rs59932020-T"
+   }
+  ],
+  "riskFrequency": "0.219425",
+  "pValueExponent": -11,
+  "pValue": 1,
+  "beta": "0.0596867 unit increase",
+  "ci": "[0.043-0.076]",
+  "mappedGenes": [
+   "SOX5"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:24026667"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs6063031",
+    "label": "rs6063031-A"
+   }
+  ],
+  "riskFrequency": "0.447758",
+  "pValueExponent": -12,
+  "pValue": 2,
+  "beta": "0.0498953 unit increase",
+  "ci": "[0.036-0.064]",
+  "mappedGenes": [
+   "EYA2",
+   "RPL13P14"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "20:46893463"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs6763927",
+    "label": "rs6763927-T"
+   }
+  ],
+  "riskFrequency": "0.442719",
+  "pValueExponent": -7,
+  "pValue": 1,
+  "beta": "0.0397001 unit increase",
+  "ci": "[0.026-0.053]",
+  "mappedGenes": [
+   "ZBTB38"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "3:141421524"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs6824784",
+    "label": "rs6824784-G"
+   }
+  ],
+  "riskFrequency": "0.316214",
+  "pValueExponent": -7,
+  "pValue": 3,
+  "beta": "0.0432047 unit increase",
+  "ci": "[0.029-0.058]",
+  "mappedGenes": [
+   "RNU5A-2P",
+   "RASGEF1B"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "4:81354258"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs702101",
+    "label": "rs702101-A"
+   }
+  ],
+  "riskFrequency": "0.595937",
+  "pValueExponent": -8,
+  "pValue": 3,
+  "beta": "0.0407805 unit increase",
+  "ci": "[0.027-0.055]",
+  "mappedGenes": [
+   "SMIM23",
+   "FBXW11"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "5:171849389"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2131354",
+    "label": "rs2131354-A"
+   }
+  ],
+  "riskFrequency": "0.526239",
+  "pValueExponent": -18,
+  "pValue": 2,
+  "beta": "0.0659062 unit increase",
+  "ci": "[0.052-0.079]",
+  "mappedGenes": [
+   "HHIP"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "4:144678756"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2258604",
+    "label": "rs2258604-A"
+   }
+  ],
+  "riskFrequency": "0.656808",
+  "pValueExponent": -15,
+  "pValue": 3,
+  "beta": "0.0585216 unit increase",
+  "ci": "[0.044-0.073]",
+  "mappedGenes": [
+   "ANKS1A"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "6:35029829"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2284747",
+    "label": "rs2284747-T"
+   }
+  ],
+  "riskFrequency": "0.518933",
+  "pValueExponent": -8,
+  "pValue": 5,
+  "beta": "0.03953 unit increase",
+  "ci": "[0.026-0.053]",
+  "mappedGenes": [
+   "MFAP2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "1:16980101"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2298333",
+    "label": "rs2298333-C"
+   }
+  ],
+  "riskFrequency": "0.432912",
+  "pValueExponent": -10,
+  "pValue": 2,
+  "beta": "0.0422923 unit increase",
+  "ci": "[0.029-0.056]",
+  "mappedGenes": [
+   "KCNJ15"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "21:38302059"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2707450",
+    "label": "rs2707450-C"
+   }
+  ],
+  "riskFrequency": "0.261476",
+  "pValueExponent": -11,
+  "pValue": 3,
+  "beta": "0.0489724 unit increase",
+  "ci": "[0.033-0.064]",
+  "mappedGenes": [
+   "LCORL"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "4:17940937"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs2807365",
+    "label": "rs2807365-G"
+   }
+  ],
+  "riskFrequency": "0.323888",
+  "pValueExponent": -7,
+  "pValue": 2,
+  "beta": "0.0412454 unit increase",
+  "ci": "[0.027-0.056]",
+  "mappedGenes": [
+   "MIR4418",
+   "WNT4"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "1:22158974"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs71190381",
+    "label": "rs71190381-G"
+   }
+  ],
+  "riskFrequency": "0.786036",
+  "pValueExponent": -21,
+  "pValue": 1,
+  "beta": "0.0833242 unit increase",
+  "ci": "[0.067-0.1]",
+  "mappedGenes": [
+   "DLEU1",
+   "DLEU7"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "13:50545962"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs7223535",
+    "label": "rs7223535-G"
+   }
+  ],
+  "riskFrequency": "0.730819",
+  "pValueExponent": -10,
+  "pValue": 2,
+  "beta": "0.0492639 unit increase",
+  "ci": "[0.034-0.064]",
+  "mappedGenes": [
+   "ATAD5"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:30884649"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs72656010",
+    "label": "rs72656010-T"
+   }
+  ],
+  "riskFrequency": "0.86944",
+  "pValueExponent": -9,
+  "pValue": 1,
+  "beta": "0.0640541 unit increase",
+  "ci": "[0.044-0.084]",
+  "mappedGenes": [
+   "PLAG1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "8:56209656"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs742630",
+    "label": "rs742630-C"
+   }
+  ],
+  "riskFrequency": "0.596455",
+  "pValueExponent": -8,
+  "pValue": 2,
+  "beta": "0.0390119 unit increase",
+  "ci": "[0.025-0.053]",
+  "mappedGenes": [
+   "DNMT3B"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "20:32762858"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs75495843",
+    "label": "rs75495843-A"
+   }
+  ],
+  "riskFrequency": "0.031599",
+  "pValueExponent": -10,
+  "pValue": 5,
+  "beta": "0.12176 unit increase",
+  "ci": "[0.083-0.16]",
+  "mappedGenes": [
+   "PLCD1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "3:38009720"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs75810927",
+    "label": "rs75810927-C"
+   }
+  ],
+  "riskFrequency": "0.774633",
+  "pValueExponent": -6,
+  "pValue": 2,
+  "beta": "0.0477805 unit increase",
+  "ci": "[0.031-0.064]",
+  "mappedGenes": [
+   "C8orf34"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "8:68674991"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs7591141",
+    "label": "rs7591141-T"
+   }
+  ],
+  "riskFrequency": "0.228046",
+  "pValueExponent": -7,
+  "pValue": 8,
+  "beta": "0.0456505 unit increase",
+  "ci": "[0.029-0.062]",
+  "mappedGenes": [
+   "EML4-AS1",
+   "PKDCC"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "2:42125891"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs762624732",
+    "label": "rs762624732-T"
+   }
+  ],
+  "riskFrequency": "0.201583",
+  "pValueExponent": -7,
+  "pValue": 1,
+  "beta": "0.0480478 unit increase",
+  "ci": "[0.031-0.065]",
+  "mappedGenes": [
+   "SLC35D2"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "9:96344551"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs7636776",
+    "label": "rs7636776-C"
+   }
+  ],
+  "riskFrequency": "0.410558",
+  "pValueExponent": -14,
+  "pValue": 2,
+  "beta": "0.0554565 unit increase",
+  "ci": "[0.042-0.069]",
+  "mappedGenes": [
+   "CMSS1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "3:100121602"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "chr2:19727294",
+    "label": "chr2:19727294-A"
+   }
+  ],
+  "riskFrequency": "0.067235",
+  "pValueExponent": -8,
+  "pValue": 2,
+  "beta": "0.084647 unit increase",
+  "ci": "[0.058-0.112]",
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs76895963",
+    "label": "rs76895963-G"
+   }
+  ],
+  "riskFrequency": "0.020058",
+  "pValueExponent": -12,
+  "pValue": 1,
+  "beta": "0.189167 unit increase",
+  "ci": "[0.14-0.24]",
+  "mappedGenes": [
+   "CCND2",
+   "CCND2-AS1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:4275678"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs77844679",
+    "label": "rs77844679-G"
+   }
+  ],
+  "riskFrequency": "0.822762",
+  "pValueExponent": -9,
+  "pValue": 2,
+  "beta": "0.0565388 unit increase",
+  "ci": "[0.039-0.074]",
+  "mappedGenes": [
+   "RPSAP71",
+   "MIR3912"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "5:171385212"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs7952436",
+    "label": "rs7952436-C"
+   }
+  ],
+  "riskFrequency": "0.917654",
+  "pValueExponent": -19,
+  "pValue": 9,
+  "beta": "0.118364 unit increase",
+  "ci": "[0.094-0.143]",
+  "mappedGenes": [
+   "KDM2A"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "11:67257063"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs7954185",
+    "label": "rs7954185-A"
+   }
+  ],
+  "riskFrequency": "0.485479",
+  "pValueExponent": -13,
+  "pValue": 6,
+  "beta": "0.0522645 unit increase",
+  "ci": "[0.039-0.066]",
+  "mappedGenes": [
+   "CRADD"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "12:93702397"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs798565",
+    "label": "rs798565-G"
+   }
+  ],
+  "riskFrequency": "0.698733",
+  "pValueExponent": -10,
+  "pValue": 1,
+  "beta": "0.0505252 unit increase",
+  "ci": "[0.036-0.065]",
+  "mappedGenes": [
+   "AMZ1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "7:2712518"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs8034564",
+    "label": "rs8034564-G"
+   }
+  ],
+  "riskFrequency": "0.418731",
+  "pValueExponent": -8,
+  "pValue": 4,
+  "beta": "0.0405775 unit increase",
+  "ci": "[0.027-0.054]",
+  "mappedGenes": [
+   "IRAIN"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "15:98647372"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs806790",
+    "label": "rs806790-G"
+   }
+  ],
+  "riskFrequency": "0.5842",
+  "pValueExponent": -8,
+  "pValue": 2,
+  "beta": "0.0397745 unit increase",
+  "ci": "[0.026-0.054]",
+  "mappedGenes": [
+   "H3C5P",
+   "H2AC8"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "6:26218692"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs923346",
+    "label": "rs923346-T"
+   }
+  ],
+  "riskFrequency": "0.834391",
+  "pValueExponent": -9,
+  "pValue": 6,
+  "beta": "0.0582864 unit increase",
+  "ci": "[0.04-0.077]",
+  "mappedGenes": [
+   "LRP5"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "11:68414907"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs9298310",
+    "label": "rs9298310-G"
+   }
+  ],
+  "riskFrequency": "0.292004",
+  "pValueExponent": -21,
+  "pValue": 2,
+  "beta": "0.074742 unit increase",
+  "ci": "[0.06-0.09]",
+  "mappedGenes": [
+   "PKIA-AS1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "8:78252547"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs9905385",
+    "label": "rs9905385-A"
+   }
+  ],
+  "riskFrequency": "0.326228",
+  "pValueExponent": -8,
+  "pValue": 4,
+  "beta": "0.0461386 unit increase",
+  "ci": "[0.032-0.061]",
+  "mappedGenes": [
+   "TBX2-AS1",
+   "TBX4"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:61420889"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ },
+ {
+  "riskAllele": [
+   {
+    "key": "rs9912553",
+    "label": "rs9912553-G"
+   }
+  ],
+  "riskFrequency": "0.72363",
+  "pValueExponent": -9,
+  "pValue": 2,
+  "beta": "0.0481727 unit increase",
+  "ci": "[0.033-0.063]",
+  "mappedGenes": [
+   "ASPSCR1"
+  ],
+  "traitName": [
+   "Femoral neck width"
+  ],
+  "efoTraits": [
+   {
+    "key": "OBA_0002725",
+    "label": "neck of femur size"
+   }
+  ],
+  "locations": [
+   "17:82001827"
+  ],
+  "author": "Tobias JH",
+  "publicationDate": "2024-01-12",
+  "accessionId": "GCST90399549",
+  "riskAlleleSep": " x ",
+  "pubmedId": "38477772",
+  "_links": {
+   "self": {
+    "href": "https://www.ebi.ac.uk/gwas/api/v2/publications"
+   }
+  }
+ }
+]

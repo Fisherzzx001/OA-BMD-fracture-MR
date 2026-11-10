@@ -1,0 +1,5635 @@
+{
+ "hatzikotoulas": [
+  {
+   "accessionId": "GCST006566",
+   "pubmedId": "30273415",
+   "reportedTrait": "Developmental dysplasia of the hip",
+   "efoTraits": [
+    {
+     "key": "MONDO_0000158",
+     "label": "developmental dysplasia of the hip"
+    }
+   ],
+   "publicationDate": "2018-05-31",
+   "journal": "Commun Biol",
+   "title": "Genome-wide association study of developmental dysplasia of the hip identifies an association with GDF5.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "3,364 European ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "1,129 European ancestry cases",
+    "4,652 European ancestry controls"
+   ],
+   "discoverySampleAncestry": [
+    "4134 European"
+   ],
+   "replicationSampleAncestry": [
+    "5781 European"
+   ],
+   "associationCount": 3,
+   "summaryStatistics": "NA",
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566795",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005178",
+     "label": "osteoarthritis"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "441,288 European ancestry cases",
+    "1,271,822 European ancestry controls",
+    "10,408 East Asian ancestry cases",
+    "128,633 East Asian ancestry controls",
+    "25,698 African or African American cases",
+    "34,718 African or African American controls",
+    "2,422 South Asian ancestry cases",
+    "18,894 South Asian ancestry controls",
+    "8,128 Hispanic cases",
+    "9,759 Hispanic controls",
+    "2,031 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "1713110 European",
+    "139041 East Asian",
+    "60416 African unspecified, African American or Afro-Caribbean",
+    "21316 South Asian",
+    "17887 Hispanic or Latin American",
+    "10299 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 175,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566795",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566796",
+   "pubmedId": "40205036",
+   "reportedTrait": "Finger osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "16,039 European ancestry cases",
+    "690,450 European ancestry controls, 253 African or African American cases",
+    "8,523 African or African American controls, 27 Hispanic cases",
+    "1,797 Hispanic controls, 136 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "706489 European",
+    "8776 African unspecified, African American or Afro-Caribbean",
+    "1824 Hispanic or Latin American",
+    "8404 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 7,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566796",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566797",
+   "pubmedId": "40205036",
+   "reportedTrait": "Hand Osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "39,454 European ancestry cases",
+    "814,447 European ancestry controls, 49 East Asian ancestry cases, 435 East Asian ancestry controls, 949 African or African American cases",
+    "14,129 African or African American controls, 28 South Asian ancestry cases",
+    "8,811 South Asian ancestry controls, 242 Hispanic cases",
+    "3,471 Hispanic controls, 182 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "853901 European",
+    "484 East Asian",
+    "15078 African unspecified, African American or Afro-Caribbean",
+    "8839 South Asian",
+    "3713 Hispanic or Latin American",
+    "8450 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 15,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566797",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566798",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (hip)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "95,395 European ancestry cases",
+    "1,011,691 European ancestry controls, 65 East Asian ancestry cases",
+    "2,619 East Asian ancestry controls",
+    "1,357 African or African American cases",
+    "21,394 African or African American controls, 76 South Asian ancestry cases",
+    "7,921 South Asian ancestry controls, 288 Hispanic cases",
+    "3,486 Hispanic controls, 147 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "1107086 European",
+    "2684 East Asian",
+    "22751 African unspecified, African American or Afro-Caribbean",
+    "7997 South Asian",
+    "3774 Hispanic or Latin American",
+    "8415 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 151,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566798",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566799",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis of the hip or knee",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "201,533 European ancestry cases",
+    "901,637 European ancestry controls",
+    "5,506 East Asian ancestry cases",
+    "126,769 East Asian ancestry controls",
+    "4,149 African or African American cases",
+    "21,448 African or African American controls",
+    "1,087 South Asian ancestry cases",
+    "18,871 South Asian ancestry controls, 842 Hispanic cases",
+    "3,489 Hispanic controls, 722 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "1103170 European",
+    "132275 East Asian",
+    "25597 African unspecified, African American or Afro-Caribbean",
+    "19958 South Asian",
+    "4331 Hispanic or Latin American",
+    "8990 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 132,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566799",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566800",
+   "pubmedId": "40205036",
+   "reportedTrait": "Knee osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "161,228 European ancestry cases",
+    "965,985 European ancestry controls",
+    "5,433 East Asian ancestry cases",
+    "126,769 East Asian ancestry controls",
+    "3,463 African or African American cases",
+    "21,448 African or African American controls, 993 South Asian ancestry cases",
+    "18,871 South Asian ancestry controls, 523 Hispanic cases",
+    "2,903 Hispanic controls, 616 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "1127213 European",
+    "132202 East Asian",
+    "24911 African unspecified, African American or Afro-Caribbean",
+    "19864 South Asian",
+    "3426 Hispanic or Latin American",
+    "8884 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 146,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566800",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566801",
+   "pubmedId": "40205036",
+   "reportedTrait": "Spine osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006630",
+     "label": "osteoarthritis, spine"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "68,970 European ancestry cases",
+    "733,825 European ancestry controls",
+    "3,799 East Asian ancestry cases",
+    "70,581 East Asian ancestry controls",
+    "1,973 African or African American cases",
+    "21,394 African or African American controls, 506 South Asian ancestry cases",
+    "18,870 South Asian ancestry controls, 575 Hispanic cases",
+    "3,490 Hispanic controls, 346 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "802795 European",
+    "74380 East Asian",
+    "23367 African unspecified, African American or Afro-Caribbean",
+    "19376 South Asian",
+    "4065 Hispanic or Latin American",
+    "8614 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 4,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566801",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566802",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (with total hip replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "EFO_0009806",
+     "label": "total hip arthroplasty"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "49,733 European ancestry cases",
+    "963,748 European ancestry controls, 19 East Asian ancestry cases",
+    "2,184 East Asian ancestry controls, 74 African or African American cases",
+    "7,319 African or African American controls, 48 South Asian ancestry cases",
+    "7,921 South Asian ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "1013481 European",
+    "2203 East Asian",
+    "7393 African unspecified, African American or Afro-Caribbean",
+    "7969 South Asian"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 138,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566802",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566803",
+   "pubmedId": "40205036",
+   "reportedTrait": "Thumb osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "16,653 European ancestry cases",
+    "759,835 European ancestry controls, 166 African or African American cases",
+    "8,523 African or African American controls, 17 South Asian ancestry cases",
+    "7,921 South Asian ancestry controls, 56 Admixed ancestry cases",
+    "8,268 Admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "776488 European",
+    "8689 African unspecified, African American or Afro-Caribbean",
+    "7938 South Asian",
+    "8324 Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 5,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566803",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566804",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "EFO_0010726",
+     "label": "total joint arthroplasty"
+    },
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "76,604 European ancestry cases",
+    "771,801 European ancestry controls, 43 East Asian ancestry cases",
+    "2,184 East Asian ancestry controls, 247 African or African American cases",
+    "7,319 African or African American controls, 298 South Asian ancestry cases",
+    "7,921 South Asian ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "848405 European",
+    "2227 East Asian",
+    "7566 African unspecified, African American or Afro-Caribbean",
+    "8219 South Asian"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 101,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566804",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566805",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (with total knee replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    },
+    {
+     "key": "EFO_0020975",
+     "label": "total knee arthroplasty"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "47,701 European ancestry cases",
+    "941,039 European ancestry controls, 24 East Asian ancestry cases",
+    "2,184 East Asian ancestry controls, 179 African or African American cases",
+    "7,319 African or African American controls, 257 South Asian ancestry cases",
+    "7,921 South Asian ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "988740 European",
+    "2208 East Asian",
+    "7498 African unspecified, African American or Afro-Caribbean",
+    "8178 South Asian"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 92,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566805",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566806",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005178",
+     "label": "osteoarthritis"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "186,917 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "796,809 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "983726 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566806",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566807",
+   "pubmedId": "40205036",
+   "reportedTrait": "Finger osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "13,247 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "579,060 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "592307 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566807",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566808",
+   "pubmedId": "40205036",
+   "reportedTrait": "Hand Osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "21,076 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "658,029 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "679105 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566808",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566809",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (hip)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "53,993 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "686,636 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "740629 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566809",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566810",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis of the hip or knee",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "128,534 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "740,522 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "869056 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566810",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566811",
+   "pubmedId": "40205036",
+   "reportedTrait": "Knee osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "89,555 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "704,336 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "793891 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566811",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566812",
+   "pubmedId": "40205036",
+   "reportedTrait": "Spine osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006630",
+     "label": "osteoarthritis, spine"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "43,793 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "709,977 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "753770 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566812",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566813",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (with total hip replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "EFO_0009806",
+     "label": "total hip arthroplasty"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "32,869 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "625,143 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "658012 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566813",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566814",
+   "pubmedId": "40205036",
+   "reportedTrait": "Thumb osteoarthritis",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006632",
+     "label": "osteoarthritis, hand"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "13,064 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "649,339 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "662403 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566814",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566815",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0006629",
+     "label": "osteoarthritis, hip"
+    },
+    {
+     "key": "EFO_0010726",
+     "label": "total joint arthroplasty"
+    },
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "58,583 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "614,377 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "672960 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566815",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  },
+  {
+   "accessionId": "GCST90566816",
+   "pubmedId": "40205036",
+   "reportedTrait": "Osteoarthritis (with total knee replacement)",
+   "efoTraits": [
+    {
+     "key": "MONDO_0005416",
+     "label": "osteoarthritis, knee"
+    },
+    {
+     "key": "EFO_0020975",
+     "label": "total knee arthroplasty"
+    }
+   ],
+   "publicationDate": "2025-04-09",
+   "journal": "Nature",
+   "title": "Translational genomics of osteoarthritis in 1,962,069 individuals.",
+   "firstAuthor": "Hatzikotoulas K",
+   "genotypingTechnologies": [
+    "Genome-wide genotyping array"
+   ],
+   "initialSampleDescription": [
+    "29,552 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry cases",
+    "611,386 European, East Asian, African, African American, South Asian, Hispanic or admixed ancestry controls"
+   ],
+   "replicateSampleDescription": [
+    "NA"
+   ],
+   "discoverySampleAncestry": [
+    "640938 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+   ],
+   "replicationSampleAncestry": [],
+   "associationCount": 0,
+   "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566816",
+   "agreedToCc0": false,
+   "gxe": false,
+   "_links": {
+    "self": {
+     "href": "https://www.ebi.ac.uk/gwas/api/v2/variants"
+    }
+   }
+  }
+ ],
+ "queries": {
+  "bone size": [
+   {
+    "accessionId": "GCST004538",
+    "pubmedId": "28548082",
+    "reportedTrait": "Hip bone size",
+    "publicationDate": "2017-05-26",
+    "firstAuthor": "Southam L",
+    "discoverySampleAncestry": [
+     "3213 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004760",
+    "pubmedId": "28548082",
+    "reportedTrait": "Hip bone size adjusted for BMI",
+    "publicationDate": "2017-05-26",
+    "firstAuthor": "Southam L",
+    "discoverySampleAncestry": [
+     "3213 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001756",
+    "pubmedId": "23207799",
+    "reportedTrait": "Spine bone size",
+    "publicationDate": "2012-11-30",
+    "firstAuthor": "Deng FY",
+    "discoverySampleAncestry": [
+     "2286 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST008282",
+    "pubmedId": "31053729",
+    "reportedTrait": "Spine bone size",
+    "publicationDate": "2019-05-03",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "29059 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST008281",
+    "pubmedId": "31053729",
+    "reportedTrait": "Hip bone size",
+    "publicationDate": "2019-05-03",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "28900 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010300",
+    "pubmedId": "32314116",
+    "reportedTrait": "Hip bone size",
+    "publicationDate": "2020-04-20",
+    "firstAuthor": "Zhang H",
+    "discoverySampleAncestry": [
+     "3267 European",
+     "1619 East Asian",
+     "843 African American or Afro-Caribbean",
+     "446 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010299",
+    "pubmedId": "32314116",
+    "reportedTrait": "Bone mineral density (hip) and hip bone size",
+    "publicationDate": "2020-04-20",
+    "firstAuthor": "Zhang H",
+    "discoverySampleAncestry": [
+     "3267 European",
+     "1619 East Asian",
+     "843 African American or Afro-Caribbean",
+     "446 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000229",
+    "pubmedId": "18776929",
+    "reportedTrait": "Hip bone size",
+    "publicationDate": "2008-09-08",
+    "firstAuthor": "Liu YZ",
+    "discoverySampleAncestry": [
+     "1000 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001249",
+    "pubmedId": "21947420",
+    "reportedTrait": "Spine bone size",
+    "publicationDate": "2011-09-25",
+    "firstAuthor": "Lei SF",
+    "discoverySampleAncestry": [
+     "1627 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "bone width": [],
+  "bone volume": [],
+  "bone mineral content": [
+   {
+    "accessionId": "GCST002952",
+    "pubmedId": "26041818",
+    "reportedTrait": "Pediatric bone mineral content (radius)",
+    "publicationDate": "2015-06-03",
+    "firstAuthor": "Chesi A",
+    "discoverySampleAncestry": [
+     "126 Hispanic or Latin American, Other",
+     "908 European",
+     "337 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004179",
+    "pubmedId": "28181694",
+    "reportedTrait": "Pediatric bone mineral content (femoral neck)",
+    "publicationDate": "2017-02-09",
+    "firstAuthor": "Chesi A",
+    "discoverySampleAncestry": [
+     "933 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004175",
+    "pubmedId": "28181694",
+    "reportedTrait": "Pediatric bone mineral content (radius)",
+    "publicationDate": "2017-02-09",
+    "firstAuthor": "Chesi A",
+    "discoverySampleAncestry": [
+     "933 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004182",
+    "pubmedId": "28181694",
+    "reportedTrait": "Pediatric bone mineral content (spine)",
+    "publicationDate": "2017-02-09",
+    "firstAuthor": "Chesi A",
+    "discoverySampleAncestry": [
+     "933 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004180",
+    "pubmedId": "28181694",
+    "reportedTrait": "Pediatric bone mineral content (hip)",
+    "publicationDate": "2017-02-09",
+    "firstAuthor": "Chesi A",
+    "discoverySampleAncestry": [
+     "933 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST009378",
+    "pubmedId": "31790847",
+    "reportedTrait": "Bone mineral content",
+    "publicationDate": "2019-11-29",
+    "firstAuthor": "Hou R",
+    "discoverySampleAncestry": [
+     "1030 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010986",
+    "pubmedId": "31668963",
+    "reportedTrait": "Hip bone mineral content accrual during adolescent growth spurt",
+    "publicationDate": "2019-09-27",
+    "firstAuthor": "Bay CP",
+    "discoverySampleAncestry": [
+     "259 European, Hispanic or Latin American, Native American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010987",
+    "pubmedId": "31668963",
+    "reportedTrait": "Peak hip bone mineral content",
+    "publicationDate": "2019-09-27",
+    "firstAuthor": "Bay CP",
+    "discoverySampleAncestry": [
+     "1 Native American",
+     "362 European",
+     "1 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90026432",
+    "pubmedId": "34239500",
+    "reportedTrait": "Arm bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "4386 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90026433",
+    "pubmedId": "34239500",
+    "reportedTrait": "Leg bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "4386 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90026434",
+    "pubmedId": "34239500",
+    "reportedTrait": "Trunk bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "4386 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044728",
+    "pubmedId": "34239500",
+    "reportedTrait": "Total bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2294 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90026445",
+    "pubmedId": "34239500",
+    "reportedTrait": "Total bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "4386 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044715",
+    "pubmedId": "34239500",
+    "reportedTrait": "Arm bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2294 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044716",
+    "pubmedId": "34239500",
+    "reportedTrait": "Leg bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2294 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044717",
+    "pubmedId": "34239500",
+    "reportedTrait": "Trunk bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2294 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044746",
+    "pubmedId": "34239500",
+    "reportedTrait": "Arm bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2109 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044747",
+    "pubmedId": "34239500",
+    "reportedTrait": "Leg bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2109 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044748",
+    "pubmedId": "34239500",
+    "reportedTrait": "Trunk bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2109 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90044759",
+    "pubmedId": "34239500",
+    "reportedTrait": "Total bone mineral content",
+    "publicationDate": "2021-06-22",
+    "firstAuthor": "Livingstone KM",
+    "discoverySampleAncestry": [
+     "2109 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90826225",
+    "pubmedId": "42167238",
+    "reportedTrait": "Head BMC (bone mineral content) (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "39704 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826225"
+   }
+  ],
+  "cortical thickness": [
+   {
+    "accessionId": "GCST010281",
+    "pubmedId": "32193296",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2020-03-01",
+    "firstAuthor": "Grasby KL",
+    "discoverySampleAncestry": [
+     "33992 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010224",
+    "pubmedId": "32198502",
+    "reportedTrait": "Cortical thickness (PC1)",
+    "publicationDate": "2020-03-20",
+    "firstAuthor": "Shin J",
+    "discoverySampleAncestry": [
+     "23784 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010223",
+    "pubmedId": "32198502",
+    "reportedTrait": "Cortical thickness (PC2)",
+    "publicationDate": "2020-03-20",
+    "firstAuthor": "Shin J",
+    "discoverySampleAncestry": [
+     "23784 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010041",
+    "pubmedId": "32310165",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2020-04-09",
+    "firstAuthor": "Kim BH",
+    "discoverySampleAncestry": [
+     "919 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000894",
+    "pubmedId": "21116278",
+    "reportedTrait": "Entorhinal cortical thickness",
+    "publicationDate": "2010-11-30",
+    "firstAuthor": "Furney SJ",
+    "discoverySampleAncestry": [
+     "939 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000889",
+    "pubmedId": "21116278",
+    "reportedTrait": "Entorhinal cortical thickness (Alzheimer's disease interaction)",
+    "publicationDate": "2010-11-30",
+    "firstAuthor": "Furney SJ",
+    "discoverySampleAncestry": [
+     "939 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001187",
+    "pubmedId": "21810643",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2011-08-01",
+    "firstAuthor": "Bakken TE",
+    "discoverySampleAncestry": [
+     "1054 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90025855",
+    "pubmedId": "33640202",
+    "reportedTrait": "Left inferior frontal gyrus (orbital part) cortical thickness",
+    "publicationDate": "2021-02-03",
+    "firstAuthor": "Kim BH",
+    "discoverySampleAncestry": [
+     "919 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90025856",
+    "pubmedId": "33640202",
+    "reportedTrait": "Left parahippocampal gyrus cortical thickness",
+    "publicationDate": "2021-02-03",
+    "firstAuthor": "Kim BH",
+    "discoverySampleAncestry": [
+     "919 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271815",
+    "pubmedId": "36893272",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2023-03-09",
+    "firstAuthor": "Makowski C",
+    "discoverySampleAncestry": [
+     "32488 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90271001-GCST90272000/GCST90271815"
+   },
+   {
+    "accessionId": "GCST90103773",
+    "pubmedId": "35113692",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2022-02-03",
+    "firstAuthor": "Makowski C",
+    "discoverySampleAncestry": [
+     "32488 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90103001-GCST90104000/GCST90103773"
+   },
+   {
+    "accessionId": "GCST90128579",
+    "pubmedId": "35383335",
+    "reportedTrait": "Cortical thickness change rate x age interaction (2df)",
+    "publicationDate": "2022-04-05",
+    "firstAuthor": "Brouwer RM",
+    "discoverySampleAncestry": [
+     "15100 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90128591",
+    "pubmedId": "35383335",
+    "reportedTrait": "Cortical thickness change rate x age interaction (2df)",
+    "publicationDate": "2022-04-05",
+    "firstAuthor": "Brouwer RM",
+    "discoverySampleAncestry": [
+     "15100 European",
+     "490 Other admixed ancestry",
+     "50 Other"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90128549",
+    "pubmedId": "35383335",
+    "reportedTrait": "Cortical thickness change rate",
+    "publicationDate": "2022-04-05",
+    "firstAuthor": "Brouwer RM",
+    "discoverySampleAncestry": [
+     "15100 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90128564",
+    "pubmedId": "35383335",
+    "reportedTrait": "Cortical thickness change rate x age interaction (1df)",
+    "publicationDate": "2022-04-05",
+    "firstAuthor": "Brouwer RM",
+    "discoverySampleAncestry": [
+     "15100 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90104703",
+    "pubmedId": "35386118",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2022-03-21",
+    "firstAuthor": "Homann J",
+    "discoverySampleAncestry": [
+     "560 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90091061",
+    "pubmedId": "34560273",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2021-09-21",
+    "firstAuthor": "Shadrin AA",
+    "discoverySampleAncestry": [
+     "35657 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90091001-GCST90092000/GCST90091061"
+   },
+   {
+    "accessionId": "GCST90095659",
+    "pubmedId": "34785643",
+    "reportedTrait": "Entorhinal cortical thickness",
+    "publicationDate": "2021-11-16",
+    "firstAuthor": "Park JY",
+    "discoverySampleAncestry": [
+     "2643 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90095660",
+    "pubmedId": "34785643",
+    "reportedTrait": "Superior frontal cortical thickness",
+    "publicationDate": "2021-11-16",
+    "firstAuthor": "Park JY",
+    "discoverySampleAncestry": [
+     "2643 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90095661",
+    "pubmedId": "34785643",
+    "reportedTrait": "Middle temporal cortical thickness",
+    "publicationDate": "2021-11-16",
+    "firstAuthor": "Park JY",
+    "discoverySampleAncestry": [
+     "2643 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90095662",
+    "pubmedId": "34785643",
+    "reportedTrait": "Inferior parietal cortical thickness",
+    "publicationDate": "2021-11-16",
+    "firstAuthor": "Park JY",
+    "discoverySampleAncestry": [
+     "2643 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010700",
+    "pubmedId": "32665545",
+    "reportedTrait": "Cortical thickness (MOSTest)",
+    "publicationDate": "2020-07-14",
+    "firstAuthor": "van der Meer D",
+    "discoverySampleAncestry": [
+     "26502 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST010001-GCST011000/GCST010700"
+   },
+   {
+    "accessionId": "GCST010696",
+    "pubmedId": "32665545",
+    "reportedTrait": "Cortical thickness (min-P)",
+    "publicationDate": "2020-07-14",
+    "firstAuthor": "van der Meer D",
+    "discoverySampleAncestry": [
+     "26502 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST010001-GCST011000/GCST010696"
+   },
+   {
+    "accessionId": "GCST011618",
+    "pubmedId": "32963231",
+    "reportedTrait": "Cortical thickness",
+    "publicationDate": "2020-09-22",
+    "firstAuthor": "Hofer E",
+    "discoverySampleAncestry": [
+     "22163 African American or Afro-Caribbean, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90095131",
+    "pubmedId": "34910505",
+    "reportedTrait": "Vertex-wise cortical thickness",
+    "publicationDate": "2021-12-15",
+    "firstAuthor": "van der Meer D",
+    "discoverySampleAncestry": [
+     "33748 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90095001-GCST90096000/GCST90095131"
+   },
+   {
+    "accessionId": "GCST90095134",
+    "pubmedId": "34910505",
+    "reportedTrait": "Vertex-wise cortical thickness",
+    "publicationDate": "2021-12-15",
+    "firstAuthor": "van der Meer D",
+    "discoverySampleAncestry": [
+     "5199 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90095137",
+    "pubmedId": "34910505",
+    "reportedTrait": "Vertex-wise cortical thickness",
+    "publicationDate": "2021-12-15",
+    "firstAuthor": "van der Meer D",
+    "discoverySampleAncestry": [
+     "8072 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90652472",
+    "pubmedId": "41219506",
+    "reportedTrait": "Average cortical thickness",
+    "publicationDate": "2025-11-11",
+    "firstAuthor": "Smeland OB",
+    "discoverySampleAncestry": [
+     "32877 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90652001-GCST90653000/GCST90652472"
+   },
+   {
+    "accessionId": "GCST90431485",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region IPS1 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431485"
+   },
+   {
+    "accessionId": "GCST90431486",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region FFC cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431486"
+   },
+   {
+    "accessionId": "GCST90431487",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region V3B cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431487"
+   },
+   {
+    "accessionId": "GCST90431488",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region LO1 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431488"
+   },
+   {
+    "accessionId": "GCST90431489",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region LO2 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431489"
+   },
+   {
+    "accessionId": "GCST90431490",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region PIT cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431490"
+   },
+   {
+    "accessionId": "GCST90431491",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region MT cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431491"
+   },
+   {
+    "accessionId": "GCST90431492",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region A1 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431492"
+   },
+   {
+    "accessionId": "GCST90431493",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region PSL cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431493"
+   },
+   {
+    "accessionId": "GCST90431494",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region SFL cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431494"
+   },
+   {
+    "accessionId": "GCST90431495",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region PCV cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431495"
+   },
+   {
+    "accessionId": "GCST90431496",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region STV cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431496"
+   },
+   {
+    "accessionId": "GCST90431497",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 7Pm cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431497"
+   },
+   {
+    "accessionId": "GCST90431498",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 7m cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431498"
+   },
+   {
+    "accessionId": "GCST90431499",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region POS1 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431499"
+   },
+   {
+    "accessionId": "GCST90431500",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 23d cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431500"
+   },
+   {
+    "accessionId": "GCST90431501",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region v23ab cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431501"
+   },
+   {
+    "accessionId": "GCST90431502",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region d23ab cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431502"
+   },
+   {
+    "accessionId": "GCST90431503",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 31pv cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431503"
+   },
+   {
+    "accessionId": "GCST90431504",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 5m cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431504"
+   },
+   {
+    "accessionId": "GCST90431505",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 5mv cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431505"
+   },
+   {
+    "accessionId": "GCST90431506",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 23c cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431506"
+   },
+   {
+    "accessionId": "GCST90431507",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 5L cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431507"
+   },
+   {
+    "accessionId": "GCST90431508",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 24dd cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431508"
+   },
+   {
+    "accessionId": "GCST90431509",
+    "pubmedId": "39271676",
+    "reportedTrait": "Right brain hemisphere region 24dv cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "15994 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431509"
+   },
+   {
+    "accessionId": "GCST90431441",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region VMV1 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431441"
+   },
+   {
+    "accessionId": "GCST90431442",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region VMV3 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431442"
+   },
+   {
+    "accessionId": "GCST90431443",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region PHA2 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431443"
+   },
+   {
+    "accessionId": "GCST90431444",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region V4t cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431444"
+   },
+   {
+    "accessionId": "GCST90431445",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region FST cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431445"
+   },
+   {
+    "accessionId": "GCST90431446",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region V3CD cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431446"
+   },
+   {
+    "accessionId": "GCST90431447",
+    "pubmedId": "39271676",
+    "reportedTrait": "Left brain hemisphere region LO3 cortical thickness",
+    "publicationDate": "2024-09-13",
+    "firstAuthor": "Shafee R",
+    "discoverySampleAncestry": [
+     "16057 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90431001-GCST90432000/GCST90431447"
+   }
+  ],
+  "trabecular bone": [
+   {
+    "accessionId": "GCST012025",
+    "pubmedId": "33232597",
+    "reportedTrait": "trabecular bone score",
+    "publicationDate": "2020-11-24",
+    "firstAuthor": "Kong SH",
+    "discoverySampleAncestry": [
+     "2451 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "bone geometry": [
+   {
+    "accessionId": "GCST004835",
+    "pubmedId": "28840121",
+    "reportedTrait": "Femoral neck bone geometry",
+    "publicationDate": "2017-08-03",
+    "firstAuthor": "Villalobos-Comparán M",
+    "discoverySampleAncestry": [
+     "411 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001950",
+    "pubmedId": "23593202",
+    "reportedTrait": "Femoral neck bone geometry and menarche (age at onset)",
+    "publicationDate": "2013-04-04",
+    "firstAuthor": "Ran S",
+    "discoverySampleAncestry": [
+     "1728 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000541",
+    "pubmedId": "20175129",
+    "reportedTrait": "Femoral neck bone geometry",
+    "publicationDate": "2009-12-11",
+    "firstAuthor": "Zhao LJ",
+    "discoverySampleAncestry": [
+     "987 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001315",
+    "pubmedId": "22087292",
+    "reportedTrait": "Femoral neck bone geometry",
+    "publicationDate": "2011-11-07",
+    "firstAuthor": "Sun L",
+    "discoverySampleAncestry": [
+     "1627 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "hip geometry": [
+   {
+    "accessionId": "GCST000101",
+    "pubmedId": "17903296",
+    "reportedTrait": "Hip geometry",
+    "publicationDate": "2007-09-19",
+    "firstAuthor": "Kiel DP",
+    "discoverySampleAncestry": [
+     "1094 NR"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "femoral neck width": [
+   {
+    "accessionId": "GCST90399549",
+    "pubmedId": "38477772",
+    "reportedTrait": "Femoral neck width",
+    "publicationDate": "2024-01-12",
+    "firstAuthor": "Tobias JH",
+    "discoverySampleAncestry": [
+     "38150 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90399001-GCST90400000/GCST90399549"
+   }
+  ],
+  "hip axis length": [],
+  "bone strength": [],
+  "sitting height": [
+   {
+    "accessionId": "GCST002843",
+    "pubmedId": "25865494",
+    "reportedTrait": "Sitting height ratio",
+    "publicationDate": "2015-04-09",
+    "firstAuthor": "Chan Y",
+    "discoverySampleAncestry": [
+     "3545 African American or Afro-Caribbean",
+     "21590 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90013303",
+    "pubmedId": "33623009",
+    "reportedTrait": "Sitting height",
+    "publicationDate": "2021-02-23",
+    "firstAuthor": "Thareja G",
+    "discoverySampleAncestry": [
+     "6034 NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90013001-GCST90014000/GCST90013303"
+   },
+   {
+    "accessionId": "GCST90078245",
+    "pubmedId": "34662886",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "430080 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90078001-GCST90079000/GCST90078245"
+   },
+   {
+    "accessionId": "GCST90082231",
+    "pubmedId": "34662886",
+    "reportedTrait": "Sitting height (UKB data field 20015) (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "430080 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90082001-GCST90083000/GCST90082231"
+   },
+   {
+    "accessionId": "GCST90691757",
+    "pubmedId": "40968291",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-09-18",
+    "firstAuthor": "Karczewski KJ",
+    "discoverySampleAncestry": [
+     "419233 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90691001-GCST90692000/GCST90691757"
+   },
+   {
+    "accessionId": "GCST90692661",
+    "pubmedId": "40968291",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-09-18",
+    "firstAuthor": "Karczewski KJ",
+    "discoverySampleAncestry": [
+     "6554 African unspecified",
+     "8649 South Asian, Central Asian",
+     "2698 East Asian",
+     "419233 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90692001-GCST90693000/GCST90692661"
+   },
+   {
+    "accessionId": "GCST90692248",
+    "pubmedId": "40968291",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-09-18",
+    "firstAuthor": "Karczewski KJ",
+    "discoverySampleAncestry": [
+     "8649 South Asian, Central Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90692001-GCST90693000/GCST90692248"
+   },
+   {
+    "accessionId": "GCST90692051",
+    "pubmedId": "40968291",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-09-18",
+    "firstAuthor": "Karczewski KJ",
+    "discoverySampleAncestry": [
+     "6554 African unspecified"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90692001-GCST90693000/GCST90692051"
+   },
+   {
+    "accessionId": "GCST90692483",
+    "pubmedId": "40968291",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-09-18",
+    "firstAuthor": "Karczewski KJ",
+    "discoverySampleAncestry": [
+     "2698 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90692001-GCST90693000/GCST90692483"
+   },
+   {
+    "accessionId": "GCST90841368",
+    "pubmedId": "38710707",
+    "reportedTrait": "Sitting height change",
+    "publicationDate": "2024-05-06",
+    "firstAuthor": "Kemper KE",
+    "discoverySampleAncestry": [
+     "50117 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90728585",
+    "pubmedId": "41861830",
+    "reportedTrait": "Sitting height ratio adjusted for height and BMI (inverse-normalization-transformed)",
+    "publicationDate": "2026-03-19",
+    "firstAuthor": "Bartell E",
+    "discoverySampleAncestry": [
+     "451921 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90728001-GCST90729000/GCST90728585"
+   },
+   {
+    "accessionId": "GCST90728586",
+    "pubmedId": "41861830",
+    "reportedTrait": "Sitting height (inverse-normalization-transformed)",
+    "publicationDate": "2026-03-19",
+    "firstAuthor": "Bartell E",
+    "discoverySampleAncestry": [
+     "451921 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90728001-GCST90729000/GCST90728586"
+   },
+   {
+    "accessionId": "GCST90727384",
+    "pubmedId": "41861830",
+    "reportedTrait": "Sitting height ratio adjusted for height and BMI",
+    "publicationDate": "2026-03-19",
+    "firstAuthor": "Bartell E",
+    "discoverySampleAncestry": [
+     "72471 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90727001-GCST90728000/GCST90727384"
+   },
+   {
+    "accessionId": "GCST90728588",
+    "pubmedId": "41861830",
+    "reportedTrait": "Sitting height ratio adjusted for height and BMI (inverse-normalization-transformed)",
+    "publicationDate": "2026-03-19",
+    "firstAuthor": "Bartell E",
+    "discoverySampleAncestry": [
+     "72471 East Asian",
+     "473511 European",
+     "3545 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90728001-GCST90729000/GCST90728588"
+   },
+   {
+    "accessionId": "GCST90727383",
+    "pubmedId": "41861830",
+    "reportedTrait": "Sitting height",
+    "publicationDate": "2026-03-19",
+    "firstAuthor": "Bartell E",
+    "discoverySampleAncestry": [
+     "72471 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90727001-GCST90728000/GCST90727383"
+   },
+   {
+    "accessionId": "GCST90309820",
+    "pubmedId": "38351177",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2024-02-13",
+    "firstAuthor": "Jung H",
+    "discoverySampleAncestry": [
+     "174488 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90309001-GCST90310000/GCST90309820"
+   },
+   {
+    "accessionId": "GCST90310178",
+    "pubmedId": "39901012",
+    "reportedTrait": "Sitting height (UKB data field 20015)",
+    "publicationDate": "2025-02-03",
+    "firstAuthor": "Hu S",
+    "discoverySampleAncestry": [
+     "342957 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90310001-GCST90311000/GCST90310178"
+   },
+   {
+    "accessionId": "GCST90826111",
+    "pubmedId": "42167238",
+    "reportedTrait": "Sitting height (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "404530 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826111"
+   }
+  ],
+  "height": [
+   {
+    "accessionId": "GCST004212",
+    "pubmedId": "28270201",
+    "reportedTrait": "Height",
+    "publicationDate": "2017-03-07",
+    "firstAuthor": "Nagy R",
+    "discoverySampleAncestry": [
+     "19965 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004321",
+    "pubmedId": "28441456",
+    "reportedTrait": "Facial morphology (factor 17, height of vermillion upper lip)",
+    "publicationDate": "2017-04-25",
+    "firstAuthor": "Lee MK",
+    "discoverySampleAncestry": [
+     "2187 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004308",
+    "pubmedId": "28441456",
+    "reportedTrait": "Facial morphology (factor 4, facial height related to vertical position of gnathion)",
+    "publicationDate": "2017-04-25",
+    "firstAuthor": "Lee MK",
+    "discoverySampleAncestry": [
+     "2187 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004310",
+    "pubmedId": "28441456",
+    "reportedTrait": "Facial morphology (factor 6, height of vermillion lower lip)",
+    "publicationDate": "2017-04-25",
+    "firstAuthor": "Lee MK",
+    "discoverySampleAncestry": [
+     "2187 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004313",
+    "pubmedId": "28441456",
+    "reportedTrait": "Facial morphology (factor 9, facial height related to vertical position of nasion)",
+    "publicationDate": "2017-04-25",
+    "firstAuthor": "Lee MK",
+    "discoverySampleAncestry": [
+     "2187 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004534",
+    "pubmedId": "28548082",
+    "reportedTrait": "Height",
+    "publicationDate": "2017-05-26",
+    "firstAuthor": "Southam L",
+    "discoverySampleAncestry": [
+     "3213 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST008163",
+    "pubmedId": "28552196",
+    "reportedTrait": "Height",
+    "publicationDate": "2017-06-01",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "3541 NR",
+     "53588 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002538",
+    "pubmedId": "25044758",
+    "reportedTrait": "Height adjusted BMI",
+    "publicationDate": "2014-07-21",
+    "firstAuthor": "Stergiakouli E",
+    "discoverySampleAncestry": [
+     "5809 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002573",
+    "pubmedId": "25133637",
+    "reportedTrait": "Height",
+    "publicationDate": "2014-08-18",
+    "firstAuthor": "Scannell Bryan M",
+    "discoverySampleAncestry": [
+     "5344 South Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001956",
+    "pubmedId": "23563607",
+    "reportedTrait": "Height",
+    "publicationDate": "2013-04-07",
+    "firstAuthor": "Berndt SI",
+    "discoverySampleAncestry": [
+     "16196 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002647",
+    "pubmedId": "25282103",
+    "reportedTrait": "Height",
+    "publicationDate": "2014-10-05",
+    "firstAuthor": "Wood AR",
+    "discoverySampleAncestry": [
+     "253288 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002702",
+    "pubmedId": "25429064",
+    "reportedTrait": "Height",
+    "publicationDate": "2014-11-26",
+    "firstAuthor": "He M",
+    "discoverySampleAncestry": [
+     "36227 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001885",
+    "pubmedId": "23456168",
+    "reportedTrait": "Height",
+    "publicationDate": "2013-03-03",
+    "firstAuthor": "Hao Y",
+    "discoverySampleAncestry": [
+     "6534 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005354",
+    "pubmedId": "26366551",
+    "reportedTrait": "Height",
+    "publicationDate": "2015-11-01",
+    "firstAuthor": "Zoledziewska M",
+    "discoverySampleAncestry": [
+     "6307 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002843",
+    "pubmedId": "25865494",
+    "reportedTrait": "Sitting height ratio",
+    "publicationDate": "2015-04-09",
+    "firstAuthor": "Chan Y",
+    "discoverySampleAncestry": [
+     "3545 African American or Afro-Caribbean",
+     "21590 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006901",
+    "pubmedId": "30124842",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-08-16",
+    "firstAuthor": "Yengo L",
+    "discoverySampleAncestry": [
+     "237103 NR",
+     "456426 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST006001-GCST007000/GCST006901"
+   },
+   {
+    "accessionId": "GCST008974",
+    "pubmedId": "30305743",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-10-10",
+    "firstAuthor": "Bycroft C",
+    "discoverySampleAncestry": [
+     "343321 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST003645",
+    "pubmedId": "27560520",
+    "reportedTrait": "Lower facial height",
+    "publicationDate": "2016-08-25",
+    "firstAuthor": "Shaffer JR",
+    "discoverySampleAncestry": [
+     "2447 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST003968",
+    "pubmedId": "27918534",
+    "reportedTrait": "Pericardial adipose tissue adjusted for height and weight",
+    "publicationDate": "2016-12-05",
+    "firstAuthor": "Chu AY",
+    "discoverySampleAncestry": [
+     "1261 African American or Afro-Caribbean",
+     "1445 Hispanic or Latin American",
+     "7866 European",
+     "768 Asian unspecified"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST003001-GCST004000/GCST003968"
+   },
+   {
+    "accessionId": "GCST006543",
+    "pubmedId": "27918534",
+    "reportedTrait": "Pericardial adipose tissue adjusted for height and weight",
+    "publicationDate": "2016-12-05",
+    "firstAuthor": "Chu AY",
+    "discoverySampleAncestry": [
+     "378 Asian unspecified",
+     "3888 European",
+     "699 Hispanic or Latin American",
+     "877 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST006001-GCST007000/GCST006543"
+   },
+   {
+    "accessionId": "GCST006544",
+    "pubmedId": "27918534",
+    "reportedTrait": "Pericardial adipose tissue adjusted for height and weight",
+    "publicationDate": "2016-12-05",
+    "firstAuthor": "Chu AY",
+    "discoverySampleAncestry": [
+     "390 Asian unspecified",
+     "746 Hispanic or Latin American",
+     "1284 African American or Afro-Caribbean",
+     "3978 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST006001-GCST007000/GCST006544"
+   },
+   {
+    "accessionId": "GCST008839",
+    "pubmedId": "31562340",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-09-27",
+    "firstAuthor": "Akiyama M",
+    "discoverySampleAncestry": [
+     "159095 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST009142",
+    "pubmedId": "31453325",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-08-14",
+    "firstAuthor": "Wang H",
+    "discoverySampleAncestry": [
+     "347086 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST009111",
+    "pubmedId": "31453325",
+    "reportedTrait": "Height variance",
+    "publicationDate": "2019-08-14",
+    "firstAuthor": "Wang H",
+    "discoverySampleAncestry": [
+     "347086 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST009001-GCST010000/GCST009111"
+   },
+   {
+    "accessionId": "GCST008053",
+    "pubmedId": "31217584",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-06-19",
+    "firstAuthor": "Wojcik GL",
+    "discoverySampleAncestry": [
+     "1052 NR",
+     "3939 Oceanian",
+     "17286 African American or Afro-Caribbean",
+     "4680 East Asian, Asian unspecified",
+     "22192 Hispanic or Latin American",
+     "647 Native American"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST008001-GCST009000/GCST008053"
+   },
+   {
+    "accessionId": "GCST008040",
+    "pubmedId": "31217584",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-06-19",
+    "firstAuthor": "Wojcik GL",
+    "discoverySampleAncestry": [
+     "303288 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST008041",
+    "pubmedId": "31217584",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-06-19",
+    "firstAuthor": "Wojcik GL",
+    "discoverySampleAncestry": [
+     "22192 Hispanic or Latin American",
+     "253288 European",
+     "17286 African American or Afro-Caribbean",
+     "3939 Oceanian",
+     "4680 East Asian, Asian unspecified",
+     "647 Native American",
+     "1052 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST008904",
+    "pubmedId": "31564439",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-09-26",
+    "firstAuthor": "Fang H",
+    "discoverySampleAncestry": [
+     "3054 Asian unspecified",
+     "68155 African American or Afro-Caribbean",
+     "25847 Hispanic or Latin American",
+     "248507 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST009551",
+    "pubmedId": "31840077",
+    "reportedTrait": "Peak height velocity",
+    "publicationDate": "2019-09-04",
+    "firstAuthor": "Couto Alves A",
+    "discoverySampleAncestry": [
+     "6933 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST009055",
+    "pubmedId": "31675503",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-10-01",
+    "firstAuthor": "Gurdasani D",
+    "discoverySampleAncestry": [
+     "14126 Sub-Saharan African"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST009001-GCST010000/GCST009055"
+   },
+   {
+    "accessionId": "GCST007841",
+    "pubmedId": "30595370",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-12-27",
+    "firstAuthor": "Kichaev G",
+    "discoverySampleAncestry": [
+     "458000 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010311",
+    "pubmedId": "32499652",
+    "reportedTrait": "Height",
+    "publicationDate": "2020-05-13",
+    "firstAuthor": "Asgari S",
+    "discoverySampleAncestry": [
+     "598 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST010001-GCST011000/GCST010311"
+   },
+   {
+    "accessionId": "GCST90002224",
+    "pubmedId": "32499652",
+    "reportedTrait": "Height",
+    "publicationDate": "2020-05-13",
+    "firstAuthor": "Asgari S",
+    "discoverySampleAncestry": [
+     "3134 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90002001-GCST90003000/GCST90002224"
+   },
+   {
+    "accessionId": "GCST007251",
+    "pubmedId": "30595539",
+    "reportedTrait": "Postburn scar height",
+    "publicationDate": "2018-12-27",
+    "firstAuthor": "Wallace HJ",
+    "discoverySampleAncestry": [
+     "665 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007251"
+   },
+   {
+    "accessionId": "GCST006500",
+    "pubmedId": "30174134",
+    "reportedTrait": "Nosetip height",
+    "publicationDate": "2018-08-16",
+    "firstAuthor": "Qiao L",
+    "discoverySampleAncestry": [
+     "694 Other admixed ancestry"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006502",
+    "pubmedId": "30174134",
+    "reportedTrait": "Nasal root height",
+    "publicationDate": "2018-08-16",
+    "firstAuthor": "Qiao L",
+    "discoverySampleAncestry": [
+     "694 Other admixed ancestry"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST007057",
+    "pubmedId": "30108283",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-08-14",
+    "firstAuthor": "Granot-Hershkovitz E",
+    "discoverySampleAncestry": [
+     "901 Other"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST011875",
+    "pubmedId": "30653739",
+    "reportedTrait": "Height",
+    "publicationDate": "2019-01-17",
+    "firstAuthor": "Sofer T",
+    "discoverySampleAncestry": [
+     "12595 Hispanic or Latin American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000068",
+    "pubmedId": "17767157",
+    "reportedTrait": "Height",
+    "publicationDate": "2007-09-02",
+    "firstAuthor": "Weedon MN",
+    "discoverySampleAncestry": [
+     "4921 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000136",
+    "pubmedId": "18193045",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-01-13",
+    "firstAuthor": "Sanna S",
+    "discoverySampleAncestry": [
+     "6669 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000174",
+    "pubmedId": "18391952",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-04-06",
+    "firstAuthor": "Weedon MN",
+    "discoverySampleAncestry": [
+     "13665 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000175",
+    "pubmedId": "18391951",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-04-06",
+    "firstAuthor": "Gudbjartsson DF",
+    "discoverySampleAncestry": [
+     "30968 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000176",
+    "pubmedId": "18391950",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-04-06",
+    "firstAuthor": "Lettre G",
+    "discoverySampleAncestry": [
+     "15821 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000254",
+    "pubmedId": "18952825",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-10-24",
+    "firstAuthor": "Johansson A",
+    "discoverySampleAncestry": [
+     "3925 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000272",
+    "pubmedId": "19030899",
+    "reportedTrait": "Height",
+    "publicationDate": "2008-11-23",
+    "firstAuthor": "Lei SF",
+    "discoverySampleAncestry": [
+     "618 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000372",
+    "pubmedId": "19343178",
+    "reportedTrait": "Height",
+    "publicationDate": "2009-04-03",
+    "firstAuthor": "Soranzo N",
+    "discoverySampleAncestry": [
+     "12611 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000380",
+    "pubmedId": "19396169",
+    "reportedTrait": "Height",
+    "publicationDate": "2009-04-26",
+    "firstAuthor": "Cho YS",
+    "discoverySampleAncestry": [
+     "8842 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000431",
+    "pubmedId": "19570815",
+    "reportedTrait": "Height",
+    "publicationDate": "2009-07-01",
+    "firstAuthor": "Estrada K",
+    "discoverySampleAncestry": [
+     "10074 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000475",
+    "pubmedId": "19729412",
+    "reportedTrait": "Height",
+    "publicationDate": "2009-09-03",
+    "firstAuthor": "Tönjes A",
+    "discoverySampleAncestry": [
+     "929 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000522",
+    "pubmedId": "19893584",
+    "reportedTrait": "Height",
+    "publicationDate": "2009-11-06",
+    "firstAuthor": "Kim JJ",
+    "discoverySampleAncestry": [
+     "8842 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000611",
+    "pubmedId": "20189936",
+    "reportedTrait": "Height",
+    "publicationDate": "2010-02-26",
+    "firstAuthor": "Okada Y",
+    "discoverySampleAncestry": [
+     "19633 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000644",
+    "pubmedId": "20397748",
+    "reportedTrait": "Height",
+    "publicationDate": "2010-04-01",
+    "firstAuthor": "Liu JZ",
+    "discoverySampleAncestry": [
+     "11536 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000744",
+    "pubmedId": "20668459",
+    "reportedTrait": "Height",
+    "publicationDate": "2010-07-29",
+    "firstAuthor": "Kim HN",
+    "discoverySampleAncestry": [
+     "518 South East Asian, East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000817",
+    "pubmedId": "20881960",
+    "reportedTrait": "Height",
+    "publicationDate": "2010-09-29",
+    "firstAuthor": "Lango Allen H",
+    "discoverySampleAncestry": [
+     "133653 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST000001-GCST001000/GCST000817"
+   },
+   {
+    "accessionId": "GCST000839",
+    "pubmedId": "20966902",
+    "reportedTrait": "Height",
+    "publicationDate": "2010-10-21",
+    "firstAuthor": "Croteau-Chonka DC",
+    "discoverySampleAncestry": [
+     "1792 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001263",
+    "pubmedId": "21998595",
+    "reportedTrait": "Height",
+    "publicationDate": "2011-10-06",
+    "firstAuthor": "N'Diaye A",
+    "discoverySampleAncestry": [
+     "20427 African American or Afro-Caribbean, African unspecified"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001290",
+    "pubmedId": "22021425",
+    "reportedTrait": "Height",
+    "publicationDate": "2011-10-21",
+    "firstAuthor": "Carty CL",
+    "discoverySampleAncestry": [
+     "8149 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005908",
+    "pubmedId": "29782485",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-05-21",
+    "firstAuthor": "Rüeger S",
+    "discoverySampleAncestry": [
+     "253288 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90029008",
+    "pubmedId": "29892013",
+    "reportedTrait": "Height",
+    "publicationDate": "2018-07-01",
+    "firstAuthor": "Loh PR",
+    "discoverySampleAncestry": [
+     "673878 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90029001-GCST90030000/GCST90029008"
+   },
+   {
+    "accessionId": "GCST90013466",
+    "pubmedId": "33713608",
+    "reportedTrait": "Height",
+    "publicationDate": "2021-03-05",
+    "firstAuthor": "Graff M",
+    "discoverySampleAncestry": [
+     "41389 African American or Afro-Caribbean, African unspecified"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90013001-GCST90014000/GCST90013466"
+   }
+  ],
+  "bone mineral apparent density": [],
+  "periosteal": [],
+  "skeletal": [
+   {
+    "accessionId": "GCST006130",
+    "pubmedId": "29240982",
+    "reportedTrait": "Pediatric areal bone mineral density (concordant skeletal phenotype)",
+    "publicationDate": "2017-12-14",
+    "firstAuthor": "Mitchell JA",
+    "discoverySampleAncestry": [
+     "933 European",
+     "466 African unspecified, Asian unspecified"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006247",
+    "pubmedId": "29240982",
+    "reportedTrait": "Pediatric areal bone mineral density (radius vs spine & hip discordant skeletal phenotype)",
+    "publicationDate": "2017-12-14",
+    "firstAuthor": "Mitchell JA",
+    "discoverySampleAncestry": [
+     "933 European",
+     "466 African unspecified, Asian unspecified"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006129",
+    "pubmedId": "29240982",
+    "reportedTrait": "Pediatric areal bone mineral density (spine vs radius & hip discordant skeletal phenotype)",
+    "publicationDate": "2017-12-14",
+    "firstAuthor": "Mitchell JA",
+    "discoverySampleAncestry": [
+     "933 European",
+     "466 African unspecified, Asian unspecified"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90436770",
+    "pubmedId": "30104761",
+    "reportedTrait": "Congenital musculoskeletal deformities of spine (PheCode 754)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "407941 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436770"
+   },
+   {
+    "accessionId": "GCST90436775",
+    "pubmedId": "30104761",
+    "reportedTrait": "Other congenital musculoskeletal anomalies (PheCode 756)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "408425 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436775"
+   },
+   {
+    "accessionId": "GCST90436787",
+    "pubmedId": "30104761",
+    "reportedTrait": "Musculoskeletal symptoms referable to limbs (PheCode 771)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "408961 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436787"
+   },
+   {
+    "accessionId": "GCST90436792",
+    "pubmedId": "30104761",
+    "reportedTrait": "Symptoms involving nervous and musculoskeletal systems (PheCode 781)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "408961 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436792"
+   },
+   {
+    "accessionId": "GCST90436805",
+    "pubmedId": "30104761",
+    "reportedTrait": "Nonspecific abnormal findings on radiological and other examination of musculoskeletal system (PheCode 793)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "408961 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436805"
+   },
+   {
+    "accessionId": "GCST90436857",
+    "pubmedId": "30104761",
+    "reportedTrait": "Late effects of musculoskeletal and connective tissue injuries (PheCode 905)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "407654 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436857"
+   },
+   {
+    "accessionId": "GCST90436896",
+    "pubmedId": "30104761",
+    "reportedTrait": "Poisoning by agents primarily acting on the smooth and skeletal muscles and respiratory system (PheCode 975)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "381861 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436896"
+   },
+   {
+    "accessionId": "GCST90436716",
+    "pubmedId": "30104761",
+    "reportedTrait": "Other acquired musculoskeletal deformity (PheCode 738)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "396835 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436716"
+   },
+   {
+    "accessionId": "GCST90101230",
+    "pubmedId": "28240269",
+    "reportedTrait": "Keratin, type I cytoskeletal 18 levels",
+    "publicationDate": "2017-02-27",
+    "firstAuthor": "Suhre K",
+    "discoverySampleAncestry": [
+     "997 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90101001-GCST90102000/GCST90101230"
+   },
+   {
+    "accessionId": "GCST90101624",
+    "pubmedId": "28240269",
+    "reportedTrait": "Troponin I, fast skeletal muscle levels",
+    "publicationDate": "2017-02-27",
+    "firstAuthor": "Suhre K",
+    "discoverySampleAncestry": [
+     "997 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90101001-GCST90102000/GCST90101624"
+   },
+   {
+    "accessionId": "GCST90241980",
+    "pubmedId": "29875488",
+    "reportedTrait": "Muscle, skeletal receptor tyrosine-protein kinase levels (MUSK.11547.84.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241980"
+   },
+   {
+    "accessionId": "GCST90241689",
+    "pubmedId": "29875488",
+    "reportedTrait": "Keratin, type I cytoskeletal 17 levels (KRT17.12923.51.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241689"
+   },
+   {
+    "accessionId": "GCST90241690",
+    "pubmedId": "29875488",
+    "reportedTrait": "Keratin, type I cytoskeletal 18 levels (KRT18.5354.11.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241690"
+   },
+   {
+    "accessionId": "GCST90241691",
+    "pubmedId": "29875488",
+    "reportedTrait": "Keratin, type I cytoskeletal 20 levels (KRT20.12975.11.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241691"
+   },
+   {
+    "accessionId": "GCST90241692",
+    "pubmedId": "29875488",
+    "reportedTrait": "Keratin, type II cytoskeletal 5 levels (KRT5.11177.16.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241692"
+   },
+   {
+    "accessionId": "GCST90241693",
+    "pubmedId": "29875488",
+    "reportedTrait": "Keratin, type II cytoskeletal 7 levels (KRT7.11383.41.3)",
+    "publicationDate": "2018-06-06",
+    "firstAuthor": "Sun BB",
+    "discoverySampleAncestry": [
+     "3301 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90241001-GCST90242000/GCST90241693"
+   },
+   {
+    "accessionId": "GCST012217",
+    "pubmedId": "33674626",
+    "reportedTrait": "Skeletal muscle index",
+    "publicationDate": "2021-03-05",
+    "firstAuthor": "Yoon KJ",
+    "discoverySampleAncestry": [
+     "2046 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90038601",
+    "pubmedId": "33959723",
+    "reportedTrait": "Musculoskeletal disorder or trauma",
+    "publicationDate": "2021-04-08",
+    "firstAuthor": "Dönertaş HM",
+    "discoverySampleAncestry": [
+     "484598 NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90038001-GCST90039000/GCST90038601"
+   },
+   {
+    "accessionId": "GCST011779",
+    "pubmedId": "33926923",
+    "reportedTrait": "Chronic widespread musculoskeletal pain",
+    "publicationDate": "2021-04-29",
+    "firstAuthor": "Rahman MS",
+    "discoverySampleAncestry": [
+     "249843 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271636",
+    "pubmedId": "36856146",
+    "reportedTrait": "Appendicular skeletal muscle index in chronic obstructive pulmonary disease",
+    "publicationDate": "2023-03-01",
+    "firstAuthor": "Attaway AH",
+    "discoverySampleAncestry": [
+     "32426 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90134417",
+    "pubmedId": "35776183",
+    "reportedTrait": "Aromatase inhibitors induced musculoskeletal syndrome in HR+ non-metastatic breast cancer",
+    "publicationDate": "2022-07-01",
+    "firstAuthor": "Hertz DL",
+    "discoverySampleAncestry": [
+     "400 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90134418",
+    "pubmedId": "35776183",
+    "reportedTrait": "Exemestane induced musculoskeletal syndrome in HR+ non-metastatic breast cancer",
+    "publicationDate": "2022-07-01",
+    "firstAuthor": "Hertz DL",
+    "discoverySampleAncestry": [
+     "201 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90134419",
+    "pubmedId": "35776183",
+    "reportedTrait": "Letrozole induced musculoskeletal syndrome in HR+ non-metastatic breast cancer",
+    "publicationDate": "2022-07-01",
+    "firstAuthor": "Hertz DL",
+    "discoverySampleAncestry": [
+     "319 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90103965",
+    "pubmedId": "35173190",
+    "reportedTrait": "Skin and musculoskeletal infection",
+    "publicationDate": "2022-02-16",
+    "firstAuthor": "Tängdén T",
+    "discoverySampleAncestry": [
+     "337484 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90103966",
+    "pubmedId": "35173190",
+    "reportedTrait": "Musculoskeletal infection",
+    "publicationDate": "2022-02-16",
+    "firstAuthor": "Tängdén T",
+    "discoverySampleAncestry": [
+     "337484 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90104265",
+    "pubmedId": "35241739",
+    "reportedTrait": "Appendicular skeletal muscle mass",
+    "publicationDate": "2022-03-03",
+    "firstAuthor": "Jin H",
+    "discoverySampleAncestry": [
+     "1781 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90104266",
+    "pubmedId": "35241739",
+    "reportedTrait": "Skeletal muscle index",
+    "publicationDate": "2022-03-03",
+    "firstAuthor": "Jin H",
+    "discoverySampleAncestry": [
+     "1781 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90104118",
+    "pubmedId": "35121771",
+    "reportedTrait": "Skeletal muscle mass",
+    "publicationDate": "2022-02-04",
+    "firstAuthor": "Choe EK",
+    "discoverySampleAncestry": [
+     "9630 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90235762",
+    "pubmedId": "35870639",
+    "reportedTrait": "Musculoskeletal embryonic nuclear protein 1 level in Chronic kidney disease with hypertension and no diabetes (21545_51)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90235001-GCST90236000/GCST90235762"
+   },
+   {
+    "accessionId": "GCST90233107",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 5 level in Chronic kidney disease with hypertension and no diabetes (11177_16)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233107"
+   },
+   {
+    "accessionId": "GCST90234575",
+    "pubmedId": "35870639",
+    "reportedTrait": "Troponin T, fast skeletal muscle level in Chronic kidney disease with hypertension and no diabetes (16807_35)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90234001-GCST90235000/GCST90234575"
+   },
+   {
+    "accessionId": "GCST90233301",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 72 level in Chronic kidney disease with hypertension and no diabetes (11566_48)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233301"
+   },
+   {
+    "accessionId": "GCST90239546",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 1 level in Chronic kidney disease with hypertension and no diabetes (9931_20)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90239001-GCST90240000/GCST90239546"
+   },
+   {
+    "accessionId": "GCST90235060",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 16 level in Chronic kidney disease with hypertension and no diabetes (18905_5)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90235001-GCST90236000/GCST90235060"
+   },
+   {
+    "accessionId": "GCST90233227",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 7 level in Chronic kidney disease with hypertension and no diabetes (11383_41)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233227"
+   },
+   {
+    "accessionId": "GCST90235564",
+    "pubmedId": "35870639",
+    "reportedTrait": "Myosin regulatory light chain 2, skeletal muscle isoform level in Chronic kidney disease with hypertension and no diabetes (21112_6)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90235001-GCST90236000/GCST90235564"
+   },
+   {
+    "accessionId": "GCST90236830",
+    "pubmedId": "35870639",
+    "reportedTrait": "Phosphorylase b kinase regulatory subunit alpha, skeletal muscle isoform level in Chronic kidney disease with hypertension and no diabetes (25088_42)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90236001-GCST90237000/GCST90236830"
+   },
+   {
+    "accessionId": "GCST90236079",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 14 level in Chronic kidney disease with hypertension and no diabetes (22482_87)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90236001-GCST90237000/GCST90236079"
+   },
+   {
+    "accessionId": "GCST90236080",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 71 level in Chronic kidney disease with hypertension and no diabetes (22483_109)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90236001-GCST90237000/GCST90236080"
+   },
+   {
+    "accessionId": "GCST90236083",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type II cytoskeletal 6A level in Chronic kidney disease with hypertension and no diabetes (22486_58)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90236001-GCST90237000/GCST90236083"
+   },
+   {
+    "accessionId": "GCST90237935",
+    "pubmedId": "35870639",
+    "reportedTrait": "Troponin I, fast skeletal muscle level in Chronic kidney disease with hypertension and no diabetes (5440_26)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90237001-GCST90238000/GCST90237935"
+   },
+   {
+    "accessionId": "GCST90237916",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 18 level in Chronic kidney disease with hypertension and no diabetes (5354_11)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90237001-GCST90238000/GCST90237916"
+   },
+   {
+    "accessionId": "GCST90233762",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 17 level in Chronic kidney disease with hypertension and no diabetes (12923_51)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233762"
+   },
+   {
+    "accessionId": "GCST90233774",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 20 level in Chronic kidney disease with hypertension and no diabetes (12975_11)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233774"
+   },
+   {
+    "accessionId": "GCST90234461",
+    "pubmedId": "35870639",
+    "reportedTrait": "Keratin, type I cytoskeletal 19 level in Chronic kidney disease with hypertension and no diabetes (15606_19)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90234001-GCST90235000/GCST90234461"
+   },
+   {
+    "accessionId": "GCST90233291",
+    "pubmedId": "35870639",
+    "reportedTrait": "Muscle, skeletal receptor tyrosine-protein kinase level in Chronic kidney disease with hypertension and no diabetes (11547_84)",
+    "publicationDate": "2022-07-21",
+    "firstAuthor": "Surapaneni A",
+    "discoverySampleAncestry": [
+     "466 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90233001-GCST90234000/GCST90233291"
+   },
+   {
+    "accessionId": "GCST90244764",
+    "pubmedId": "36344522",
+    "reportedTrait": "Asthma in muscoskeletal disease",
+    "publicationDate": "2022-11-07",
+    "firstAuthor": "Jia G",
+    "discoverySampleAncestry": [
+     "305098 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90162384",
+    "pubmedId": "36168886",
+    "reportedTrait": "Keratin, type I cytoskeletal 18 levels",
+    "publicationDate": "2022-09-28",
+    "firstAuthor": "Thareja G",
+    "discoverySampleAncestry": [
+     "2935 Greater Middle Eastern (Middle Eastern, North African or Persian)"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90162001-GCST90163000/GCST90162384"
+   },
+   {
+    "accessionId": "GCST90162403",
+    "pubmedId": "36168886",
+    "reportedTrait": "Troponin I, fast skeletal muscle levels",
+    "publicationDate": "2022-09-28",
+    "firstAuthor": "Thareja G",
+    "discoverySampleAncestry": [
+     "2935 Greater Middle Eastern (Middle Eastern, North African or Persian)"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90162001-GCST90163000/GCST90162403"
+   },
+   {
+    "accessionId": "GCST90084822",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29: Other symptoms and signs involving the nervous and musculoskeletal systems (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "381480 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084822"
+   },
+   {
+    "accessionId": "GCST90084821",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29.8: Other symptoms and signs involving the nervous and musculoskeletal systems (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "383649 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084821"
+   },
+   {
+    "accessionId": "GCST90084820",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29.89: Other symptoms and signs involving the musculoskeletal system (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "384647 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084820"
+   },
+   {
+    "accessionId": "GCST90095044",
+    "pubmedId": "34754074",
+    "reportedTrait": "Skeletal age",
+    "publicationDate": "2021-11-09",
+    "firstAuthor": "Grgic O",
+    "discoverySampleAncestry": [
+     "4557 European, African unspecified, Asian unspecified, NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90080833",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29.898.: Other symptoms and signs involving the musculoskeletal system",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "384651 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080833"
+   },
+   {
+    "accessionId": "GCST90080834",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29.89: Other symptoms and signs involving the musculoskeletal system",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "384647 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080834"
+   },
+   {
+    "accessionId": "GCST90080836",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29: Other symptoms and signs involving the nervous and musculoskeletal systems",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "381480 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080836"
+   },
+   {
+    "accessionId": "GCST90080835",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 R29.8: Other symptoms and signs involving the nervous and musculoskeletal systems",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "383649 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080835"
+   }
+  ],
+  "bone length": [],
+  "femoral neck bone mineral density": [
+   {
+    "accessionId": "GCST004836",
+    "pubmedId": "28761973",
+    "reportedTrait": "Femoral neck bone mineral density or breast cancer (pleiotropy)",
+    "publicationDate": "2017-07-31",
+    "firstAuthor": "Peng C",
+    "discoverySampleAncestry": [
+     "53236 NR",
+     "5152 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005228",
+    "pubmedId": "28934396",
+    "reportedTrait": "Osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "50623 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005229",
+    "pubmedId": "28934396",
+    "reportedTrait": "Hip osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "46961 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005224",
+    "pubmedId": "28934396",
+    "reportedTrait": "Knee osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "47017 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005317",
+    "pubmedId": "29327327",
+    "reportedTrait": "Femoral neck bone mineral density or plasma lipids (pleiotropy)",
+    "publicationDate": "2018-01-11",
+    "firstAuthor": "Lin X",
+    "discoverySampleAncestry": [
+     "238565 European, NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005795",
+    "pubmedId": "29499414",
+    "reportedTrait": "Femoral neck bone mineral density",
+    "publicationDate": "2018-02-27",
+    "firstAuthor": "Pei YF",
+    "discoverySampleAncestry": [
+     "446 Hispanic or Latin American",
+     "1539 East Asian",
+     "37657 European",
+     "849 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005544",
+    "pubmedId": "26367794",
+    "reportedTrait": "Femoral neck bone mineral density",
+    "publicationDate": "2015-10-01",
+    "firstAuthor": "Zheng HF",
+    "discoverySampleAncestry": [
+     "32735 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005544"
+   },
+   {
+    "accessionId": "GCST010268",
+    "pubmedId": "32239398",
+    "reportedTrait": "Femoral neck bone mineral density",
+    "publicationDate": "2020-04-01",
+    "firstAuthor": "Liu L",
+    "discoverySampleAncestry": [
+     "1539 East Asian",
+     "10208 European",
+     "843 African unspecified",
+     "445 Native American"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010266",
+    "pubmedId": "32239398",
+    "reportedTrait": "Femoral neck bone mineral density and trunk fat mass adjusted by trunk lean mass",
+    "publicationDate": "2020-04-01",
+    "firstAuthor": "Liu L",
+    "discoverySampleAncestry": [
+     "445 Hispanic or Latin American",
+     "1539 East Asian",
+     "10208 European",
+     "843 African unspecified"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006445",
+    "pubmedId": "30172743",
+    "reportedTrait": "Femoral neck bone mineral density",
+    "publicationDate": "2018-08-30",
+    "firstAuthor": "Liang X",
+    "discoverySampleAncestry": [
+     "2286 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006861",
+    "pubmedId": "30172742",
+    "reportedTrait": "Femoral neck bone mineral density or type 2 diabetes (pleiotropy)",
+    "publicationDate": "2018-08-30",
+    "firstAuthor": "Hu Y",
+    "discoverySampleAncestry": [
+     "212444 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST007691",
+    "pubmedId": "22504420",
+    "reportedTrait": "Femoral neck bone mineral density",
+    "publicationDate": "2012-04-15",
+    "firstAuthor": "Estrada K",
+    "discoverySampleAncestry": [
+     "32961 East Asian, European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007691"
+   }
+  ],
+  "total body bone mineral density": [
+   {
+    "accessionId": "GCST005348",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "1333 African American or Afro-Caribbean",
+     "9328 NR",
+     "56284 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005348"
+   },
+   {
+    "accessionId": "GCST005345",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density (age 0-15)",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "11807 European, NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005345"
+   },
+   {
+    "accessionId": "GCST005344",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density (age 15-30)",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "4180 European, NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005344"
+   },
+   {
+    "accessionId": "GCST005346",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density (age 30-45)",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "10062 European, NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005346"
+   },
+   {
+    "accessionId": "GCST005350",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density (age 45-60)",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "18805 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005350"
+   },
+   {
+    "accessionId": "GCST005349",
+    "pubmedId": "29304378",
+    "reportedTrait": "Total body bone mineral density (age over 60)",
+    "publicationDate": "2018-01-04",
+    "firstAuthor": "Medina-Gomez C",
+    "discoverySampleAncestry": [
+     "22504 European, African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005349"
+   },
+   {
+    "accessionId": "GCST008603",
+    "pubmedId": "30690781",
+    "reportedTrait": "Total body bone mineral density (MTAG)",
+    "publicationDate": "2019-02-28",
+    "firstAuthor": "Pei YF",
+    "discoverySampleAncestry": [
+     "66628 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST010092",
+    "pubmedId": "32390946",
+    "reportedTrait": "Total body bone mineral density (MTAG)",
+    "publicationDate": "2020-04-22",
+    "firstAuthor": "Liu L",
+    "discoverySampleAncestry": [
+     "66628 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006443",
+    "pubmedId": "30172743",
+    "reportedTrait": "Total body bone mineral density",
+    "publicationDate": "2018-08-30",
+    "firstAuthor": "Liang X",
+    "discoverySampleAncestry": [
+     "2286 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST012243",
+    "pubmedId": "33740106",
+    "reportedTrait": "Total body bone mineral density or rheumatoid arthritis (pleiotropy)",
+    "publicationDate": "2021-03-19",
+    "firstAuthor": "Liu YQ",
+    "discoverySampleAncestry": [
+     "124912 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90093097",
+    "pubmedId": "33430342",
+    "reportedTrait": "Total body bone mineral density",
+    "publicationDate": "2021-01-07",
+    "firstAuthor": "Younes N",
+    "discoverySampleAncestry": [
+     "3000 Greater Middle Eastern (Middle Eastern, North African or Persian)"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "bone area": [
+   {
+    "accessionId": "GCST90826226",
+    "pubmedId": "42167238",
+    "reportedTrait": "Pelvis bone area (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "39704 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826226"
+   },
+   {
+    "accessionId": "GCST90826227",
+    "pubmedId": "42167238",
+    "reportedTrait": "Legs combined bone area (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "39704 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826227"
+   },
+   {
+    "accessionId": "GCST90826228",
+    "pubmedId": "42167238",
+    "reportedTrait": "Femur neck bone area (left) (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "39709 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826228"
+   },
+   {
+    "accessionId": "GCST90826229",
+    "pubmedId": "42167238",
+    "reportedTrait": "Femur neck bone area (right) (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "38395 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826229"
+   },
+   {
+    "accessionId": "GCST90826231",
+    "pubmedId": "42167238",
+    "reportedTrait": "Femur wards bone area (left) (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "39709 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826231"
+   },
+   {
+    "accessionId": "GCST90826232",
+    "pubmedId": "42167238",
+    "reportedTrait": "Femur wards bone area (right) (CNV)",
+    "publicationDate": "2026-05-20",
+    "firstAuthor": "Garg P",
+    "discoverySampleAncestry": [
+     "38395 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90826001-GCST90827000/GCST90826232"
+   }
+  ],
+  "volumetric bone mineral density": [],
+  "hip shape": [
+   {
+    "accessionId": "GCST006903",
+    "pubmedId": "30320955",
+    "reportedTrait": "Hip shape (DXA scan)",
+    "publicationDate": "2018-10-15",
+    "firstAuthor": "Baird DA",
+    "discoverySampleAncestry": [
+     "5717 NR",
+     "10217 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90482704",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 1",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482704"
+   },
+   {
+    "accessionId": "GCST90482705",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 2",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482705"
+   },
+   {
+    "accessionId": "GCST90482706",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 3",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482706"
+   },
+   {
+    "accessionId": "GCST90482707",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 4",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482707"
+   },
+   {
+    "accessionId": "GCST90482708",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 5",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482708"
+   },
+   {
+    "accessionId": "GCST90482709",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 6",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482709"
+   },
+   {
+    "accessionId": "GCST90482710",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 7",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482710"
+   },
+   {
+    "accessionId": "GCST90482711",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 8",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482711"
+   },
+   {
+    "accessionId": "GCST90482712",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 9",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482712"
+   },
+   {
+    "accessionId": "GCST90482713",
+    "pubmedId": "39574169",
+    "reportedTrait": "Hip shape mode 10",
+    "publicationDate": "2024-11-22",
+    "firstAuthor": "Faber BG",
+    "discoverySampleAncestry": [
+     "38175 European",
+     "5310 East Asian"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90482001-GCST90483000/GCST90482713"
+   }
+  ],
+  "joint space narrowing": [],
+  "Kellgren": [
+   {
+    "accessionId": "GCST005277",
+    "pubmedId": "29354237",
+    "reportedTrait": "Lumbar spondylosis (Kellgren-Lawrence grade)",
+    "publicationDate": "2018-01-01",
+    "firstAuthor": "Kim HA",
+    "discoverySampleAncestry": [
+     "1424 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "radiographic osteoarthritis": [],
+  "osteoarthritis": [
+   {
+    "accessionId": "GCST009596",
+    "pubmedId": "28855172",
+    "reportedTrait": "Osteoarthritis of the hand",
+    "publicationDate": "2017-08-30",
+    "firstAuthor": "den Hollander W",
+    "discoverySampleAncestry": [
+     "8743 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005225",
+    "pubmedId": "28934396",
+    "reportedTrait": "Osteoarthritis or lumbar spine bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "49462 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005226",
+    "pubmedId": "28934396",
+    "reportedTrait": "Hip osteoarthritis or lumbar spine bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "45800 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005227",
+    "pubmedId": "28934396",
+    "reportedTrait": "Knee osteoarthritis or lumbar spine bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "45856 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005228",
+    "pubmedId": "28934396",
+    "reportedTrait": "Osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "50623 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005229",
+    "pubmedId": "28934396",
+    "reportedTrait": "Hip osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "46961 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005224",
+    "pubmedId": "28934396",
+    "reportedTrait": "Knee osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "47017 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004881",
+    "pubmedId": "28916551",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2017-09-15",
+    "firstAuthor": "Liu Y",
+    "discoverySampleAncestry": [
+     "1217 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST003963",
+    "pubmedId": "28051079",
+    "reportedTrait": "Possible neuropathic pain in post total joint replacement surgery for osteoarthritis",
+    "publicationDate": "2017-01-04",
+    "firstAuthor": "Warner SC",
+    "discoverySampleAncestry": [
+     "613 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004199",
+    "pubmedId": "28319091",
+    "reportedTrait": "Osteoarthritis (with total hip replacement)",
+    "publicationDate": "2017-03-20",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "212171 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005811",
+    "pubmedId": "29559693",
+    "reportedTrait": "Osteoarthritis (self-reported)",
+    "publicationDate": "2018-03-20",
+    "firstAuthor": "Zengini E",
+    "discoverySampleAncestry": [
+     "63556 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005811"
+   },
+   {
+    "accessionId": "GCST005810",
+    "pubmedId": "29559693",
+    "reportedTrait": "Osteoarthritis of the hip (hospital diagnosed)",
+    "publicationDate": "2018-03-20",
+    "firstAuthor": "Zengini E",
+    "discoverySampleAncestry": [
+     "11989 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005810"
+   },
+   {
+    "accessionId": "GCST005814",
+    "pubmedId": "29559693",
+    "reportedTrait": "Osteoarthritis (hospital diagnosed)",
+    "publicationDate": "2018-03-20",
+    "firstAuthor": "Zengini E",
+    "discoverySampleAncestry": [
+     "50508 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005814"
+   },
+   {
+    "accessionId": "GCST005813",
+    "pubmedId": "29559693",
+    "reportedTrait": "Osteoarthritis of the knee (hospital diagnosed)",
+    "publicationDate": "2018-03-20",
+    "firstAuthor": "Zengini E",
+    "discoverySampleAncestry": [
+     "22347 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005813"
+   },
+   {
+    "accessionId": "GCST005812",
+    "pubmedId": "29559693",
+    "reportedTrait": "Osteoarthritis of the hip or knee (hospital diagnosed)",
+    "publicationDate": "2018-03-20",
+    "firstAuthor": "Zengini E",
+    "discoverySampleAncestry": [
+     "32970 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST005001-GCST006000/GCST005812"
+   },
+   {
+    "accessionId": "GCST005571",
+    "pubmedId": "29436472",
+    "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+    "publicationDate": "2018-02-07",
+    "firstAuthor": "Casalone E",
+    "discoverySampleAncestry": [
+     "15353 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005573",
+    "pubmedId": "29436472",
+    "reportedTrait": "Osteoarthritis of the hip or knee",
+    "publicationDate": "2018-02-07",
+    "firstAuthor": "Casalone E",
+    "discoverySampleAncestry": [
+     "15353 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005572",
+    "pubmedId": "29436472",
+    "reportedTrait": "Osteoarthritis of the hip (with total joint replacement)",
+    "publicationDate": "2018-02-07",
+    "firstAuthor": "Casalone E",
+    "discoverySampleAncestry": [
+     "12456 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005574",
+    "pubmedId": "29436472",
+    "reportedTrait": "Osteoarthritis of the knee (with total joint replacement)",
+    "publicationDate": "2018-02-07",
+    "firstAuthor": "Casalone E",
+    "discoverySampleAncestry": [
+     "12127 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002540",
+    "pubmedId": "25057126",
+    "reportedTrait": "Osteoarthritis biomarkers",
+    "publicationDate": "2014-07-23",
+    "firstAuthor": "Ramos YF",
+    "discoverySampleAncestry": [
+     "4654 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST002155",
+    "pubmedId": "23989986",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2013-08-29",
+    "firstAuthor": "Evangelou E",
+    "discoverySampleAncestry": [
+     "51537 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001592",
+    "pubmedId": "22763110",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2012-07-03",
+    "firstAuthor": "Zeggini E",
+    "discoverySampleAncestry": [
+     "18419 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST001001-GCST002000/GCST001592"
+   },
+   {
+    "accessionId": "GCST002410",
+    "pubmedId": "24728293",
+    "reportedTrait": "Osteoarthritis (hand, severe)",
+    "publicationDate": "2014-04-13",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "69776 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90436720",
+    "pubmedId": "30104761",
+    "reportedTrait": "Osteoarthritis; localized (PheCode 740.1)",
+    "publicationDate": "2018-08-13",
+    "firstAuthor": "Zhou W",
+    "discoverySampleAncestry": [
+     "398213 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90436001-GCST90437000/GCST90436720"
+   },
+   {
+    "accessionId": "GCST006925",
+    "pubmedId": "30374069",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2018-10-29",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "586030 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006926",
+    "pubmedId": "30374069",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2018-10-29",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "613790 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST003820",
+    "pubmedId": "27696742",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2016-10-01",
+    "firstAuthor": "Yau MS",
+    "discoverySampleAncestry": [
+     "4448 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST007090",
+    "pubmedId": "30664745",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2019-01-21",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "403124 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007090"
+   },
+   {
+    "accessionId": "GCST007091",
+    "pubmedId": "30664745",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2019-01-21",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "393873 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007091"
+   },
+   {
+    "accessionId": "GCST007092",
+    "pubmedId": "30664745",
+    "reportedTrait": "Osteoarthritis of the hip or knee",
+    "publicationDate": "2019-01-21",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "417596 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007092"
+   },
+   {
+    "accessionId": "GCST007093",
+    "pubmedId": "30664745",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2019-01-21",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "455221 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007093"
+   },
+   {
+    "accessionId": "GCST000186",
+    "pubmedId": "18471798",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2008-05-08",
+    "firstAuthor": "Valdes AM",
+    "discoverySampleAncestry": [
+     "642 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000421",
+    "pubmedId": "19508968",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2009-06-08",
+    "firstAuthor": "Zhai G",
+    "discoverySampleAncestry": [
+     "1804 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000558",
+    "pubmedId": "20112360",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2010-01-07",
+    "firstAuthor": "Kerkhof HJ",
+    "discoverySampleAncestry": [
+     "4837 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000629",
+    "pubmedId": "20305777",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2010-03-18",
+    "firstAuthor": "Nakajima M",
+    "discoverySampleAncestry": [
+     "4295 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000869",
+    "pubmedId": "21068099",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2010-11-10",
+    "firstAuthor": "Evangelou E",
+    "discoverySampleAncestry": [
+     "38280 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000923",
+    "pubmedId": "21177295",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2010-12-21",
+    "firstAuthor": "Panoutsopoulou K",
+    "discoverySampleAncestry": [
+     "8071 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001209",
+    "pubmedId": "21871595",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2011-08-25",
+    "firstAuthor": "Day-Williams AG",
+    "discoverySampleAncestry": [
+     "8071 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST001516",
+    "pubmedId": "22566624",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2012-05-07",
+    "firstAuthor": "Castaño Betancourt MC",
+    "discoverySampleAncestry": [
+     "6523 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90038686",
+    "pubmedId": "33959723",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2021-04-08",
+    "firstAuthor": "Dönertaş HM",
+    "discoverySampleAncestry": [
+     "484598 NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90038001-GCST90039000/GCST90038686"
+   },
+   {
+    "accessionId": "GCST90038699",
+    "pubmedId": "33959723",
+    "reportedTrait": "Arthritis (not osteoarthritis)",
+    "publicationDate": "2021-04-08",
+    "firstAuthor": "Dönertaş HM",
+    "discoverySampleAncestry": [
+     "484598 NR"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90038001-GCST90039000/GCST90038699"
+   },
+   {
+    "accessionId": "GCST90086113",
+    "pubmedId": "33893285",
+    "reportedTrait": "Osteoarthritis (dominant model)",
+    "publicationDate": "2021-04-23",
+    "firstAuthor": "Guindo-Martínez M",
+    "discoverySampleAncestry": [
+     "56637 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086113"
+   },
+   {
+    "accessionId": "GCST90086114",
+    "pubmedId": "33893285",
+    "reportedTrait": "Osteoarthritis (genotypic model)",
+    "publicationDate": "2021-04-23",
+    "firstAuthor": "Guindo-Martínez M",
+    "discoverySampleAncestry": [
+     "56637 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086114"
+   },
+   {
+    "accessionId": "GCST90086115",
+    "pubmedId": "33893285",
+    "reportedTrait": "Osteoarthritis (heterodominant model)",
+    "publicationDate": "2021-04-23",
+    "firstAuthor": "Guindo-Martínez M",
+    "discoverySampleAncestry": [
+     "56637 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086115"
+   },
+   {
+    "accessionId": "GCST90086116",
+    "pubmedId": "33893285",
+    "reportedTrait": "Osteoarthritis (recessive model)",
+    "publicationDate": "2021-04-23",
+    "firstAuthor": "Guindo-Martínez M",
+    "discoverySampleAncestry": [
+     "56637 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086116"
+   },
+   {
+    "accessionId": "GCST90086117",
+    "pubmedId": "33893285",
+    "reportedTrait": "Osteoarthritis (additive model)",
+    "publicationDate": "2021-04-23",
+    "firstAuthor": "Guindo-Martínez M",
+    "discoverySampleAncestry": [
+     "56637 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90086001-GCST90087000/GCST90086117"
+   },
+   {
+    "accessionId": "GCST90013931",
+    "pubmedId": "34017140",
+    "reportedTrait": "Osteoarthritis (SPA correction)",
+    "publicationDate": "2021-05-20",
+    "firstAuthor": "Mbatchou J",
+    "discoverySampleAncestry": [
+     "407746 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90013001-GCST90014000/GCST90013931"
+   },
+   {
+    "accessionId": "GCST90013881",
+    "pubmedId": "34017140",
+    "reportedTrait": "Osteoarthritis (Firth correction)",
+    "publicationDate": "2021-05-20",
+    "firstAuthor": "Mbatchou J",
+    "discoverySampleAncestry": [
+     "407746 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90013001-GCST90014000/GCST90013881"
+   },
+   {
+    "accessionId": "GCST90271767",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1633524 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271768",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "585026 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271769",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "718329 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271770",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or knee osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1202888 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271771",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or hip osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1160222 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271772",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or spine osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1140784 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90270115",
+    "pubmedId": "36769350",
+    "reportedTrait": "Hand Osteoarthritis",
+    "publicationDate": "2023-02-03",
+    "firstAuthor": "Khosasih V",
+    "discoverySampleAncestry": [
+     "1136 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90102548",
+    "pubmedId": "35204431",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2022-01-28",
+    "firstAuthor": "Park S",
+    "discoverySampleAncestry": [
+     "5430 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90103750",
+    "pubmedId": "35130970",
+    "reportedTrait": "Asymmetrical dimethylarginine levels in osteoarthritis",
+    "publicationDate": "2022-02-07",
+    "firstAuthor": "Werdyani S",
+    "discoverySampleAncestry": [
+     "77 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90179469",
+    "pubmedId": "36000784",
+    "reportedTrait": "End-stage knee osteoarthritis",
+    "publicationDate": "2022-08-23",
+    "firstAuthor": "Kulm S",
+    "discoverySampleAncestry": [
+     "389548 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264170",
+    "pubmedId": "36376028",
+    "reportedTrait": "Surgical knee osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "661143 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264171",
+    "pubmedId": "36376028",
+    "reportedTrait": "Non-surgical knee osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "663858 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264172",
+    "pubmedId": "36376028",
+    "reportedTrait": "Surgical hip osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "646831 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264173",
+    "pubmedId": "36376028",
+    "reportedTrait": "Non-surgical hip osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "689962 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90080420",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M19.0: Primary osteoarthritis of other joints",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "386201 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080420"
+   },
+   {
+    "accessionId": "GCST90061021",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "890949 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061022",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "353388 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061023",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "729611 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034531",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total hip replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "319037 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061024",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total knee replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "252041 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061025",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "368576 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061026",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hand",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "303782 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061027",
+    "pubmedId": "34450027",
+    "reportedTrait": "Finger osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "266618 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061028",
+    "pubmedId": "34450027",
+    "reportedTrait": "Thumb osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "247455 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061029",
+    "pubmedId": "34450027",
+    "reportedTrait": "Spine osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "639528 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061030",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "210270 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061031",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "890949 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061032",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "353388 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061033",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "729611 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061034",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total hip replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "319037 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061035",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total knee replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "252041 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061036",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "368576 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061037",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hand",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "303782 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061038",
+    "pubmedId": "34450027",
+    "reportedTrait": "Finger osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "266618 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061039",
+    "pubmedId": "34450027",
+    "reportedTrait": "Thumb osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "247455 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061040",
+    "pubmedId": "34450027",
+    "reportedTrait": "Spine osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "639528 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034521",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "486050 European",
+     "4295 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034520",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "820665 European",
+     "6025 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034522",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (hip)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "353388 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034523",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "391749 European",
+     "4295 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034524",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total hip replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "319037 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034525",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis (with total knee replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "252041 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034526",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hip or knee (with total joint replacement)",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "368576 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034527",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis of the hand",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "303782 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034528",
+    "pubmedId": "34450027",
+    "reportedTrait": "Finger osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "266618 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034529",
+    "pubmedId": "34450027",
+    "reportedTrait": "Thumb osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "247455 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034530",
+    "pubmedId": "34450027",
+    "reportedTrait": "Spine osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "328823 European",
+     "5127 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034533",
+    "pubmedId": "34450027",
+    "reportedTrait": "Early-onset osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "48287 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034532",
+    "pubmedId": "34450027",
+    "reportedTrait": "Osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "283535 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90080412",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M16: Osteoarthritis of hip",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "385198 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080412"
+   },
+   {
+    "accessionId": "GCST90080416",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M17: Osteoarthritis of knee",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "381164 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080416"
+   },
+   {
+    "accessionId": "GCST90080421",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M19.90: Unspecified osteoarthritis, unspecified site",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "377431 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080421"
+   }
+  ],
+  "osteophyte": [
+   {
+    "accessionId": "GCST005278",
+    "pubmedId": "29354237",
+    "reportedTrait": "Lumbar spondylosis (presence and severity of osteophytes)",
+    "publicationDate": "2018-01-01",
+    "firstAuthor": "Kim HA",
+    "discoverySampleAncestry": [
+     "1426 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90080464",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.7: Osteophyte",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387926 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080464"
+   },
+   {
+    "accessionId": "GCST90080462",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.76: Osteophyte, knee",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387930 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080462"
+   },
+   {
+    "accessionId": "GCST90080463",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.77: Osteophyte, ankle and foot",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387930 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90080001-GCST90081000/GCST90080463"
+   },
+   {
+    "accessionId": "GCST90084450",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.7: Osteophyte (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387926 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084450"
+   },
+   {
+    "accessionId": "GCST90084448",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.76: Osteophyte, knee (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387930 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084448"
+   },
+   {
+    "accessionId": "GCST90084449",
+    "pubmedId": "34662886",
+    "reportedTrait": "ICD10 M25.77: Osteophyte, ankle and foot (Gene-based burden)",
+    "publicationDate": "2021-10-18",
+    "firstAuthor": "Backman JD",
+    "discoverySampleAncestry": [
+     "387930 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90084001-GCST90085000/GCST90084449"
+   }
+  ],
+  "enthesophyte": [],
+  "bone spur": [],
+  "spondylophyte": [],
+  "cartilage thickness": [],
+  "cartilage volume": [],
+  "hip osteoarthritis": [
+   {
+    "accessionId": "GCST005226",
+    "pubmedId": "28934396",
+    "reportedTrait": "Hip osteoarthritis or lumbar spine bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "45800 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005229",
+    "pubmedId": "28934396",
+    "reportedTrait": "Hip osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "46961 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271771",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or hip osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1160222 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264172",
+    "pubmedId": "36376028",
+    "reportedTrait": "Surgical hip osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "646831 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264173",
+    "pubmedId": "36376028",
+    "reportedTrait": "Non-surgical hip osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "689962 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90833065",
+    "pubmedId": "41912496",
+    "reportedTrait": "Developmental dysplasia of the hip or hip osteoarthritis",
+    "publicationDate": "2026-03-31",
+    "firstAuthor": "Yoshino S",
+    "discoverySampleAncestry": [
+     "353388 European",
+     "25085 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   }
+  ],
+  "knee osteoarthritis": [
+   {
+    "accessionId": "GCST005227",
+    "pubmedId": "28934396",
+    "reportedTrait": "Knee osteoarthritis or lumbar spine bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "45856 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST005224",
+    "pubmedId": "28934396",
+    "reportedTrait": "Knee osteoarthritis or femoral neck bone mineral density",
+    "publicationDate": "2017-10-01",
+    "firstAuthor": "Hackinger S",
+    "discoverySampleAncestry": [
+     "47017 NR"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST004881",
+    "pubmedId": "28916551",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2017-09-15",
+    "firstAuthor": "Liu Y",
+    "discoverySampleAncestry": [
+     "1217 African American or Afro-Caribbean"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST006925",
+    "pubmedId": "30374069",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2018-10-29",
+    "firstAuthor": "Styrkarsdottir U",
+    "discoverySampleAncestry": [
+     "586030 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST003820",
+    "pubmedId": "27696742",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2016-10-01",
+    "firstAuthor": "Yau MS",
+    "discoverySampleAncestry": [
+     "4448 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST007090",
+    "pubmedId": "30664745",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2019-01-21",
+    "firstAuthor": "Tachmazidou I",
+    "discoverySampleAncestry": [
+     "403124 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST007001-GCST008000/GCST007090"
+   },
+   {
+    "accessionId": "GCST000186",
+    "pubmedId": "18471798",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2008-05-08",
+    "firstAuthor": "Valdes AM",
+    "discoverySampleAncestry": [
+     "642 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST000629",
+    "pubmedId": "20305777",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2010-03-18",
+    "firstAuthor": "Nakajima M",
+    "discoverySampleAncestry": [
+     "4295 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90271770",
+    "pubmedId": "36889626",
+    "reportedTrait": "Body mass index or knee osteoarthritis (pleiotropy)",
+    "publicationDate": "2023-03-06",
+    "firstAuthor": "Zhang L",
+    "discoverySampleAncestry": [
+     "1202888 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90179469",
+    "pubmedId": "36000784",
+    "reportedTrait": "End-stage knee osteoarthritis",
+    "publicationDate": "2022-08-23",
+    "firstAuthor": "Kulm S",
+    "discoverySampleAncestry": [
+     "389548 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264170",
+    "pubmedId": "36376028",
+    "reportedTrait": "Surgical knee osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "661143 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90264171",
+    "pubmedId": "36376028",
+    "reportedTrait": "Non-surgical knee osteoarthritis",
+    "publicationDate": "2022-11-14",
+    "firstAuthor": "Henkel C",
+    "discoverySampleAncestry": [
+     "663858 European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061023",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "729611 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90061033",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "729611 East Asian, European"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90034523",
+    "pubmedId": "34450027",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2021-08-24",
+    "firstAuthor": "Boer CG",
+    "discoverySampleAncestry": [
+     "391749 European",
+     "4295 East Asian"
+    ],
+    "summaryStatistics": "NA"
+   },
+   {
+    "accessionId": "GCST90566800",
+    "pubmedId": "40205036",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2025-04-09",
+    "firstAuthor": "Hatzikotoulas K",
+    "discoverySampleAncestry": [
+     "1127213 European",
+     "132202 East Asian",
+     "24911 African unspecified, African American or Afro-Caribbean",
+     "19864 South Asian",
+     "3426 Hispanic or Latin American",
+     "8884 Other admixed ancestry"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566800"
+   },
+   {
+    "accessionId": "GCST90566811",
+    "pubmedId": "40205036",
+    "reportedTrait": "Knee osteoarthritis",
+    "publicationDate": "2025-04-09",
+    "firstAuthor": "Hatzikotoulas K",
+    "discoverySampleAncestry": [
+     "793891 European, East Asian, African unspecified, African American or Afro-Caribbean, South Asian, Hispanic or Latin American, Other admixed ancestry"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90566001-GCST90567000/GCST90566811"
+   },
+   {
+    "accessionId": "GCST90297779",
+    "pubmedId": "37247657",
+    "reportedTrait": "Idiopathic knee osteoarthritis",
+    "publicationDate": "2023-05-27",
+    "firstAuthor": "Hollis B",
+    "discoverySampleAncestry": [
+     "354561 European"
+    ],
+    "summaryStatistics": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90297001-GCST90298000/GCST90297779"
+   }
+  ],
+  "osteoarthritis (imaging)": []
+ }
+}
