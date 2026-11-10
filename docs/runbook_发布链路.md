@@ -208,3 +208,48 @@ git push origin master
 
 **备注**：`git filter-branch` 会重置工作树，上述 4 个中间文件随之从磁盘移除；
 需要时用 `code/204`/`code/205` 从源 GWAS 重建（不影响任何已报结果与四道门禁）。
+
+---
+
+## §10 2026-11-10 第二次发布（v2.1 / Zenodo 24097660）
+
+**触发**：用户明确要求「推 master 并发 v2.1 让 Zenodo 再 mint」。本轮新增内容
+（OSF DOI 10.17605/OSF.IO/CSMP7 回写、S32 F10 ancestry proxy、F2/F5/F10
+alternative-path 复盘与 F2 尺寸臂实跑）此前仅在本地，需同步到归档版本。
+
+**发布器改动**（`code/318`，提交 `2dc8a33`）：`TAG` 从硬编码 `v2.0` 改为
+`os.environ.get("RELEASE_TAG", "v2.1")`，annotated-tag 消息与 Release body/name
+按 TAG 动态生成（`submission-v2.1`）；`v2.0` 保持不可变。改完先提交，使发布器
+逻辑本身进入被推送的历史。
+
+**执行的三次调用**（分阶段，便于逐步核验；`all` 等价）：
+1. `setup` — 生成临时 ed25519 key，REST POST 注册可写 deploy key
+   （id=169353419，HTTP 201），`ssh -T` 认证通过。
+2. `push` — `e175d69..2dc8a33 master` 推送成功；新建 annotated tag `v2.1`
+   → `2dc8a3358ad0`；Release `submission-v2.1` POST HTTP 201（id=439956194，
+   published 2026-11-10T04:46:07Z）。
+3. `cleanup` — 删除 deploy key（HTTP 204，验证剩余 0 把），移除临时 remote
+   与 `_tmp_release/`，origin 仍为无凭证 URL。
+
+**代理端口变化**：本地代理从 `127.0.0.1:49831` 变为 `127.0.0.1:60670`；
+`code/317` 用 `HTTPS_PROXY` 环境变量自动取端口，无需改脚本。
+
+**Zenodo 再 mint 已确认**：
+- 新版本记录 **24097660** / 版本 DOI **10.5281/zenodo.24097660**，
+  `created=2026-11-10T04:46:16Z`（Release 后 9 秒，webhook 触发特征），
+  conceptrecid 仍 `23400860`。
+- concept DOI `10.5281/zenodo.23400860` 返回 302 → `https://zenodo.org/doi/10.5281/zenodo.23400860`
+  → 解析到最新版本 24097660。
+- 归档文件 `OA-BMD-fracture-MR-v2.1.zip`（113,771,310 B，854 entries）。
+- 判断新版本依旧只看 `created` + concept DOI 重定向；`version=submission-v2`、
+  `publication_date=2026-10-11` 是 Zip 内 `.zenodo.json` 的静态字段，未随发布更新，
+  **不影响版本判定**（如需元数据一致需改 `.zenodo.json` 后再发一次，暂不做）。
+
+**归档内容核验**（因代理限速 ~45 KB/s 无法整下 108 MB，改用 HTTP Range 只取
+Zip 尾部 EOCD + 中央目录，仅下载 ~180 KB）：确认含本轮全部新增产物 —
+`docs/08`、`L7_F2_size_arm_FNW.json`、`L7_F10_cross_ancestry_MVP_AFR.json`、
+`L7_F10_AFR_LDproxy_coverage.json`、`01_predictions_and_falsification.md`、
+`Table_S32_f10_ancestry_proxy.md`。归档 commit 前缀 `596b766`（= 本地 `2dc8a33`）。
+
+**门禁**：发布前后 148 COMPLIANT / 149b SAFE / 182 65/65 / 310 30/30 全绿，
+正文 3982/4000、refs 50/50，任何已报 β/SE/p/OR/CI 未动。
