@@ -9,8 +9,9 @@ Design (no secrets are ever printed or persisted):
   * classic PAT is read from C:/Users/Administrator/github_token.doc (scope: repo)
   * a TEMPORARY ed25519 deploy key (write access) is registered via the REST API
   * git pushes over GitHub SSH-on-443 through code/317_ssh_proxy_relay.py
-  * an annotated tag v2.0 is pushed and a GitHub Release is published, which is
-    what the GitHub-Zenodo integration listens for
+  * an annotated tag (default v2.1, override with RELEASE_TAG env var) is pushed
+    and a GitHub Release is published, which is what the GitHub-Zenodo
+    integration listens for
   * the deploy key is ALWAYS deleted in `finally` (phases share a state file)
 
 Phases (run in order):
@@ -42,7 +43,7 @@ KEY = os.path.join(TMP, "id_ed25519")
 SSH_CONFIG = os.path.join(TMP, "ssh_config")
 RELAY = os.path.join(ROOT, "code", "317_ssh_proxy_relay.py")
 OWNER, REPO = "Fisherzzx001", "OA-BMD-fracture-MR"
-TAG = "v2.0"
+TAG = os.environ.get("RELEASE_TAG", "v2.1")
 REMOTE = "_ssh_release_tmp"
 API = "https://api.github.com"
 
@@ -222,8 +223,11 @@ def push():
             git(["tag", "-d", TAG])
             need_create = True
     if need_create:
-        rc, out, err = git(["tag", "-a", TAG, "-m",
-                            "Submission-ready OAC manuscript: S29 rg + S32 F10 ancestry proxy (Zenodo submission-v2)"])
+        tag_msg = (
+            f"Submission-ready OAC manuscript {TAG}: 50-reference text, S32 F10 "
+            "ancestry proxy, S29 LDSC site rg, OSF DOI 10.17605/OSF.IO/CSMP7, "
+            "F2/F5/F10 alternative-path audit")
+        rc, out, err = git(["tag", "-a", TAG, "-m", tag_msg])
         print("[push] tag created at HEAD:", rc, err)
     rc, out, err = git(["push", REMOTE, TAG], env=env, timeout=300)
     print(f"[push] git push tag {TAG} rc={rc}\n  out: {out[:300]}\n  err: {err[:300]}")
@@ -235,12 +239,18 @@ def push():
     if code == 200:
         print(f"[push] release for {TAG} already exists (id={rel.get('id')})")
     else:
-        bodytxt = ("Submission-ready version including Supplementary Table S32 "
-                   "(F10 ancestry-composition robustness proxy), S29 LDSC site rg, "
-                   "SOS theory boundary and the 50-reference OAC-compliant manuscript. "
-                   "Concept DOI: https://doi.org/10.5281/zenodo.23400860")
+        bodytxt = (
+            f"Submission-ready version {TAG}. Adds the OSF preregistration DOI "
+            "(10.17605/OSF.IO/CSMP7), Supplementary Table S32 (F10 ancestry-composition "
+            "robustness proxy), S29 LDSC site-level rg, the SOS discriminative-kernel "
+            "theory boundary, and the F2/F5/F10 alternative-path re-audit (F2 bone-size "
+            "arm executed, INCONCLUSIVE under heterogeneity; F5 JSN-side protocols; "
+            "F10 cross-ancestry feasibility quantified). OAC-compliant manuscript: "
+            "3982/4000 words, 50/50 references. "
+            "Concept DOI: https://doi.org/10.5281/zenodo.23400860")
+        rel_name = "submission-" + TAG
         code, rel = api("POST", f"/repos/{OWNER}/{REPO}/releases",
-                        {"tag_name": TAG, "name": "submission-v2",
+                        {"tag_name": TAG, "name": rel_name,
                          "body": bodytxt, "draft": False, "prerelease": False})
         print(f"[push] release POST: HTTP {code} id={rel.get('id')} url={rel.get('html_url','')}")
         if code not in (201, 422):
