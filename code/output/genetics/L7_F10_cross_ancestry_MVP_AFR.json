@@ -1,0 +1,55 @@
+{
+  "design": "F10 cross-ancestry SENSITIVITY (European BMD instruments -> non-European OA outcome); NOT the registered de novo EAS replication",
+  "outcome": "MVP African-ancestry OA (GCST90134287, n=35753, McDonald 2022 Nat Genet)",
+  "exposure": "31 European-only total-body DXA BMD instruments",
+  "n_instruments": 31,
+  "n_rsid_matched": 4,
+  "n_harmonised": 4,
+  "chunks": 2013,
+  "rows_decoded": 46257,
+  "ivw_beta": 0.04067460698067828,
+  "ivw_se": 0.13638167875680404,
+  "ivw_p": 0.7655192384664034,
+  "or_sd": 1.0415131492931593,
+  "ci_lo": 0.7972129205330444,
+  "ci_hi": 1.3606774453997224,
+  "egger_intercept": 0.0017006844297825863,
+  "egger_intercept_p": 0.8918752066764918,
+  "Q": 1.9980076111630178,
+  "Q_df": 3,
+  "Q_p": 0.5728203352142713,
+  "loo_min": 0.009840878483354555,
+  "loo_max": 0.1626186062100392,
+  "loo_sign_flips": 0,
+  "snps": [
+    {
+      "rsid": "rs12568930",
+      "be": 0.1013894561212349,
+      "se_e": 0.01030263229342083,
+      "bo": -0.004,
+      "so": 0.0178
+    },
+    {
+      "rsid": "rs2566755",
+      "be": 0.08256921827004188,
+      "se_e": 0.009594310573631628,
+      "bo": 0.0119,
+      "so": 0.0235
+    },
+    {
+      "rsid": "rs4846607",
+      "be": -0.04957761691016597,
+      "se_e": 0.008135323238154649,
+      "bo": -0.0014,
+      "so": 0.0178
+    },
+    {
+      "rsid": "rs6679677",
+      "be": 0.07475771098816839,
+      "se_e": 0.013412993000515697,
+      "bo": 0.0903,
+      "so": 0.0678
+    }
+  ],
+  "verdict": "UNINFORMATIVE / UNDERPOWERED: only 4/31 European BMD instruments are present in this African-ancestry OA GWAS (IVW beta +0.0407, P=7.66e-01). The estimate is unstable (its sign flips between tabix window radii) and cannot support ANY claim about direction, stability or reversal. This analysis therefore does NOT close F10, does NOT change the S23 9/10 verdict, and must NOT be reported as a cross-ancestry replication. Recorded only as a negative feasibility check."
+}

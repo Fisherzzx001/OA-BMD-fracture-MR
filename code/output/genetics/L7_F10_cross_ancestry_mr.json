@@ -1,0 +1,9 @@
+{
+  "design": "F10 cross-ancestry SENSITIVITY feasibility check (European BMD instruments -> non-European OA outcome)",
+  "outcome": "Genes & Health British South Asian OA excl. spine (GCST90727231, n=44026)",
+  "outcome_n": 44026,
+  "n_instruments": 31,
+  "n_rsid_matched": 1,
+  "n_harmonised": 0,
+  "verdict": "UNINFORMATIVE: exome-wide sequencing does not capture the common regulatory variants used as European BMD instruments (1/31 matched). No MR estimate produced; does NOT close F10 and must NOT be reported as a result."
+}

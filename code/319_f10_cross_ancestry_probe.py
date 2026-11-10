@@ -12,6 +12,15 @@ STATUS: ABANDONED PROTOTYPE — 未执行完、未产出结果、未写入稿件
 可复跑的正式核对脚本为 `code/320_public_data_recheck.py`。本文件仅作
 设计取舍留痕，**不产生任何已报数值**。
 
+2026-11-10 追加：用户追问「F10 能否解决」后，**真正执行了一次**跨祖先 MR，
+而非停留在检索。MVP 2022 祖先分层 OA（GCST90134287, 非洲 n=35753）用
+tabix/BGZF 定点抓取实跑，结果仅 4–5/31 个欧洲工具可匹配、IVW 符号随窗口
+半径翻转、P>0.37 → UNINFORMATIVE / UNDERPOWERED，不能关闭 F10、不改 S23
+9/10、不得写入正文。详见
+`compliance_internal/F10_cross_ancestry_execution_2026-11-10.md` 与
+`code/323_f10_mvp_tabix_mr.py`。本探针的结论（登记册 F10 不可执行）因此
+从「文献检索推断」升级为「实测验证」，但本文件仍不产生任何已报数值。
+
 背景
 ----
 稿件 Data availability 与预注册登记册目前记载：
