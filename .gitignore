@@ -87,3 +87,11 @@ code/output/genetics/ldsc_munge_input/*.munge_input.tsv.gz
 # Transient release/network probe artefacts (never publish)
 _tmp_*/
 _tmp_*
+
+# Third-party supplementary tables & scraped API caches (re-obtainable from the
+# publisher / GWAS Catalog; see Data availability). Mirrors the PUSH-SIZE GUARD
+# above: raw re-downloadable inputs never enter git. code/328 rebuilds its own
+# cache via fetch_all() when absent; code/329 re-reads MOESM4 from disk.
+code/output/genetics/Chai2026_MOESM*.xlsx
+code/output/genetics/_chai_*.json
+code/output/genetics/_nature_chai.html

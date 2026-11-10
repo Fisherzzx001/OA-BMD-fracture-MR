@@ -236,3 +236,39 @@ executable sensitivity on the mixed-ancestry outcome.
   3982/4000 (all edited prose lies after `## Figure legends`). Four gates re-run:
   148 COMPLIANT / 149b SAFE / 182 **65/65** / 310 **30/30**. No β/SE/p/OR/CI
   was modified.
+
+## Methodology addendum (2026-11-09) — OSF DOI located and written back
+
+- **The DOI existed; the write-back had simply never been run.** Registration
+  `csmp7` ("OA–BMD–fracture Mendelian randomisation — Preregistration",
+  registered 2026-10-21, public, unembargoed) was found through the OSF v2
+  `filter[title]=BMD` route; prior searches used `osteoarthritis`, which its
+  title does not contain. `attributes.doi` is `None` on this registration, but
+  `/v2/registrations/csmp7/identifiers/` returns
+  `10.17605/OSF.IO/CSMP7`, DataCite shows `state: findable` (created
+  2026-10-24, URL `https://osf.io/csmp7/`), and `https://doi.org/10.17605/OSF.IO/CSMP7`
+  resolves. Its `registration_responses.summary` explicitly names P1–P6,
+  F1–F10, the GitHub repository and the Zenodo concept DOI, and states it is
+  the independent registration for *this* study (distinct from `hp9k6`, the
+  archived comorbidity-network protocol). `hp9k6` was correctly not used.
+- **Gate fix required first.** `code/182` Section E tested
+  `"osf.io" in txt` case-sensitively, while OSF mints uppercase `OSF.IO`; after
+  removing the "being deposited" placeholder every manuscript/cover artefact
+  would have failed. The check is now a case-insensitive DOI regex
+  `10\.17605/OSF\.IO/[A-Z0-9]{5,10}`. This changes the gate's robustness, not
+  its acceptance standard.
+- **Build-script hygiene.** `code/135`'s generated `Manuscript_Ready/README.md`
+  still reported superseded numbers (body 3999/4000, refs 45/50, S1–S17,
+  "460 checks / 187 checks"). Because `code/184` re-runs `code/135`, the stale
+  README would have shipped. The template now reports the live four-gate state
+  (3982/4000, 50/50, 65/65, 30/30), S1–S24, the actual delivered figure file
+  counts and the OSF DOI.
+- **Write-back executed.** `python3 code/184_osf_doi_writeback.py
+  10.17605/OSF.IO/CSMP7` (dry-run first) replaced the single
+  "An OSF mirror is being deposited." in `docs/08` and
+  `docs/cover_letter_OAC.md`, rebuilt all three docx and `Manuscript_Ready/`,
+  re-ran `code/182`, and ticked `docs/128`. Verified: DOI present and no
+  "being deposited" residual in all 5 markdown artefacts and all 3 docx; all
+  four mirrors byte-identical; four gates 148 COMPLIANT / 149b SAFE / 182
+  **65/65** / 310 **30/30**; `code/321 --check` still passes. Body words remain
+  3982/4000, refs 50/50, no β/SE/p/OR/CI changed.

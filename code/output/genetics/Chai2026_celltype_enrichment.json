@@ -1,0 +1,410 @@
+{
+  "design": "T2-B: Chai 2026 448K-eBMD effector genes vs 34-cell-type scRNA programs",
+  "effector_source": "GWAS Catalog mappedGenes of 1,236 Chai GCST90726625 leads",
+  "cluster_source": "Chai 2026 Nat Genet Suppl Table 2a (mouse endosteal scRNA)",
+  "homology": "Chai Suppl Table 3a/3b HGNC->MGI; unconverted uppercase direct match",
+  "universe_genes": 4237,
+  "effector_in_universe": 83,
+  "n_clusters": 34,
+  "n_clusters_q_lt_0p05": 2,
+  "key_skeletal_cells": [
+    {
+      "cell": "chondrocyte",
+      "cluster": "27. Chondrocytes",
+      "lineage": "Non-haematopoietic",
+      "K": 546,
+      "k": 30,
+      "expected": 10.7,
+      "fold": 2.8,
+      "p": 4.209858933708968e-08,
+      "q": 7.156760187305246e-07
+    },
+    {
+      "cell": "osteoblast",
+      "cluster": "28. Osteoblasts",
+      "lineage": "Non-haematopoietic",
+      "K": 577,
+      "k": 33,
+      "expected": 11.3,
+      "fold": 2.92,
+      "p": 2.130233054065241e-09,
+      "q": 7.24279238382182e-08
+    },
+    {
+      "cell": "osteoclast",
+      "cluster": "30. Osteoclasts",
+      "lineage": "Monocytes",
+      "K": 687,
+      "k": 14,
+      "expected": 13.46,
+      "fold": 1.04,
+      "p": 0.4818485456204026,
+      "q": 1.0
+    },
+    {
+      "cell": "endothelial",
+      "cluster": "31. Endothelial cells",
+      "lineage": "Non-haematopoietic",
+      "K": 609,
+      "k": 13,
+      "expected": 11.93,
+      "fold": 1.09,
+      "p": 0.41487544370881163,
+      "q": 1.0
+    },
+    {
+      "cell": "vascular_SMC",
+      "cluster": "32. Vascular SMCs",
+      "lineage": "Non-haematopoietic",
+      "K": 636,
+      "k": 12,
+      "expected": 12.46,
+      "fold": 0.96,
+      "p": 0.6044496030237569,
+      "q": 1.0
+    }
+  ],
+  "note": "effector-gene-set enrichment (NOT the 31 areal-BMD instruments); independent public-data cell-level anchor for SOS mechanism",
+  "rows": [
+    {
+      "cluster": "28. Osteoblasts",
+      "lineage": "Non-haematopoietic",
+      "K": 577,
+      "k": 33,
+      "expected": 11.3,
+      "fold": 2.92,
+      "p": 2.130233054065241e-09,
+      "q": 7.24279238382182e-08
+    },
+    {
+      "cluster": "27. Chondrocytes",
+      "lineage": "Non-haematopoietic",
+      "K": 546,
+      "k": 30,
+      "expected": 10.7,
+      "fold": 2.8,
+      "p": 4.209858933708968e-08,
+      "q": 7.156760187305246e-07
+    },
+    {
+      "cluster": "24. Multiplets",
+      "lineage": "B Cells",
+      "K": 17,
+      "k": 1,
+      "expected": 0.33,
+      "fold": 3.0,
+      "p": 0.2860673989454152,
+      "q": 1.0
+    },
+    {
+      "cluster": "31. Endothelial cells",
+      "lineage": "Non-haematopoietic",
+      "K": 609,
+      "k": 13,
+      "expected": 11.93,
+      "fold": 1.09,
+      "p": 0.41487544370881163,
+      "q": 1.0
+    },
+    {
+      "cluster": "0. Immature neutrophils",
+      "lineage": "Neutrophils",
+      "K": 128,
+      "k": 3,
+      "expected": 2.51,
+      "fold": 1.2,
+      "p": 0.4613111042507087,
+      "q": 1.0
+    },
+    {
+      "cluster": "30. Osteoclasts",
+      "lineage": "Monocytes",
+      "K": 687,
+      "k": 14,
+      "expected": 13.46,
+      "fold": 1.04,
+      "p": 0.4818485456204026,
+      "q": 1.0
+    },
+    {
+      "cluster": "23. NK cells",
+      "lineage": "T cells",
+      "K": 301,
+      "k": 6,
+      "expected": 5.9,
+      "fold": 1.02,
+      "p": 0.544335666783592,
+      "q": 1.0
+    },
+    {
+      "cluster": "6. Immature neutrophils",
+      "lineage": "Neutrophils",
+      "K": 96,
+      "k": 2,
+      "expected": 1.88,
+      "fold": 1.06,
+      "p": 0.5660639544545354,
+      "q": 1.0
+    },
+    {
+      "cluster": "32. Vascular SMCs",
+      "lineage": "Non-haematopoietic",
+      "K": 636,
+      "k": 12,
+      "expected": 12.46,
+      "fold": 0.96,
+      "p": 0.6044496030237569,
+      "q": 1.0
+    },
+    {
+      "cluster": "22. Monocytes (Ear2+)",
+      "lineage": "Monocytes",
+      "K": 118,
+      "k": 2,
+      "expected": 2.31,
+      "fold": 0.87,
+      "p": 0.6789779138760937,
+      "q": 1.0
+    },
+    {
+      "cluster": "26. Macrophages",
+      "lineage": "Monocytes",
+      "K": 243,
+      "k": 4,
+      "expected": 4.76,
+      "fold": 0.84,
+      "p": 0.7103376979241722,
+      "q": 1.0
+    },
+    {
+      "cluster": "4. Immature B cells",
+      "lineage": "B Cells",
+      "K": 284,
+      "k": 4,
+      "expected": 5.56,
+      "fold": 0.72,
+      "p": 0.8178213644192128,
+      "q": 1.0
+    },
+    {
+      "cluster": "2. Pre B cells",
+      "lineage": "B Cells",
+      "K": 359,
+      "k": 5,
+      "expected": 7.03,
+      "fold": 0.71,
+      "p": 0.8445016009315458,
+      "q": 1.0
+    },
+    {
+      "cluster": "3. Mature neutrophils (Tmcc1+)",
+      "lineage": "Neutrophils",
+      "K": 167,
+      "k": 2,
+      "expected": 3.27,
+      "fold": 0.61,
+      "p": 0.8462421102805279,
+      "q": 1.0
+    },
+    {
+      "cluster": "1. Mature neutrophils (Cxcl2+)",
+      "lineage": "Neutrophils",
+      "K": 235,
+      "k": 3,
+      "expected": 4.6,
+      "fold": 0.65,
+      "p": 0.8481984868358229,
+      "q": 1.0
+    },
+    {
+      "cluster": "8. Mature neutrophils",
+      "lineage": "Neutrophils",
+      "K": 181,
+      "k": 2,
+      "expected": 3.55,
+      "fold": 0.56,
+      "p": 0.8769847928971124,
+      "q": 1.0
+    },
+    {
+      "cluster": "11. Pre-neutrophils",
+      "lineage": "Neutrophils",
+      "K": 118,
+      "k": 1,
+      "expected": 2.31,
+      "fold": 0.43,
+      "p": 0.9062998943184001,
+      "q": 1.0
+    },
+    {
+      "cluster": "25. Baso-Eosinophil-Mast cell progenitors",
+      "lineage": "Haematopoietic progenitors",
+      "K": 280,
+      "k": 3,
+      "expected": 5.49,
+      "fold": 0.55,
+      "p": 0.9199872545240358,
+      "q": 1.0
+    },
+    {
+      "cluster": "9. T cells",
+      "lineage": "T cells",
+      "K": 281,
+      "k": 3,
+      "expected": 5.5,
+      "fold": 0.54,
+      "p": 0.9211610665110121,
+      "q": 1.0
+    },
+    {
+      "cluster": "19. Pre-neutrophils",
+      "lineage": "Neutrophils",
+      "K": 136,
+      "k": 1,
+      "expected": 2.66,
+      "fold": 0.38,
+      "p": 0.9350953280293146,
+      "q": 1.0
+    },
+    {
+      "cluster": "15. Pro B cells",
+      "lineage": "B Cells",
+      "K": 642,
+      "k": 7,
+      "expected": 12.58,
+      "fold": 0.56,
+      "p": 0.9770735208581317,
+      "q": 1.0
+    },
+    {
+      "cluster": "5. Mature B cells",
+      "lineage": "B Cells",
+      "K": 203,
+      "k": 1,
+      "expected": 3.98,
+      "fold": 0.25,
+      "p": 0.9836906490324576,
+      "q": 1.0
+    },
+    {
+      "cluster": "7. Monocytes (Cd14+)",
+      "lineage": "Monocytes",
+      "K": 392,
+      "k": 3,
+      "expected": 7.68,
+      "fold": 0.39,
+      "p": 0.9864582948638987,
+      "q": 1.0
+    },
+    {
+      "cluster": "21. Classical DCs",
+      "lineage": "Monocytes",
+      "K": 357,
+      "k": 2,
+      "expected": 6.99,
+      "fold": 0.29,
+      "p": 0.9945145462407207,
+      "q": 1.0
+    },
+    {
+      "cluster": "14. Monocytes (Txnip+)",
+      "lineage": "Monocytes",
+      "K": 362,
+      "k": 2,
+      "expected": 7.09,
+      "fold": 0.28,
+      "p": 0.9950100214085155,
+      "q": 1.0
+    },
+    {
+      "cluster": "17. Plasmacytoid DCs",
+      "lineage": "Monocytes",
+      "K": 416,
+      "k": 2,
+      "expected": 8.15,
+      "fold": 0.25,
+      "p": 0.9982363716144653,
+      "q": 1.0
+    },
+    {
+      "cluster": "10. HSCs",
+      "lineage": "Haematopoietic progenitors",
+      "K": 583,
+      "k": 3,
+      "expected": 11.42,
+      "fold": 0.26,
+      "p": 0.9995746431120683,
+      "q": 1.0
+    },
+    {
+      "cluster": "29. Erythroid progenitors",
+      "lineage": "Haematopoietic progenitors",
+      "K": 708,
+      "k": 4,
+      "expected": 13.87,
+      "fold": 0.29,
+      "p": 0.9997922471327617,
+      "q": 1.0
+    },
+    {
+      "cluster": "33. Plasma cells",
+      "lineage": "B Cells",
+      "K": 408,
+      "k": 1,
+      "expected": 7.99,
+      "fold": 0.13,
+      "p": 0.999794624168309,
+      "q": 1.0
+    },
+    {
+      "cluster": "12. GMPs",
+      "lineage": "Haematopoietic progenitors",
+      "K": 448,
+      "k": 1,
+      "expected": 8.78,
+      "fold": 0.11,
+      "p": 0.9999149113468844,
+      "q": 1.0
+    },
+    {
+      "cluster": "13. Proliferating pre B cells",
+      "lineage": "B Cells",
+      "K": 933,
+      "k": 3,
+      "expected": 18.28,
+      "fold": 0.16,
+      "p": 0.9999997334168227,
+      "q": 1.0
+    },
+    {
+      "cluster": "20. Proliferating monocytes",
+      "lineage": "Monocytes",
+      "K": 509,
+      "k": 0,
+      "expected": 9.97,
+      "fold": 0.0,
+      "p": 1.0,
+      "q": 1.0
+    },
+    {
+      "cluster": "16. GMPs",
+      "lineage": "Haematopoietic progenitors",
+      "K": 173,
+      "k": 0,
+      "expected": 3.39,
+      "fold": 0.0,
+      "p": 1.0,
+      "q": 1.0
+    },
+    {
+      "cluster": "18. Low viability cells",
+      "lineage": "Haematopoietic progenitors",
+      "K": 32,
+      "k": 0,
+      "expected": 0.63,
+      "fold": 0.0,
+      "p": 1.0,
+      "q": 1.0
+    }
+  ]
+}

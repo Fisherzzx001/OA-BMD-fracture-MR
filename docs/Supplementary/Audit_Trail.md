@@ -272,3 +272,69 @@ executable sensitivity on the mixed-ancestry outcome.
   four mirrors byte-identical; four gates 148 COMPLIANT / 149b SAFE / 182
   **65/65** / 310 **30/30**; `code/321 --check` still passes. Body words remain
   3982/4000, refs 50/50, no β/SE/p/OR/CI changed.
+
+## Methodology addendum (2026-11-10) — PLINK .bed 2-bit decoding error found & corrected, LD-dependent analyses re-run
+
+- **Discovery.** While building the T2-A Chai 2026 independent-instrument
+  replication (`code/328`) and the coloc-SuSiE robustness check (`code/325`),
+  a cross-check of 1000G EUR allele frequencies against the locked BMD
+  instrument eaf exposed a silent decoding error in the PLINK1 `.bed` reader.
+  The buggy mapping sent het→dosage 2 and hom-A2→dosage 0; the correct PLINK1
+  coding is `00=hom A1 (0), 01=missing (NaN), 10=het (1), 11=hom A2 (2)`.
+  Diagnostic: rs12568930 "A2 frequency" was 0.276 under the wrong decode
+  (= heterozygote rate 2p(1−p)) versus 0.836 after the fix, the latter matching
+  the GWAS eaf 0.8197.
+- **Scope — what was affected.** Only analyses that build an LD matrix or LD-
+  based clumping from the 1000G EUR genotypes: `code/325` (coloc-SuSiE, window
+  LD matrix) and `code/328` (Chai lead clumping, r² via per-SNP LD).
+  **Not affected**: `code/330` three-trait coloc (uses sumstat z-scores only,
+  no LD), `code/326` CPBB weight-bearing MR, `code/327` JSN-side MR, `code/329`
+  cell-type enrichment. The manuscript's reported β/SE/p/OR/CI were all
+  computed by independent MR scripts that do not read `.bed`, so **no reported
+  value is affected** (149b SAFE re-confirmed).
+- **Fix applied.** `code/325.read_dosages` and `code/328.dosage` now use the
+  correct code→dosage map; both the pure-python shift decode and the numpy
+  `unpackbits(bitorder="little")` decode (`code = bit_high*2 + bit_low`) were
+  cross-validated SNP-by-SNP (100% agreement). `code/328` additionally dropped
+  its unbounded per-SNP dosage cache (a multi-GB MemoryError risk over 921
+  leads × ~1,800 window SNPs) while keeping the FULL clumping cost unchanged
+  (all 921 leads, r²<0.001, ±500 kb, per-SNP real LD) — an engineering fix,
+  not a statistical shortcut.
+- **Regression guard added.** `code/331_verify_plink_bed_decode.py` asserts
+  (i) python vs numpy decoders agree on every locked instrument and (ii) each
+  instrument's 1000G A2-allele frequency matches its GWAS eaf OR its
+  complement within 0.05. A het/homA2 swap drives A2freq toward 2p(1−p) and
+  fails most SNPs, so the guard fails loudly. Verified PASS 31/31 decode
+  agreement, 31/31 eaf concordance.
+- **Second independent bug in code/325 (window scoping).** Re-running with the
+  correct decoder exposed a separate defect: the positional re-scan keyed SNP
+  sets by *chromosome* (`oa_pos={ch:{}}`, `bmd_pos={ch:{}}`) and `break`-ed
+  after the first matching window, so all loci on a chromosome shared one
+  whole-chromosome SNP collection instead of their own ±500 kb window. Symptom:
+  the four chr1 loci reported identical `n=1082, cs1=1, cs2=1`. Fixed by keying
+  per lead rsid with `defaultdict(dict)` and assigning each SNP to every window
+  it falls in (no `break`), matching the correct per-locus-index pattern already
+  used in `code/330`. Note `code/330` was checked and is NOT affected (it uses
+  per-index windows). The previously reported "0/31 coloc-SuSiE" had been
+  produced by the combined wrong-decode + wrong-window code and was withdrawn
+  pending the corrected full re-run. **Result of corrected full re-run
+  (2026-11-10): 0/31 genuine colocalisation stands** — 18 loci have disjoint
+  BMD/OA credible sets, 13 loci have diffuse OA signal (no concentrated OA
+  causal signal at that BMD locus); per-locus window SNP counts 93–503 (28
+  distinct), confirming correct per-locus scoping. The 0/31 conclusion survives
+  both independent bug fixes; P3 (diffuse polygenic) is strengthened.
+- **Third fix — SOS sign predicate in code/330.** The SOS kernel requires that
+  one BMD-raising allele be protective at the whole-bone endpoint (opposite sign
+  to BMD for fracture) yet pathogenic at the joint (SAME sign as BMD for OA):
+  `sign(z_BMD)==sign(z_OA) and sign(z_BMD)!=sign(z_FX)`. The old predicate
+  (`BMD!=OA and BMD!=FX`) inverted this, mislabelling the 3 genuine SOS-congruent
+  H123≥0.8 loci (chr4/11/17) as non-SOS and flagging 5 anti-SOS loci as SOS.
+  The K=3 ABF posteriors (H123) are unaffected; only the sign annotation changed.
+  Re-run launched with the corrected predicate.
+- **Status.** Both LD-dependent analyses (`code/325`, `code/328`) are being
+  re-run with the corrected decoder at full cost; `code/330` re-run with the
+  corrected sign predicate. Their conclusions will be updated from the new
+  output (not carried over from the buggy runs) in
+  `docs/144_T1T2T3分层补强执行报告_2026-11-10.md` §2.1, §3.1 and §3.3. This
+  addendum records all three errors transparently so no buggy result is
+  silently retained.

@@ -1,0 +1,35 @@
+cluster	lineage	K	k	expected	fold	p	q
+28. Osteoblasts	Non-haematopoietic	577	33	11.3	2.92	2.13e-09	7.24e-08
+27. Chondrocytes	Non-haematopoietic	546	30	10.7	2.8	4.21e-08	7.16e-07
+24. Multiplets	B Cells	17	1	0.33	3.0	0.286	1
+31. Endothelial cells	Non-haematopoietic	609	13	11.93	1.09	0.415	1
+0. Immature neutrophils	Neutrophils	128	3	2.51	1.2	0.461	1
+30. Osteoclasts	Monocytes	687	14	13.46	1.04	0.482	1
+23. NK cells	T cells	301	6	5.9	1.02	0.544	1
+6. Immature neutrophils	Neutrophils	96	2	1.88	1.06	0.566	1
+32. Vascular SMCs	Non-haematopoietic	636	12	12.46	0.96	0.604	1
+22. Monocytes (Ear2+)	Monocytes	118	2	2.31	0.87	0.679	1
+26. Macrophages	Monocytes	243	4	4.76	0.84	0.71	1
+4. Immature B cells	B Cells	284	4	5.56	0.72	0.818	1
+2. Pre B cells	B Cells	359	5	7.03	0.71	0.845	1
+3. Mature neutrophils (Tmcc1+)	Neutrophils	167	2	3.27	0.61	0.846	1
+1. Mature neutrophils (Cxcl2+)	Neutrophils	235	3	4.6	0.65	0.848	1
+8. Mature neutrophils	Neutrophils	181	2	3.55	0.56	0.877	1
+11. Pre-neutrophils	Neutrophils	118	1	2.31	0.43	0.906	1
+25. Baso-Eosinophil-Mast cell progenitors	Haematopoietic progenitors	280	3	5.49	0.55	0.92	1
+9. T cells	T cells	281	3	5.5	0.54	0.921	1
+19. Pre-neutrophils	Neutrophils	136	1	2.66	0.38	0.935	1
+15. Pro B cells	B Cells	642	7	12.58	0.56	0.977	1
+5. Mature B cells	B Cells	203	1	3.98	0.25	0.984	1
+7. Monocytes (Cd14+)	Monocytes	392	3	7.68	0.39	0.986	1
+21. Classical DCs	Monocytes	357	2	6.99	0.29	0.995	1
+14. Monocytes (Txnip+)	Monocytes	362	2	7.09	0.28	0.995	1
+17. Plasmacytoid DCs	Monocytes	416	2	8.15	0.25	0.998	1
+10. HSCs	Haematopoietic progenitors	583	3	11.42	0.26	1	1
+29. Erythroid progenitors	Haematopoietic progenitors	708	4	13.87	0.29	1	1
+33. Plasma cells	B Cells	408	1	7.99	0.13	1	1
+12. GMPs	Haematopoietic progenitors	448	1	8.78	0.11	1	1
+13. Proliferating pre B cells	B Cells	933	3	18.28	0.16	1	1
+20. Proliferating monocytes	Monocytes	509	0	9.97	0.0	1	1
+16. GMPs	Haematopoietic progenitors	173	0	3.39	0.0	1	1
+18. Low viability cells	Haematopoietic progenitors	32	0	0.63	0.0	1	1

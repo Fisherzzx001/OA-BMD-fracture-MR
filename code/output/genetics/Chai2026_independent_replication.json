@@ -1,0 +1,27 @@
+{
+  "design": "T2-A independent instrument-set replication: Chai 2026 eBMD leads -> knee OA",
+  "exposure": "Chai 2026 Nat Genet eBMD (GCST90726625, n=448010 EUR)",
+  "outcome": "knee OA GCST90566800 (Hatzikotoulas 2025)",
+  "n_catalog_assocs": 1246,
+  "n_leads": 1236,
+  "n_mapped_1000g": 921,
+  "n_independent": 664,
+  "n_harmonised_kneeOA": 662,
+  "scale_note": "eBMD (heel ultrasound rank-normal) vs DXA aBMD differ in scale; direction compared, magnitude not",
+  "mr_knee": {
+    "exposure": "Chai eBMD -> knee OA",
+    "n": 662,
+    "ivw_fixed_OR": 1.0306,
+    "ivw_fixed_p": 0.0005373205071571176,
+    "ivw_random_OR": 1.0147,
+    "ivw_random_p": 0.4020205462275595,
+    "Q": 2073.05,
+    "df": 661,
+    "I2": 68.1,
+    "egger_intercept": 5e-05,
+    "egger_intercept_p": 0.8201595495946664,
+    "wmedian_OR": 1.0305
+  },
+  "verdict": "DIRECTION-CONSISTENT, EFFECT-UNRELIABLE: independent Chai 2026 eBMD instruments give OR>1 under both fixed and random effects, matching the DIRECTION of the DXA-aBMD 31-instrument result, BUT the random-effects estimate is not significant (OR=1.0147, p=0.402) and heterogeneity dominates (I2=68.1%). The fixed-effect significance is not read causally. This is directional corroboration, NOT an independent significant replication; eBMD/DXA scales are not magnitude-comparable.",
+  "verdict_basis": "recomputed 2026-11-10 with heterogeneity-aware verdict_for(); ABF/MR numbers unchanged"
+}
