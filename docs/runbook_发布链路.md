@@ -253,3 +253,51 @@ Zip 尾部 EOCD + 中央目录，仅下载 ~180 KB）：确认含本轮全部新
 
 **门禁**：发布前后 148 COMPLIANT / 149b SAFE / 182 65/65 / 310 30/30 全绿，
 正文 3982/4000、refs 50/50，任何已报 β/SE/p/OR/CI 未动。
+
+---
+
+## §11 2026-11-11 第三次发布（v2.2 / Zenodo 24115233）
+
+**触发**：用户明确要求「推送并发 v2.2」。本轮新增为 T1/T2/T3 分层补强（本地提交
+`502b23b`），加发布器文案刷新（`80f85b3`，见下）。v2.1 tag `2dc8a33` 不可变，未触及。
+
+**发布前准备**：
+- `code/318` 的 tag 消息与 Release 正文原写死为 v2.1 描述、且含过时「3982/4000」；
+  公开发布会是错误存档陈述。按 §10 先例先更新这两处**纯文本**（TAG 参数化与所有发布
+  逻辑不动），提交 `80f85b3`「Release driver: refresh v2.2 tag/release notes」，使发布器
+  逻辑本身进入被推送历史。`py_compile` 自检通过。
+- 只读预检（REST）：远端 master = `0e60b8765795`（= 本地 `502b23b` 父提交）→ fast-forward；
+  远端 tags/releases 含 v2.0/v2.1、**无 v2.2** → 可安全新建。
+- 代理端口本次 `127.0.0.1:64315`（又变），`code/317` 用 `HTTPS_PROXY` 自动取，未改脚本。
+
+**三次调用分阶段执行**（`RELEASE_TAG=v2.2`）：
+1. `setup` — 临时 ed25519 deploy key（id **169418775**，写权限，HTTP 201），
+   `ssh -T` 认证通过（`Hi Fisherzzx001/...! successfully authenticated`）。
+2. `push` — `0e60b87..80f85b3 master` 推送成功，远端 SHA == 本地 SHA `80f85b38f38e`；
+   新建 annotated tag **v2.2 → `80f85b38f38e`**；Release `submission-v2.2` POST HTTP 201
+   （id **440593157**，url `.../releases/tag/v2.2`）。
+3. `cleanup` — deploy key DELETE HTTP 204，独立复核**剩余 deploy keys = 0**；临时 remote
+   与 `_tmp_release/` 移除；origin 仍为无凭证 URL。
+
+**Zenodo 再 mint 已确认**：
+- 新版本 **recid 24115233** / 版本 DOI **10.5281/zenodo.24115233**（DOI 解析 HTTP 200），
+  `created=2026-11-10T16:10:20Z`（= 北京 00:10:20，Release 后约 1 分钟，webhook 特征），
+  conceptrecid 仍 `23400860`；concept DOI `10.5281/zenodo.23400860` 解析正常。
+- 归档文件 `Fisherzzx001/OA-BMD-fracture-MR-v2.2.zip`（**113,885,767 B**）。
+- **归档内容核验**（HTTP Range 只取尾部 64 KB，未整下 113 MB）：EOCD 存在，
+  尾部检出 commit 前缀 **`80f85b38f38e0579972e387696a0b86209a95d75`** = 本地/远端 master
+  HEAD → 归档确为 v2.2 本批内容。新增产物（code/325–331、Chai2026_* 结果、docs/143/144、
+  Audit_Trail 解码纠错条目）随提交一并进入归档；被 `.gitignore` 排除的 MOESM4/5 xlsx 与
+  EBI 抓取缓存不在归档内（re-downloadable，Data availability 一致）。
+- 同 §10：`version=submission-v2`、`publication_date=2026-10-11` 是 Zip 内 `.zenodo.json`
+  静态字段，未随发布更新，**不影响版本判定**（新 mint 只看 `created` + conceptrecid +
+  归档 commit 前缀）。
+
+**门禁**：发布前后 148 COMPLIANT（正文 **3984**/4000、摘要 318/350、refs 50/50、显示项 8/8）、
+149b SAFE、182 65/65、310 30/30、331 PASS（31/31 bed 解码 + eaf 吻合）全绿，
+已报 β/SE/p/OR/CI 未动。
+
+**当前基线**：本地 = 远端 master = `80f85b3`；tag `v2.2`→`80f85b3`；
+Zenodo 最新 = **24115233 / 10.5281/zenodo.24115233**；v2.0=`4e7a098`、v2.1=`2dc8a33` 不可变。
+下次发布继续 `RELEASE_TAG=v2.3 python3 code/318_...py all`（发布器已参数化，无需改码；
+如需更新 Release 文案则先改两处文本并提交，使文案进入历史）。
