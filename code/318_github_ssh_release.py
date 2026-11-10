@@ -224,9 +224,10 @@ def push():
             need_create = True
     if need_create:
         tag_msg = (
-            f"Submission-ready OAC manuscript {TAG}: 50-reference text, S32 F10 "
-            "ancestry proxy, S29 LDSC site rg, OSF DOI 10.17605/OSF.IO/CSMP7, "
-            "F2/F5/F10 alternative-path audit")
+            f"Submission-ready OAC manuscript {TAG}: SOS cellular anchor and "
+            "S22 dual-axis discriminating kernel, PLINK .bed decode fix + code/331 "
+            "guard, three-trait coloc 3/31 SOS-congruent, Chai 2026 independent-"
+            "instrument audit; 50 refs, 3984/4000 words, reported values unchanged")
         rc, out, err = git(["tag", "-a", TAG, "-m", tag_msg])
         print("[push] tag created at HEAD:", rc, err)
     rc, out, err = git(["push", REMOTE, TAG], env=env, timeout=300)
@@ -240,13 +241,27 @@ def push():
         print(f"[push] release for {TAG} already exists (id={rel.get('id')})")
     else:
         bodytxt = (
-            f"Submission-ready version {TAG}. Adds the OSF preregistration DOI "
-            "(10.17605/OSF.IO/CSMP7), Supplementary Table S32 (F10 ancestry-composition "
-            "robustness proxy), S29 LDSC site-level rg, the SOS discriminative-kernel "
-            "theory boundary, and the F2/F5/F10 alternative-path re-audit (F2 bone-size "
-            "arm executed, INCONCLUSIVE under heterogeneity; F5 JSN-side protocols; "
-            "F10 cross-ancestry feasibility quantified). OAC-compliant manuscript: "
-            "3982/4000 words, 50/50 references. "
+            f"Submission-ready version {TAG}. Layered T1/T2/T3 reinforcement over v2.1.\n\n"
+            "T1 (theory): Peng 2026 RSPO3-NFATC1 promoted to the SOS cellular anchor "
+            "(S30 vi); S22 dual-axis PCA (bone-mass/fracture vs OA axes orthogonal) "
+            "built into the discriminating kernel; word-neutral prose edit.\n\n"
+            "T2 (methods + revision flagship): a PLINK1 .bed 2-bit decoding error "
+            "(het/homA2 swapped) was found and fixed in the LD-dependent readers, with "
+            "code/331 added as a permanent regression guard (31/31 decode and eaf "
+            "concordance) - no reported beta/SE/p/OR/CI affected. Full-cost re-runs "
+            "(clumping settings unchanged): coloc-SuSiE 0/31 after a per-locus window "
+            "fix; three-trait BMD/OA/fracture coloc 3/31 at PP.H4>=0.8, 3/3 SOS-sign-"
+            "congruent after a sign-predicate fix; Chai 2026 independent instruments "
+            "662 harmonised (direction-consistent, random-effects p=0.40, NOT an "
+            "independent significant replication) with osteoblast/chondrocyte "
+            "enrichment; CPBB weight-bearing positive-control MR OR 0.694, p=4.6e-20; "
+            "F5 JSN-side MR uninformative.\n\n"
+            "T3 (long-term): PanUKB SAS heel-BMD / P1NP / vBMD public-data readiness "
+            "protocols recorded. Also carries the OSF preregistration DOI "
+            "(10.17605/OSF.IO/CSMP7), S32 F10 ancestry-composition proxy, S29 LDSC "
+            "site-level rg, and the F2/F5/F10 alternative-path audit.\n\n"
+            "OAC-compliant manuscript: 3984/4000 words, 50/50 references. Four gates "
+            "green (148 COMPLIANT / 149b SAFE / 182 65-65 / 310 30-30) plus 331 PASS. "
             "Concept DOI: https://doi.org/10.5281/zenodo.23400860")
         rel_name = "submission-" + TAG
         code, rel = api("POST", f"/repos/{OWNER}/{REPO}/releases",
