@@ -50,6 +50,21 @@ def docx_text(path):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", xml))
 
 
+def docx_paragraphs(path):
+    """Paragraph texts (one per <w:p>). A full supplementary table starts its
+    OWN paragraph with 'Supplementary Table SNN.'; an in-text cross-reference
+    ('...in Supplementary Table S16.') never opens a paragraph, so this
+    distinction is robust to whitespace flattening in docx_text()."""
+    xml = zipfile.ZipFile(path).read("word/document.xml").decode("utf-8", "ignore")
+    paras = re.split(r"</w:p>", xml)
+    out = []
+    for p in paras:
+        t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", p)).strip()
+        if t:
+            out.append(t)
+    return out
+
+
 def read(path):
     return io.open(path, encoding="utf-8").read()
 
@@ -284,42 +299,74 @@ miss_s = ["S%d" % i for i in range(1, 25)
 record("G. 物料清单", "补充图 S1–S24 (24)", not miss_s,
        ("missing: " + str(miss_s)) if miss_s else "全部存在")
 
-miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16, 17, 26, 27, 29)
-          if not any(f.startswith("Table_S%d_" % i) for f in tab_files)]
-record("G. 物料清单", "补充表 S8,S9,S12–S17,S26,S27,S29 (11, 独立文件)", not miss_t,
-       ("missing: " + str(miss_t)) if miss_t else "全部存在")
+# 2026-11-11 compliance audit: the standalone table set uses the SAME numbering
+# as the inline manuscript. Legacy files (S26=hip, S27=geometry, S29=ldsc) were
+# mis-numbered; they have been removed in favour of correctly numbered exports.
+# Audit_Trail.md is an INTERNAL archive and must NOT appear in the delivery set.
+md_tabs = [f for f in tab_files if f.endswith(".md")]
+miss_t = ["Table_S%d" % i for i in (8, 9, 12, 13, 14, 15, 16, 17, 25, 26, 27, 28, 29, 30, 31, 32)
+          if not any(f.startswith("Table_S%d_" % i) for f in md_tabs)]
+record("G. 物料清单", "补充表 S8,S9,S12–S17,S25–S32 (16, 独立 .md)", not miss_t,
+       ("missing: " + str(miss_t)) if miss_t else "16/16")
 
-need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_checklist",
-        "Audit_Trail"]
-miss_o = [k for k in need if not any(k in f for f in tab_files + ["docs/Supplementary/Audit_Trail.md"])]
-record("G. 物料清单", "Table S10/S11 + STROBE-MR 清单 + Audit_Trail", not miss_o,
+need = ["02_mvmr_height_grid", "01_predictions_and_falsification", "STROBE-MR_checklist"]
+miss_o = [k for k in need if not any(k in f for f in tab_files)]
+record("G. 物料清单", "Table S10/S11 + STROBE-MR 清单", not miss_o,
        ("missing: " + str(miss_o)) if miss_o else "全部存在")
 
-# S25/S28/S30/S31 are delivered inline inside docs/08 (not as standalone files);
-# verify their headers are present so the declared supplementary-table range is complete.
+leaked_audit = [f for f in tab_files if "Audit_Trail" in f]
+record("G. 物料清单", "审计档案未混入交付集 (no Audit_Trail in Manuscript_Ready/)",
+       not leaked_audit, ("LEAK: " + str(leaked_audit)) if leaked_audit else "clean")
+
+# Every inline supplementary-table heading must be present so the declared range
+# is complete; the docx builder strips this block, so these are repository-only.
 t08 = read(MANU)
-inline_tables = ["## Supplementary Table S25", "## Supplementary Table S28",
-                 "## Supplementary Table S30", "## Supplementary Table S31"]
+inline_tables = ["## Supplementary Table S%d" % i
+                 for i in (8, 9, 14, 15, 25, 26, 27, 28, 29, 30, 31, 32)]
 miss_inline = [t for t in inline_tables if t not in t08]
-record("G. 物料清单", "内联补充表 S25/S28/S30/S31 (docs/08)", not miss_inline,
-       ("missing: " + str(miss_inline)) if miss_inline else "全部内联存在")
+record("G. 物料清单", "内联补充表 S8,S9,S14,S15,S25–S32 (12, docs/08)", not miss_inline,
+       ("missing: " + str(miss_inline)) if miss_inline else "12/12")
 
 # ---------------------------------------------------------------- Section H
 # Compliance rule (2026-10-28): the MAIN TEXT must not contain audit-trail
 # material. Audit content belongs in docs/Supplementary/Audit_Trail.md and is
 # referenced from the Supplementary Material list only. Enforce automatically.
 leak = bool(re.search(r"audit trail", t, re.IGNORECASE))
-record("H. 主文合规", "主文稿无审计轨迹泄漏 (no 'audit trail' in docs/08)",
-       not leak, ("found 'audit trail' in main text" if leak else "clean"))
+record("H. 主文合规", "真源无审计轨迹字样 (no 'audit trail' in docs/08)",
+       not leak, ("found 'audit trail' in docs/08" if leak else "clean"))
 
-# The audit archive itself must exist and list every headline claim.
+# 2026-11-11 compliance audit: the DECISIVE check is on the journal-facing docx
+# files, not merely a literal string in the markdown source. The old check passed
+# while both docx carried all 21 inline supplementary tables plus internal
+# self-audit phrasing. Enforce on the actual delivered documents.
+for name in ["Manuscript.docx", "Submission_MainText.docx"]:
+    dx = art.get(name, "")
+    has_body = "Abstract" in dx or "Introduction" in dx
+    record("H. 主文合规", f"{name}: 含主文结构", has_body,
+           "" if has_body else "missing Abstract/Introduction (empty/truncated?)")
+    # A full table opens its OWN paragraph with 'Supplementary Table SNN.'.
+    # An in-text cross-reference ('...in Supplementary Table S16.') lives inside
+    # a sentence and never starts a paragraph -- robust to whitespace flattening.
+    full_tables = [p[:60] for p in docx_paragraphs(DOCX[name])
+                   if re.match(r"^#{0,3}\s*Supplementary Table S\d+\.", p)]
+    record("H. 主文合规", f"{name}: 无补表全文嵌入", not full_tables,
+           ("LEAK paras: " + str(full_tables)) if full_tables else "clean")
+    for pat, lab in [(r"code/\d+", "code/NNN 内部编号"),
+                     (r"this revision", "修订过程语气"),
+                     (r"internal-consistency", "自检语气"),
+                     (r"previously tabulated", "重算过程语气")]:
+        n = len(re.findall(pat, dx, re.IGNORECASE))
+        record("H. 主文合规", f"{name}: 无 {lab}", n == 0,
+               f"{n} hit(s)" if n else "clean")
+
+# The audit archive itself must exist (repository-internal traceability only).
 try:
     at = read("docs/Supplementary/Audit_Trail.md")
-    n_claims = at.count("| A")  # rows tagged A1..A12
-    record("H. 主文合规", f"审计档案存在且覆盖 {n_claims} 条核心声称",
+    n_claims = at.count("| A")  # rows tagged A1..A20
+    record("H. 主文合规", f"内部审计档案存在且覆盖 {n_claims} 条核心声称",
            n_claims >= 10 and "claim → script line → independent" in at, "")
 except Exception:
-    record("H. 主文合规", "审计档案存在", False, "Audit_Trail.md 缺失")
+    record("H. 主文合规", "内部审计档案存在", False, "Audit_Trail.md 缺失")
 
 # ---------------------------------------------------------------- Report
 print("=" * 74)

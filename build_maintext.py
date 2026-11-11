@@ -23,6 +23,12 @@ def clean(text):
     if "[REF]" in text:
         raise SystemExit("Aborting: unresolved [REF] placeholder(s) remain in the manuscript.")
     text = text.replace("(§5 and the Supplement, ", "(the Supplement, ")
+    # Submission-integrity split (2026-11-11): keep the journal main text free
+    # of full supplementary tables. They are delivered separately under
+    # docs/Supplementary/ (see code/332_extract_inline_supplementary.py).
+    m_supp = re.search(r"\n## Supplementary Table S8\..*?(?=\n## References\n)", text, re.S)
+    if m_supp:
+        text = text[: m_supp.start()] + text[m_supp.end():]
     m = re.search(r"\n## §5 Pre-submission checklist.*$", text, re.S)
     if m:
         text = text[: m.start()]

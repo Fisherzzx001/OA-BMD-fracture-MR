@@ -17,7 +17,7 @@ The independent OSF preregistration is **<https://doi.org/10.17605/OSF.IO/CSMP7>
 | `02_Cover_letter.md` | Cover letter (no placeholders) |
 | `Figures/Main/` | Figure 1–5 and Graphical Abstract (23 files) |
 | `Figures/Supplementary/` | Supplementary Figures S1–S24 (23 files, PNG/PDF/TIF) |
-| `Supplementary/` | Independent supplementary tables S8–S9, S12–S17, S26–S27, S29–S32; Table S10 (MVMR grid); Table S11 (SOS predictions and falsifying tests); STROBE-MR checklist; Audit_Trail |
+| `Supplementary/` | Independent supplementary tables S8–S9, S12–S17, S25–S32; Table S10 (MVMR grid); Table S11 (SOS predictions and falsifying tests); STROBE-MR checklist. Internal audit archives are excluded from the journal-facing set. |
 
 ## Verification state at build time
 

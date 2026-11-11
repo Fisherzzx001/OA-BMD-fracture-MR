@@ -88,6 +88,15 @@ def clean(text):
         raise SystemExit("Aborting: unresolved [REF] placeholder(s) remain in the manuscript.")
     # fix dangling cross-reference to the removed §5 checklist
     text = text.replace("(§5 and the Supplement, ", "(the Supplement, ")
+    # Submission-integrity split (2026-11-11). The journal manuscript must not
+    # embed full supplementary tables: they are delivered as separate files in
+    # docs/Supplementary/. Keep Figure legends, Tables 1-3, References and the
+    # declarations; drop only the inline supplementary-table block (S8 ... S32).
+    # The repository source docs/08 keeps that block as the auditable single
+    # source of truth, so compliance gates that read docs/08 are unaffected.
+    m_supp = re.search(r"\n## Supplementary Table S8\..*?(?=\n## References\n)", text, re.S)
+    if m_supp:
+        text = text[: m_supp.start()] + text[m_supp.end():]
     # cut the §5 pre-submission checklist section (and everything after it)
     m = re.search(r"\n## §5 Pre-submission checklist.*$", text, re.S)
     if m:

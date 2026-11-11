@@ -338,3 +338,90 @@ executable sensitivity on the mixed-ancestry outcome.
   `docs/144_T1T2T3分层补强执行报告_2026-11-10.md` §2.1, §3.1 and §3.3. This
   addendum records all three errors transparently so no buggy result is
   silently retained.
+
+## Methodology addendum (2026-11-11) — supplementary-table numbering drift, inadmissible p-value, and packaging defects
+
+Context: the six-item full-text terminal audit (task ledger in
+`docs/145_六项全面终审台账_2026-11-11.md`). Nothing below alters a reported
+β/SE/p/OR/CI; all changes are numbering, statistical *notation*, or packaging.
+
+- **Finding N1 — one table carried two numbers.** Three TRACKED standalone files
+  used the pre-insertion numbering `Table_S26_f1_hip_replication.md` (content =
+  inline **S27** hip replication), `Table_S27_f2_geometry_arm.md` (content =
+  inline **S28** geometry), `Table_S29_ldsc_site_rg.md` (content = inline **S30**
+  LDSC site-r_g), while `docs/08` had already renumbered them S27/S28/S30 after
+  inserting S25 tissue-enrichment and S26 eQTL-coloc. Independent verification:
+  digit-sequence fingerprints were identical for the hip (217 numeric tokens)
+  and geometry (328 tokens) tables; the LDSC legacy file additionally carried a
+  `## Reproduction` block absent from the inline slice. Root cause: the
+  generator `code/196_l7_make_s26_s27.py` still emitted the old numbers.
+  **Correction:** `code/332_extract_inline_supplementary.py` now re-exports the
+  full correctly-numbered set (S25–S31) verbatim from `docs/08`, re-attaches the
+  LDSC `## Reproduction` block (S30), asserts no filename/content number drift,
+  and removes the three legacy files only after replacements verify. `code/196`
+  was re-numbered to emit S27/S28 and marked as a downstream regeneration path
+  (332 remains authoritative). `code/205`/`code/206` doc references updated
+  S29→S30. The delivery set (`code/135`) gained a stale-`Table_S*.md` prune so
+  incremental builds cannot resurrect retired numbers.
+- **Finding N2 — statistically inadmissible p-value.** The standalone
+  `Table_S32_f10_ancestry_proxy.md` rendered six Cochran-Q heterogeneity
+  p-values as `p=0.000`. Independent check against
+  `code/output/genetics/L7_F10_ancestry_proxy.json`: P0 Q=156.64, Q_p=4.40e-19;
+  P1 5.64e-17; P2 5.95e-05; P5 5.11e-17; P6 1.23e-07; P7 1.38e-09. The inline
+  S32 already used the correct `p<0.001`. The six cells were changed
+  `p=0.000`→`p<0.001` (notation only; no β/SE/OR/CI touched).
+- **Finding N3 — stale placeholder cross-references.** Earlier standalone
+  copies (`Table_S28_geometry_arm.md`, `Table_S30_ldsc_site_rg.md`) contained
+  un-filled `Table XX` references from before an inline fix; the current
+  `docs/08` inline reads S28 "as Table S27" and S30 "Table 2 and S29". The 332
+  re-export asserts `Table XX`/`p=0.000` are absent; all supplementary .md files
+  now pass.
+- **Finding N4 — main-text packaging defect (compliance bottom line).** Both
+  journal-facing docx (`Manuscript.docx`, `Submission_MainText.docx`) embedded
+  all 21 inline supplementary tables plus internal self-audit phrasing
+  (`code/NNN` ×14, `this revision` ×3, `internal-consistency` ×1). Verified by
+  `zipfile` extraction of `word/document.xml`. `build_submission.py` /
+  `build_maintext.py` now strip the inline-supplementary block before docx
+  writing; `Manuscript_Ready/Supplementary/Audit_Trail.md` is excluded from the
+  delivery set. Body word count unchanged (3984/4000) because all edits sit
+  after `## Figure legends`; L49 `N≈1.873`→`N≈31,873` (typo) and L95
+  `executed this revision`→neutral are word-neutral.
+- **Finding N5 — candidate revision figures must not enter the delivery set.**
+  Three revision-candidate supplementary figures (S33 r_g-vs-MR triangulation,
+  S34 SOS sign opposition 21/31 + three-way coloc, S35 cell-type enrichment),
+  built by `code/335` from real results files with per-figure `plotted_data`,
+  exist in `Figures_v18_Suppl/`. Because OAC displayed items are already at the
+  8/8 cap, these are NOT in the submitted Figure-legend list; an incremental
+  `code/135` build had nonetheless copied their PNGs into
+  `Manuscript_Ready/Figures/Supplementary/`, which would present unrequested
+  figures as submitted supplements. `code/135` now excludes the `SupplFig33_/
+  34_/35_` prefixes and prunes any such stale copies (delivery set verified at
+  16 supplementary PNGs, none S33–S35). The candidates remain available for the
+  response-to-reviewers.
+- **Gate integrity (the gates themselves were audited, not trusted).** Old
+  `code/182` §H checked only the literal string "audit trail" in `docs/08` and
+  never opened the docx; old §G perversely listed `Audit_Trail` as a *required*
+  delivery item; old `code/310` table inventory used the stale (26/27/29)
+  numbers and its inline list omitted S26/S27/S29/S32. These are now corrected:
+  182 = **78/78** (was 65), 310 = **33/33** (was 30), with DOCX paragraph-level
+  checks (`docx_paragraphs`, L53/350 in 182; L51/150 in 310) that distinguish a
+  full table opening its own paragraph from a legitimate in-text cross-reference
+  ("in Supplementary Table S16."). A **mutation test** (injecting a standalone
+  "Supplementary Table S16. …" paragraph into Manuscript.docx) drove 182 to
+  77/78 FAIL and 310 to 31/33 FAIL, then reverted to green — direct evidence the
+  reinforced gates are not vacuous. `code/149b` remains a HEAD-vs-worktree byte
+  comparison ("numbers match the files"), NOT independent verification; the
+  genuine "numbers are right" check is the new `code/334_data_level_trust_but_verify.py`
+  (18/18 PASS), which re-derives Table 2 from per-SNP instruments rather than
+  restating stored CSV values.
+- **Note on historical rows.** Entry A20 above retains its original text
+  ("Supplementary Table S29", "182 = 64/64") as the audit record of that round;
+  under the 2026-11-11 renumbering the LDSC site-r_g table is S30 and the live
+  gate counts are 182 78/78 / 310 33/33 / 334 18/18. Historical rows are not
+  rewritten (append-only).
+- **Status.** All six gates green after repair: 148 COMPLIANT, 149b SAFE,
+  182 78/78, 310 33/33, 331 PASS, 334 18/18. Candidate supplementary figures
+  S33–S35 generated by `code/335` with per-figure `plotted_data` provenance; held
+  as revision assets (OAC displayed items already 8/8). No reported
+  β/SE/p/OR/CI changed; F10 remains an ancestry-composition proxy (not
+  cross-ancestry replication); S23 "9/10" unchanged.

@@ -158,7 +158,7 @@ def main():
                "已核实 BMD 真实 N = 31,986（GCST90568455, total-body DXA）、"
                "对 BMD 重跑 `--merge-alleles w_hm3.snplist`，h² 校正为 0.3479 (0.0355) "
                "并变为可引用，rg 实测不变（max |Δ| = 0.0002；N=31,873 敏感性一致）。"
-               "可提交方法段与结果表见 `docs/Supplementary/Table_S29_ldsc_site_rg.md`；"
+               "可提交方法段与结果表见 `docs/Supplementary/Table_S30_ldsc_site_rg.md`（正文内联为 S30）；"
                "完整前后对比见 `ldsc_rg_verified/COMPARISON.md`。"
                "本目录**保留为探索性基线**作前后对照：表 2 的 h² 仍不可引用。"
                "是否纳入正文需先做等词压缩（OAC 3999/4000，仅剩 1 词），"

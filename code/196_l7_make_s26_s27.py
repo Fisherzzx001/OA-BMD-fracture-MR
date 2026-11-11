@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
-"""Generate Supplementary Tables S26 (F1: prospective hip-OA MR) and S27 (F2: geometry arm)."""
+"""Generate the F1 (prospective hip-OA MR) and F2 (geometry arm) tables.
+
+Numbering note (2026-11-11 full-text audit)
+-------------------------------------------
+The inline manuscript (docs/08) renumbered these two tables to S27 (F1 hip) and
+S28 (F2 geometry) after inserting S25 tissue-enrichment and S26 eQTL coloc.
+This module historically emitted them as S26/S27, which collided with the eQTL
+and geometry numbers across the delivery set. It now emits the CORRECT numbers
+and filenames so a re-run cannot resurrect the retired mis-numbered files.
+
+Authority: code/332_extract_inline_supplementary.py remains the SINGLE source
+of the delivered standalone tables (verbatim from docs/08). This script is kept
+for downstream regeneration from the raw L7 JSON; after running it, re-run 332
+so the delivered copies are the verbatim inline slices.
+"""
 import json, math, os, csv
 
 D = "G:/OA_B_PROJECT_cache/l7"
@@ -13,11 +27,11 @@ f2 = json.load(open(os.path.join(D, "l7_f2_hsm.json")))
 def fmt(x, n=4):
     return f"{x:+.{n}f}" if isinstance(x, float) else str(x)
 
-# ---------------- S26 ----------------
+# ---------------- S27 (F1 hip replication) ----------------
 h, k = f1["hip"], f1["knee"]
 adj = f1["adjudication"]
 lines26 = []
-lines26.append("## Supplementary Table S26. Prospective hip-osteoarthritis replication (falsifying test F1): two-sample MR of total-body BMD on hip OA, and the conjunctive adjudication against the knee-OA estimate\n")
+lines26.append("## Supplementary Table S27. Prospective hip-osteoarthritis replication (falsifying test F1): two-sample MR of total-body BMD on hip OA, and the conjunctive adjudication against the knee-OA estimate\n")
 lines26.append("F1 was pre-registered as the prospective replication of the BMD->OA finding at the hip, with a conjunctive criterion: the hip effect must be positive AND of knee-like magnitude. The hip outcome is the Hatzikotoulas 2025 mixed-ancestry hip-OA GWAS (GCST90566798; 95,395 European cases, 1,011,691 European controls plus East Asian, African, South Asian, Hispanic and admixed groups; maximum per-variant 97,328 cases and 1,055,375 controls), and the knee outcome is the same study's knee-OA GWAS (GCST90566800; maximum per-variant 172,256 cases and 1,144,248 controls) — the file from which the manuscript's own knee-OA estimate was derived, so that the two rows below are produced by an identical pipeline on an identical instrument set (31 total-body BMD instruments, Qian 2025).\n")
 lines26.append("| Outcome | n_snp | IVW beta (fixed) | SE | p | IVW p (random) | OR per SD (95% CI) | MR-Egger beta (SE) | Egger p | Egger intercept p | Weighted median (95% CI) | Cochran Q | I2 | LOO sign flips |")
 lines26.append("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
@@ -46,12 +60,12 @@ for r in sorted(per, key=lambda x: x["rs"]):
                    f"{r['hip_se']:.4f} | {r['hip_OR']:.3f} | {int(r['hip_N']):,} |")
 lines26.append("")
 s26 = "\n".join(lines26) + "\n"
-open(os.path.join(SUP, "Table_S26_f1_hip_replication.md"), "w", encoding="utf-8").write(s26)
+open(os.path.join(SUP, "Table_S27_hip_oa_replication.md"), "w", encoding="utf-8").write(s26)
 
-# ---------------- S27 ----------------
+# ---------------- S28 (F2 geometry arm) ----------------
 lines27 = []
-lines27.append("## Supplementary Table S27. Geometry arm of the mass-versus-geometry decomposition (falsifying test F2): two-sample MR of ten hip-shape modes on hip OA and knee OA, plus a conditional BMD-plus-hip-shape multivariable MR\n")
-lines27.append("Areal BMD fuses bone mass, size and geometry, so the BMD->OA effect could in principle be transmitted by bone geometry rather than by mass or formation. Height indexes stature but not bone width or geometry, leaving this split to F2. The ten statistical hip-shape modes (HSM1-HSM10) of Faber et al. 2025 (PMID 39574169; deposited in the GWAS Catalog as GCST90482704-GCST90482713) are derived from DXA imaging and encode geometry only, with no density component; they are used here as pure-geometry instruments in the same pipeline and with the same hip and knee outcomes as Table S26. Instruments are the genome-wide-significant lead variants of each mode (P < 5e-9, 193 distinct positions); exposure effects are the authors' reported betas with direction, and standard errors are derived from the reported P values. Hip-shape mode 5 yielded only one instrument and is not analysable. A conditional BMD-plus-hip-shape multivariable MR extending this screen is reported in the second part of this table.")
+lines27.append("## Supplementary Table S28. Geometry arm of the mass-versus-geometry decomposition (falsifying test F2): two-sample MR of ten hip-shape modes on hip OA and knee OA, plus a conditional BMD-plus-hip-shape multivariable MR\n")
+lines27.append("Areal BMD fuses bone mass, size and geometry, so the BMD->OA effect could in principle be transmitted by bone geometry rather than by mass or formation. Height indexes stature but not bone width or geometry, leaving this split to F2. The ten statistical hip-shape modes (HSM1-HSM10) of Faber et al. 2025 (PMID 39574169; deposited in the GWAS Catalog as GCST90482704-GCST90482713) are derived from DXA imaging and encode geometry only, with no density component; they are used here as pure-geometry instruments in the same pipeline and with the same hip and knee outcomes as Table S27. Instruments are the genome-wide-significant lead variants of each mode (P < 5e-9, 193 distinct positions); exposure effects are the authors' reported betas with direction, and standard errors are derived from the reported P values. Hip-shape mode 5 yielded only one instrument and is not analysable. A conditional BMD-plus-hip-shape multivariable MR extending this screen is reported in the second part of this table.")
 lines27.append("")
 lines27.append("### Part A. Single-variable two-sample MR of each hip-shape mode on hip OA and knee OA\n")
 lines27.append("| Mode | Outcome | n_snp | IVW beta | SE | p (fixed) | OR (95% CI) | p (random) | Cochran Q | I2 | MR-Egger beta | Egger intercept p | Weighted median | Mean F |")
@@ -113,9 +127,10 @@ lines27.append("**Why the magnitudes are not quoted as a single coefficient.** T
 lines27.append("")
 lines27.append("**Conclusion for F2.** The formal conditional MVMR corroborates the single-variable geometry arm: for knee OA the BMD effect survives geometry conditioning, so bone geometry is not the transmission path; for hip OA the conditional test is underpowered and inconclusive. The literal volumetric-instrument form of F2 (areal BMD replaced by a volume- or area-conditioned BMD instrument) remains untested because no public summary-statistics file for a volumetric BMD trait was found in the GWAS Catalog; the manuscript's height conditioning (9.5-33.2% attenuation) and BMI conditioning already cover the stature and adiposity axes.")
 s27 = "\n".join(lines27) + "\n"
-open(os.path.join(SUP, "Table_S27_f2_geometry_arm.md"), "w", encoding="utf-8").write(s27)
+open(os.path.join(SUP, "Table_S28_geometry_arm.md"), "w", encoding="utf-8").write(s27)
 
 print("Wrote:")
-print(" ", os.path.join(SUP, "Table_S26_f1_hip_replication.md"))
-print(" ", os.path.join(SUP, "Table_S27_f2_geometry_arm.md"))
+print(" ", os.path.join(SUP, "Table_S27_hip_oa_replication.md"))
+print(" ", os.path.join(SUP, "Table_S28_geometry_arm.md"))
+print("  NOTE: re-run code/332 afterwards so delivered copies are the verbatim inline slices.")
 print("S26 words:", len(s26.split()), " S27 words:", len(s27.split()))

@@ -67,7 +67,7 @@ METHOD / HONEST BOUNDARIES  (read before interpreting ANY number)
    docs/08 (the submission-ready manuscript, OAC body 3999/4000) and does
    NOT change any reported beta/SE/p/OR/CI. A submission-ready methods
    paragraph and result table (candidate Table S29) are held in
-   docs/Supplementary/Table_S29_ldsc_site_rg.md, NOT inserted into docs/08
+   docs/Supplementary/Table_S30_ldsc_site_rg.md (S30 in docs/08; formerly S29)
    because the OAC body has only 1 word of headroom. Inserting it requires
    equal-word compression plus a re-run of gates 148/149b/182.
 

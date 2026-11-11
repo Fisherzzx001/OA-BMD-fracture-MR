@@ -7,7 +7,8 @@
   (B) docs/08 本轮理论边界深化已落地（S22 正交维度前提 + 单一设定点判别式 novelty）
   (C) 派生稿同步：Manuscript_Ready 镜像 + 两份 docx 均含新理论串
   (D) 已报数值零改动：5 个 KEY 串在 docs/08 与两份 docx 中均存在
-  (E) 物料清单完整：S1–S24 图文件、独立补充表文件、内联 S25/S28/S30/S31
+  (E) 物料清单完整：S1–S24 图文件、16 份独立补表 .md、12 个内联补表标题；
+      审计档案未混入交付集；两份 docx 无补表全文/内部编号
 
 退出码 0 = 全部通过；1 = 任一断言失败。
 """
@@ -45,6 +46,19 @@ def read(path):
 def docx_text(path):
     xml = zipfile.ZipFile(path).read("word/document.xml").decode("utf-8", "ignore")
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", xml))
+
+
+def docx_paragraphs(path):
+    """Paragraph texts, one per <w:p>. A full supp. table opens its own
+    paragraph 'Supplementary Table SNN.'; an in-text cross-reference never
+    does, so this is robust to whitespace flattening."""
+    xml = zipfile.ZipFile(path).read("word/document.xml").decode("utf-8", "ignore")
+    out = []
+    for p in re.split(r"</w:p>", xml):
+        t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", p)).strip()
+        if t:
+            out.append(t)
+    return out
 
 
 def run(script):
@@ -116,14 +130,28 @@ miss_s = [f"S{i}" for i in range(1, 25)
           if not any(f.startswith(f"SupplFig{i}_") for f in allfig)]
 record("S1–S24 图文件齐全", not miss_s, str(miss_s) if miss_s else "24/24")
 tab_files = os.listdir("Manuscript_Ready/Supplementary") if os.path.isdir("Manuscript_Ready/Supplementary") else []
-miss_t = [f"Table_S{i}" for i in (8, 9, 12, 13, 14, 15, 16, 17, 26, 27, 29)
-          if not any(f.startswith(f"Table_S{i}_") for f in tab_files)]
-record("独立补充表文件齐全", not miss_t, str(miss_t) if miss_t else "11/11")
-inline = ["## Supplementary Table S25", "## Supplementary Table S28",
-          "## Supplementary Table S30", "## Supplementary Table S31"]
+md_tabs = [f for f in tab_files if f.endswith(".md")]
+miss_t = [f"Table_S{i}" for i in (8, 9, 12, 13, 14, 15, 16, 17,
+                                  25, 26, 27, 28, 29, 30, 31, 32)
+          if not any(f.startswith(f"Table_S{i}_") for f in md_tabs)]
+record("独立补充表 .md 齐全 (16)", not miss_t, str(miss_t) if miss_t else "16/16")
+leaked = [f for f in tab_files if "Audit_Trail" in f]
+record("审计档案未混入交付集", not leaked, str(leaked) if leaked else "clean")
+inline = ["## Supplementary Table S%d" % i
+          for i in (8, 9, 14, 15, 25, 26, 27, 28, 29, 30, 31, 32)]
 miss_inline = [x for x in inline if x not in t]
-record("内联补充表 S25/S28/S30/S31 在 docs/08", not miss_inline,
-       str(miss_inline) if miss_inline else "4/4")
+record("内联补充表 12 个标题在 docs/08", not miss_inline,
+       str(miss_inline) if miss_inline else "12/12")
+# Decisive compliance check on the delivered docx (not just the markdown).
+for name, path in DOCX.items():
+    dx = docx_text(path)
+    # A full table opens its own paragraph 'Supplementary Table SNN.'; an
+    # in-text cross-reference lives mid-sentence and never starts a paragraph.
+    full = [p[:60] for p in docx_paragraphs(path)
+            if re.match(r"^#{0,3}\s*Supplementary Table S\d+\.", p)]
+    internal = re.findall(r"code/\d+|this revision|internal-consistency", dx, re.IGNORECASE)
+    record(f"{name} 无补表全文/内部编号", (not full) and (not internal),
+           f"full_tables={len(full)} internal={len(internal)}")
 
 # ---------- 汇总 ----------
 n_fail = sum(1 for _, ok, _ in results if not ok)

@@ -95,3 +95,11 @@ _tmp_*
 code/output/genetics/Chai2026_MOESM*.xlsx
 code/output/genetics/_chai_*.json
 code/output/genetics/_nature_chai.html
+
+# Candidate revision figures S33–S35 (code/335) live in Figures_v18_Suppl/
+# for the response-to-reviewers, but are NOT submitted supplements (OAC
+# displayed items already 8/8). Keep them out of the journal-facing delivery
+# set; code/135 also excludes/prunes them on every build.
+Manuscript_Ready/Figures/Supplementary/SupplFig33_*
+Manuscript_Ready/Figures/Supplementary/SupplFig34_*
+Manuscript_Ready/Figures/Supplementary/SupplFig35_*

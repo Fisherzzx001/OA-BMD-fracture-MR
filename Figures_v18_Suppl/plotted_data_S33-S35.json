@@ -1,0 +1,739 @@
+{
+  "S33": {
+    "source": [
+      "rg_results_long_13.csv",
+      "mr_results_corrected.csv"
+    ],
+    "rg": [
+      {
+        "pair": "BMD vs knee OA",
+        "rg": 0.1541447060578458,
+        "se": 0.0153059178934573,
+        "p": 7.427842476651635e-24
+      },
+      {
+        "pair": "BMD vs any fracture",
+        "rg": -0.4978248028276762,
+        "se": 0.0277637529770531,
+        "p": 6.786299387224942e-72
+      },
+      {
+        "pair": "knee OA vs fracture",
+        "rg": 0.1189577740750827,
+        "se": 0.0200727454852027,
+        "p": 3.0977409356177644e-09
+      }
+    ],
+    "mr": [
+      {
+        "pair": "BMD -> knee OA",
+        "beta": 0.07834010438367285,
+        "se": 0.012514930461477254,
+        "p": 3.856408734654331e-10
+      },
+      {
+        "pair": "BMD -> fracture",
+        "beta": -0.33713356706038805,
+        "se": 0.02240647991016813,
+        "p": 3.653495240010767e-51
+      },
+      {
+        "pair": "knee OA -> fracture",
+        "beta": 0.027198494197540102,
+        "se": 0.03197409471566673,
+        "p": 0.39496848878008584
+      }
+    ]
+  },
+  "S34": {
+    "source": "three_trait_coloc.json",
+    "n_loci": 31,
+    "sos_sign_pattern": 21,
+    "n_three_way_H4_ge_0p8": 3,
+    "loci": [
+      {
+        "chr": 1,
+        "bp": 22702231,
+        "Z_BMD": 9.849,
+        "Z_OA": 0.063,
+        "Z_FX": -4.771,
+        "sos": true,
+        "H123": 0.026654118225096474
+      },
+      {
+        "chr": 1,
+        "bp": 68635390,
+        "Z_BMD": 8.606,
+        "Z_OA": -0.534,
+        "Z_FX": -1.25,
+        "sos": false,
+        "H123": 0.00015654402286336148
+      },
+      {
+        "chr": 1,
+        "bp": 220093188,
+        "Z_BMD": -6.094,
+        "Z_OA": -2.119,
+        "Z_FX": -0.902,
+        "sos": false,
+        "H123": 0.0001877062312634662
+      },
+      {
+        "chr": 1,
+        "bp": 114303808,
+        "Z_BMD": 5.574,
+        "Z_OA": -0.392,
+        "Z_FX": 0.588,
+        "sos": false,
+        "H123": 0.00013378743188365393
+      },
+      {
+        "chr": 2,
+        "bp": 166554037,
+        "Z_BMD": -9.073,
+        "Z_OA": -3.049,
+        "Z_FX": 0.089,
+        "sos": true,
+        "H123": 0.0033445743681542973
+      },
+      {
+        "chr": 2,
+        "bp": 202832130,
+        "Z_BMD": -5.747,
+        "Z_OA": -1.259,
+        "Z_FX": 4.032,
+        "sos": true,
+        "H123": 0.045240588656985305
+      },
+      {
+        "chr": 3,
+        "bp": 41068497,
+        "Z_BMD": 6.122,
+        "Z_OA": 2.447,
+        "Z_FX": -4.797,
+        "sos": true,
+        "H123": 0.2873720617110667
+      },
+      {
+        "chr": 4,
+        "bp": 994414,
+        "Z_BMD": -8.652,
+        "Z_OA": -3.414,
+        "Z_FX": 3.945,
+        "sos": true,
+        "H123": 0.8433686135120546
+      },
+      {
+        "chr": 4,
+        "bp": 88840386,
+        "Z_BMD": 8.598,
+        "Z_OA": 0.708,
+        "Z_FX": -2.966,
+        "sos": true,
+        "H123": 0.0042481863026962935
+      },
+      {
+        "chr": 5,
+        "bp": 122943848,
+        "Z_BMD": -7.265,
+        "Z_OA": 0.769,
+        "Z_FX": 3.263,
+        "sos": false,
+        "H123": 0.012256215745230226
+      },
+      {
+        "chr": 5,
+        "bp": 88416354,
+        "Z_BMD": -6.376,
+        "Z_OA": -4.093,
+        "Z_FX": 0.235,
+        "sos": true,
+        "H123": 0.019431258103862568
+      },
+      {
+        "chr": 6,
+        "bp": 152010254,
+        "Z_BMD": 9.518,
+        "Z_OA": 2.0,
+        "Z_FX": -4.038,
+        "sos": true,
+        "H123": 0.1066218514379887
+      },
+      {
+        "chr": 6,
+        "bp": 126986996,
+        "Z_BMD": -5.763,
+        "Z_OA": 3.385,
+        "Z_FX": -0.813,
+        "sos": false,
+        "H123": 0.019705365153676893
+      },
+      {
+        "chr": 7,
+        "bp": 120966790,
+        "Z_BMD": 18.319,
+        "Z_OA": 0.938,
+        "Z_FX": -9.174,
+        "sos": true,
+        "H123": 0.03174848246748571
+      },
+      {
+        "chr": 7,
+        "bp": 96130553,
+        "Z_BMD": -10.402,
+        "Z_OA": -0.189,
+        "Z_FX": 2.988,
+        "sos": true,
+        "H123": 0.003690452675692442
+      },
+      {
+        "chr": 7,
+        "bp": 38110032,
+        "Z_BMD": -5.701,
+        "Z_OA": -1.0,
+        "Z_FX": 5.313,
+        "sos": true,
+        "H123": 0.03501438438520092
+      },
+      {
+        "chr": 8,
+        "bp": 119946656,
+        "Z_BMD": 11.807,
+        "Z_OA": 2.381,
+        "Z_FX": 0.45,
+        "sos": false,
+        "H123": 0.0006792861832415528
+      },
+      {
+        "chr": 11,
+        "bp": 16253187,
+        "Z_BMD": 8.798,
+        "Z_OA": -0.625,
+        "Z_FX": -3.11,
+        "sos": false,
+        "H123": 0.024291587751564613
+      },
+      {
+        "chr": 11,
+        "bp": 68289796,
+        "Z_BMD": -8.652,
+        "Z_OA": -4.056,
+        "Z_FX": 3.648,
+        "sos": true,
+        "H123": 0.9559752745847653
+      },
+      {
+        "chr": 11,
+        "bp": 86901237,
+        "Z_BMD": -7.179,
+        "Z_OA": 1.722,
+        "Z_FX": 4.187,
+        "sos": false,
+        "H123": 0.08780307912687899
+      },
+      {
+        "chr": 11,
+        "bp": 46370767,
+        "Z_BMD": 6.422,
+        "Z_OA": 0.484,
+        "Z_FX": -2.321,
+        "sos": true,
+        "H123": 0.0008601115668565414
+      },
+      {
+        "chr": 11,
+        "bp": 27355031,
+        "Z_BMD": -6.253,
+        "Z_OA": -0.75,
+        "Z_FX": 3.378,
+        "sos": true,
+        "H123": 0.06745762875642615
+      },
+      {
+        "chr": 12,
+        "bp": 53727545,
+        "Z_BMD": 6.472,
+        "Z_OA": 2.054,
+        "Z_FX": -2.198,
+        "sos": true,
+        "H123": 0.0041481195134202165
+      },
+      {
+        "chr": 13,
+        "bp": 43032593,
+        "Z_BMD": 7.361,
+        "Z_OA": 4.98,
+        "Z_FX": -0.838,
+        "sos": true,
+        "H123": 0.0636433831220319
+      },
+      {
+        "chr": 13,
+        "bp": 111109859,
+        "Z_BMD": -5.726,
+        "Z_OA": -0.756,
+        "Z_FX": -1.21,
+        "sos": false,
+        "H123": 0.00010337279409605349
+      },
+      {
+        "chr": 15,
+        "bp": 51524292,
+        "Z_BMD": -5.733,
+        "Z_OA": 6.674,
+        "Z_FX": 1.699,
+        "sos": false,
+        "H123": 0.07717797960243955
+      },
+      {
+        "chr": 16,
+        "bp": 86710660,
+        "Z_BMD": -5.924,
+        "Z_OA": -2.086,
+        "Z_FX": 2.36,
+        "sos": true,
+        "H123": 0.008580131437242502
+      },
+      {
+        "chr": 17,
+        "bp": 41776686,
+        "Z_BMD": 5.647,
+        "Z_OA": 3.048,
+        "Z_FX": -6.361,
+        "sos": true,
+        "H123": 0.9621330439119505
+      },
+      {
+        "chr": 18,
+        "bp": 60054857,
+        "Z_BMD": -6.979,
+        "Z_OA": -3.2,
+        "Z_FX": 1.435,
+        "sos": true,
+        "H123": 0.019304229115932842
+      },
+      {
+        "chr": 20,
+        "bp": 10640306,
+        "Z_BMD": -6.146,
+        "Z_OA": -3.476,
+        "Z_FX": 3.215,
+        "sos": true,
+        "H123": 0.6165824024142803
+      },
+      {
+        "chr": 21,
+        "bp": 37836973,
+        "Z_BMD": 5.714,
+        "Z_OA": 0.909,
+        "Z_FX": -0.815,
+        "sos": true,
+        "H123": 7.943450296537639e-05
+      }
+    ]
+  },
+  "S35": {
+    "source": "Chai2026_celltype_enrichment.json",
+    "n_clusters": 34,
+    "n_clusters_q_lt_0p05": 2,
+    "key_skeletal_cells": [
+      {
+        "cell": "chondrocyte",
+        "cluster": "27. Chondrocytes",
+        "lineage": "Non-haematopoietic",
+        "K": 546,
+        "k": 30,
+        "expected": 10.7,
+        "fold": 2.8,
+        "p": 4.209858933708968e-08,
+        "q": 7.156760187305246e-07
+      },
+      {
+        "cell": "osteoblast",
+        "cluster": "28. Osteoblasts",
+        "lineage": "Non-haematopoietic",
+        "K": 577,
+        "k": 33,
+        "expected": 11.3,
+        "fold": 2.92,
+        "p": 2.130233054065241e-09,
+        "q": 7.24279238382182e-08
+      },
+      {
+        "cell": "osteoclast",
+        "cluster": "30. Osteoclasts",
+        "lineage": "Monocytes",
+        "K": 687,
+        "k": 14,
+        "expected": 13.46,
+        "fold": 1.04,
+        "p": 0.4818485456204026,
+        "q": 1.0
+      },
+      {
+        "cell": "endothelial",
+        "cluster": "31. Endothelial cells",
+        "lineage": "Non-haematopoietic",
+        "K": 609,
+        "k": 13,
+        "expected": 11.93,
+        "fold": 1.09,
+        "p": 0.41487544370881163,
+        "q": 1.0
+      },
+      {
+        "cell": "vascular_SMC",
+        "cluster": "32. Vascular SMCs",
+        "lineage": "Non-haematopoietic",
+        "K": 636,
+        "k": 12,
+        "expected": 12.46,
+        "fold": 0.96,
+        "p": 0.6044496030237569,
+        "q": 1.0
+      }
+    ],
+    "rows": [
+      {
+        "cluster": "28. Osteoblasts",
+        "lineage": "Non-haematopoietic",
+        "K": 577,
+        "k": 33,
+        "expected": 11.3,
+        "fold": 2.92,
+        "p": 2.130233054065241e-09,
+        "q": 7.24279238382182e-08
+      },
+      {
+        "cluster": "27. Chondrocytes",
+        "lineage": "Non-haematopoietic",
+        "K": 546,
+        "k": 30,
+        "expected": 10.7,
+        "fold": 2.8,
+        "p": 4.209858933708968e-08,
+        "q": 7.156760187305246e-07
+      },
+      {
+        "cluster": "24. Multiplets",
+        "lineage": "B Cells",
+        "K": 17,
+        "k": 1,
+        "expected": 0.33,
+        "fold": 3.0,
+        "p": 0.2860673989454152,
+        "q": 1.0
+      },
+      {
+        "cluster": "31. Endothelial cells",
+        "lineage": "Non-haematopoietic",
+        "K": 609,
+        "k": 13,
+        "expected": 11.93,
+        "fold": 1.09,
+        "p": 0.41487544370881163,
+        "q": 1.0
+      },
+      {
+        "cluster": "0. Immature neutrophils",
+        "lineage": "Neutrophils",
+        "K": 128,
+        "k": 3,
+        "expected": 2.51,
+        "fold": 1.2,
+        "p": 0.4613111042507087,
+        "q": 1.0
+      },
+      {
+        "cluster": "30. Osteoclasts",
+        "lineage": "Monocytes",
+        "K": 687,
+        "k": 14,
+        "expected": 13.46,
+        "fold": 1.04,
+        "p": 0.4818485456204026,
+        "q": 1.0
+      },
+      {
+        "cluster": "23. NK cells",
+        "lineage": "T cells",
+        "K": 301,
+        "k": 6,
+        "expected": 5.9,
+        "fold": 1.02,
+        "p": 0.544335666783592,
+        "q": 1.0
+      },
+      {
+        "cluster": "6. Immature neutrophils",
+        "lineage": "Neutrophils",
+        "K": 96,
+        "k": 2,
+        "expected": 1.88,
+        "fold": 1.06,
+        "p": 0.5660639544545354,
+        "q": 1.0
+      },
+      {
+        "cluster": "32. Vascular SMCs",
+        "lineage": "Non-haematopoietic",
+        "K": 636,
+        "k": 12,
+        "expected": 12.46,
+        "fold": 0.96,
+        "p": 0.6044496030237569,
+        "q": 1.0
+      },
+      {
+        "cluster": "22. Monocytes (Ear2+)",
+        "lineage": "Monocytes",
+        "K": 118,
+        "k": 2,
+        "expected": 2.31,
+        "fold": 0.87,
+        "p": 0.6789779138760937,
+        "q": 1.0
+      },
+      {
+        "cluster": "26. Macrophages",
+        "lineage": "Monocytes",
+        "K": 243,
+        "k": 4,
+        "expected": 4.76,
+        "fold": 0.84,
+        "p": 0.7103376979241722,
+        "q": 1.0
+      },
+      {
+        "cluster": "4. Immature B cells",
+        "lineage": "B Cells",
+        "K": 284,
+        "k": 4,
+        "expected": 5.56,
+        "fold": 0.72,
+        "p": 0.8178213644192128,
+        "q": 1.0
+      },
+      {
+        "cluster": "2. Pre B cells",
+        "lineage": "B Cells",
+        "K": 359,
+        "k": 5,
+        "expected": 7.03,
+        "fold": 0.71,
+        "p": 0.8445016009315458,
+        "q": 1.0
+      },
+      {
+        "cluster": "3. Mature neutrophils (Tmcc1+)",
+        "lineage": "Neutrophils",
+        "K": 167,
+        "k": 2,
+        "expected": 3.27,
+        "fold": 0.61,
+        "p": 0.8462421102805279,
+        "q": 1.0
+      },
+      {
+        "cluster": "1. Mature neutrophils (Cxcl2+)",
+        "lineage": "Neutrophils",
+        "K": 235,
+        "k": 3,
+        "expected": 4.6,
+        "fold": 0.65,
+        "p": 0.8481984868358229,
+        "q": 1.0
+      },
+      {
+        "cluster": "8. Mature neutrophils",
+        "lineage": "Neutrophils",
+        "K": 181,
+        "k": 2,
+        "expected": 3.55,
+        "fold": 0.56,
+        "p": 0.8769847928971124,
+        "q": 1.0
+      },
+      {
+        "cluster": "11. Pre-neutrophils",
+        "lineage": "Neutrophils",
+        "K": 118,
+        "k": 1,
+        "expected": 2.31,
+        "fold": 0.43,
+        "p": 0.9062998943184001,
+        "q": 1.0
+      },
+      {
+        "cluster": "25. Baso-Eosinophil-Mast cell progenitors",
+        "lineage": "Haematopoietic progenitors",
+        "K": 280,
+        "k": 3,
+        "expected": 5.49,
+        "fold": 0.55,
+        "p": 0.9199872545240358,
+        "q": 1.0
+      },
+      {
+        "cluster": "9. T cells",
+        "lineage": "T cells",
+        "K": 281,
+        "k": 3,
+        "expected": 5.5,
+        "fold": 0.54,
+        "p": 0.9211610665110121,
+        "q": 1.0
+      },
+      {
+        "cluster": "19. Pre-neutrophils",
+        "lineage": "Neutrophils",
+        "K": 136,
+        "k": 1,
+        "expected": 2.66,
+        "fold": 0.38,
+        "p": 0.9350953280293146,
+        "q": 1.0
+      },
+      {
+        "cluster": "15. Pro B cells",
+        "lineage": "B Cells",
+        "K": 642,
+        "k": 7,
+        "expected": 12.58,
+        "fold": 0.56,
+        "p": 0.9770735208581317,
+        "q": 1.0
+      },
+      {
+        "cluster": "5. Mature B cells",
+        "lineage": "B Cells",
+        "K": 203,
+        "k": 1,
+        "expected": 3.98,
+        "fold": 0.25,
+        "p": 0.9836906490324576,
+        "q": 1.0
+      },
+      {
+        "cluster": "7. Monocytes (Cd14+)",
+        "lineage": "Monocytes",
+        "K": 392,
+        "k": 3,
+        "expected": 7.68,
+        "fold": 0.39,
+        "p": 0.9864582948638987,
+        "q": 1.0
+      },
+      {
+        "cluster": "21. Classical DCs",
+        "lineage": "Monocytes",
+        "K": 357,
+        "k": 2,
+        "expected": 6.99,
+        "fold": 0.29,
+        "p": 0.9945145462407207,
+        "q": 1.0
+      },
+      {
+        "cluster": "14. Monocytes (Txnip+)",
+        "lineage": "Monocytes",
+        "K": 362,
+        "k": 2,
+        "expected": 7.09,
+        "fold": 0.28,
+        "p": 0.9950100214085155,
+        "q": 1.0
+      },
+      {
+        "cluster": "17. Plasmacytoid DCs",
+        "lineage": "Monocytes",
+        "K": 416,
+        "k": 2,
+        "expected": 8.15,
+        "fold": 0.25,
+        "p": 0.9982363716144653,
+        "q": 1.0
+      },
+      {
+        "cluster": "10. HSCs",
+        "lineage": "Haematopoietic progenitors",
+        "K": 583,
+        "k": 3,
+        "expected": 11.42,
+        "fold": 0.26,
+        "p": 0.9995746431120683,
+        "q": 1.0
+      },
+      {
+        "cluster": "29. Erythroid progenitors",
+        "lineage": "Haematopoietic progenitors",
+        "K": 708,
+        "k": 4,
+        "expected": 13.87,
+        "fold": 0.29,
+        "p": 0.9997922471327617,
+        "q": 1.0
+      },
+      {
+        "cluster": "33. Plasma cells",
+        "lineage": "B Cells",
+        "K": 408,
+        "k": 1,
+        "expected": 7.99,
+        "fold": 0.13,
+        "p": 0.999794624168309,
+        "q": 1.0
+      },
+      {
+        "cluster": "12. GMPs",
+        "lineage": "Haematopoietic progenitors",
+        "K": 448,
+        "k": 1,
+        "expected": 8.78,
+        "fold": 0.11,
+        "p": 0.9999149113468844,
+        "q": 1.0
+      },
+      {
+        "cluster": "13. Proliferating pre B cells",
+        "lineage": "B Cells",
+        "K": 933,
+        "k": 3,
+        "expected": 18.28,
+        "fold": 0.16,
+        "p": 0.9999997334168227,
+        "q": 1.0
+      },
+      {
+        "cluster": "20. Proliferating monocytes",
+        "lineage": "Monocytes",
+        "K": 509,
+        "k": 0,
+        "expected": 9.97,
+        "fold": 0.0,
+        "p": 1.0,
+        "q": 1.0
+      },
+      {
+        "cluster": "16. GMPs",
+        "lineage": "Haematopoietic progenitors",
+        "K": 173,
+        "k": 0,
+        "expected": 3.39,
+        "fold": 0.0,
+        "p": 1.0,
+        "q": 1.0
+      },
+      {
+        "cluster": "18. Low viability cells",
+        "lineage": "Haematopoietic progenitors",
+        "K": 32,
+        "k": 0,
+        "expected": 0.63,
+        "fold": 0.0,
+        "p": 1.0,
+        "q": 1.0
+      }
+    ]
+  }
+}

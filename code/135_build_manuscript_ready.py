@@ -56,11 +56,25 @@ def main():
     print(f"[OK] main figures: {n_main} PNG")
 
     # ---- 补充图 ----
+    # Candidate revision figures S33–S35 (code/335) are NOT in the submitted
+    # Figure-legend list (OAC displayed items already 8/8). Keep them out of
+    # the journal-facing delivery set so they are not mistaken for submitted
+    # supplementary figures; they remain available in Figures_v18_Suppl/ for
+    # the response-to-reviewers.
+    FIG_EXCLUDE_PREFIX = ("SupplFig33_", "SupplFig34_", "SupplFig35_")
     n_supp = 0
     if os.path.isdir(SUPPL_FIG_SRC):
         for f in sorted(glob.glob(os.path.join(SUPPL_FIG_SRC, "*.png"))):
+            if os.path.basename(f).startswith(FIG_EXCLUDE_PREFIX):
+                continue
             shutil.copy2(f, os.path.join(OUT, "Figures", "Supplementary"))
             n_supp += 1
+    # Prune candidate figures left by an earlier incremental build.
+    delivered_fig = os.path.join(OUT, "Figures", "Supplementary")
+    for f in sorted(os.listdir(delivered_fig)):
+        if f.startswith(FIG_EXCLUDE_PREFIX):
+            os.remove(os.path.join(delivered_fig, f))
+            print(f"[OK] excluded candidate revision figure from delivery: {f}")
     print(f"[OK] supplementary figures: {n_supp} PNG")
 
     # Count the *delivered* files, not just the newly copied PNGs: the figure
@@ -69,9 +83,36 @@ def main():
     n_supp_files = len(os.listdir(os.path.join(OUT, "Figures", "Supplementary")))
 
     # ---- 补充材料 ----
+    # Compliance boundary (2026-11-11 full-text audit): Audit_Trail.md is an
+    # INTERNAL audit archive (claim -> script line -> independent check). It is
+    # kept in docs/Supplementary/ for repository traceability but must never be
+    # copied into the journal-facing Manuscript_Ready/ delivery set.
+    EXCLUDE = {"Audit_Trail.md"}
+    n_supp = 0
     for f in sorted(os.listdir(SUPPL_SRC)):
+        if f in EXCLUDE:
+            continue
         shutil.copy2(os.path.join(SUPPL_SRC, f), os.path.join(OUT, "Supplementary"))
-    print(f"[OK] supplementary docs: {len(os.listdir(SUPPL_SRC))}")
+        n_supp += 1
+    stale = os.path.join(OUT, "Supplementary", "Audit_Trail.md")
+    if os.path.exists(stale):
+        os.remove(stale)  # purge any copy left by an older build
+        print("[OK] purged stale internal Audit_Trail.md from delivery set")
+    # Incremental builds never rmtree the delivery dir, so files removed from
+    # the source (e.g. the three legacy mis-numbered Table_S*.md retired by
+    # code/332) linger in the delivery set and resurrect duplicate table
+    # numbers. Prune any Table_S*.md present in the delivery set but absent
+    # from the source, without touching non-table deliverables.
+    src_tables = {f for f in os.listdir(SUPPL_SRC) if f.startswith("Table_S") and f.endswith(".md")}
+    delivered_dir = os.path.join(OUT, "Supplementary")
+    pruned = []
+    for f in sorted(os.listdir(delivered_dir)):
+        if f.startswith("Table_S") and f.endswith(".md") and f not in src_tables:
+            os.remove(os.path.join(delivered_dir, f))
+            pruned.append(f)
+    if pruned:
+        print(f"[OK] pruned {len(pruned)} stale table files: {pruned}")
+    print(f"[OK] supplementary docs: {n_supp}")
 
     # ---- 备份归档 ----
     bakdir = os.path.join(ROOT, ".workbuddy", "backups")
@@ -114,7 +155,7 @@ The independent OSF preregistration is **<https://doi.org/10.17605/OSF.IO/CSMP7>
 | `02_Cover_letter.md` | Cover letter (no placeholders) |
 | `Figures/Main/` | Figure 1–5 and Graphical Abstract ({n_main_files} files) |
 | `Figures/Supplementary/` | Supplementary Figures S1–S24 ({n_supp_files} files, PNG/PDF/TIF) |
-| `Supplementary/` | Independent supplementary tables S8–S9, S12–S17, S26–S27, S29–S32; Table S10 (MVMR grid); Table S11 (SOS predictions and falsifying tests); STROBE-MR checklist; Audit_Trail |
+| `Supplementary/` | Independent supplementary tables S8–S9, S12–S17, S25–S32; Table S10 (MVMR grid); Table S11 (SOS predictions and falsifying tests); STROBE-MR checklist. Internal audit archives are excluded from the journal-facing set. |
 
 ## Verification state at build time
 

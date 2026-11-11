@@ -1,4 +1,8 @@
-## Supplementary Table S26. Prospective hip-osteoarthritis replication (falsifying test F1): two-sample MR of total-body BMD on hip OA, and the conjunctive adjudication against the knee-OA estimate
+<!-- Standalone supplementary table extracted verbatim from
+     docs/08_投稿稿_OA_BMD_fracture.md by code/332_extract_inline_supplementary.py.
+     Source slice sha256: 87d979b5d7f95dc59f1a436184ba9bbf2f2a155c7e65e37bf418a7cedd3bb034 . No statistic was rewritten. -->
+
+## Supplementary Table S27. Prospective hip-osteoarthritis replication (falsifying test F1): two-sample MR of total-body BMD on hip OA, and the conjunctive adjudication against the knee-OA estimate
 
 F1 was pre-registered as the prospective replication of the BMD->OA finding at the hip, with a conjunctive criterion: the hip effect must be positive AND of knee-like magnitude. The hip outcome is the Hatzikotoulas 2025 mixed-ancestry hip-OA GWAS (GCST90566798; 95,395 European cases, 1,011,691 European controls plus East Asian, African, South Asian, Hispanic and admixed groups; maximum per-variant 97,328 cases and 1,055,375 controls), and the knee outcome is the same study's knee-OA GWAS (GCST90566800; maximum per-variant 172,256 cases and 1,144,248 controls) — the file from which the manuscript's own knee-OA estimate was derived, so that the two rows below are produced by an identical pipeline on an identical instrument set (31 total-body BMD instruments, Qian 2025).
 
@@ -48,4 +52,3 @@ F1 was pre-registered as the prospective replication of the BMD->OA finding at t
 | rs930900 | +0.0556 | 0.0086 | +0.0139 | 0.0068 | 1.014 | 925,856 |
 | rs9515218 | -0.0464 | 0.0081 | -0.0044 | 0.0056 | 0.996 | 1,108,931 |
 | rs9594759 | +0.0585 | 0.0080 | +0.0123 | 0.0056 | 1.012 | 1,099,288 |
-
