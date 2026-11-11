@@ -337,5 +337,52 @@ Zenodo 最新 = **24115233 / 10.5281/zenodo.24115233**；v2.0=`4e7a098`、v2.1=`
 182 **78/78** · 310 **33/33** · 331 PASS(31/31) · 334 18/18 · **336 docx 级 3965/4000 COMPLIANT**。
 压缩中一度触发 182 STROBE-MR item 5（改写"三假设"句），已恢复字面串并保持词数达标。
 
-**状态**：本批为 v2.2 之后本地提交（在 `ca9c29f` 之后），**未 push、未发新版**。
+**状态（§12 当时快照）**：本批为 v2.2 之后本地提交（在 `ca9c29f` 之后），当时**未 push、未发新版**。
 v2.2 tag `80f85b3`/Zenodo `24115233` 快照不变、不可变。若发 v2.3，发布器文案已更新。
+（随后发布已完成，见 §13。）
+
+---
+
+## §13 2026-11-11 第四次发布（v2.3 / Zenodo 24141253）
+
+**触发**：用户明确指令「推送这两个提交或发布 v2.3」，经发布前就绪确认后选择**发布 v2.3**。
+核心动机：v2.2 归档内稿件实际 **4230 词**（当时因词数门禁偏窄被假报成 3984 合规），
+按 OAC 4000 词硬上限属超限；v2.3 把词数纠错后的合规稿件（**3965/4000 Word 口径**）正式归档。
+
+**发布前就绪检查**：工作树 clean、HEAD `c317371` 领先远端 `13a9f79` 两个提交
+（`ca9c29f` 六项终审修复 + `c317371` 词数门禁纠错）；v2.3 tag 远端不存在；
+发布器文案已刷新 3965/4000 + 七门禁；代理 `127.0.0.1:49153`，SSH CONNECT
+到 `ssh.github.com:443` 返回 `HTTP/1.1 200`；远端 deploy keys=0；七门禁全绿。
+
+**三次调用分阶段执行**（`RELEASE_TAG=v2.3 python3 code/318_github_ssh_release.py {setup,push,cleanup}`）：
+1. `setup` — 临时 ed25519 deploy key（id **169544169**，写权限，HTTP 201），
+   `ssh -T` 确认认证到 `Fisherzzx001/OA-BMD-fracture-MR`，在任何 push 前验证通过。
+2. `push` — master `13a9f79..c317371`，远端 SHA=本地 SHA=`c3173716900a`；
+   annotated tag **v2.3**（tag 对象 `31c8c592e5305d01fc1071255ae41d8325e5091c`，
+   tag→commit `c3173716900a95537290e32c6470ca8f477f2325`）；
+   Release `submission-v2.3` POST HTTP 201（id **441929149**，
+   `2026-11-11T16:21:29Z`），触发 GitHub→Zenodo 集成。
+3. `cleanup` — deploy key DELETE HTTP 204，独立复核**剩余 deploy keys=0**；
+   临时 remote 与 `_tmp_release/` 目录均移除；origin 保持无凭证。
+
+**Zenodo 新版本**（判据只看 `created` + 概念 DOI 重定向目标 + 归档 commit 前缀，
+不看归档内 `.zenodo.json` 的静态字段 `version=submission-v2` / `publication_date`）：
+- recid **24141253**，版本 DOI **`10.5281/zenodo.24141253`**，
+  created **`2026-11-11T16:21:38Z`**（Release 后约 9 s，与 v2.1/v2.2 模式一致）。
+- 概念 DOI **`10.5281/zenodo.23400860`** 最终解析到 `zenodo.org/records/24141253`（已指向 v2.3）。
+- 归档 `Fisherzzx001/OA-BMD-fracture-MR-v2.3.zip` **114,773,849 B** / **893 条目**。
+- **归档内容核验**（HTTP Range 只取尾部 220 KB，未整下 114 MB）：ZIP 根前缀
+  `Fisherzzx001-OA-BMD-fracture-MR-31c8c59`（= annotated tag 对象短前缀，指向 commit `c317371`）；
+  确认含本批全部产物：`code/336_verify_wordcount_docx.py`、`337_compress_wordneutral.py`、
+  `332_extract_inline_supplementary.py`、`334_data_level_trust_but_verify.py`、
+  `148_oac_compliance.py`、`code/output/wordcount_numeric_snapshot.json`、
+  `docs/Supplementary/Audit_Trail.md`、候选补图 S33–S35（PDF）。
+
+**门禁（发布前后一致，Word 口径）**：148 COMPLIANT **3965/4000**、摘要 342/350、
+refs 50/50、显示项 8/8；149b SAFE；182 **78/78**；310 **33/33**；331 PASS(31/31)；
+334 18/18；**336 docx 级 3965/4000 COMPLIANT**。已报 β/SE/p/OR/CI 零改动。
+
+**当前基线（v2.3）**：本地 = 远端 master = `c317371`；tag `v2.3`→`c317371`（对象 `31c8c59`）；
+Zenodo **24141253** / `10.5281/zenodo.24141253`；概念 DOI 23400860 指向 v2.3。
+v2.0/v2.1/v2.2 tag 与各自 Zenodo 归档保持不可变。下次发版仍 `RELEASE_TAG=v2.4 ... all`
+（若改发布器文案须先提交，使文案进入被推历史）。
