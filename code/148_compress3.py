@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 # Third compression pass: target <4000 words. Validate by unique substring.
-import re, sys
+import re, sys, os
+# DEPRECATED one-shot EDITOR (not a gate): its replacement markers were consumed
+# in an earlier pass, so re-running always fails the marker check — and would
+# silently WRITE docs/08 if a marker ever reappeared. Mistaken for the word-count
+# gate during the 2026-11-11 audit. The live gate is code/148_oac_compliance.py;
+# docx-level verification is code/336_verify_wordcount_docx.py.
+if os.environ.get("ALLOW_ONESHOT_COMPRESS") != "1":
+    sys.exit("DEPRECATED one-shot editor; do NOT run on the live manuscript. "
+             "Use code/148_oac_compliance.py / code/336 instead.")
 F = "docs/08_投稿稿_OA_BMD_fracture.md"
 lines = open(F, encoding="utf-8").read().split("\n")
 

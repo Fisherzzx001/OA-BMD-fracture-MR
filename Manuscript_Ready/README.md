@@ -21,11 +21,15 @@ The independent OSF preregistration is **<https://doi.org/10.17605/OSF.IO/CSMP7>
 
 ## Verification state at build time
 
-- OAC format gate `code/148_oac_compliance.py`: **COMPLIANT**
-  (body 3982/4000 words; abstract 318/350; references 50/50; display items 8/8; 5 highlights all ≤85 characters)
+- OAC format gate `code/148_oac_compliance.py` + docx-level `code/336_verify_wordcount_docx.py`: **COMPLIANT**
+  (body 3965/4000 words on the Word-compatible count that INCLUDES numerals; abstract 342/350;
+   references 50/50; display items 8/8; 5 highlights all ≤85 characters)
+  NB: the old letter-start regex under-counted the body by 246 numeric tokens (3984 false value); fixed 2026-11-11.
 - Reported-value integrity `code/149b_verify_reported_values.py`: **SAFE** — no reported β/SE/p/OR/CI changed
-- Final QC `code/182_final_qc.py`: **65/65 PASS — READY TO SUBMIT**
-- No-regression guard `code/310_assert_no_regression.py`: **30/30 PASS**
+- Data-level recompute `code/334_data_level_trust_but_verify.py`: **18/18 VERIFIED**
+- Final QC `code/182_final_qc.py`: **78/78 PASS — READY TO SUBMIT**
+- No-regression guard `code/310_assert_no_regression.py`: **33/33 PASS**
+- PLINK .bed decode guard `code/331_verify_plink_bed_decode.py`: **PASS (31/31)**
 - Supplementary figures S1–S24; inline supplementary tables S25, S28, S30, S31 and S32 in `01_Manuscript.md`
 - Placeholders in this folder: **0**
 

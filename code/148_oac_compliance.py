@@ -9,7 +9,14 @@ F = "docs/08_投稿稿_OA_BMD_fracture.md"
 t = open(F, encoding="utf-8").read()
 
 def words(s):
-    return len(re.findall(r"[A-Za-z][A-Za-z0-9'\-]*", s))
+    # Word-compatible / OAC count: a whitespace-delimited token containing at
+    # least one letter or digit counts as ONE word. This INCLUDES numerals
+    # (0.075), references ([1];) and parenthesised statistics ((OR 1.40)), which
+    # is how MS Word and the journal's word counter behave.
+    # The OLD regex `[A-Za-z][A-Za-z0-9'\-]*` required the token to START with an
+    # ASCII letter and silently dropped 246 numeric tokens in this manuscript,
+    # reporting 3984 for a 4230-word body -> a false "COMPLIANT". Fixed 2026-11-11.
+    return len([t for t in s.split() if re.search(r"[^\W_]", t, re.UNICODE)])
 
 # --- abstract ---
 ai = t.find("**Objective.**")

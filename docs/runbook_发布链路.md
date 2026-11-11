@@ -301,3 +301,41 @@ Zip 尾部 EOCD + 中央目录，仅下载 ~180 KB）：确认含本轮全部新
 Zenodo 最新 = **24115233 / 10.5281/zenodo.24115233**；v2.0=`4e7a098`、v2.1=`2dc8a33` 不可变。
 下次发布继续 `RELEASE_TAG=v2.3 python3 code/318_...py all`（发布器已参数化，无需改码；
 如需更新 Release 文案则先改两处文本并提交，使文案进入历史）。
+
+---
+
+## §12 词数门禁口径纠错（2026-11-11，v2.2 之后；**不改历史 §11 数值**）
+
+**背景**：v2.2 发布台账 §11 记录"148 COMPLIANT 3984/4000"，此数值当时为该门禁实测输出，
+按 append-only 保留不改写。但本轮"继续复核门禁"时发现该门禁口径本身有错。
+
+**根因（数据级 trust-but-verify 的又一实例）**：`code/144_measure_oac.py` 与
+`code/148_oac_compliance.py` 共用偏窄分词器 `re.findall(r"[A-Za-z][A-Za-z0-9'\-]*", s)`，
+要求 token **以 ASCII 字母开头**，系统性丢弃全部数字/引用/括号开头的 token
+（`0.075`、`β=+0.097`、`[1];`、`(OR`、`1.40,`、`38,472`、`13×13` …），
+对本文 MR 正文漏计 **246 个**。OAC 官方字数按 Word 统计器口径（数字计入），
+排除 title/abstract/tables/fig legends/ack/contrib/refs，正文=IMRaD 四段。
+
+**三处独立读数一致**：markdown docs/08、`Manuscript.docx`、`Submission_MainText.docx`
+均为 Word-like **4230** vs 窄口径 3984——稿件实际**超限 230 词**，而一路绿灯。
+`code/148_compress3.py` 是带写副作用的一次性编辑器（marker 早已消费），
+曾被 `ls code/148_*.py | head -1` 误选为门禁；已加防误跑护栏。
+
+**修复**：
+1. `code/144`/`code/148` 分词器改为 Word 兼容口径（数字计入）；`code/148` 现报
+   正文 3965/4000、摘要 342/350 COMPLIANT。
+2. 新增 `code/336_verify_wordcount_docx.py`：从两份投稿 docx 段落独立重数并导出数值快照，
+   与 markdown 三处交叉验证；docx 级 3965/4000 COMPLIANT。
+3. `code/337_compress_wordneutral.py`：43 处数值中性措辞精简（4230→3965，余 35），
+   硬护栏比对压缩前后 **673 个数字字面量多重集完全一致**（独立备份逐字比对确认），
+   已报 β/SE/p/OR/CI/r_g/N/引用编号零改动。
+4. `code/148_compress3.py` 加 `ALLOW_ONESHOT_COMPRESS=1` 防误跑护栏。
+5. `code/135`/README 模板、`code/318` 发布文案词数改为 Word 口径（3965/4000、摘要 342/350、
+   七门禁全绿）；`docs/145` 台账追加修订记录。
+
+**门禁终态（Word 口径，2026-11-11）**：148 COMPLIANT 3965/4000 · 149b SAFE ·
+182 **78/78** · 310 **33/33** · 331 PASS(31/31) · 334 18/18 · **336 docx 级 3965/4000 COMPLIANT**。
+压缩中一度触发 182 STROBE-MR item 5（改写"三假设"句），已恢复字面串并保持词数达标。
+
+**状态**：本批为 v2.2 之后本地提交（在 `ca9c29f` 之后），**未 push、未发新版**。
+v2.2 tag `80f85b3`/Zenodo `24115233` 快照不变、不可变。若发 v2.3，发布器文案已更新。

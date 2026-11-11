@@ -3,7 +3,10 @@ import re
 t = open("docs/08_投稿稿_OA_BMD_fracture.md", encoding="utf-8").read()
 
 def words(s):
-    return len(re.findall(r"[A-Za-z][A-Za-z0-9'\-]*", s))
+    # Word-compatible / OAC count (see code/148_oac_compliance.py): count any
+    # whitespace token containing a letter or digit, numerals included. The old
+    # letter-start regex dropped numeric tokens and under-reported the body.
+    return len([t for t in s.split() if re.search(r"[^\W_]", t, re.UNICODE)])
 
 # --- abstract block ---
 ai = t.find("**Objective.**")

@@ -425,3 +425,42 @@ Context: the six-item full-text terminal audit (task ledger in
   as revision assets (OAC displayed items already 8/8). No reported
   β/SE/p/OR/CI changed; F10 remains an ancestry-composition proxy (not
   cross-ancestry replication); S23 "9/10" unchanged.
+
+### 2026-11-11 addendum — N6: word-count gate under-counted by 246 numeric tokens (false COMPLIANT)
+
+- **Finding N6 — the OAC word-count gate itself was wrong.** `code/144_measure_oac.py`
+  and `code/148_oac_compliance.py` shared `re.findall(r"[A-Za-z][A-Za-z0-9'\-]*", s)`,
+  which requires a token to START with an ASCII letter. It silently drops every
+  numeric/bracket/symbol-initial token (`0.075`, `β=+0.097`, `[1];`, `(OR`, `1.40,`,
+  `38,472`, `13×13`). For this MR manuscript that is **246 tokens**: the gate
+  reported body 3984/4000 COMPLIANT while the Word-compatible count (numerals
+  included, the OAC/Elsevier convention) is **4230/4000 — over limit by 230**.
+  Independently verified in three places: `docs/08` markdown, `Manuscript.docx`
+  and `Submission_MainText.docx` all read Word-like 4230 / narrow 3984; the
+  deviation is systematic, not noise. OAC Guide for Authors (ScienceDirect,
+  checked 2026-11-11): 4000-word cap excludes title page, abstract, tables,
+  figure legends, acknowledgements, contributions, references; body = IMRaD.
+- **N6-adjacent — a one-shot editor shared the `148_*` prefix.** `code/148_compress3.py`
+  is a legacy *editor* with a write side effect, whose replacement markers were
+  long consumed. A gate re-run that selected scripts by `ls code/148_*.py | head -1`
+  picked this editor instead of `148_oac_compliance.py`; it exited at the marker
+  check BEFORE writing (manuscript intact). A hard guard (`ALLOW_ONESHOT_COMPRESS=1`)
+  now prevents any accidental replay.
+- **Independent verification.** (i) `code/336_verify_wordcount_docx.py` re-counts the
+  IMRaD body directly from both submission docx paragraph streams (tables excluded),
+  exports a numeric-token snapshot, and cross-checks markdown vs docx. (ii) The
+  compression guard compared the multiset of **all 673 numeric literals** in the
+  IMRaD body before vs after against a byte backup
+  (`.workbuddy/backups/docs08_pre337_*.md`): identical — so no reported
+  β/SE/p/OR/CI/r_g/N/reference number was touched.
+- **Fix.** 144/148 tokeniser changed to the Word-compatible rule; `code/337` applied
+  43 word-neutral prose edits (4230 → 3965, 35-word headroom) with the numeric-literal
+  guard enforced per replacement; one edit that removed the "three assumptions"
+  literals briefly tripped 182 STROBE-MR item 5 and was corrected. Mirrors, both
+  docx, `code/135`/README and `code/318` release text re-synced.
+- **Gate state after N6 repair (Word-compatible count).** 148 COMPLIANT 3965/4000,
+  abstract 342/350, refs 50/50, display 8/8; 149b SAFE; 182 78/78; 310 33/33;
+  331 PASS (31/31); 334 18/18; 336 docx-level COMPLIANT 3965/4000.
+- **Historical rows note.** N4/A20 retain their original 3984/64-64 text as the
+  record of those rounds; the corrected count is 3965 and the live gate tallies
+  are 182 78/78 / 310 33/33. Append-only; history not rewritten.

@@ -227,7 +227,8 @@ def push():
             f"Submission-ready OAC manuscript {TAG}: SOS cellular anchor and "
             "S22 dual-axis discriminating kernel, PLINK .bed decode fix + code/331 "
             "guard, three-trait coloc 3/31 SOS-congruent, Chai 2026 independent-"
-            "instrument audit; 50 refs, 3984/4000 words, reported values unchanged")
+            "instrument audit; 50 refs, 3965/4000 words (Word-compatible count), "
+            "reported values unchanged; word-count gate de-bias + docx-level code/336")
         rc, out, err = git(["tag", "-a", TAG, "-m", tag_msg])
         print("[push] tag created at HEAD:", rc, err)
     rc, out, err = git(["push", REMOTE, TAG], env=env, timeout=300)
@@ -260,8 +261,11 @@ def push():
             "protocols recorded. Also carries the OSF preregistration DOI "
             "(10.17605/OSF.IO/CSMP7), S32 F10 ancestry-composition proxy, S29 LDSC "
             "site-level rg, and the F2/F5/F10 alternative-path audit.\n\n"
-            "OAC-compliant manuscript: 3984/4000 words, 50/50 references. Four gates "
-            "green (148 COMPLIANT / 149b SAFE / 182 65-65 / 310 30-30) plus 331 PASS. "
+            "OAC-compliant manuscript: 3965/4000 words on the Word-compatible count "
+            "(numerals included), 50/50 references; corrected from the old letter-start "
+            "count of 3984 that omitted 246 numeric tokens. Seven gates green "
+            "(148 COMPLIANT / 149b SAFE / 182 78-78 / 310 33-33 / 331 PASS / "
+            "334 18-18 / 336 docx-level COMPLIANT). "
             "Concept DOI: https://doi.org/10.5281/zenodo.23400860")
         rel_name = "submission-" + TAG
         code, rel = api("POST", f"/repos/{OWNER}/{REPO}/releases",
