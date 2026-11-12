@@ -220,6 +220,98 @@ record("P0-4 code/340 协方差=共享分母+ρ_s (非 MRlap λ)",
        "cov_sampling = (bo_fx * bo_oa / be ** 4) * se_be ** 2" in r1src
        and "rho_s * (so_fx * so_oa / np.abs(be) ** 2)" in r1src)
 
+# ---------- (G) 第八轮 §2 整改 P1-2/3/4 + P2 ----------
+print("\n(G) docs/148 §2 整改落地（P1-2 双分母 / P1-3 EUR-only / P1-4 K双尺度 / P2-1..5）")
+# 正文新串须同时出现在 docs/08、镜像与两份 docx（三载体；防止只改真源漏派生）。
+msrc = read("docs/08_投稿稿_OA_BMD_fracture.md")
+mirror = read("Manuscript_Ready/01_Manuscript.md")
+carriers = {"md": msrc, "mirror": mirror,
+            "Manuscript.docx": docx_text(md_path:=("submission_package/Manuscript.docx")),
+            "MainText.docx": docx_text("submission_package/Submission_MainText.docx")}
+BODY_NEW = {
+    "P1-2 并列 34% BMD-referenced 分母": "≤34% on the BMD-referenced basis",
+    "P1-2 保留 8.4%-of-fracture 参照": "≤4.5% of the positive control on the fracture-referenced overlap",
+    "P1-3 EUR-only 方向复制指针": "an EUR-only knee-OA GWAS preserves all five positive r_g",
+    "P2-6 GDF5 腰椎反例进正文": "one lumbar GDF5 locus reverses this endpoint split",
+    "P2-5 hip 改 cross-site 同研究": "Our cross-site hip estimate (same study/instruments) resolves F1",
+    "P2-3 阳性对照 only partly calibrates": "the control only partly calibrates the pipeline",
+    "P2-3 directional pleiotropy flagged": "its directional pleiotropy flagged",
+    "P2-1 Highlights 因果降调": "associates with higher knee OA, lower fracture",
+    "P2-4 achieved power 标 post-hoc": "achieved power is computed post-hoc",
+}
+def flat(s):
+    return re.sub(r"\s+", " ", s)
+for item, needle in BODY_NEW.items():
+    hit = {k: (flat(needle) in flat(v)) for k, v in carriers.items()}
+    record(item, all(hit.values()), detail=str(hit))
+# S33 index lives in the Supplementary-Material index block, which
+# build_submission.py strips from BOTH docx (cut from "## Supplementary Table
+# S8." onward). It is therefore correctly absent from the docx carriers. Scope
+# this assertion to the two markdown carriers only (true source + byte mirror).
+record("Table S33 索引行存在",
+       all(flat("**Table S33.** Section-2 review remediation audit") in flat(v)
+           for v in (msrc, mirror)),
+       detail="md/mirror only; docx strips the supplementary index")
+# 旧强断言串必须消失（四载体）
+for item, old in [
+    ("P2-1 Highlights 旧 raises 已去", "- Higher genetically predicted BMD raises knee OA risk"),
+    ("P2-5 prospective replication 旧串已去", "Our prospective hip estimate resolves F1"),
+    ("P2-3 calibrates 旧绝对串已去", "so the control calibrates the pipeline despite its non-clean diagnostic"),
+]:
+    record(item, all(old not in v for v in carriers.values()))
+
+# 补表实质断言（独立补表文件，不计正文词数）
+s14 = read("docs/Supplementary/Table_S14_ancestry.md")
+record("P1-2 S14 修正 12% 误标并说明几何平均",
+       "mislabeled the geometric-mean figure" in s14 and "geometric-mean overlap" in s14
+       and "~34–36% on the literal 70%-of-BMD basis" in s14)
+record("P1-2 S14 MRlap 校正对照 vs GEFOS (1.475/1.521)",
+       "1.475" in s14 and "1.521" in s14 and "not a strictly two-sample comparison" in s14)
+s17 = read("docs/Supplementary/Table_S17_sensitivity.md")
+record("P1-4 S17-a 39SNP bootstrap CI 落表",
+       "bootstrap 95% CI of 0.085457–0.087291" in s17 and "3.385–3.421" in s17)
+record("P1-4 S17-a 双尺度披露（OR<1% vs log-odds~9%）",
+       "Dual reporting scale" in s17 and "±9% K-sensitivity" in s17)
+record("P1-4 S17-a 三 K 口径调和",
+       "K=0.0964" in s17 and "K=0.096 is" in s17 and "K=0.12 is an external population-prevalence" in s17)
+s33 = flat(read("docs/Supplementary/Table_S33_review_remediation.md"))
+record("P1-2 S33 Part A 三分母齐全 (4.10/11.83/34.10)",
+       "4.10%" in s33 and "11.83%" in s33 and "34.10%" in s33 and "Label correction" in s33)
+record("P1-2 S33 Part B MRlap relative shift",
+       "−0.1222→−0.1409" in s33 and "1.475" in s33 and "1.521" in s33)
+record("P1-3 S33 Part C EUR-only 5/5 方向一致 + GO×FinnGen r_g",
+       "Sign agrees" in s33 and "0.137" in s33 and "not publicly reconstructible" in s33)
+record("P2-2 S33 Part D 反向 79→69 + Egger 翻转",
+       "79 harmonised instruments" in s33 and "p=0.0392" in s33 and "p=0.376" in s33
+       and "excluded from the deliverable" in s33)
+s27s = read("docs/Supplementary/Table_S27_hip_oa_replication.md")
+record("P2-5 S27 标题/导语 cross-site 且非独立队列",
+       "Within-study cross-site" in s27s and "not an independent cohort" in s27s)
+
+# 三份审计 JSON 存在且关键字段齐全（可复跑数值证据）
+def jget(d, *path):
+    for k in path:
+        d = d[k]
+    return d
+for item, path, need in [
+    ("P1-2 JSON 三分母+MRlap转移", "code/output/genetics/P1_2_overlap_dual_denominator.json",
+     lambda j: ("bias_on_8.4pct_pct" in jget(j, "burgess_bias", "BMD_total->fracture")
+                and "bias_on_geometric_mean_pct" in jget(j, "burgess_bias", "BMD_total->fracture")
+                and "bias_on_70pct_pct" in jget(j, "burgess_bias", "BMD_total->fracture")
+                and "BMD_total" in j["mrlap_transferred_positive_control"])),
+    ("P1-3 JSON EUR-only 方向+祖先错配", "code/output/genetics/P1_3_ancestry_ldsc_sensitivity.json",
+     lambda j: all(k in j for k in ["eur_only_independent_replication", "GO_vs_FinnGen_kneeOA", "h2_liab_sensitivity"])),
+    ("P1-4 JSON K bootstrap+双尺度", "code/output/genetics/P1_4_K_bootstrap.json",
+     lambda j: all(k in j["K_estimation"] for k in ["K_boot_CI", "scale_factor_boot_CI"])
+                and "forward_beta_propagation" in j
+                and "S17a_plusminus10pct_K_on_both_scales" in j),
+]:
+    if os.path.isfile(path):
+        j = json.load(open(path, encoding="utf-8"))
+        record(item, need(j) and all(c["pass"] for c in j["checks"]))
+    else:
+        record(item, False)
+
 # ---------- 汇总 ----------
 n_fail = sum(1 for _, ok, _ in results if not ok)
 print("\n" + "=" * 70)

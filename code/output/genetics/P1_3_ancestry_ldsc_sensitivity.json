@@ -1,0 +1,104 @@
+{
+  "task": "docs/148 P1-3",
+  "why_no_same_cohort_EUR_subset": "GCST90566800 (Hatzikotoulas 2025) is a multi-ancestry meta-analysis; the deposited summary file has per-SNP NCASES/NCONTROLS heterogeneity and no per-SNP ancestry label, so a EUR-only subset of the SAME GWAS cannot be reconstructed from public summary statistics.",
+  "eur_only_independent_replication": [
+    {
+      "site": "arms",
+      "GO_multi_ancestry_rg": 0.1628036257773157,
+      "FinnGen_EUR_only_rg": 0.0733,
+      "FinnGen_rg_se": 0.0267,
+      "FinnGen_intercept": -0.001,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.08395372809529264
+    },
+    {
+      "site": "femur_neck",
+      "GO_multi_ancestry_rg": 0.172808729992166,
+      "FinnGen_EUR_only_rg": 0.0514,
+      "FinnGen_rg_se": 0.0315,
+      "FinnGen_intercept": 0.001,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.05887069064253808
+    },
+    {
+      "site": "femur_total",
+      "GO_multi_ancestry_rg": 0.1531282625641996,
+      "FinnGen_EUR_only_rg": 0.0694,
+      "FinnGen_rg_se": 0.0293,
+      "FinnGen_intercept": -0.0051,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.07948688580918567
+    },
+    {
+      "site": "lumbar",
+      "GO_multi_ancestry_rg": 0.1428684099464187,
+      "FinnGen_EUR_only_rg": 0.0269,
+      "FinnGen_rg_se": 0.0254,
+      "FinnGen_intercept": 0.0074,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.03080975833237888
+    },
+    {
+      "site": "leg",
+      "GO_multi_ancestry_rg": 0.1878854841596349,
+      "FinnGen_EUR_only_rg": 0.0694,
+      "FinnGen_rg_se": 0.0286,
+      "FinnGen_intercept": -0.0039,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.07948688580918567
+    },
+    {
+      "site": "total",
+      "GO_multi_ancestry_rg": 0.1541447060578458,
+      "FinnGen_EUR_only_rg": 0.054,
+      "FinnGen_rg_se": 0.027,
+      "FinnGen_intercept": -0.0008,
+      "direction_agree": true,
+      "EUR_only_upper_bound_abs_rg": 0.06184858549994273
+    },
+    {
+      "site": "fracture",
+      "GO_multi_ancestry_rg": null,
+      "FinnGen_EUR_only_rg": -0.0277,
+      "FinnGen_rg_se": 0.0321,
+      "FinnGen_intercept": 0.0078,
+      "direction_agree": null,
+      "EUR_only_upper_bound_abs_rg": 0.03172603367311877
+    }
+  ],
+  "GO_vs_FinnGen_kneeOA": {
+    "rg": 0.1372,
+    "se": 0.0163,
+    "intercept": 0.2581
+  },
+  "h2_liab_sensitivity": {
+    "observed_h2_kneeOA": 0.035,
+    "K_GWAS_case_fraction_0.096": 0.106,
+    "K_population_prevalence_0.12": 0.094,
+    "ratio": 1.127659574468085
+  },
+  "EUR_share": 0.8731,
+  "checks": [
+    {
+      "name": "GO vs FinnGen knee OA r_g is positive",
+      "pass": true,
+      "detail": "rg=+0.1372, intercept=0.2581"
+    },
+    {
+      "name": "GO vs FinnGen r_g < 1 (definition/ancestry heterogeneity)",
+      "pass": true,
+      "detail": "rg=+0.1372"
+    },
+    {
+      "name": "BMD-OA direction preserved in EUR-only (5/5)",
+      "pass": true,
+      "detail": "5/5"
+    },
+    {
+      "name": "h2_liab(K=0.096 GWAS) > h2_liab(K=0.12 population)",
+      "pass": true,
+      "detail": "0.106 vs 0.094"
+    }
+  ],
+  "honest_conclusion": "EUR-only FinnGen knee OA preserves the POSITIVE BMD-OA genetic correlation at all five MR-entered sites, so ancestry mismatch is unlikely to have created the sign of the core r_g. Magnitudes are smaller in FinnGen, but GO-vs-FinnGen knee-OA r_g is itself far below 1 (definition + ancestry heterogeneity are confounded), so the magnitude gap cannot be attributed to ancestry alone. This is a directional reassurance, not a same-cohort EUR-only recomputation; the residual stratification caveat stands."
+}

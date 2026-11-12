@@ -1,0 +1,138 @@
+{
+  "task": "docs/148 P1-4",
+  "K_estimation": {
+    "n_SNP": 39,
+    "K1minusK_median": 0.0870819877962311,
+    "K_point": 0.09636896526187572,
+    "scale_factor_point": 3.3887211482593664,
+    "K1minusK_boot_CI": [
+      0.08545748588372205,
+      0.08729127349801293
+    ],
+    "K_boot_CI": [
+      0.09436159684236262,
+      0.09662830230420594
+    ],
+    "scale_factor_boot_CI": [
+      3.3846563863493335,
+      3.420778421890281
+    ]
+  },
+  "K_three_conventions": {
+    "K=0.0964": "Scale reconstruction of the knee-OA OUTCOME beta/SE: K estimated from 39 SNPs where deposited GO log-odds SE is available (N_eff=1/[SE^2*2f(1-f)] over munged N_total); this is the case-fraction of the GWAS sample and sets factor 1/sqrt[K(1-K)]=3.389.",
+    "K=0.096": "GWAS case-fraction used for the liability-scale h2 conversion of the observed h2 (S14: OA_knee h2_liab=0.106); same quantity as 0.0964 rounded to the precision of the h2 conversion.",
+    "K=0.12": "Population-prevalence convention for an ALTERNATIVE liability conversion (Table 1: OA_knee h2_liab=0.094); not a GWAS sampling quantity, shown to demonstrate h2_liab sensitivity to prevalence."
+  },
+  "forward_beta_propagation": {
+    "total-body": {
+      "beta_point": 0.078,
+      "or_point": 1.081122658670083,
+      "beta_95lo": 0.07790643920962767,
+      "beta_95hi": 0.07873787934557429,
+      "or_95lo": 1.0810215127113703,
+      "or_95hi": 1.0819206911395778,
+      "or_span_pct": 0.0831708059207295
+    },
+    "lumbar-spine": {
+      "beta_point": 0.095,
+      "or_point": 1.0996588551261028,
+      "beta_95lo": 0.09488604775531576,
+      "beta_95hi": 0.09589869920294304,
+      "or_95lo": 1.099533553670501,
+      "or_95hi": 1.1006475618711509,
+      "or_span_pct": 0.10130489064465596
+    },
+    "arms": {
+      "beta_point": 0.075,
+      "or_point": 1.0778841508846315,
+      "beta_95lo": 0.07491003770156507,
+      "beta_95hi": 0.0757094993707445,
+      "or_95lo": 1.0777871863106148,
+      "or_95hi": 1.0786491803732978,
+      "or_span_pct": 0.07997093769080935
+    },
+    "legs": {
+      "beta_point": 0.06,
+      "or_point": 1.0618365465453596,
+      "beta_95lo": 0.059928030161252054,
+      "beta_95hi": 0.0605675994965956,
+      "or_95lo": 1.061760129090237,
+      "or_95hi": 1.0624394155125212,
+      "or_span_pct": 0.06397278606526008
+    },
+    "femoral-neck": {
+      "beta_point": 0.058,
+      "or_point": 1.0597149957102876,
+      "beta_95lo": 0.05793042915587699,
+      "beta_95hi": 0.05854867951337575,
+      "or_95lo": 1.0596412730080111,
+      "or_95hi": 1.060296599160809,
+      "or_span_pct": 0.06183984896417473
+    }
+  },
+  "S17a_plusminus10pct_K_on_both_scales": {
+    "total-body": {
+      "beta_at_Kplus10pct": 0.07476984727767848,
+      "beta_at_Kminus10pct": 0.08178427592929895,
+      "beta_swing_pct_of_point": 8.992857245667269,
+      "or_at_Kplus10pct": 1.0776361014586784,
+      "or_at_Kminus10pct": 1.085221676138731,
+      "or_swing_pct_of_point": 0.7016386733938054
+    },
+    "lumbar-spine": {
+      "beta_at_Kplus10pct": 0.09106583963306994,
+      "beta_at_Kminus10pct": 0.09960905401645385,
+      "beta_swing_pct_of_point": 8.99285724566728,
+      "or_at_Kplus10pct": 1.095341119741854,
+      "or_at_Kminus10pct": 1.1047389403895664,
+      "or_swing_pct_of_point": 0.8546123740016297
+    },
+    "arms": {
+      "beta_at_Kplus10pct": 0.07189408392084469,
+      "beta_at_Kminus10pct": 0.07863872685509514,
+      "beta_swing_pct_of_point": 8.992857245667267,
+      "or_at_Kplus10pct": 1.0745415268109721,
+      "or_at_Kminus10pct": 1.0818134213266728,
+      "or_swing_pct_of_point": 0.6746452770209604
+    },
+    "legs": {
+      "beta_at_Kplus10pct": 0.05751526713667575,
+      "beta_at_Kminus10pct": 0.06291098148407612,
+      "beta_swing_pct_of_point": 8.992857245667281,
+      "or_at_Kplus10pct": 1.0592014415044653,
+      "or_at_Kminus10pct": 1.064932036342327,
+      "or_swing_pct_of_point": 0.5396870974639076
+    },
+    "femoral-neck": {
+      "beta_at_Kplus10pct": 0.055598091565453235,
+      "beta_at_Kminus10pct": 0.06081394876794025,
+      "beta_swing_pct_of_point": 8.99285724566727,
+      "or_at_Kplus10pct": 1.0571727117128014,
+      "or_at_Kminus10pct": 1.0627011789296703,
+      "or_swing_pct_of_point": 0.5216937798604447
+    }
+  },
+  "checks": [
+    {
+      "name": "39 matched SNPs",
+      "pass": true,
+      "detail": "n=39"
+    },
+    {
+      "name": "K(1-K) median ~ 0.0871",
+      "pass": true,
+      "detail": "0.087082"
+    },
+    {
+      "name": "scale factor ~ 3.389",
+      "pass": true,
+      "detail": "3.3887"
+    },
+    {
+      "name": "log-odds relative swing > OR relative swing (scale-switch exposed)",
+      "pass": true,
+      "detail": "log-odds 9.0% vs OR 0.70%"
+    }
+  ],
+  "honest_conclusion": "The 39-SNP bootstrap places K(1-K) in a tight interval, so the scale factor is 3.389 (95% CI ~3.385-3.421) and the forward ORs move <0.2%; K sampling error does not threaten the OR point estimates. However the +/-10% K perturbation moves the log-odds magnitude by ~10% while moving the OR by only ~0.4% -- the manuscript's habit of quoting OR-scale stability for robustness but log-odds magnitude for literature gaps is a reporting-scale switch that must be disclosed on both scales."
+}

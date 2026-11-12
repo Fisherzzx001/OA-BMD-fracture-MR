@@ -1,0 +1,125 @@
+{
+  "task": "docs/148 P1-2",
+  "overlap_counts": {
+    "N_BMD": 31873,
+    "N_fracture": 264973,
+    "N_overlap_UKB": 22330,
+    "frac_of_BMD_pct": 70.05929783829573,
+    "frac_of_fracture_pct": 8.427273722228303
+  },
+  "burgess_bias": {
+    "BMD_total->kneeOA": {
+      "overlap_frac_pct": 2.6,
+      "r_g": 0.162084331881118,
+      "bias_on_2.6pct_pct": 0.4214192628909068
+    },
+    "BMD_total->fracture": {
+      "overlap_of_fracture_pct": 8.427273722228303,
+      "overlap_of_BMD_pct": 70.05929783829573,
+      "overlap_geometric_mean_pct": 24.29833080008657,
+      "r_g": -0.486795020610176,
+      "bias_on_8.4pct_pct": 4.102354885299721,
+      "bias_on_70pct_pct": 34.104517335127625,
+      "bias_on_geometric_mean_pct": 11.828306442621015
+    },
+    "BMD_femur_neck->fracture": {
+      "overlap_of_fracture_pct": 8.427273722228303,
+      "overlap_of_BMD_pct": 70.05929783829573,
+      "overlap_geometric_mean_pct": 24.29833080008657,
+      "r_g": -0.508643754850951,
+      "bias_on_8.4pct_pct": 4.286480149230954,
+      "bias_on_70pct_pct": 35.63522431469186,
+      "bias_on_geometric_mean_pct": 12.359194214766546
+    }
+  },
+  "mrlap_transferred_positive_control": {
+    "BMD_total": {
+      "mrlap_n_iv": 48,
+      "mrlap_observed": -0.122245826778434,
+      "mrlap_corrected": -0.140900537773009,
+      "relative_displacement_pct": 15.25999822340436,
+      "egger_intercept_p": 0.450514705182323,
+      "table2_ivw_beta_perSD_higher": -0.337,
+      "table2_or_perSD_lower": 1.4007390637385353,
+      "transferred_beta": -0.3884261940128727,
+      "transferred_or_perSD_lower": 1.4746581408483919,
+      "gap_to_GEFOS_OR_before_pct": 9.629737823320305,
+      "gap_to_GEFOS_OR_after_pct": 4.860765106555366,
+      "gap_to_GEFOS_log_before_pct": 23.104116755975816,
+      "gap_to_GEFOS_log_after_pct": 11.369806339066635
+    },
+    "BMD_femur_neck": {
+      "mrlap_n_iv": 34,
+      "mrlap_observed": -0.103184223088857,
+      "mrlap_corrected": -0.123221110111867,
+      "relative_displacement_pct": 19.418556852199444,
+      "egger_intercept_p": 0.0928877909240421,
+      "table2_ivw_beta_perSD_higher": -0.351,
+      "table2_or_perSD_lower": 1.420487325912195,
+      "transferred_beta": -0.41915913455122,
+      "transferred_or_perSD_lower": 1.5206823286364015,
+      "gap_to_GEFOS_OR_before_pct": 8.355656392761611,
+      "gap_to_GEFOS_OR_after_pct": 1.89146266861926,
+      "gap_to_GEFOS_log_before_pct": 19.909629024770073,
+      "gap_to_GEFOS_log_after_pct": 4.35723480380761
+    }
+  },
+  "caveats": [
+    "Burgess bias = overlap fraction x |r_g| is an approximation (Burgess 2016); the 70%-of-BMD denominator is the fraction of the EXPOSURE sample shared, appropriate for asking whether the two-sample assumption holds for the BMD instrument -> fracture path; the 8.4%-of-fracture denominator is the fraction of the OUTCOME sample shared. Both describe the SAME 22,330 people.",
+    "LABEL ERROR CORRECTED: manuscript S14 and docs/148 P1-2 previously wrote 'up to ~12% on the 70%-of-BMD basis'. But 70% x |r_g|=0.4868 = 34.1%, NOT 12%. The ~12% figure actually corresponds to the symmetric geometric-mean overlap sqrt(0.701 x 0.084)=24.3% x |r_g| ~ 11.8-12.4% (code/121 used overlap~0.23, consistent with this). The three denominators (8.4% / geometric-mean 24.3% / 70%) now each carry their correctly-derived bias (4.1% / ~12% / 34%). The literal Burgess formula is olsbias x overlap.prop x (1/F); the manuscript's overlap x r_g omits the 1/F attenuation and is a conservative upper bound, so even the 34% is a worst-case ceiling, not an expected bias.",
+    "MRlap re-clumps to 48 (total) / 34 (femur-neck) instruments, not the primary 31/25, and reports effects on its own exposure scale; its raw corrected beta is therefore NOT the Table 2 corrected OR. We transfer the scale-free ratio corrected/observed onto the Table 2 IVW beta, which assumes the RELATIVE overlap displacement is approximately instrument-set invariant.",
+    "This transfer is a sensitivity analysis, not a substitute point estimate; the primary Table 2 OR (1.40/1.42) remains the reported value."
+  ],
+  "checks": [
+    {
+      "name": "overlap 70.1% of BMD",
+      "pass": true,
+      "detail": "0.7006"
+    },
+    {
+      "name": "overlap 8.4% of fracture",
+      "pass": true,
+      "detail": "0.0843"
+    },
+    {
+      "name": "total Burgess 8.4% ~ 4.1%",
+      "pass": true,
+      "detail": "4.10%"
+    },
+    {
+      "name": "total Burgess 70% ~ 34% (NOT 12%)",
+      "pass": true,
+      "detail": "34.10%"
+    },
+    {
+      "name": "geometric-mean overlap ~ 24%",
+      "pass": true,
+      "detail": "24.30%"
+    },
+    {
+      "name": "geometric-mean Burgess ~ 12% = the mislabeled '70%' figure",
+      "pass": true,
+      "detail": "11.83%"
+    },
+    {
+      "name": "BMD_total MRlap moves away from null",
+      "pass": true,
+      "detail": "ratio=1.1526"
+    },
+    {
+      "name": "BMD_total transfer moves toward GEFOS",
+      "pass": true,
+      "detail": "23.1% -> 11.4%"
+    },
+    {
+      "name": "BMD_femur_neck MRlap moves away from null",
+      "pass": true,
+      "detail": "ratio=1.1942"
+    },
+    {
+      "name": "BMD_femur_neck transfer moves toward GEFOS",
+      "pass": true,
+      "detail": "19.9% -> 4.4%"
+    }
+  ]
+}
