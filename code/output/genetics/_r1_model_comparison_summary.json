@@ -1,0 +1,37 @@
+{
+  "rho_s_main": 0.0,
+  "lambda_lcsc_intercept": [
+    -0.0360600721603821,
+    -0.00510735075368427
+  ],
+  "covariance_note": "V_j = shared-beta_e denominator term + rho_s*(so_fx*so_oa/|be|^2); MRlap cross-trait LDSC intercept lambda NOT used as sampling correlation (P0-4)",
+  "rho_hat": -0.12996790901476954,
+  "rho_ci_prof": [
+    -0.5830816510992167,
+    0.39646287322252705
+  ],
+  "rho_ci_boot": [
+    -0.6014492632619569,
+    0.5151995880289255
+  ],
+  "LRT": 25.819975070765075,
+  "p_LRT_analytic": 1.8739479979266161e-07,
+  "p_LRT_bootstrap": 0.000999000999000999,
+  "lrt_null_q95": 2.9119863604301583,
+  "rho_compat_CI": {
+    "rho_eq_0_within_CI": true,
+    "rho_eq_minus05_within_CI": true,
+    "rho_eq_minus1_within_CI": false
+  },
+  "tost_near_indep_0": false,
+  "dAIC": 23.819975070765075,
+  "dBIC": 22.385987866279926,
+  "verdict": "拒绝'单一设定点严格共线(rho=−1)'强版本：M2 拟合显著更优，rho=−1 在 95% CI 外。但 rho_hat=-0.130，95% CI [-0.583,+0.396] 含 0，'近独立(rho≈0)'与'弱–中等耦合'均不可排除 → 耦合强度未定位；本检验不判定单设定点一般形式，也不暗示数据偏向 SOS。",
+  "n_needed_80pct": 31,
+  "reliability": [
+    0.7444378752353816,
+    0.8181380080533472
+  ],
+  "tau_oa_M1": 0.00010000000000000009,
+  "boundary_note": "rho=-1 forces tau_oa->0 lower bound (double boundary); analytic 0.5chi2_0+0.5chi2_1 replaced by parametric bootstrap (P1-5)"
+}

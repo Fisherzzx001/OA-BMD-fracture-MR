@@ -88,8 +88,16 @@ record("code/182 综合 QC 全 PASS", "ALL CHECKS PASSED" in out,
 
 # ---------- (B) docs/08 理论边界深化 ----------
 print("\n(B) docs/08 理论边界深化（L135 S23 图注）")
+# v2.4 (2026-11-12) P1-5 改稿：S22 正交串去掉定冠词 "the"，并明确正交性对
+# "单一设定点" 中性（R1-2/C 证据两用修复）。旧断言 "orthogonal to the PC2 OA axis"
+# 已不存在；同步到新串，并把 R1-2 修复核心固化为实质检查（比旧门禁更严格）。
 t = read(MANU)
-record("docs/08: S22 正交维度前提", "orthogonal to the PC2 OA axis" in t)
+S22_NEW = "PC1 bone-mass/fracture axis orthogonal to PC2 OA axis"
+record("docs/08: S22 正交维度前提（新措辞）", S22_NEW in t)
+record("docs/08: 正交性对单设定点中性（R1-2 修复）",
+       "orthogonality alone is neutral about a single set-point" in t)
+record("docs/08: 兼容双耦合模块（R1-2 修复）",
+       "consistent also with two coupled modules" in t)
 record("docs/08: 单一设定点判别式 novelty", "single-set-point discriminator" in t)
 record("docs/08: 内核判别式语料保留（shared set of inherited variants, opposite signs）",
        "read through a shared set of inherited variants, must fix opposite signs at whole-bone and joint endpoints" in t)
@@ -97,11 +105,15 @@ record("docs/08: 内核判别式语料保留（shared set of inherited variants,
 # ---------- (C) 派生稿同步 ----------
 print("\n(C) 派生稿同步（镜像 + 两份 docx）")
 m = read(MIRROR)
-record("Manuscript_Ready 镜像: 含新理论串", "orthogonal to the PC2 OA axis" in m)
+record("Manuscript_Ready 镜像: 含新理论串", S22_NEW in m)
+record("Manuscript_Ready 镜像: 含 R1-2 中性串",
+       "orthogonality alone is neutral about a single set-point" in m)
 record("Manuscript_Ready 镜像: 含 novelty 串", "single-set-point discriminator" in m)
 for name, path in DOCX.items():
     dt = docx_text(path)
-    record(f"{name}: 含新理论串", "orthogonal to the PC2 OA axis" in dt)
+    record(f"{name}: 含新理论串", S22_NEW in dt)
+    record(f"{name}: 含 R1-2 中性串",
+           "orthogonality alone is neutral about a single set-point" in dt)
     record(f"{name}: 含 novelty 串", "single-set-point discriminator" in dt)
 
 # ---------- (D) 已报数值零改动 ----------
@@ -152,6 +164,61 @@ for name, path in DOCX.items():
     internal = re.findall(r"code/\d+|this revision|internal-consistency", dx, re.IGNORECASE)
     record(f"{name} 无补表全文/内部编号", (not full) and (not internal),
            f"full_tables={len(full)} internal={len(internal)}")
+
+# ---------- (F) 第七轮极限审稿 P0-1/P0-3/P0-4/P1-1 实质整改 ----------
+print("\n(F) docs/148 整改落地（P0-1 尺度披露 / P0-2 唯一权威表 / P0-3 逐SNP表 / P1-1 组织富集 / P0-4 协方差重建）")
+m = read(MIRROR)
+# P0-1: 尺度换算必须写明，且 "no rescaling" 必须彻底消失（正文真源+镜像+docx）
+for label, text in [("docs/08", t), ("镜像", m)] + [(n, docx_text(p)) for n, p in DOCX.items()]:
+    record(f"P0-1 {label}: 写明 √(400,000/31,873)=3.543", "3.543" in text)
+    record(f"P0-1 {label}: 无 'no rescaling' 旧披露", "no rescaling" not in text)
+# P1-1: 置换校准 + 软骨≥骨 + 撤回 formation-side 独占（正文真源+镜像+docx）
+for label, text in [("docs/08", t), ("镜像", m)] + [(n, docx_text(p)) for n, p in DOCX.items()]:
+    record(f"P1-1 {label}: 置换校准措辞", "permutation-calibrated" in text)
+    record(f"P1-1 {label}: 撤回 formation-side 独占", "not formation-side-exclusive" in text)
+    record(f"P1-1 {label}: 无旧串 'formation-side rather than'", "formation-side rather than" not in text)
+# P1-1: S25 表新增 perm p 列 + contrast + 67% 污染披露（markdown 层，图注区）
+record("P1-1 docs/08: S25 perm p 列", "perm p (length/chr-matched)" in t)
+record("P1-1 docs/08: S25 cartilage-minus-bone contrast", "Cartilage-minus-bone contrast" in t)
+record("P1-1 docs/08: 67% 软骨污染披露", "67%" in t and "shared with the cartilage sets" in t)
+# P0-2: 唯一权威结果表声明 + 打包排除 raw/backup
+auth = "docs/RESULTS_AUTHORITATIVE.md"
+record("P0-2 权威数据声明存在", os.path.isfile(auth))
+if os.path.isfile(auth):
+    at = read(auth)
+    record("P0-2 声明唯一权威表", "mr_results_corrected.csv" in at and "AUTHORITATIVE" in at)
+    record("P0-2 记录 raw/backup 排除", "EXCLUDED" in at and "_backup_pre_G6" in at)
+z = read("code/150_build_submission_zip.py")
+# TABLE_CSVS must list the authoritative corrected table; raw mr_results.csv must
+# NOT appear as an active entry (it may appear only in comments/docstrings).
+record("P0-2 打包脚本用 corrected 权威表",
+       '"mr_results_corrected.csv"' in z and "AUTHORITATIVE MR table" in z)
+record("P0-2 打包脚本不交付 raw mr_results.csv",
+       '    "mr_results.csv",' not in z and '"mr_results.csv", "mr_power.csv"' not in z)
+record("P0-2 打包脚本交付 harmonised", "HARMONISED_CSVS" in z and "harmonised" in z)
+# P0-3: 12 个 harmonised 逐 SNP 表存在且可复现 Table 2
+harm_dir = os.path.join(CODE, "output", "genetics", "harmonised")
+need_harm = ["BMD_total__fracture", "BMD_total__OA_knee", "BMD_femur_neck__fracture",
+             "OA_knee__BMD_total", "OA_knee__fracture"]
+record("P0-3 harmonised 逐 SNP 表齐全 (12)",
+       os.path.isdir(harm_dir) and len([f for f in os.listdir(harm_dir) if f.endswith(".csv")]) == 12
+       and all(os.path.isfile(os.path.join(harm_dir, p + ".csv")) for p in need_harm))
+# P0-4: R1 summary 含 bootstrap p，且不再把 MRlap 截距当抽样协方差
+import json
+r1p = os.path.join(CODE, "output", "genetics", "_r1_model_comparison_summary.json")
+if os.path.isfile(r1p):
+    r1 = json.load(open(r1p, encoding="utf-8"))
+    record("P0-4 R1 用 bootstrap 校准 LRT", "p_LRT_bootstrap" in r1 and r1["p_LRT_bootstrap"] is not None)
+    record("P0-4 MRlap λ 降格为参照（非抽样相关）",
+           "lambda_lcsc_intercept" in r1 and "NOT used as sampling correlation" in r1.get("covariance_note", ""))
+    record("P0-4 结论限定: ρ=−1 被拒但耦合强度未定位",
+           "rho_hat" in r1 and abs(r1["rho_hat"]) < 0.5 and r1["rho_compat_CI"]["rho_eq_0_within_CI"])
+else:
+    record("P0-4 R1 summary 存在", False)
+r1src = read("code/340_r1_single_vs_dual_module.py")
+record("P0-4 code/340 协方差=共享分母+ρ_s (非 MRlap λ)",
+       "cov_sampling = (bo_fx * bo_oa / be ** 4) * se_be ** 2" in r1src
+       and "rho_s * (so_fx * so_oa / np.abs(be) ** 2)" in r1src)
 
 # ---------- 汇总 ----------
 n_fail = sum(1 for _, ok, _ in results if not ok)

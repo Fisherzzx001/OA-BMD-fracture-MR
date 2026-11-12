@@ -174,8 +174,13 @@ _SOS_TENTATIVE = [
 ]
 record("D. 理论段定位", "SOS 明确为待检验假设",
        any(k in t for k in _SOS_TENTATIVE), "")
-record("D. 理论段定位", "F2 标为决定性检验且未执行",
-       "its decisive test" in t and "remains unexecuted" in t, "")
+# v2.4 (2026-11-12): P1-4 改稿把判别者明确收敛到 P4/共定位，F2 为"decisive arm 未执行"。
+# 旧串 "its decisive test ... remains unexecuted" 已被替换；实质要求（F2 决定性臂未执行、
+# 且判别性归于共定位）不降反升，故同步更新断言并新增 P4 判别性锚点。
+record("D. 理论段定位", "F2 决定性臂标为未执行",
+       "F2's decisive arm is unexecuted" in t, "")
+record("D. 理论段定位", "判别性收敛到 P4/共定位（非 F2）",
+       "P4 alone discriminates (via colocalisation)" in t, "")
 record("D. 理论段定位", "Highlights 同步 testable hypothesis",
        "is a testable hypothesis consistent with data." in t, "")
 

@@ -35,7 +35,10 @@ code/output/genetics/*_clump_input.txt
 code/output/genetics/fracture_raw_extract.csv
 code/output/cohort_ukb.csv
 code/output/genetics/sumstats/_demo_*
-code/output/genetics/harmonised/
+# harmonised/ per-SNP instrument tables are NOW DELIVERED (2026-11-12, docs/148 P0-3):
+# Table 2's IVW/Egger/Q/I2/WM/LOO are derived from these; STROBE-MR requires them.
+# ~95 KB total. Reproduce Table 2 with code/334_data_level_trust_but_verify.py.
+# (removed prior exclusion line `code/output/genetics/harmonised/`)
 code/output/genetics/sumstats/
 
 # ---- plink / MR intermediates ----
