@@ -428,6 +428,25 @@ v2.0/v2.1/v2.2 tag 与各自 Zenodo 归档保持不可变。下次发版仍 `REL
 
 **结论**：归档确为 v2.4 本批内容（commit 前缀精确匹配），条目级核验通过。
 
+### §14.2 2026-11-14 v2.4 元数据更正重归档（v2.5 / Zenodo 24223099）
+
+**触发**：用户要求先对 v2.4 归档做条目级核验（§14.1 已完成，commit 前缀 2e4e02a 精确匹配），再调整 `.zenodo.json` 元数据。因环境**无 Zenodo token**（docs/125 确认："无 Zenodo token"，GitHub–Zenodo 集成由新建 Release 触发），"API 原地编辑 24221520"不可行，用户选定兜底"再发布 mint v2.5"（GitHub Release webhook 免 token）。
+
+**准备**（提交 `a4d4f52` 元数据修正 + `5fbed8c` 发布器文案刷新）：
+- `.zenodo.json`：version `submission-v2`→`v2.5`、publication_date `2026-10-11`→`2026-11-14`、title 去因果化、description/notes 增补 M1-M6 整改并注明"仅更正元数据、稿件内容同 v2.4"。
+- `code/318` tag 消息/Release 正文改为 v2.5 元数据重归档叙述（稿件内容不变、七门禁仍全绿、未改动任何已报 β/SE/p/OR/CI）。
+
+**三次调用分阶段执行**（`RELEASE_TAG=v2.5 python3 code/318 … {setup,push,cleanup}`）：
+1. `setup` — 临时 ed25519 deploy key（id **169883780**，写权限，HTTP 201），`ssh -T` 认证通过。
+2. `push` — master `20a6540..5fbed8c`，远端 SHA==本地 HEAD `5fbed8c96188`；annotated tag **v2.5** 推送；Release `submission-v2.5` POST HTTP 201（id **445386459**，published）。
+3. `cleanup` — deploy key DELETE HTTP 204，独立复核**剩余 deploy keys = 0**；临时 remote 与目录移除；origin 保持无凭证。
+
+**Zenodo 新版本**（判据：created + 概念 DOI 重定向 + 元数据字段）：
+- recid **24223099** / 版本 DOI **`10.5281/zenodo.24223099`**，version **v2.5**，publication_date **2026-11-14**，`created` **`2026-11-14T15:18:53Z`**，state **done**。
+- 元数据已更正：title "Genetically higher BMD **is associated with** higher knee-osteoarthritis risk yet lower fracture risk: **pleiotropy-aware** Mendelian-randomisation evidence"；version v2.5；date 2026-11-14；notes 注明仅更正元数据、稿件内容同 v2.4(commit 2e4e02a)。
+- 概念 DOI **`10.5281/zenodo.23400860`** 现指向 v2.5。v2.4 记录 24221520 保留不动（旧元数据），两版本共存于同一概念下。
+- 未改动任何已报告 β/SE/p/OR/CI；归档内容（稿件）与 v2.4 一致（仅 `.zenodo.json` 版本号/日期/描述随重归档刷新）。
+
 **门禁（发布前后一致，Word 口径）**：148 COMPLIANT 3996/4000、摘要 341/350、refs 50/50、显示项 8/8、Highlights[80,81,81,84,76]；149b SAFE；182 **79/79**；310 **98/98**；331 PASS(31/31)；334 18/18；**336 docx 级 3996/4000 COMPLIANT**。已报 β/SE/p/OR/CI 零改动。
 
 **当前基线（v2.4）**：本地 = 远端 master = `2e4e02a`；tag `v2.4`→`2e4e02a`；Zenodo **24221520** / `10.5281/zenodo.24221520`；概念 DOI 23400860 指向 v2.4。v2.0/v2.1/v2.2/v2.3 tag 与各自 Zenodo 归档保持不可变。
