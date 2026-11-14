@@ -1,0 +1,67 @@
+{
+  "BMD_total": {
+    "n": 13,
+    "ivw_beta": 0.06513,
+    "ivw_se": 0.02682,
+    "ivw_p": 0.0152,
+    "or_sd": 1.0673,
+    "or_lo": 1.0126,
+    "or_hi": 1.1249,
+    "egger_slope": 0.07764,
+    "egger_int": -0.00294,
+    "egger_int_p": 0.4,
+    "wmed_beta": 0.06522
+  },
+  "BMD_femur_neck": {
+    "n": 12,
+    "ivw_beta": 0.07536,
+    "ivw_se": 0.03524,
+    "ivw_p": 0.0325,
+    "or_sd": 1.0783,
+    "or_lo": 1.0063,
+    "or_hi": 1.1554,
+    "egger_slope": 0.08033,
+    "egger_int": -0.00072,
+    "egger_int_p": 0.816,
+    "wmed_beta": 0.12165
+  },
+  "BMD_lumbar": {
+    "n": 9,
+    "ivw_beta": 0.11029,
+    "ivw_se": 0.0381,
+    "ivw_p": 0.00379,
+    "or_sd": 1.1166,
+    "or_lo": 1.0363,
+    "or_hi": 1.2032,
+    "egger_slope": 0.11304,
+    "egger_int": -0.00056,
+    "egger_int_p": 0.882,
+    "wmed_beta": 0.1041
+  },
+  "BMD_arms": {
+    "n": 6,
+    "ivw_beta": 0.08829,
+    "ivw_se": 0.03198,
+    "ivw_p": 0.00576,
+    "or_sd": 1.0923,
+    "or_lo": 1.0259,
+    "or_hi": 1.163,
+    "egger_slope": 0.10837,
+    "egger_int": -0.00352,
+    "egger_int_p": 0.299,
+    "wmed_beta": 0.06107
+  },
+  "BMD_leg": {
+    "n": 10,
+    "ivw_beta": 0.06062,
+    "ivw_se": 0.02948,
+    "ivw_p": 0.0397,
+    "or_sd": 1.0625,
+    "or_lo": 1.0028,
+    "or_hi": 1.1257,
+    "egger_slope": 0.1103,
+    "egger_int": -0.00789,
+    "egger_int_p": 0.00348,
+    "wmed_beta": 0.06208
+  }
+}
