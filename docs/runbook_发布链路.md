@@ -407,6 +407,27 @@ v2.0/v2.1/v2.2 tag 与各自 Zenodo 归档保持不可变。下次发版仍 `REL
 - 概念 DOI **`10.5281/zenodo.23400860`** 解析到最新版本 24221520。
 - 注：归档内 `.zenodo.json` 静态 `version=submission-v2`（§13 已说明，不影响版本判定）。
 
+### §14.1 归档条目级核验（2026-11-14，取 ZIP 尾部，不整下 115.9 MB）
+
+方法（同 §13）：`HTTPS_PROXY` 经 `urllib` ProxyHandler 发 HTTP Range。归档
+`Fisherzzx001/OA-BMD-fracture-MR-v2.4.zip`（**115,864,136 B**，964 条目）。
+
+1. **EOCD**：尾部取 66 KB，`rfind(b"PK\x05\x06")` 命中，total_entries=964、cd_size=130,752、
+   cd_offset=115,733,322、comment_len=40 → ZIP 结构完整。
+2. **commit 前缀（权威判据）**：GitHub 源码归档把 commit SHA 写入 EOCD 注释（40 字节）。
+   注释 = **`2e4e02aff23bd559463e123b52cd580a7a55eefc`** = v2.4 tag 指向的 commit → **一致 ✓**。
+3. **根文件夹前缀** = `Fisherzzx001-OA-BMD-fracture-MR-9b0cd76`，等于 v2.4 annotated tag 对象哈希
+   `9b0cd76c…`（与 §13 用 tag 对象哈希命名一致）；全部 964 条目均在此根下。
+4. **v2.4 专属产物齐备**（完整中央目录解析）：`docs/08_投稿稿_OA_BMD_fracture.md`、`docs/149_…_续轮_2026-11-12.md`
+   （§8 整改台账）、`docs/runbook_发布链路.md`（§14）、`code/318_github_ssh_release.py`（刷新文案）、
+   `Manuscript_Ready/01_Manuscript.md`（字节镜像）、`code/149b/334/331` 门禁、`docs/Supplementary/`。
+5. **`submission_package/*.docx` 不在归档** —— 因 `submission_package/` 与 `*.zip` 本就 gitignore（构建产物、可复现），属预期正确，非缺失。
+6. 归档内确含 `.zenodo.json`（v2.4 commit 状态），即 Zenodo 记录 24221520 元数据来源——当时为陈旧版
+   （title "raises … pleiotropy-robust"、`version=submission-v2`、date `2026-10-11`）。随后已修正 `.zenodo.json`
+   （title→去因果化、version→v2.4、date→2026-11-14、description/notes 加 M1–M6 整改说明），提交待发布传播。
+
+**结论**：归档确为 v2.4 本批内容（commit 前缀精确匹配），条目级核验通过。
+
 **门禁（发布前后一致，Word 口径）**：148 COMPLIANT 3996/4000、摘要 341/350、refs 50/50、显示项 8/8、Highlights[80,81,81,84,76]；149b SAFE；182 **79/79**；310 **98/98**；331 PASS(31/31)；334 18/18；**336 docx 级 3996/4000 COMPLIANT**。已报 β/SE/p/OR/CI 零改动。
 
 **当前基线（v2.4）**：本地 = 远端 master = `2e4e02a`；tag `v2.4`→`2e4e02a`；Zenodo **24221520** / `10.5281/zenodo.24221520`；概念 DOI 23400860 指向 v2.4。v2.0/v2.1/v2.2/v2.3 tag 与各自 Zenodo 归档保持不可变。

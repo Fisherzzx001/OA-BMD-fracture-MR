@@ -1,11 +1,11 @@
 {
-  "title": "Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence",
+  "title": "Genetically higher BMD is associated with higher knee-osteoarthritis risk yet lower fracture risk: pleiotropy-aware Mendelian-randomisation evidence",
   "upload_type": "software",
-  "publication_date": "2026-10-11",
-  "description": "Analysis code, configuration, and reproduction material for the manuscript \"Genetically higher BMD raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence\" (submitted to Osteoarthritis and Cartilage). The repository contains the full Python/R pipeline (LDSC genetic correlation across 78 phenotype pairs, two-sample Mendelian randomisation with MR-Egger / weighted median / MR-PRESSO / leave-one-out, multivariable MR conditioning on adult height, colocalisation, MRlap sample-overlap correction, and statistical power) and the derived outputs needed to reproduce every table and figure, including the multivariable-MR height grid and the colocalisation contrast. Raw GWAS summary statistics are not redistributed; they are publicly published (cited in the manuscript) and re-derived by the pipeline.",
+  "publication_date": "2026-11-14",
+  "description": "Analysis code, configuration, and reproduction material for the manuscript \"Genetically higher BMD is associated with higher knee-osteoarthritis risk yet lower fracture risk: pleiotropy-aware Mendelian-randomisation evidence\" (submitted to Osteoarthritis and Cartilage). The repository contains the full Python/R pipeline (LDSC genetic correlation across 78 phenotype pairs, two-sample Mendelian randomisation with MR-Egger / weighted median / MR-PRESSO / leave-one-out, multivariable MR conditioning on adult height and BMI, colocalisation, MRlap sample-overlap correction, and statistical power) and the derived outputs needed to reproduce every table and figure, including the multivariable-MR height/BMI grid and the colocalisation contrast. v2.4 incorporates the M1-M6 adversarial-reviewer rectification: GEFOS variant-level validation confirming the deposited BMD beta is already on the true per-SD scale (no x3.543 reconstruction required), the Systemic Osteogenic Set-point hypothesis restated as a falsifiable hypothesis rather than a demonstrated mechanism, and explicit power caveats for the multivariable-MR height/BMI conditioning and the fracture-versus-knee-OA colocalisation contrast. Raw GWAS summary statistics are not redistributed; they are publicly published (cited in the manuscript) and re-derived by the pipeline.",
   "access_right": "open",
   "license": "mit",
-  "version": "submission-v2",
+  "version": "v2.4",
   "creators": [
     { "name": "Zheng, Zhenxin", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
     { "name": "Chen, Song", "affiliation": "The Quzhou Affiliated Hospital of Wenzhou Medical University (Quzhou People's Hospital), Quzhou, Zhejiang, China" },
@@ -27,5 +27,5 @@
   "related_identifiers": [
     { "identifier": "https://github.com/Fisherzzx001/OA-BMD-fracture-MR", "relation": "isSupplementTo", "resource_type": "software" }
   ],
-  "notes": "Snapshot archived from the GitHub repository Fisherzzx001/OA-BMD-fracture-MR. Corresponds to the submission to Osteoarthritis and Cartilage (revised manuscript with OAC-compliant word count, Supplementary Table S29 genetic correlations, and added references supporting the Systemic Osteogenic Set-point hypothesis). No raw GWAS data are included; all inputs are publicly available and cited in the manuscript."
+  "notes": "Snapshot archived from the GitHub repository Fisherzzx001/OA-BMD-fracture-MR at tag v2.4 (commit 2e4e02a). Corresponds to the v2.4 submission to Osteoarthritis and Cartilage: OAC-compliant 3996/4000-word manuscript; M1-M6 plus m1-m10 adversarial-reviewer rectification (GEFOS variant-level scale validation, SOS theory boundary restated as a falsifiable hypothesis, MVMR/colocalisation power caveats). No raw GWAS data are included; all inputs are publicly available and cited in the manuscript."
 }
