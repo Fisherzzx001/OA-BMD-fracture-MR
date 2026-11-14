@@ -179,10 +179,10 @@ record("D. 理论段定位", "SOS 明确为待检验假设",
 # 且判别性归于共定位）不降反升，故同步更新断言并新增 P4 判别性锚点。
 record("D. 理论段定位", "F2 决定性臂标为未执行",
        "F2's decisive arm is unexecuted" in t, "")
-record("D. 理论段定位", "判别性收敛到 P4/共定位（非 F2）",
-       "P4 alone discriminates (via colocalisation)" in t, "")
-record("D. 理论段定位", "Highlights 同步 testable hypothesis",
-       "is a testable hypothesis consistent with data." in t, "")
+record("D. 理论段定位", "判别性收敛到 共定位判别者（非 F2）",
+       "colocalisation split (9/31 fracture vs 0/31 knee-OA)" in t, "")
+record("D. 理论段定位", "Highlights 同步 untested hypothesis",
+       "Bone-forming set-point is untested" in t, "")
 
 # STROBE-MR item 5 (assumptions) must state all three IV assumptions in Methods (§2 MR)
 record("D. 理论段定位", "STROBE-MR item 5 三假设在正文显式陈述",
@@ -213,8 +213,8 @@ _GAP = ["SOS is directionally supported but quantitatively untested",
         "not resolved into bone mass versus skeletal geometry"]
 record("D. 理论段定位", "P2: IV estimand vs SOS 构念 gap 已在正文命名",
        (sum(k in t for k in _FUSE) >= 1 and sum(k in t for k in _GAP) >= 1), "")
-record("D. 理论段定位", "E1: 标题含 pleiotropy-robust 限定",
-       "raises knee osteoarthritis risk yet protects against fracture on pleiotropy-robust evidence" in t, "")
+record("D. 理论段定位", "E1: 标题含 pleiotropy-aware 限定",
+       "pleiotropy-aware Mendelian-randomisation evidence" in t, "")
 # NOTE (2026-10-30): this previously hard-coded "[42]" as the TREASURE anchor. A literal
 # number is a *proxy* for the citation, not the citation: any renumbering of the
 # bibliography (e.g. inserting new references mid-list) failed the gate even though the

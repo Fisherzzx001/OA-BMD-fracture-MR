@@ -233,9 +233,9 @@ BODY_NEW = {
     "P1-2 保留 8.4%-of-fracture 参照": "≤4.5% of the positive control on the fracture-referenced overlap",
     "P1-3 EUR-only 方向复制指针": "an EUR-only knee-OA GWAS preserves all five positive r_g",
     "P2-6 GDF5 腰椎反例进正文": "one lumbar GDF5 locus reverses this endpoint split",
-    "P2-5 hip 改 cross-site 同研究": "Our cross-site hip estimate (same study/instruments) resolves F1",
+    "P2-5 hip 改 cross-site 同研究": "restoring P6's pre-registered direction",
     "P2-3 阳性对照 only partly calibrates": "the control only partly calibrates the pipeline",
-    "P2-3 directional pleiotropy flagged": "its directional pleiotropy flagged",
+    "P2-3 directional pleiotropy flagged": "carries directional pleiotropy",
     "P2-1 Highlights 因果降调": "associates with higher knee OA, lower fracture",
     "P2-4 achieved power 标 post-hoc": "achieved power is computed post-hoc",
 }

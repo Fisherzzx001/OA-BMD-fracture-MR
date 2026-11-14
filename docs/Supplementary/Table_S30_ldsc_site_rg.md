@@ -4,9 +4,9 @@
 
 ## Supplementary Table S30. Cross-trait genetic correlation between total-body BMD and site-stratified osteoarthritis (LD Score regression)
 
-Genetic correlations (r_g) between total-body DXA BMD (GCST90568455; verified N = 31,986) and the four site-stratified OA outcomes — hip, knee, spine and hand (Hatzikotoulas et al. 2025, GWAS Catalog GCST90566798/6800/6801/6803, GRCh37) — were estimated with LD Score regression (ldsc v2.0.1, Bulik-Sullivan et al. 2015 [5]) using European-ancestry 1000 Genomes Phase 3 HapMap3 LD Scores (eur_w_ld_chr_1–22; 1,290,028 regression SNPs; the HLA region excluded). All traits were munged against the same w_hm3.snplist (1,217,311 SNPs), so the regression SNP set is identical across traits (685,394–685,477 SNPs per BMD–OA pair). Because r_g = b_gencov / √(b_h2,1 · b_h2,2) is a ratio of LD Score regression slopes, a global rescaling of N cancels exactly; the verified N is therefore required only before quoting h², not r_g.
+Genetic correlations (r_g) between total-body DXA BMD (GCST90568455; true N = 31,986 — the BMD exposure used throughout, not an independent dataset) and the four site-stratified OA outcomes — hip, knee, spine and hand (Hatzikotoulas et al. 2025, GWAS Catalog GCST90566798/6800/6801/6803, GRCh37) — were estimated with LD Score regression (ldsc v2.0.1, Bulik-Sullivan et al. 2015 [5]) using European-ancestry 1000 Genomes Phase 3 HapMap3 LD Scores (eur_w_ld_chr_1–22; 1,290,028 regression SNPs; the HLA region excluded). All traits were munged against the same w_hm3.snplist (1,217,311 SNPs), so the regression SNP set is identical across traits (685,394–685,477 SNPs per BMD–OA pair). Because r_g = b_gencov / √(b_h2,1 · b_h2,2) is a ratio of LD Score regression slopes, a global rescaling of N cancels exactly; the true N is therefore required only before quoting h², not r_g.
 
-**Table S30a. Genetic correlation of total-body BMD with site-stratified OA (verified N = 31,986).**
+**Table S30a. Genetic correlation of total-body BMD with site-stratified OA (true N = 31,986, the BMD exposure).**
 
 | OA site | r_g | SE | z | P | h²_obs of OA (SE) | genetic-covariance intercept (SE) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -44,4 +44,4 @@ Genetic correlations (r_g) between total-body DXA BMD (GCST90568455; verified N 
 
 ## Reproduction
 
-`code/204_prep_oa_gwas_for_munge.py` → `code/205_run_ldsc_munge_rg.py --weights standard` (exploratory baseline, placeholder BMD N) → `code/206_summarise_ldsc_rg.py` → `code/207_bmd_verified_ldsc.py` (verified N + `--merge-alleles`, this table). Machine-readable values: `code/output/genetics/ldsc_rg_verified/verified_results.csv`; full comparison and boundary notes: `COMPARISON.md` in the same directory.
+`code/204_prep_oa_gwas_for_munge.py` → `code/205_run_ldsc_munge_rg.py --weights standard` (exploratory baseline, placeholder BMD N) → `code/206_summarise_ldsc_rg.py` → `code/207_bmd_verified_ldsc.py` (true N + `--merge-alleles`, this table). Machine-readable values: `code/output/genetics/ldsc_rg_verified/verified_results.csv`; full comparison and boundary notes: `COMPARISON.md` in the same directory.

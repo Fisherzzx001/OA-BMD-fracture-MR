@@ -45,6 +45,8 @@ code/output/genetics/sumstats/
 *.log
 *.nosex
 *_clump_in.txt
+# ---- M1 downloaded GWAS cache (large; reproducible via code/download_*.sh) ----
+code/output/genetics/independent_bmd/
 
 # ---- secrets / scratch / backups (never commit) ----
 .github_token

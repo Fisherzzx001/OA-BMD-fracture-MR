@@ -160,7 +160,7 @@ The independent OSF preregistration is **<https://doi.org/10.17605/OSF.IO/CSMP7>
 ## Verification state at build time
 
 - OAC format gate `code/148_oac_compliance.py` + docx-level `code/336_verify_wordcount_docx.py`: **COMPLIANT**
-  (body 3965/4000 words on the Word-compatible count that INCLUDES numerals; abstract 342/350;
+  (body 3996/4000 words on the Word-compatible count that INCLUDES numerals; abstract 341/350;
    references 50/50; display items 8/8; 5 highlights all ≤85 characters)
   NB: the old letter-start regex under-counted the body by 246 numeric tokens (3984 false value); fixed 2026-11-11.
 - Reported-value integrity `code/149b_verify_reported_values.py`: **SAFE** — no reported β/SE/p/OR/CI changed

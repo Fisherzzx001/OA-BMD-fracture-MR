@@ -1,0 +1,236 @@
+{
+  "test": "exposure_beta_vs_independent_GEFOS_total_body_BMD",
+  "independent_source": "GCST005348 (GEFOS Lifecourse total-body BMD, Medina-Gomez AJHG 2018), N=56284 EUR",
+  "scale_factor_claimed": 3.5425706833762196,
+  "n_exposure_instruments": 31,
+  "n_gefs_matched": 31,
+  "n_used": 31,
+  "n_ambiguous_allele": 0,
+  "median_beta_ratio": 0.7935167225128472,
+  "q1_beta_ratio": 0.6678191450215423,
+  "q3_beta_ratio": 0.845226596478266,
+  "median_Z_ratio": 1.0736334405144696,
+  "adjudication": "RECONSTRUCTION_OVER_INFLATED_WRONG",
+  "adjudication_text": "median(beta_GEFOS/beta_exp)=0.794 ~ 1.0 => the deposited exposure beta was already on the true scale; the x3.5426 reconstruction is a 3.5x over-inflation and must be removed.",
+  "can_adjudicate_M1": true,
+  "caveat": "Total-body BMD vs total-body BMD (trait-matched); GRCh37 position match; 31 MR instruments only -- a focused but directly relevant test of the instruments that drive the MR.",
+  "detail": [
+    {
+      "snp": "rs12568930",
+      "beta_exp": 0.10139,
+      "beta_gefs": -0.1001,
+      "beta_gefs_oriented": 0.1001,
+      "beta_ratio": 0.9873
+    },
+    {
+      "snp": "rs2566755",
+      "beta_exp": 0.08257,
+      "beta_gefs": -0.0696,
+      "beta_gefs_oriented": 0.0696,
+      "beta_ratio": 0.8429
+    },
+    {
+      "snp": "rs4846607",
+      "beta_exp": -0.04958,
+      "beta_gefs": -0.0315,
+      "beta_gefs_oriented": -0.0315,
+      "beta_ratio": 0.6354
+    },
+    {
+      "snp": "rs6679677",
+      "beta_exp": 0.07476,
+      "beta_gefs": 0.0509,
+      "beta_gefs_oriented": 0.0509,
+      "beta_ratio": 0.6809
+    },
+    {
+      "snp": "rs777355",
+      "beta_exp": -0.07191,
+      "beta_gefs": -0.0473,
+      "beta_gefs_oriented": -0.0473,
+      "beta_ratio": 0.6578
+    },
+    {
+      "snp": "rs10931982",
+      "beta_exp": -0.05467,
+      "beta_gefs": -0.0508,
+      "beta_gefs_oriented": -0.0508,
+      "beta_ratio": 0.9292
+    },
+    {
+      "snp": "rs4974056",
+      "beta_exp": 0.04851,
+      "beta_gefs": 0.05,
+      "beta_gefs_oriented": 0.05,
+      "beta_ratio": 1.0306
+    },
+    {
+      "snp": "rs3755955",
+      "beta_exp": -0.09581,
+      "beta_gefs": -0.0737,
+      "beta_gefs_oriented": -0.0737,
+      "beta_ratio": 0.7692
+    },
+    {
+      "snp": "rs6846509",
+      "beta_exp": 0.07609,
+      "beta_gefs": -0.0618,
+      "beta_gefs_oriented": 0.0618,
+      "beta_ratio": 0.8122
+    },
+    {
+      "snp": "rs17150506",
+      "beta_exp": -0.06964,
+      "beta_gefs": -0.0412,
+      "beta_gefs_oriented": -0.0412,
+      "beta_ratio": 0.5916
+    },
+    {
+      "snp": "rs9293511",
+      "beta_exp": -0.05182,
+      "beta_gefs": -0.0438,
+      "beta_gefs_oriented": -0.0438,
+      "beta_ratio": 0.8452
+    },
+    {
+      "snp": "rs3020333",
+      "beta_exp": 0.07585,
+      "beta_gefs": -0.0587,
+      "beta_gefs_oriented": 0.0587,
+      "beta_ratio": 0.7739
+    },
+    {
+      "snp": "rs1262476",
+      "beta_exp": -0.05247,
+      "beta_gefs": -0.0481,
+      "beta_gefs_oriented": -0.0481,
+      "beta_ratio": 0.9166
+    },
+    {
+      "snp": "rs3779381",
+      "beta_exp": 0.16523,
+      "beta_gefs": -0.1345,
+      "beta_gefs_oriented": 0.1345,
+      "beta_ratio": 0.814
+    },
+    {
+      "snp": "rs10808100",
+      "beta_exp": -0.08758,
+      "beta_gefs": 0.073,
+      "beta_gefs_oriented": -0.073,
+      "beta_ratio": 0.8335
+    },
+    {
+      "snp": "rs6956946",
+      "beta_exp": -0.04742,
+      "beta_gefs": -0.0424,
+      "beta_gefs_oriented": -0.0424,
+      "beta_ratio": 0.8941
+    },
+    {
+      "snp": "rs7010267",
+      "beta_exp": 0.09405,
+      "beta_gefs": 0.059,
+      "beta_gefs_oriented": 0.059,
+      "beta_ratio": 0.6274
+    },
+    {
+      "snp": "rs7938055",
+      "beta_exp": 0.07951,
+      "beta_gefs": 0.0508,
+      "beta_gefs_oriented": 0.0508,
+      "beta_ratio": 0.6389
+    },
+    {
+      "snp": "rs11228269",
+      "beta_exp": -0.07703,
+      "beta_gefs": 0.0767,
+      "beta_gefs_oriented": -0.0767,
+      "beta_ratio": 0.9957
+    },
+    {
+      "snp": "rs17212655",
+      "beta_exp": -0.07609,
+      "beta_gefs": -0.0618,
+      "beta_gefs_oriented": -0.0618,
+      "beta_ratio": 0.8122
+    },
+    {
+      "snp": "rs876701",
+      "beta_exp": 0.06754,
+      "beta_gefs": -0.053,
+      "beta_gefs_oriented": 0.053,
+      "beta_ratio": 0.7847
+    },
+    {
+      "snp": "rs3929244",
+      "beta_exp": -0.05631,
+      "beta_gefs": -0.0452,
+      "beta_gefs_oriented": -0.0452,
+      "beta_ratio": 0.8027
+    },
+    {
+      "snp": "rs930900",
+      "beta_exp": 0.05558,
+      "beta_gefs": 0.0498,
+      "beta_gefs_oriented": 0.0498,
+      "beta_ratio": 0.8959
+    },
+    {
+      "snp": "rs9594759",
+      "beta_exp": 0.05854,
+      "beta_gefs": -0.0374,
+      "beta_gefs_oriented": 0.0374,
+      "beta_ratio": 0.6388
+    },
+    {
+      "snp": "rs9515218",
+      "beta_exp": -0.04636,
+      "beta_gefs": -0.0304,
+      "beta_gefs_oriented": -0.0304,
+      "beta_ratio": 0.6558
+    },
+    {
+      "snp": "rs2414095",
+      "beta_exp": -0.04764,
+      "beta_gefs": -0.0326,
+      "beta_gefs_oriented": -0.0326,
+      "beta_ratio": 0.6843
+    },
+    {
+      "snp": "rs10048146",
+      "beta_exp": -0.06011,
+      "beta_gefs": 0.0477,
+      "beta_gefs_oriented": -0.0477,
+      "beta_ratio": 0.7935
+    },
+    {
+      "snp": "rs12600549",
+      "beta_exp": 0.04574,
+      "beta_gefs": -0.0344,
+      "beta_gefs_oriented": 0.0344,
+      "beta_ratio": 0.7521
+    },
+    {
+      "snp": "rs884205",
+      "beta_exp": -0.06439,
+      "beta_gefs": -0.0531,
+      "beta_gefs_oriented": -0.0531,
+      "beta_ratio": 0.8247
+    },
+    {
+      "snp": "rs6040061",
+      "beta_exp": -0.04872,
+      "beta_gefs": -0.0356,
+      "beta_gefs_oriented": -0.0356,
+      "beta_ratio": 0.7308
+    },
+    {
+      "snp": "rs7277076",
+      "beta_exp": 0.04567,
+      "beta_gefs": 0.0305,
+      "beta_gefs_oriented": 0.0305,
+      "beta_ratio": 0.6678
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "placeholder_N": 400000.0,
+    "N_true_exposure": 31873.0,
+    "recon_factor": 3.5425706833762196
+  },
+  "m1i_placeholder_audit": {
+    "total_rows": 691715,
+    "rows_with_placeholder_N": 691715,
+    "fraction": 1.0
+  },
+  "m1ii_gefsos_positive_control": {
+    "reconstructed_OR": 1.4009,
+    "gefos_FN_BMD_OR": 1.55,
+    "logodds_reconstructed": 0.3371,
+    "logodds_gefos": 0.4383,
+    "logodds_gap_pct": 23.1,
+    "overinflation_counterfactual_OR": 3.301,
+    "verdict": "VALIDATED: reconstructed scale concordant with independent GEFOS; 3.5x over-inflation ruled out"
+  },
+  "m1iii_scale_sensitivity": {
+    "BMD_total->OA_knee": {
+      "K": 31,
+      "OR_per_SD_f1": 1.0815,
+      "CI_f1": [
+        1.0553,
+        1.1083
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": 0.06267,
+          "OR_per_SD": 1.0647,
+          "CI_lo": 1.044,
+          "CI_hi": 1.0858
+        },
+        "f0.9": {
+          "beta": 0.07051,
+          "OR_per_SD": 1.0731,
+          "CI_lo": 1.0496,
+          "CI_hi": 1.097
+        },
+        "f1.0": {
+          "beta": 0.07834,
+          "OR_per_SD": 1.0815,
+          "CI_lo": 1.0553,
+          "CI_hi": 1.1083
+        },
+        "f1.1": {
+          "beta": 0.08617,
+          "OR_per_SD": 1.09,
+          "CI_lo": 1.061,
+          "CI_hi": 1.1198
+        },
+        "f1.2": {
+          "beta": 0.09401,
+          "OR_per_SD": 1.0986,
+          "CI_lo": 1.0667,
+          "CI_hi": 1.1314
+        }
+      },
+      "survives_20pct_down": true
+    },
+    "BMD_femur_neck->OA_knee": {
+      "K": 25,
+      "OR_per_SD_f1": 1.0596,
+      "CI_f1": [
+        1.025,
+        1.0954
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": 0.04632,
+          "OR_per_SD": 1.0474,
+          "CI_lo": 1.0199,
+          "CI_hi": 1.0756
+        },
+        "f0.9": {
+          "beta": 0.05211,
+          "OR_per_SD": 1.0535,
+          "CI_lo": 1.0225,
+          "CI_hi": 1.0855
+        },
+        "f1.0": {
+          "beta": 0.05791,
+          "OR_per_SD": 1.0596,
+          "CI_lo": 1.025,
+          "CI_hi": 1.0954
+        },
+        "f1.1": {
+          "beta": 0.0637,
+          "OR_per_SD": 1.0658,
+          "CI_lo": 1.0275,
+          "CI_hi": 1.1054
+        },
+        "f1.2": {
+          "beta": 0.06949,
+          "OR_per_SD": 1.072,
+          "CI_lo": 1.0301,
+          "CI_hi": 1.1156
+        }
+      },
+      "survives_20pct_down": true
+    },
+    "BMD_lumbar->OA_knee": {
+      "K": 21,
+      "OR_per_SD_f1": 1.0992,
+      "CI_f1": [
+        1.0645,
+        1.135
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": 0.07566,
+          "OR_per_SD": 1.0786,
+          "CI_lo": 1.0513,
+          "CI_hi": 1.1067
+        },
+        "f0.9": {
+          "beta": 0.08512,
+          "OR_per_SD": 1.0888,
+          "CI_lo": 1.0578,
+          "CI_hi": 1.1208
+        },
+        "f1.0": {
+          "beta": 0.09457,
+          "OR_per_SD": 1.0992,
+          "CI_lo": 1.0645,
+          "CI_hi": 1.135
+        },
+        "f1.1": {
+          "beta": 0.10403,
+          "OR_per_SD": 1.1096,
+          "CI_lo": 1.0711,
+          "CI_hi": 1.1495
+        },
+        "f1.2": {
+          "beta": 0.11349,
+          "OR_per_SD": 1.1202,
+          "CI_lo": 1.0779,
+          "CI_hi": 1.1642
+        }
+      },
+      "survives_20pct_down": true
+    },
+    "BMD_arms->OA_knee": {
+      "K": 16,
+      "OR_per_SD_f1": 1.078,
+      "CI_f1": [
+        1.0454,
+        1.1117
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": 0.06012,
+          "OR_per_SD": 1.062,
+          "CI_lo": 1.0361,
+          "CI_hi": 1.0884
+        },
+        "f0.9": {
+          "beta": 0.06763,
+          "OR_per_SD": 1.07,
+          "CI_lo": 1.0407,
+          "CI_hi": 1.1
+        },
+        "f1.0": {
+          "beta": 0.07515,
+          "OR_per_SD": 1.078,
+          "CI_lo": 1.0454,
+          "CI_hi": 1.1117
+        },
+        "f1.1": {
+          "beta": 0.08266,
+          "OR_per_SD": 1.0862,
+          "CI_lo": 1.05,
+          "CI_hi": 1.1236
+        },
+        "f1.2": {
+          "beta": 0.09018,
+          "OR_per_SD": 1.0944,
+          "CI_lo": 1.0547,
+          "CI_hi": 1.1355
+        }
+      },
+      "survives_20pct_down": true
+    },
+    "BMD_leg->OA_knee": {
+      "K": 24,
+      "OR_per_SD_f1": 1.0619,
+      "CI_f1": [
+        1.0328,
+        1.0918
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": 0.04803,
+          "OR_per_SD": 1.0492,
+          "CI_lo": 1.0261,
+          "CI_hi": 1.0728
+        },
+        "f0.9": {
+          "beta": 0.05403,
+          "OR_per_SD": 1.0555,
+          "CI_lo": 1.0294,
+          "CI_hi": 1.0822
+        },
+        "f1.0": {
+          "beta": 0.06003,
+          "OR_per_SD": 1.0619,
+          "CI_lo": 1.0328,
+          "CI_hi": 1.0918
+        },
+        "f1.1": {
+          "beta": 0.06604,
+          "OR_per_SD": 1.0683,
+          "CI_lo": 1.0361,
+          "CI_hi": 1.1014
+        },
+        "f1.2": {
+          "beta": 0.07204,
+          "OR_per_SD": 1.0747,
+          "CI_lo": 1.0395,
+          "CI_hi": 1.1111
+        }
+      },
+      "survives_20pct_down": true
+    },
+    "BMD_total->fracture": {
+      "K": 31,
+      "OR_per_SD_f1": 0.7138,
+      "CI_f1": [
+        0.6831,
+        0.7459
+      ],
+      "factors": {
+        "f0.8": {
+          "beta": -0.26971,
+          "OR_per_SD": 0.7636,
+          "CI_lo": 0.7372,
+          "CI_hi": 0.7909
+        },
+        "f0.9": {
+          "beta": -0.30342,
+          "OR_per_SD": 0.7383,
+          "CI_lo": 0.7097,
+          "CI_hi": 0.7681
+        },
+        "f1.0": {
+          "beta": -0.33713,
+          "OR_per_SD": 0.7138,
+          "CI_lo": 0.6831,
+          "CI_hi": 0.7459
+        },
+        "f1.1": {
+          "beta": -0.37085,
+          "OR_per_SD": 0.6901,
+          "CI_lo": 0.6576,
+          "CI_hi": 0.7243
+        },
+        "f1.2": {
+          "beta": -0.40456,
+          "OR_per_SD": 0.6673,
+          "CI_lo": 0.633,
+          "CI_hi": 0.7034
+        }
+      },
+      "survives_20pct_down": false
+    }
+  }
+}

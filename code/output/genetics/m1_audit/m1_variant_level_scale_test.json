@@ -1,0 +1,24 @@
+{
+  "scale_factor_claimed": 3.5425706833762196,
+  "qian_vs_ukb": {
+    "test": "Qian_N31873_vs_UKB_N31986_z_ratio",
+    "verdict": "CIRCULAR_NON_INDEPENDENT",
+    "explanation": "The two files are the SAME summary statistics (identical A1/A2/Z across all SNPs; only the N column differs). This is a relabelled copy of the exposure, NOT an independent BMD GWAS. A comparison between them is circular and CANNOT adjudicate the 3.5426 scale-reconstruction factor.",
+    "scale_factor_claimed": 3.5425706833762196,
+    "n_qian": 691715,
+    "n_ukb": 691715,
+    "n_common": 691715,
+    "n_harmonised": 691715,
+    "pearson_r_Zq_Zu": 1.0,
+    "median_Z_ratio": 1.0,
+    "exact_Z_match_fraction": 1.0,
+    "identical_snp_set": true,
+    "allele_concordant_fraction": 1.0,
+    "skipped_blank_Z": {
+      "qian": 525596,
+      "ukb": 525596
+    },
+    "can_adjudicate_M1": false,
+    "reason_cannot_adjudicate": "Pair is circular (same source). Even if independent, Z-only files cannot reveal a beta-scale factor; the correct test needs beta&SE from a genuinely independent BMD GWAS (--independent mode)."
+  }
+}
