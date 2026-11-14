@@ -386,3 +386,27 @@ refs 50/50、显示项 8/8；149b SAFE；182 **78/78**；310 **33/33**；331 PAS
 Zenodo **24141253** / `10.5281/zenodo.24141253`；概念 DOI 23400860 指向 v2.3。
 v2.0/v2.1/v2.2 tag 与各自 Zenodo 归档保持不可变。下次发版仍 `RELEASE_TAG=v2.4 ... all`
 （若改发布器文案须先提交，使文案进入被推历史）。
+
+---
+
+## §14 2026-11-14 第五次发布（v2.4 / Zenodo 24221520）
+
+**触发**：用户明确指令「现在就执行发布（含 v2.4 tag + Release + Zenodo deposition 的拆分流程）」。本轮新增为 M1–M6 + m1–m10 彻底整改（对抗性审稿 docs/149 闭环），此前仅在本地（提交 `4132a8c` 整改 + `17b262e` 台账 + `2e4e02a` 发布器文案），需同步到归档版本。
+
+**发布前就绪**：工作树 clean；HEAD `2e4e02a` 领先远端 `52f36c3` 三个提交（`4132a8c` + `17b262e` + `2e4e02a`）；v2.4 tag 远端不存在；代理 `127.0.0.1:58523`（HTTPS_PROXY），SSH CONNECT 到 `ssh.github.com:443` 通过；远端 deploy keys=0；七门禁全绿（148 3996/4000、149b SAFE、182 79/79、310 98/98、331 31/31、334 18/18、336 docx 3996/4000）；无 >100 MB blob（`independent_bmd` 468 MB 已 gitignore）。
+
+**发布器文案刷新**（提交 `2e4e02a`）：`code/318` 的 tag 消息与 Release body 改为 v2.4 描述（M1 尺度重建 GEFOS 变异级 median 0.79、M2 SOS 理论边界重写、M3/M4/M5/M6 + m1–m10；词数 3996/4000；七门禁 182 79/79 / 310 98/98），使文案进入被推送历史（runbook §11/§13 先例）。
+
+**三次调用分阶段执行**（`RELEASE_TAG=v2.4 python3 code/318_github_ssh_release.py {setup,push,cleanup}`）：
+1. `setup` — 临时 ed25519 deploy key（id **169876428**，写权限，HTTP 201），`ssh -T` 认证到 `Fisherzzx001/OA-BMD-fracture-MR`，在任何 push 前验证通过。
+2. `push` — master `52f36c3..2e4e02a` 推送成功，远端 SHA == 本地 SHA `2e4e02aff23b`；annotated tag **v2.4** 推送（新 tag）；Release `submission-v2.4` POST HTTP 201（id **445321276**，published，url `.../releases/tag/v2.4`）。
+3. `cleanup` — deploy key DELETE HTTP 204，独立复核**剩余 deploy keys = 0**；临时 remote 与 `_tmp_release/` 移除；origin 保持无凭证。
+
+**Zenodo 新版本**（判据只看 `created` + 概念 DOI 重定向 + 归档 commit 前缀）：
+- recid **24221520**，版本 DOI **`10.5281/zenodo.24221520`**，`created` **`2026-11-14T13:38:56Z`**（Release 后秒级，webhook 特征），state **done**，conceptrecid 23400860。
+- 概念 DOI **`10.5281/zenodo.23400860`** 解析到最新版本 24221520。
+- 注：归档内 `.zenodo.json` 静态 `version=submission-v2`（§13 已说明，不影响版本判定）。
+
+**门禁（发布前后一致，Word 口径）**：148 COMPLIANT 3996/4000、摘要 341/350、refs 50/50、显示项 8/8、Highlights[80,81,81,84,76]；149b SAFE；182 **79/79**；310 **98/98**；331 PASS(31/31)；334 18/18；**336 docx 级 3996/4000 COMPLIANT**。已报 β/SE/p/OR/CI 零改动。
+
+**当前基线（v2.4）**：本地 = 远端 master = `2e4e02a`；tag `v2.4`→`2e4e02a`；Zenodo **24221520** / `10.5281/zenodo.24221520`；概念 DOI 23400860 指向 v2.4。v2.0/v2.1/v2.2/v2.3 tag 与各自 Zenodo 归档保持不可变。
