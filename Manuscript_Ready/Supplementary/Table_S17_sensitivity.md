@@ -58,3 +58,22 @@ No pair changed direction on outlier removal; its effect moved away from the nul
 
 The five highest PP.H4 values against knee OA are rs11228269 (0.7994), rs9594759 (0.6271), rs12600549 (0.5530), rs9293511 (0.4518), rs6040061 (0.2941). Against the fracture endpoint 9/31 loci reach PP.H4 ≥0.8, so the endpoint-split contrast reported in the manuscript is preserved at every threshold from 0.5 to 0.9: relaxing the cut-off to 0.7 adds exactly one locus and leaves the interpretation unchanged.
 
+### S17-e. Pleiotropy-robust estimators: magnitude attenuation and bootstrap-CI asymmetry
+
+The body reports that weighted medians share the IVW sign at all five sites; the full pattern is a material attenuation at some sites. From Table 2:
+
+| Pair | IVW β | Weighted median β | WM/IVW | Weighted-median 95% CI |
+| --- | ---: | ---: | ---: | --- |
+| total → knee | +0.078 | +0.065 | 0.83 | +0.027 to +0.177 |
+| lumbar → knee | +0.095 | +0.115 | 1.21 | +0.014 to +0.189 |
+| arms → knee | +0.075 | +0.026 | 0.35 | +0.019 to +0.217 |
+| legs → knee | +0.060 | +0.026 | 0.43 | −0.003 to +0.132 |
+| femoral neck → knee | +0.058 | +0.052 | 0.90 | −0.000 to +0.109 |
+
+At arms and legs the most pleiotropy-robust single estimator is roughly one-third of the IVW point estimate, and the legs interval crosses zero. This is disclosed rather than hidden: the headline OR 1.060–1.099 is an IVW quantity, and a reader who prefers the more conservative robust estimator should read the effect as smaller and less certain at those two sites. The weighted-median bootstrap intervals are visibly right-skewed (point estimates near the lower bound, e.g. arms +0.026 against 0.019–0.217): Bowden weights (β_exposure/SE_outcome)² are highly uneven with 16–31 instruments, so a few strong instruments dominate and the percentile bootstrap distribution has a long right tail. The asymmetry is a small-instrument-number property of the estimator, not evidence of a second effect direction; we therefore report the intervals as computed and do not force symmetry.
+
+### S17-f. Why reverse MR has more instruments yet lower power
+
+The reverse analysis uses 69 OA instruments versus 16–31 per forward BMD site, yet its achieved power is 0.14–0.26 against 0.93–1.00 forward. Instrument count is not the driver of power: the exposure variance explained is. From `instrument_strength_steiger.csv`, forward BMD→OA pairs have R²_exposure 0.034–0.063, whereas the OA→BMD pairs have R²_exposure≈0.0003, because OA liability has low SNP heritability (h²=0.035) versus 0.26–0.39 for BMD. With near-zero exposure R² the non-centrality parameter stays small regardless of instrument number. The reverse MDE (minimum detectable |β|=0.089–0.090 in Table 3) is computed from these instruments' actual SE (≈0.032); the quoted exclusion bound |β|≥0.09 SD therefore corresponds to this MDE and is not an arbitrary cut-off. Forward and reverse estimates are on the same as-deposited scale, so the power asymmetry is biological (h²), not a scale artefact.
+
+
