@@ -1,8 +1,8 @@
 {
   "source": "docs/08 IMRaD body",
-  "word_like": 3924,
-  "narrow_144_148": 3696,
-  "delta_dropped_numeric_tokens": 228,
+  "word_like": 3951,
+  "narrow_144_148": 3722,
+  "delta_dropped_numeric_tokens": 229,
   "limit": 4000,
   "numeric_token_multiset": {
     "1.": 1,
@@ -380,6 +380,7 @@
     "−0.58": 1,
     "+0.40,": 1,
     "(ρ=−1)": 1,
+    "ρ=−1": 1,
     "(F3)": 1,
     "(S25).": 1,
     "(RSPO3+": 1,
